@@ -2,18 +2,22 @@
 
 import { LockKeyhole, Mail } from 'lucide-react'
 import { LoginFormValues, loginFormSchema } from '@/valitdators/auth'
+import React, { useState } from 'react'
 import { SubmitHandler, useForm } from 'react-hook-form'
 
-import { Button } from '../ui/button'
 import { Form } from '../ui/form'
 import FormInput from '../ui/form/form-input'
 import FormPasswordInput from '../ui/form/form-password-input'
 import Image from 'next/image'
 import Link from 'next/link'
-import React from 'react'
+import LoadingButton from '../ui/loading-button'
+import { supabase } from '@/lib/supabase/client'
+import { toast } from 'sonner'
+import { useRouter } from 'next/navigation'
 import { zodResolver } from '@hookform/resolvers/zod'
 
 const LoginForm = () => {
+    const [loading, setLoading] = useState(false)
     const form = useForm<LoginFormValues>({
         resolver: zodResolver(loginFormSchema),
         defaultValues: {
@@ -22,8 +26,25 @@ const LoginForm = () => {
         },
     })
 
+    const router = useRouter()
+
     const handleSubmit: SubmitHandler<LoginFormValues> = (values) => {
-        console.log(values)
+        toast.promise(
+            async () => {
+                setLoading(true)
+                const { error } = await supabase.auth.signInWithPassword(values)
+                if (error) throw new Error('Unable to log in. Please ensure your email and password are correct.')
+                router.push('/dashboard')
+            },
+            {
+                loading: 'Logging in... Please wait.',
+                success: 'You have successfully logged in!',
+                error: (err: Error) => {
+                    setLoading(false)
+                    return err?.message || `Oops! Something went wrong`
+                },
+            },
+        )
     }
 
     return (
@@ -50,9 +71,9 @@ const LoginForm = () => {
                 />
 
                 <div className="space-y-2">
-                    <Button variant="plain" className="w-full" size="lg">
+                    <LoadingButton type="submit" loading={loading} variant="plain" className="w-full" size="lg">
                         Login
-                    </Button>
+                    </LoadingButton>
                 </div>
 
                 <p className="text-center text-xs font-normal sm:text-base">

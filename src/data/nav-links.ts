@@ -1,3 +1,5 @@
+import { LayoutDashboard } from 'lucide-react'
+
 export const navLinks = [
     {
         label: 'About',
@@ -29,5 +31,13 @@ export const supportLinks = [
     {
         label: 'Privacy Policy',
         href: '/privacy',
+    },
+]
+
+export const dashboardLinks = [
+    {
+        label: 'Dashboard',
+        href: '/',
+        icon: LayoutDashboard,
     },
 ]

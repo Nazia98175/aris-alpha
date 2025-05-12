@@ -4,13 +4,17 @@ import { LockKeyhole, Mail, UserPlus } from 'lucide-react'
 import { SignupFormValues, signupFormSchema } from '@/valitdators/auth'
 import { SubmitHandler, useForm } from 'react-hook-form'
 
-import { Button } from '../ui/button'
 import { Form } from '../ui/form'
 import FormInput from '../ui/form/form-input'
 import FormPasswordInput from '../ui/form/form-password-input'
 import Image from 'next/image'
 import Link from 'next/link'
+import LoadingButton from '../ui/loading-button'
 import React from 'react'
+import { supabase } from '@/lib/supabase/client'
+import { toast } from 'sonner'
+import { useMutation } from '@tanstack/react-query'
+import { useRouter } from 'next/navigation'
 import { zodResolver } from '@hookform/resolvers/zod'
 
 const SignupForm = () => {
@@ -24,8 +28,35 @@ const SignupForm = () => {
         },
     })
 
+    const router = useRouter()
+
+    const signupMutation = useMutation({
+        mutationKey: ['signup'],
+        mutationFn: async (values: SignupFormValues) => {
+            const { data: existingUser } = await supabase
+                .from('users')
+                .select('id')
+                .eq('email', values.email)
+                .maybeSingle()
+            if (existingUser?.id) throw new Error('User already exist with same email')
+
+            const { error } = await supabase.auth.signUp({ email: values.email, password: values.password })
+            if (error) throw new Error('Something went wrong while creating account. Please try again later')
+
+            await supabase
+                .from('users')
+                .insert({ first_name: values.firstName, last_name: values.lastName, email: values.email })
+
+            router.push('/dashboard')
+        },
+    })
+
     const handleSubmit: SubmitHandler<SignupFormValues> = (values) => {
-        console.log(values)
+        toast.promise(signupMutation.mutateAsync(values), {
+            loading: 'Creating account...',
+            success: 'Account is created successfully',
+            error: (err: Error) => err?.message || `Oops! Something went wrong`,
+        })
     }
 
     return (
@@ -69,9 +100,9 @@ const SignupForm = () => {
                 />
 
                 <div className="space-y-2">
-                    <Button variant="plain" className="w-full" size="lg">
+                    <LoadingButton loading={signupMutation.isPending} variant="plain" className="w-full" size="lg">
                         Sign Up
-                    </Button>
+                    </LoadingButton>
 
                     <p className="text-muted-foreground text-xs font-normal sm:text-sm">
                         By creating an account, you agree to the Terms of Service. {"We'll"} occasionally send you

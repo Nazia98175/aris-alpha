@@ -6,4 +6,5 @@ export enum QueryKeys {
 export enum MutationKeys {
     user_checkout = 'user_checkout',
     user_portal = 'user_portal',
+    newsletter_subscribe = 'newsletter_subscribe',
 }

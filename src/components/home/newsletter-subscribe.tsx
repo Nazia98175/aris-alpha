@@ -1,9 +1,51 @@
-import { Button } from '../ui/button'
+'use client'
+
+import { NewsletterFormValues, newsletterFormSchema } from '@/valitdators/newsletter'
+
 import Container from '../ui/container'
+import { Form } from '../ui/form'
+import FormInput from '../ui/form/form-input'
+import LoadingButton from '../ui/loading-button'
 import { Mail } from 'lucide-react'
+import { MutationKeys } from '@/types'
 import React from 'react'
+import { supabase } from '@/lib/supabase/client'
+import { toast } from 'sonner'
+import { useForm } from 'react-hook-form'
+import { useMutation } from '@tanstack/react-query'
+import { zodResolver } from '@hookform/resolvers/zod'
 
 const NewsLetterSubscribe = () => {
+    const form = useForm<NewsletterFormValues>({
+        resolver: zodResolver(newsletterFormSchema),
+        defaultValues: { email: '' },
+    })
+
+    const newsletterSubscribeMutation = useMutation({
+        mutationKey: [MutationKeys.newsletter_subscribe],
+        mutationFn: async (values: NewsletterFormValues) => {
+            const { data: existingSubscriber } = await supabase
+                .from('subscribers')
+                .select('id')
+                .eq('email', values.email)
+                .maybeSingle()
+
+            if (existingSubscriber?.id) {
+                throw new Error('This email is already subscribed to the newsletter')
+            }
+
+            const { error } = await supabase.from('subscribers').insert({ email: values.email })
+
+            if (error) {
+                throw new Error('An error occurred while subscribing to the newsletter')
+            }
+        },
+
+        onSuccess: () => {
+            toast.success('Successfully subscribed to the newsletter')
+        },
+    })
+
     return (
         <Container className="relative flex flex-col items-center gap-7 text-center sm:gap-10">
             <div className="relative">
@@ -38,18 +80,28 @@ const NewsLetterSubscribe = () => {
                 }}
             ></div>
 
-            <div className="flex w-full max-w-3xl gap-4 overflow-hidden rounded-xl border border-white/10 bg-white/5 px-5 py-3 sm:px-10 sm:py-7">
-                <div className="flex flex-1 items-center gap-4">
-                    <Mail />
-                    <input
-                        className="placeholder:text-muted-foreground w-full text-sm focus:outline-0 sm:text-base"
-                        placeholder="email123@gmail.com"
-                    />
+            <Form {...form}>
+                <div className="flex w-full max-w-3xl gap-4 overflow-hidden rounded-xl border border-white/10 bg-white/5 px-5 py-3 sm:px-10 sm:py-7">
+                    <div className="flex flex-1 items-center gap-4">
+                        <FormInput
+                            control={form.control}
+                            name="email"
+                            className="w-full"
+                            startIcon={<Mail />}
+                            inputClassName="sm:h-14 h-10 placeholder:text-muted-foreground w-full text-sm focus:outline-0 sm:text-base"
+                            placeholder="email123@gmail.com"
+                        />
+                    </div>
+                    <LoadingButton
+                        variant="vibrant"
+                        size="xl"
+                        loading={newsletterSubscribeMutation.isPending}
+                        onClick={form.handleSubmit((values) => newsletterSubscribeMutation.mutate(values))}
+                    >
+                        Subscribe Now
+                    </LoadingButton>
                 </div>
-                <Button variant="vibrant" size="xl">
-                    Subscribe Now
-                </Button>
-            </div>
+            </Form>
         </Container>
     )
 }

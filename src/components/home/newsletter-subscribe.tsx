@@ -7,7 +7,7 @@ const NewsLetterSubscribe = () => {
     return (
         <Container className="relative flex flex-col items-center gap-7 text-center sm:gap-10">
             <div className="relative">
-                <div className="relative z-10 space-y-5">
+                <div className="relative z-10 space-y-5" id="subscribe">
                     <h2 className="text-3xl font-medium sm:text-7xl">
                         Subscribe <br />
                         to our Newsletter

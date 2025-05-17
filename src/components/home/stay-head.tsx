@@ -39,7 +39,7 @@ const StayHead = () => {
     return (
         <div className="relative">
             <Container className="relative flex flex-col gap-10 sm:gap-28">
-                <div className="flex flex-col gap-7 sm:gap-10">
+                <div className="flex flex-col gap-7 sm:gap-10" id="why-us">
                     <h2 className="max-w-4xl text-3xl leading-10 font-medium sm:text-7xl sm:leading-24">
                         Stay Ahead with Tactical Signal
                     </h2>

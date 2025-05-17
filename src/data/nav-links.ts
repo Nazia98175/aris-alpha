@@ -2,20 +2,24 @@ import { LayoutDashboard } from 'lucide-react'
 
 export const navLinks = [
     {
+        label: 'Home',
+        href: '#home',
+    },
+    {
         label: 'About',
         href: '#about',
     },
     {
-        label: 'Blog',
-        href: '#blog',
+        label: 'Why Us',
+        href: '#why-us',
     },
     {
-        label: 'Resources',
-        href: '#resources',
+        label: 'Live Insights',
+        href: '#live-insights',
     },
     {
-        label: 'Contact Us',
-        href: '#contact',
+        label: 'Subscribe',
+        href: '#subscribe',
     },
 ]
 

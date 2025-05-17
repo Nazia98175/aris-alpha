@@ -6,12 +6,15 @@ import MarkIntelligence from '@/components/home/market-intelligence'
 import Navbar from '@/components/layout/public/nav-bar'
 import NewsLetterSubscribe from '@/components/home/newsletter-subscribe'
 import StayHead from '@/components/home/stay-head'
+import { tradeData } from './actions/trade.actions'
 
-export default function Home() {
+export default async function Home() {
+    const trade = await tradeData()
+
     return (
         <div className="relative overflow-hidden">
             <div className="relative h-screen overflow-hidden">
-                <div className="relative z-10 flex h-full flex-col">
+                <div className="relative z-10 flex h-full flex-col" id="home">
                     <Navbar />
 
                     <div className="grid h-0 flex-grow place-content-center">
@@ -58,7 +61,7 @@ export default function Home() {
 
             <MarkIntelligence />
             <StayHead />
-            <Chart />
+            <Chart trade={trade} />
             <NewsLetterSubscribe />
             <Footer />
         </div>

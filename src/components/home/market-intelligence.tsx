@@ -5,7 +5,7 @@ const MarkIntelligence = () => {
     return (
         <div className="relative">
             <Container className="relative flex flex-col items-center gap-7 text-center sm:gap-10">
-                <div className="flex flex-col items-center gap-4 sm:gap-7">
+                <div className="flex flex-col items-center gap-4 sm:gap-7" id="about">
                     <div className="w-fit rounded-full border border-[#656FC9] px-4 py-2 text-sm font-medium">
                         About Us
                     </div>

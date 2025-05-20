@@ -1,6 +1,6 @@
 'use client'
 
-import { LockKeyhole, Mail, UserPlus } from 'lucide-react'
+import { ArrowLeft, LockKeyhole, Mail, UserPlus } from 'lucide-react'
 import { SignupFormValues, signupFormSchema } from '@/valitdators/auth'
 import { SubmitHandler, useForm } from 'react-hook-form'
 
@@ -65,6 +65,9 @@ const SignupForm = () => {
                 onSubmit={form.handleSubmit(handleSubmit)}
                 className="relative flex w-full flex-col gap-3 rounded-lg border border-white/5 bg-white/10 p-6 sm:gap-6 sm:rounded-xl sm:p-12"
             >
+                <Link href="/" className="text-muted-foreground flex items-center gap-2 text-sm">
+                    <ArrowLeft className="size-4" /> Back to Website
+                </Link>
                 <h1 className="mb-1.5 text-center text-xl font-semibold sm:mb-3 sm:text-4xl">Get Started for Free</h1>
                 <div className="grid gap-3 sm:grid-cols-2 sm:gap-6">
                     <FormInput

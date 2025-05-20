@@ -31,9 +31,11 @@ const Header = () => {
                         Get Started
                     </Button>
                 </Link>
-                <Button variant="outline" size="xl">
-                    Learn More
-                </Button>
+                <Link href="#why-us">
+                    <Button variant="outline" size="xl">
+                        Learn More
+                    </Button>
+                </Link>
             </div>
         </Container>
     )

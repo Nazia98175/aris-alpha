@@ -40,9 +40,9 @@ const MarkIntelligence = () => {
                         }
                     }
                 >
-                    {'‘We’re'} building a platform that delivers real-time trading signals powered by live market data.
-                    Our goal is to help you act with confidence — using insights that are fast, clear, and backed by
-                    data. Whether {"you're"} a trader, investor, or market watcher, we give you the edge to stay ahead.’
+                    We Build AI That Makes You Sharper. We fuse live market data with AI to give everyday investors
+                    real-time clarity. Our mission is simple: help you make faster, smarter trading decisions — without
+                    the guesswork.
                 </p>
             </Container>
             <div

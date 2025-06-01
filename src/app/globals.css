@@ -133,7 +133,7 @@
 
 @layer utilities {
     .custom-container {
-        @apply max-w-[760px] lg:max-w-[1168px] mx-auto px-4 w-full
+        @apply max-w-[760px] lg:max-w-[1172px] mx-auto px-4 w-full
     }
 
     .primary-button-gradient {

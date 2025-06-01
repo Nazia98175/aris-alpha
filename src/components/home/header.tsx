@@ -1,31 +1,64 @@
-import { Button } from '../ui/button'
-import Container from '../ui/container'
-import Link from 'next/link'
-import React from 'react'
+import Image from 'next/image'
 
 const Header = () => {
+    const noiseOptions = [
+        'Too many conflicting signals',
+        'Bad timing on trades',
+        'Unclear direction',
+        'Inconsistent results',
+    ]
     return (
-        <Container className="flex flex-col gap-7 text-center">
-            <h1 className="m-auto w-full max-w-3xl text-3xl leading-10 sm:text-7xl sm:leading-24">
-                Smarter Signals Better Trades
-            </h1>
-            <p className="text-muted-foreground m-auto w-full max-w-2xl text-sm leading-6 font-normal sm:text-base">
-                AI-powered alerts that show you exactly what to buy, when to buy, and how much to invest.
-            </p>
-
-            <div className="flex flex-wrap items-center justify-center gap-4">
-                <Link href="/signup">
-                    <Button variant="vibrant" size="xl">
+        <section className="relative mx-auto max-w-[1440px] py-16 lg:py-[103px]">
+            <div className="custom-container">
+                <h1 className="mb-6 w-fit bg-gradient-to-r from-white via-white to-white/20 bg-clip-text text-4xl md:text-5xl leading-[120%] font-semibold text-transparent lg:mb-10 lg:hidden xl:text-[64px]">
+                    Trade with Signal. <br className="max-lg:hidden" /> Not Noise.
+                </h1>
+                <Image
+                    className="w-full max-md:hidden lg:absolute lg:top-1/2 lg:right-3 lg:max-w-[650px] lg:translate-y-[-40%] xl:right-6 xl:max-w-[760px]"
+                    unoptimized
+                    height={200}
+                    width={600}
+                    src={'/assets/homepage/webp/hero-img.webp'}
+                    alt="/"
+                />
+                <h1 className="mb-6 w-fit bg-gradient-to-r from-white via-white to-white/20 bg-clip-text text-5xl leading-[120%] font-semibold text-transparent max-lg:mt-10 max-lg:hidden lg:mb-10 xl:text-[64px]">
+                    Trade with Signal. <br className="max-lg:hidden" /> Not Noise.
+                </h1>
+                <article className="rounded-3xl border border-[#2A64F6] p-6 backdrop-blur-2xl max-md:mt-0 max-lg:mt-12 lg:max-w-[344px] xl:max-w-[394px]">
+                    <h6 className="mb-6 text-2xl text-white">What&apos;s Your Noise?</h6>
+                    <div className="mb-10 space-y-4">
+                        {noiseOptions.map((option, index) => (
+                            <label key={index} className="group flex cursor-pointer items-center gap-3">
+                                <div className="relative">
+                                    <input type="checkbox" className="peer sr-only" />
+                                    <div className="h-6 w-6 rounded-full border-2 border-gray-400 transition-all duration-200 group-hover:border-gray-300 peer-checked:border-[#2A64F6] peer-checked:bg-[#2A64F6]">
+                                        <svg
+                                            className="h-full w-full scale-0 transition-transform duration-200 peer-checked:scale-100"
+                                            viewBox="0 0 24 24"
+                                            fill="none"
+                                        >
+                                            <path
+                                                d="M9 12l2 2 4-4"
+                                                stroke="white"
+                                                strokeWidth="2.5"
+                                                strokeLinecap="round"
+                                                strokeLinejoin="round"
+                                            />
+                                        </svg>
+                                    </div>
+                                </div>
+                                <span className="text-base text-[#D0D0D0] duration-300 group-hover:text-white xl:text-lg">
+                                    {option}
+                                </span>
+                            </label>
+                        ))}
+                    </div>
+                    <button className="w-full rounded-full border-[1.5px] border-[#2A64F6] bg-[#2A64F6] px-6 py-3 text-sm duration-300 hover:bg-transparent hover:shadow-[0px_0px_10px_0px_#2A64F6] md:text-base lg:px-10 lg:py-[13px]">
                         Get Started
-                    </Button>
-                </Link>
-                <Link href="#live-insights">
-                    <Button variant="outline" size="xl">
-                        Learn More
-                    </Button>
-                </Link>
+                    </button>
+                </article>
             </div>
-        </Container>
+        </section>
     )
 }
 

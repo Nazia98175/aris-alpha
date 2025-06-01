@@ -1,11 +1,10 @@
 import Chart from '@/components/home/chart'
-import Footer from '@/components/layout/public/footer'
 import Header from '@/components/home/header'
-import Image from 'next/image'
 import MarkIntelligence from '@/components/home/market-intelligence'
-import Navbar from '@/components/layout/public/Navbar'
 import NewsLetterSubscribe from '@/components/home/newsletter-subscribe'
 import StayHead from '@/components/home/stay-head'
+import Footer from '@/components/layout/public/footer'
+import Navbar from '@/components/layout/public/Navbar'
 import { tradeData } from './actions/trade.actions'
 
 export default async function Home() {
@@ -17,12 +16,12 @@ export default async function Home() {
                 <div className="relative z-10 flex h-full flex-col" id="home">
                     <Navbar />
 
-                    <div className="grid h-0 flex-grow place-content-center">
-                        <Header />
-                    </div>
+                    {/* <div className="grid h-0 flex-grow place-content-center"> */}
+                    <Header />
+                    {/* </div> */}
                 </div>
 
-                <div className="absolute top-0 right-0 bottom-0 left-0 -z-10">
+                {/* <div className="absolute top-0 right-0 bottom-0 left-0 -z-10">
                     <div className="h-full w-full">
                         <Image
                             alt="navbar-top-overlay"
@@ -31,8 +30,8 @@ export default async function Home() {
                             priority={false}
                         />
                     </div>
-                </div>
-                <div
+                </div> */}
+                {/* <div
                     className="absolute -top-[45%] right-0 -bottom-[300px] -z-10 w-[35%] rotate-45"
                     style={{
                         filter: 'blur(10px)',
@@ -56,7 +55,7 @@ export default async function Home() {
                             'linear-gradient(258.8deg, rgba(0, 26, 255, 0.8) 16.35%, rgba(140, 0, 255, 0.8) 77.56%)',
                     }}
                 ></div>
-                <div className="absolute top-1/2 -left-10 h-[60%] w-[5%] -translate-y-1/2 rotate-[16deg] transform rounded-tr-full rounded-br-full bg-[#FFFFFFC2] blur-[40px] lg:w-20"></div>
+                <div className="absolute top-1/2 -left-10 h-[60%] w-[5%] -translate-y-1/2 rotate-[16deg] transform rounded-tr-full rounded-br-full bg-[#FFFFFFC2] blur-[40px] lg:w-20"></div> */}
             </div>
 
             <MarkIntelligence />

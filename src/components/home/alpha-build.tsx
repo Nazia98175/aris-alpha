@@ -4,10 +4,18 @@ import { ProgressStep, stepInstractions } from './helper'
 import {
     BtnPlusIcon,
     BtnUpArrowIcon,
+    CalendarIcon,
     DotedLineIcon,
+    LessionIcon,
     MicroTradeUpIcon,
     MytradeIcon,
+    NewsIcon,
+    OpportunitiesIcon,
+    PromotionIcon,
+    SettingIcon,
+    StrategiesIcon,
     SymbolsIcon,
+    TechIcon,
     TradeHomeIcon,
 } from './Icons'
 
@@ -16,9 +24,14 @@ const AlphaBuild = () => {
         { label: 'Overview', icon: <TradeHomeIcon /> },
         { label: 'Symbols', icon: <SymbolsIcon /> },
         { label: 'My trades', icon: <MytradeIcon /> },
-        { label: 'Overview', icon: <MytradeIcon /> },
-        { label: 'Symbols', icon: <SymbolsIcon /> },
-        { label: 'My trades', icon: <MytradeIcon /> },
+        { label: 'News', icon: <NewsIcon /> },
+        { label: 'Calendar', icon: <CalendarIcon /> },
+        { label: 'Opportunities', icon: <OpportunitiesIcon /> },
+        { label: 'Tech analysis', icon: <TechIcon /> },
+        { label: 'Lessons', icon: <LessionIcon /> },
+        { label: 'Strategies', icon: <StrategiesIcon /> },
+        { label: 'Promotions', icon: <PromotionIcon /> },
+        { label: 'Settings', icon: <SettingIcon /> },
     ]
     return (
         <section className="relative">

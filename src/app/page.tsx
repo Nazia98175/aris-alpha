@@ -22,10 +22,10 @@ export default async function Home() {
                 <Projects />
             </main>
             <Reviews />
-            <MarkIntelligence />
+            {/* <MarkIntelligence />
             <StayHead />
             <Chart trade={trade} />
-            <NewsLetterSubscribe />
+            <NewsLetterSubscribe /> */}
             <ArisAlphaBuild />
             <div className="relative">
                 <img

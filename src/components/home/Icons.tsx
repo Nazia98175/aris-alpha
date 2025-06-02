@@ -1,5 +1,12 @@
 export const BuySellIcon = () => (
-    <svg width="42" height="43" viewBox="0 0 42 43" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg
+        className="h-auto max-sm:max-w-9"
+        width="42"
+        height="43"
+        viewBox="0 0 42 43"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+    >
         <path
             d="M31.57 24.2125C30.835 24.93 30.415 25.9625 30.52 27.065C30.6775 28.955 32.41 30.3375 34.3 30.3375H37.625V32.42C37.625 36.0425 34.6675 39 31.045 39H13.3525C13.895 38.545 14.3675 37.985 14.735 37.355C15.3825 36.305 15.75 35.0625 15.75 33.75C15.75 29.8825 12.6175 26.75 8.75 26.75C7.105 26.75 5.5825 27.3275 4.375 28.29V20.6425C4.375 17.02 7.33249 14.0625 10.955 14.0625H31.045C34.6675 14.0625 37.625 17.02 37.625 20.6425V23.1625H34.09C33.11 23.1625 32.2175 23.5475 31.57 24.2125Z"
             stroke="white"
@@ -40,7 +47,14 @@ export const BuySellIcon = () => (
     </svg>
 )
 export const NoguessIcon = () => (
-    <svg width="42" height="43" viewBox="0 0 42 43" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg
+        className="h-auto max-sm:max-w-9"
+        width="42"
+        height="43"
+        viewBox="0 0 42 43"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+    >
         <path
             d="M40.25 28.4475C40.25 35.22 34.7725 40.6975 28 40.6975L29.8375 37.635"
             stroke="white"
@@ -106,7 +120,14 @@ export const NoguessIcon = () => (
     </svg>
 )
 export const ForeCastIcon = () => (
-    <svg width="42" height="43" viewBox="0 0 42 43" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg
+        className="h-auto max-sm:max-w-9"
+        width="42"
+        height="43"
+        viewBox="0 0 42 43"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+    >
         <path
             d="M3.5 39H38.5"
             stroke="white"
@@ -139,7 +160,14 @@ export const ForeCastIcon = () => (
     </svg>
 )
 export const OutLookIcon = () => (
-    <svg width="42" height="43" viewBox="0 0 42 43" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg
+        className="h-auto max-sm:max-w-9"
+        width="42"
+        height="43"
+        viewBox="0 0 42 43"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+    >
         <path
             d="M7.035 10.9475C4.8125 13.8875 3.5 17.545 3.5 21.5C3.5 31.16 11.34 39 21 39C30.66 39 38.5 31.16 38.5 21.5C38.5 11.84 30.66 4 21 4"
             stroke="white"

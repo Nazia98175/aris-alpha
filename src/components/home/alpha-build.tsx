@@ -1,4 +1,6 @@
-import React from 'react'
+import Image from 'next/image'
+import CommonBtn from '../ui/common-btn'
+import { ProgressStep, stepInstractions } from './helper'
 import {
     BtnPlusIcon,
     BtnUpArrowIcon,
@@ -6,14 +8,8 @@ import {
     MicroTradeUpIcon,
     MytradeIcon,
     SymbolsIcon,
-    TellTraderIcon,
-    TradeHomeIcon,
-    TradePlaneIcon,
-    TradePlaneIcon2,
+    TradeHomeIcon
 } from './Icons'
-import CommonBtn from '../ui/common-btn'
-import Image from 'next/image'
-import { ProgressStep, stepInstractions } from './helper'
 
 const AlphaBuild = () => {
     return (
@@ -133,7 +129,7 @@ const AlphaBuild = () => {
                 <div className="flex items-center justify-center pt-10">
                     <CommonBtn
                         btnText="Get Started"
-                        btnUrl="/"
+                        btnUrl="/signup"
                         variant="primary"
                         className="h-[45px] w-full sm:w-fit md:h-[63px]"
                     />

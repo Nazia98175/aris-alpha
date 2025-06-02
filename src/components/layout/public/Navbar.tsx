@@ -36,23 +36,23 @@ const Navbar = () => {
                         ARIS
                     </Link>
                     <div className="flex items-center gap-6 text-sm text-[#D0D0D0] md:text-base lg:gap-10">
-                        <Link className="hover:text-primary duration-300" href={'/'}>
+                        <Link className="hover:text-primary duration-300" href={'/signup'}>
                             Learn More
                         </Link>
-                        <Link className="hover:text-primary duration-300" href={'/'}>
+                        <Link className="hover:text-primary duration-300" href={'#about-us'}>
                             About Us
                         </Link>
-                        <Link className="hover:text-primary duration-300" href={'/'}>
+                        <Link className="hover:text-primary duration-300" href={'#dashboard'}>
                             Dash Board
                         </Link>
                     </div>
-                    <CommonBtn btnText="Get Started" btnUrl="/" variant="primary" />
+                    <CommonBtn btnText="Get Started" btnUrl="/signup" variant="primary" />
                 </div>
             </nav>
 
             {/* Mobile Navbar - Visible only on mobile */}
             <nav className="relative bg-[#010314] sm:hidden">
-                <div className="flex h-20 items-center justify-between px-4">
+                <div className="flex h-16 items-center justify-between px-4">
                     <Link className="inline-block text-2xl leading-[120%]" href={'/'}>
                         ARIS
                     </Link>
@@ -90,21 +90,21 @@ const Navbar = () => {
                         <div className="mb-12 flex flex-col gap-8">
                             <Link
                                 className="border-b border-[#1A1B2E] pb-2 text-lg text-[#D0D0D0] duration-300 hover:text-[#2A64F6]"
-                                href={'/'}
+                                href={'/signup'}
                                 onClick={closeMenu}
                             >
                                 Learn More
                             </Link>
                             <Link
                                 className="border-b border-[#1A1B2E] pb-2 text-lg text-[#D0D0D0] duration-300 hover:text-[#2A64F6]"
-                                href={'/'}
+                                href={'#about-us'}
                                 onClick={closeMenu}
                             >
                                 About Us
                             </Link>
                             <Link
                                 className="border-b border-[#1A1B2E] pb-2 text-lg text-[#D0D0D0] duration-300 hover:text-[#2A64F6]"
-                                href={'/'}
+                                href={'#dashboard'}
                                 onClick={closeMenu}
                             >
                                 Dash Board
@@ -113,7 +113,7 @@ const Navbar = () => {
 
                         {/* Get Started Button */}
                         <div className="flex grow flex-col justify-end">
-                            <CommonBtn btnText="Get Started" btnUrl="/" variant="primary" />
+                            <CommonBtn btnText="Get Started" btnUrl="/signup" variant="primary" />
                         </div>
                     </div>
                 </div>

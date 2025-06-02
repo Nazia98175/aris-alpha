@@ -6,20 +6,20 @@ import InstantlyAction from '@/components/home/instantly-action'
 import Projects from '@/components/home/Projects'
 import Reviews from '@/components/home/reviews'
 import Footer from '@/components/layout/public/footer'
-import Navbar from '@/components/layout/public/Navbar'
+import Navbar from '@/components/layout/public/navbar'
 import Image from 'next/image'
 
 export default async function Home() {
     return (
         <div className="relative">
-            <main className="bg-[url('/assets/homepage/webp/hero-bg.webp')] bg-cover">
+            <main className="bg-[url('/assets/homepage/webp/hero-bg.webp')] bg-cover bg-right">
                 <Navbar />
                 <Header />
                 <Projects />
             </main>
             <Reviews />
             <Dashboard />
-            {/* <AiHandle /> */}
+            <AiHandle />
             <AlphaBuild />
             <div className="relative">
                 <Image

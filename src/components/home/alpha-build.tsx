@@ -137,7 +137,7 @@ const AlphaBuild = () => {
                 <div className="flex items-center justify-center pt-10">
                     <CommonBtn
                         btnText="Get Started"
-                        btnUrl="/signup"
+                        btnUrl="/onboard"
                         variant="primary"
                         className="h-[45px] w-full sm:w-fit md:h-[63px]"
                     />

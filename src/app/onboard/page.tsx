@@ -1,6 +1,5 @@
 import OnBoard from '@/components/onboard/OnBoard'
 import OnboardHeader from '@/components/onboard/OnboardHeader'
-import Step1 from '@/components/onboard/Step1'
 
 const OnBoardPage = () => {
     return (

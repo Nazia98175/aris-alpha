@@ -55,7 +55,7 @@ const Header = () => {
                             </label>
                         ))}
                     </div>
-                    <CommonBtn className='relative' btnText="Get Started" btnUrl="/signup" variant="secondary" />
+                    <CommonBtn className='relative' btnText="Get Started" btnUrl="/onboard" variant="secondary" />
                 </article>
             </div>
         </section>

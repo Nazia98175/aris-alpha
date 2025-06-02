@@ -4,10 +4,11 @@ import MarkIntelligence from '@/components/home/market-intelligence'
 import NewsLetterSubscribe from '@/components/home/newsletter-subscribe'
 import StayHead from '@/components/home/stay-head'
 import Footer from '@/components/layout/public/footer'
-import Navbar from '@/components/layout/public/Navbar'
 import { tradeData } from './actions/trade.actions'
 import Projects from '@/components/home/Projects'
 import Reviews from '@/components/home/reviews'
+import Navbar from '@/components/layout/public/navbar'
+import Dashboard from '@/components/home/dashboard'
 
 export default async function Home() {
     const trade = await tradeData()
@@ -20,6 +21,7 @@ export default async function Home() {
                 <Projects />
             </main>
             <Reviews />
+            <Dashboard />
             {/* <MarkIntelligence />
             <StayHead />
             <Chart trade={trade} />

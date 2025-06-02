@@ -1,3 +1,4 @@
+import AiHandle from '@/components/home/ai-handle'
 import ArisAlphaBuild from '@/components/home/ArisAlphaBuild'
 import Dashboard from '@/components/home/dashboard'
 import Header from '@/components/home/header'
@@ -8,9 +9,8 @@ import Footer from '@/components/layout/public/footer'
 import Navbar from '@/components/layout/public/navbar'
 
 export default async function Home() {
-
     return (
-        <div className="relative overflow-hidden">
+        <div className="relative">
             <main className="bg-[url('/assets/homepage/webp/hero-bg.webp')] bg-cover">
                 <Navbar />
                 <Header />
@@ -18,6 +18,7 @@ export default async function Home() {
             </main>
             <Reviews />
             <Dashboard />
+            {/* <AiHandle /> */}
             <ArisAlphaBuild />
             <div className="relative">
                 <img

@@ -5,7 +5,7 @@ const Dashboard = () => {
     return (
         <section className="relative">
             <div className="custom-container pb-10">
-                <h3 className="mx-auto mb-6 sm:mb-8 lg:mb-12 xl:mb-14 w-fit bg-gradient-to-r from-white via-white to-white/50 bg-clip-text text-center text-3xl sm:text-4xl xl:text-[40px] leading-[120%] text-transparent">
+                <h3 className="mx-auto mb-6 sm:mb-8 lg:mb-12 xl:mb-14 gradient-text text-center text-3xl sm:text-4xl xl:text-[40px] leading-[120%] w-fit">
                     Trusted to Cut Through the Noise
                 </h3>
                 <Image

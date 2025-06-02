@@ -1,77 +1,65 @@
-import { Mail, MapPin } from 'lucide-react'
-import { navLinks, supportLinks } from '@/data/nav-links'
-
-import { Button } from '@/components/ui/button'
-import Container from '@/components/ui/container'
+import { FooterLogoIcon, WhiteCheckIcon } from '@/components/home/Icons'
 import Link from 'next/link'
-import Logo from '@/components/ui/logo'
-import React from 'react'
 
 const Footer = () => {
+    const navLinks = [
+        {
+            label: 'Home',
+            href: '#home',
+        },
+        {
+            label: 'Learn More',
+            href: '#learn-more',
+        },
+        {
+            label: 'About Us',
+            href: '#About-Us',
+        },
+    ]
     return (
-        <div className="border-t-2 border-t-white/15 pt-10 pb-4 sm:pt-24">
-            <Container className="flex flex-col gap-4 py-0 sm:grid-cols-4 sm:gap-8 sm:py-0">
-                <div className="grid grid-cols-2 gap-6 py-0 sm:grid-cols-3 sm:gap-4 sm:py-0">
-                    <div className="col-span-2 flex flex-col gap-2 sm:col-span-1 sm:gap-4">
-                        <Logo />
-                        <p className="text-muted-foreground max-w-60 text-xs font-normal sm:text-base">
-                            Know What to Do Next — With Confidence
-                        </p>
-                        <Link href="/signup">
-                            <Button variant="plain" size="lg" className="w-fit">
-                                See Live Signals Now
-                            </Button>
-                        </Link>
-                    </div>
-                    <div className="col-span-1">
-                        <ul className="flex flex-col space-y-2 sm:space-y-4">
-                            <li className="text-sm font-medium sm:text-lg">Company</li>
-                            {navLinks.map((link) => (
-                                <li key={link.href} className="text-muted-foreground text-sm sm:text-lg">
-                                    <Link href={link.href}>{link.label}</Link>
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
-
-                    <div className="col-span-1">
-                        <ul className="flex flex-col space-y-2 sm:space-y-4">
-                            <li className="text-sm font-medium sm:text-lg">Support</li>
-                            {supportLinks.map((link) => (
-                                <li key={link.href} className="text-muted-foreground text-sm sm:text-lg">
-                                    <Link href={link.href}>{link.label}</Link>
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
-                </div>
-
-                <div className="space-y-4 sm:space-y-6">
-                    <div className="h-0.5 w-full bg-white/15" />
-                    <div className="mx-auto flex w-full max-w-5xl flex-wrap items-center justify-between gap-6 sm:gap-4">
-                        <div className="flex items-start gap-2">
-                            <MapPin className="text-primary size-5 shrink-0" />
-                            <p className="text-muted-foreground text-xs font-light sm:text-base">
-                                30 Wall Street, 8th Floor, New York City, NY 10005
+        <footer className="custom-container px-4 pt-13 sm:pt-24">
+            <div className="flex flex-col items-start justify-between gap-8 sm:gap-12 md:flex-row">
+                <div className="w-full max-w-[710px]">
+                    <FooterLogoIcon />
+                    <p className="small-text py-4">
+                        Al-powered alerts that show what to buy, when to buy, <br className="hidden md:block" /> and how
+                        much to allocate.
+                    </p>
+                    <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+                        <div className="flex items-center gap-2">
+                            <WhiteCheckIcon />
+                            <p className="text-lg font-medium text-[#d0d0d0] md:text-xl">Fast signal delivery</p>
+                        </div>
+                        <div className="flex items-center gap-2">
+                            <WhiteCheckIcon />
+                            <p className="text-lg font-medium text-[#d0d0d0] md:text-xl">No overcomplication</p>
+                        </div>
+                        <div className="flex items-center gap-2">
+                            <WhiteCheckIcon />
+                            <p className="text-lg font-medium text-[#d0d0d0] md:text-xl">
+                                Built by traders, not marketers
                             </p>
                         </div>
-                        <div className="flex items-start gap-2">
-                            <Mail className="text-primary size-5 shrink-0" />
-                            <a
-                                href="mailto:support@ariscg.com"
-                                className="text-muted-foreground text-xs font-light sm:text-base"
-                            >
-                                support@ariscg.com
-                            </a>
-                        </div>
                     </div>
                 </div>
-
-                <p className="text-muted-foreground text-center text-xs font-normal sm:text-base">
-                    Copyright © {new Date().getFullYear()} • ARIS.
-                </p>
-            </Container>
-        </div>
+                <div className="">
+                    <ul className="flex flex-col space-y-2 sm:space-y-4">
+                        <li className="small-text !text-white">Company</li>
+                        {navLinks.map((link) => (
+                            <li
+                                key={link.href}
+                                className="description hover:!text-primary transition-all duration-300 ease-in-out"
+                            >
+                                <Link href={link.href}>{link.label}</Link>
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+            </div>
+            <div className="text-secondary mt-[40px] bg-[#010314] px-2 py-4 text-center text-sm sm:mt-[60px] md:mt-[77px] md:py-6">
+                © ©Aris Capital, 30 Wall Street, New York City, NY 10005 USA
+            </div>
+        </footer>
     )
 }
 

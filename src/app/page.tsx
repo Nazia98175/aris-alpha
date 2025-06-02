@@ -1,17 +1,13 @@
-import Chart from '@/components/home/chart'
+import ArisAlphaBuild from '@/components/home/ArisAlphaBuild'
+import Dashboard from '@/components/home/dashboard'
 import Header from '@/components/home/header'
-import MarkIntelligence from '@/components/home/market-intelligence'
-import NewsLetterSubscribe from '@/components/home/newsletter-subscribe'
-import StayHead from '@/components/home/stay-head'
-import Footer from '@/components/layout/public/footer'
-import { tradeData } from './actions/trade.actions'
+import Instantly from '@/components/home/Instantly'
 import Projects from '@/components/home/Projects'
 import Reviews from '@/components/home/reviews'
+import Footer from '@/components/layout/public/footer'
 import Navbar from '@/components/layout/public/navbar'
-import Dashboard from '@/components/home/dashboard'
 
 export default async function Home() {
-    const trade = await tradeData()
 
     return (
         <div className="relative overflow-hidden">
@@ -22,11 +18,16 @@ export default async function Home() {
             </main>
             <Reviews />
             <Dashboard />
-            {/* <MarkIntelligence />
-            <StayHead />
-            <Chart trade={trade} />
-            <NewsLetterSubscribe />
-            <Footer /> */}
+            <ArisAlphaBuild />
+            <div className="relative">
+                <img
+                    className="absolute bottom-[10%] left-0 z-[-1] h-[700px] w-full object-cover object-right md:object-fill"
+                    src="/assets/homepage/webp/hero-bg.webp"
+                    alt="background"
+                />
+                <Instantly />
+                <Footer />
+            </div>
         </div>
     )
 }

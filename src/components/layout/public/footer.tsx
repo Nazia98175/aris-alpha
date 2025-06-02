@@ -1,24 +1,11 @@
+import { footerLinks } from '@/components/home/helper'
 import { FooterLogoIcon, WhiteCheckIcon } from '@/components/home/Icons'
 import Link from 'next/link'
 
 const Footer = () => {
-    const navLinks = [
-        {
-            label: 'Home',
-            href: '#',
-        },
-        {
-            label: 'Learn More',
-            href: '#',
-        },
-        {
-            label: 'About Us',
-            href: '#',
-        },
-    ]
     return (
         <footer className="custom-container px-4 pt-13 sm:pt-24">
-            <div className="flex flex-col items-start justify-between gap-8 sm:gap-12 md:flex-row">
+            <div className="flex flex-col items-start justify-between gap-8 sm:gap-12 lg:flex-row">
                 <div className="w-full max-w-[710px]">
                     <FooterLogoIcon />
                     <p className="small-text py-4">
@@ -49,10 +36,10 @@ const Footer = () => {
                 <div className="">
                     <ul className="flex flex-col space-y-2 sm:space-y-4">
                         <li className="small-text !text-white">Company</li>
-                        {navLinks.map((link, index) => (
+                        {footerLinks.map((link, index) => (
                             <li
                                 key={index}
-                                className="description transition-all duration-300 ease-in-out hover:!text-[#0082FF]"
+                                className="description transition-all duration-300 ease-in-out hover:!text-[#2a64f6]"
                             >
                                 <Link href={link.href}>{link.label}</Link>
                             </li>

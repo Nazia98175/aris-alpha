@@ -52,7 +52,7 @@ const Navbar = () => {
 
             {/* Mobile Navbar - Visible only on mobile */}
             <nav className="relative bg-[#010314] sm:hidden">
-                <div className="flex h-20 items-center justify-between px-4">
+                <div className="flex h-16 items-center justify-between px-4">
                     <Link className="inline-block text-2xl leading-[120%]" href={'/'}>
                         ARIS
                     </Link>

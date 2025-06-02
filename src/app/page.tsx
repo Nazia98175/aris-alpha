@@ -8,6 +8,8 @@ import Navbar from '@/components/layout/public/Navbar'
 import { tradeData } from './actions/trade.actions'
 import Projects from '@/components/home/Projects'
 import Reviews from '@/components/home/reviews'
+import Instantly from '@/components/home/Instantly'
+import ArisAlphaBuild from '@/components/home/ArisAlphaBuild'
 
 export default async function Home() {
     const trade = await tradeData()
@@ -24,7 +26,16 @@ export default async function Home() {
             <StayHead />
             <Chart trade={trade} />
             <NewsLetterSubscribe />
-            <Footer />
+            <ArisAlphaBuild />
+            <div className="relative">
+                <img
+                    className="absolute bottom-[10%] left-0 z-[-1] h-[700px] w-full object-cover object-right md:object-fill"
+                    src="/assets/homepage/webp/hero-bg.webp"
+                    alt="background"
+                />
+                <Instantly />
+                <Footer />
+            </div>
         </div>
     )
 }

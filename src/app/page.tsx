@@ -6,7 +6,7 @@ import InstantlyAction from '@/components/home/instantly-action'
 import Projects from '@/components/home/Projects'
 import Reviews from '@/components/home/reviews'
 import Footer from '@/components/layout/public/footer'
-import Navbar from '@/components/layout/public/Navbar'
+import Navbar from '@/components/layout/public/navbar'
 import Image from 'next/image'
 
 export default async function Home() {
@@ -19,7 +19,7 @@ export default async function Home() {
             </main>
             <Reviews />
             <Dashboard />
-            {/* <AiHandle /> */}
+            <AiHandle />
             <AlphaBuild />
             <div className="relative">
                 <Image

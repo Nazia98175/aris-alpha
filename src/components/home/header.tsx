@@ -9,7 +9,7 @@ const Header = () => {
         'Inconsistent results',
     ]
     return (
-        <section className="relative mx-auto max-w-[1440px] py-16 lg:py-[103px]">
+        <section className="relative mx-auto max-w-[1440px] py-16 lg:py-[103px]" id='home'>
             <div className="custom-container">
                 <h1 className="mb-6 w-fit bg-gradient-to-r from-white via-white to-white/20 bg-clip-text text-4xl leading-[120%] font-semibold text-transparent md:text-5xl lg:mb-10 lg:hidden xl:text-[64px]">
                     Trade with Signal. <br className="max-lg:hidden" /> Not Noise.
@@ -54,7 +54,7 @@ const Header = () => {
                             </label>
                         ))}
                     </div>
-                    <CommonBtn btnText="Get Started" btnUrl="/" variant="secondary" />
+                    <CommonBtn btnText="Get Started" btnUrl="/signup" variant="secondary" />
                 </article>
             </div>
         </section>

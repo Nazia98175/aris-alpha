@@ -58,8 +58,10 @@ const Reviews = () => {
                                         : i === (mobileIndex - 1 + reviewSlider.length) % reviewSlider.length
                                           ? '-translate-x-full opacity-0'
                                           : 'translate-x-full opacity-0'
-                                } flex flex-col justify-between rounded-[30px] border-y bg-[#FFFFFF0A] p-4 text-center h-full ${
-                                    i === mobileIndex ? 'border-[#2A64F6]' : 'border-transparent'
+                                } flex h-full flex-col justify-between rounded-[30px] border-y bg-[#FFFFFF0A] p-4 text-center ${
+                                    i === mobileIndex
+                                        ? 'border-[#2A64F6]'
+                                        : 'border-transparent'
                                 }`}
                                 key={i}
                             >
@@ -110,7 +112,7 @@ const Reviews = () => {
                                 return (
                                     <article
                                         className={`flex min-w-[480px] flex-col justify-between rounded-[30px] border-y bg-[#FFFFFF0A] p-10 text-center transition-all duration-500 ${
-                                            isActive ? 'border-[#2A64F6] opacity-100' : 'border-transparent'
+                                            isActive ? 'border-[#2A64F6]' : 'border-transparent hover:border-[#2A64F6]'
                                         }`}
                                         key={i}
                                     >

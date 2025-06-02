@@ -1,3 +1,4 @@
+import AiHandle from '@/components/home/ai-handle'
 import AlphaBuild from '@/components/home/alpha-build'
 import Dashboard from '@/components/home/dashboard'
 import Header from '@/components/home/header'
@@ -5,12 +6,12 @@ import InstantlyAction from '@/components/home/instantly-action'
 import Projects from '@/components/home/Projects'
 import Reviews from '@/components/home/reviews'
 import Footer from '@/components/layout/public/footer'
-import Navbar from '@/components/layout/public/navbar'
+import Navbar from '@/components/layout/public/Navbar'
 import Image from 'next/image'
 
 export default async function Home() {
     return (
-        <div className="relative overflow-hidden">
+        <div className="relative">
             <main className="bg-[url('/assets/homepage/webp/hero-bg.webp')] bg-cover">
                 <Navbar />
                 <Header />
@@ -18,6 +19,7 @@ export default async function Home() {
             </main>
             <Reviews />
             <Dashboard />
+            {/* <AiHandle /> */}
             <AlphaBuild />
             <div className="relative">
                 <Image

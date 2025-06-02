@@ -1,3 +1,168 @@
+export const BuySellIcon = () => (
+    <svg width="42" height="43" viewBox="0 0 42 43" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path
+            d="M31.57 24.2125C30.835 24.93 30.415 25.9625 30.52 27.065C30.6775 28.955 32.41 30.3375 34.3 30.3375H37.625V32.42C37.625 36.0425 34.6675 39 31.045 39H13.3525C13.895 38.545 14.3675 37.985 14.735 37.355C15.3825 36.305 15.75 35.0625 15.75 33.75C15.75 29.8825 12.6175 26.75 8.75 26.75C7.105 26.75 5.5825 27.3275 4.375 28.29V20.6425C4.375 17.02 7.33249 14.0625 10.955 14.0625H31.045C34.6675 14.0625 37.625 17.02 37.625 20.6425V23.1625H34.09C33.11 23.1625 32.2175 23.5475 31.57 24.2125Z"
+            stroke="white"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+        />
+        <path
+            d="M4.375 22.2175V14.2201C4.375 12.1376 5.65249 10.2825 7.59499 9.54754L21.49 4.29754C23.66 3.47504 25.9875 5.0851 25.9875 7.4126V14.0626"
+            stroke="white"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+        />
+        <path
+            d="M39.4779 24.9478V28.5529C39.4779 29.5154 38.7079 30.3028 37.7279 30.3378H34.2979C32.4079 30.3378 30.6754 28.9553 30.5179 27.0653C30.4129 25.9628 30.8329 24.9303 31.5679 24.2128C32.2154 23.5478 33.1079 23.1628 34.0879 23.1628H37.7279C38.7079 23.1978 39.4779 23.9853 39.4779 24.9478Z"
+            stroke="white"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+        />
+        <path d="M12.25 21.5H24.5" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+        <path
+            d="M15.75 33.75C15.75 35.0625 15.3825 36.305 14.735 37.355C14.3675 37.985 13.895 38.545 13.3525 39C12.1275 40.1025 10.5175 40.75 8.75 40.75C6.195 40.75 3.9725 39.385 2.765 37.355C2.1175 36.305 1.75 35.0625 1.75 33.75C1.75 31.545 2.765 29.5675 4.375 28.29C5.5825 27.3275 7.105 26.75 8.75 26.75C12.6175 26.75 15.75 29.8825 15.75 33.75Z"
+            stroke="white"
+            strokeWidth="1.5"
+            strokeMiterlimit="10"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+        />
+        <path
+            d="M6.02246 33.7491L7.75494 35.4816L11.4825 32.0342"
+            stroke="white"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+        />
+    </svg>
+)
+export const NoguessIcon = () => (
+    <svg width="42" height="43" viewBox="0 0 42 43" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path
+            d="M40.25 28.4475C40.25 35.22 34.7725 40.6975 28 40.6975L29.8375 37.635"
+            stroke="white"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+        />
+        <path
+            d="M1.75 14.4475C1.75 7.67501 7.2275 2.19751 14 2.19751L12.1625 5.26001"
+            stroke="white"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+        />
+        <path
+            d="M11.585 23.3726H16.5025C17.5875 23.3726 18.48 24.3526 18.48 25.3501C18.48 26.4351 17.605 27.3276 16.5025 27.3276H11.585V23.3726Z"
+            stroke="white"
+            strokeWidth="1.5"
+            strokeMiterlimit="10"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+        />
+        <path
+            d="M11.585 27.3276H17.22C18.4625 27.3276 19.4775 28.2026 19.4775 29.3051C19.4775 30.3901 18.4625 31.2827 17.22 31.2827H11.585V27.3276Z"
+            stroke="white"
+            strokeWidth="1.5"
+            strokeMiterlimit="10"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+        />
+        <path
+            d="M14.7349 31.2651V33.2251"
+            stroke="white"
+            strokeWidth="1.5"
+            strokeMiterlimit="10"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+        />
+        <path
+            d="M14.7349 21.4126V23.3726"
+            stroke="white"
+            strokeWidth="1.5"
+            strokeMiterlimit="10"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+        />
+        <path
+            d="M25.9876 27.3276C25.9876 33.2951 21.1576 38.1251 15.1901 38.1251C9.22258 38.1251 4.39258 33.2951 4.39258 27.3276C4.39258 21.3601 9.22258 16.53 15.1901 16.53C15.4701 16.53 15.7326 16.5476 16.0301 16.5651C21.3326 16.9676 25.5676 21.2026 25.9701 26.5051C25.9701 26.7676 25.9876 27.0301 25.9876 27.3276Z"
+            stroke="white"
+            strokeWidth="1.5"
+            strokeMiterlimit="10"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+        />
+        <path
+            d="M37.6253 15.6725C37.6253 21.64 32.7953 26.47 26.8278 26.47H25.9703C25.5678 21.1675 21.3328 16.9325 16.0303 16.53V15.6725C16.0303 9.70497 20.8603 4.875 26.8278 4.875C32.7953 4.875 37.6253 9.70497 37.6253 15.6725Z"
+            stroke="white"
+            strokeWidth="1.5"
+            strokeMiterlimit="10"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+        />
+    </svg>
+)
+export const ForeCastIcon = () => (
+    <svg width="42" height="43" viewBox="0 0 42 43" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path
+            d="M3.5 39H38.5"
+            stroke="white"
+            strokeWidth="1.5"
+            strokeMiterlimit="10"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+        />
+        <path
+            d="M17.0625 7.5V39H24.9375V7.5C24.9375 5.575 24.15 4 21.7875 4H20.2125C17.85 4 17.0625 5.575 17.0625 7.5Z"
+            stroke="white"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+        />
+        <path
+            d="M5.25 18V39H12.25V18C12.25 16.075 11.55 14.5 9.45 14.5H8.05C5.95 14.5 5.25 16.075 5.25 18Z"
+            stroke="white"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+        />
+        <path
+            d="M29.75 26.75V39H36.75V26.75C36.75 24.825 36.05 23.25 33.95 23.25H32.55C30.45 23.25 29.75 24.825 29.75 26.75Z"
+            stroke="white"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+        />
+    </svg>
+)
+export const OutLookIcon = () => (
+    <svg width="42" height="43" viewBox="0 0 42 43" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path
+            d="M7.035 10.9475C4.8125 13.8875 3.5 17.545 3.5 21.5C3.5 31.16 11.34 39 21 39C30.66 39 38.5 31.16 38.5 21.5C38.5 11.84 30.66 4 21 4"
+            stroke="white"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+        />
+        <path
+            d="M8.75 21.5C8.75 28.2725 14.2275 33.75 21 33.75C27.7725 33.75 33.25 28.2725 33.25 21.5C33.25 14.7275 27.7725 9.25 21 9.25"
+            stroke="white"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+        />
+        <path
+            d="M21 28.5C24.8675 28.5 28 25.3675 28 21.5C28 17.6325 24.8675 14.5 21 14.5"
+            stroke="white"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+        />
+    </svg>
+)
 export const FooterLogoIcon = () => (
     <svg width="82" height="30" viewBox="0 0 82 30" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path

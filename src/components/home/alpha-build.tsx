@@ -131,11 +131,11 @@ const AlphaBuild = () => {
                                         {list.startTradebtn && (
                                             <div className="flex w-full max-w-[239px] items-center justify-center sm:p-4">
                                                 <div className="w-full max-w-[188px] space-y-3">
-                                                    <button className="bg-primary flex h-[49px] w-full max-w-[188px] cursor-pointer items-center justify-center gap-3 rounded-[24px] text-lg text-white shadow-[0px_11.75px_14.688px_-5.875px_rgba(0,130,255,0.30)] transition-all duration-300 ease-in-out hover:scale-95 md:text-xl">
+                                                    <button className="flex h-[49px] w-full max-w-[188px] cursor-pointer items-center justify-center gap-3 rounded-[24px] bg-[#0082FF] text-lg text-white shadow-[0px_11.75px_14.688px_-5.875px_rgba(0,130,255,0.30)] transition-all duration-300 ease-in-out hover:scale-95 md:text-xl">
                                                         <BtnPlusIcon />
                                                         Start Trade
                                                     </button>
-                                                    <button className="text-primary shadow-[0px_8.813px_26.438px -2.937px #E2E6EE] flex h-[49px] w-full max-w-[188px] cursor-pointer items-center justify-center gap-3 rounded-[24px] bg-white text-lg transition-all duration-300 hover:scale-95 md:text-xl">
+                                                    <button className="shadow-[0px_8.813px_26.438px -2.937px #E2E6EE] flex h-[49px] w-full max-w-[188px] cursor-pointer items-center justify-center gap-3 rounded-[24px] bg-white text-lg text-[#0082FF] transition-all duration-300 hover:scale-95 md:text-xl">
                                                         <BtnUpArrowIcon />
                                                         Start Trade
                                                     </button>

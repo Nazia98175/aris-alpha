@@ -13,48 +13,9 @@ import {
 } from './Icons'
 import CommonBtn from '../ui/common-btn'
 import Image from 'next/image'
+import { ProgressStep, stepInstractions } from './helper'
 
 const AlphaBuild = () => {
-    const ProgressStep = [
-        {
-            id: 1,
-            icon: <TellTraderIcon />,
-        },
-        {
-            id: 2,
-            icon: <TradePlaneIcon />,
-        },
-        {
-            id: 3,
-            icon: <TradePlaneIcon2 />,
-        },
-    ]
-    const stepInstractions = [
-        {
-            id: 1,
-            title: 'Tell us how you trade',
-            description: ' Your goals and style shape everything. We start by learning how you think.',
-            tradeCard: true,
-            startTradebtn: false,
-            tradingNavigation: false,
-        },
-        {
-            id: 2,
-            title: 'We generate your signal and allocation plan',
-            description: 'You get a custom playbook — clear entries, exits, and position sizing.',
-            tradeCard: false,
-            startTradebtn: true,
-            tradingNavigation: false,
-        },
-        {
-            id: 3,
-            title: 'You act — no digging',
-            description: '  Your dashboard updates in real time. No scrolling. No  guesswork. Just action.',
-            tradeCard: false,
-            startTradebtn: false,
-            tradingNavigation: true,
-        },
-    ]
     return (
         <section className="relative">
             <Image
@@ -64,7 +25,7 @@ const AlphaBuild = () => {
                 src="/assets/homepage/webp/hero-bg.webp"
                 alt="background"
             />
-            <div className="mx-auto max-w-[1004px] px-4 py-13 sm:pt-10 md:pb-[161px]">
+            <div className="mx-auto max-w-[1004px] px-4 py-13 sm:pt-10 md:pb-[112px] lg:pb-[161px]">
                 <h2 className="gradient-text secondary-heading text-center">How Aris Alpha Builds Your Strategy</h2>
                 <div className="pt-[45px] md:pt-[60px]">
                     <div className="flex justify-between gap-7">
@@ -97,7 +58,7 @@ const AlphaBuild = () => {
                                                             </h5>
                                                         </div>
                                                         <div>
-                                                            <p className="text-primary flex items-center text-sm">
+                                                            <p className="flex items-center text-sm text-[#2A64F6]">
                                                                 $750
                                                                 <span className="pl-2">
                                                                     <MicroTradeUpIcon />

@@ -5,15 +5,15 @@ const Footer = () => {
     const navLinks = [
         {
             label: 'Home',
-            href: '#home',
+            href: '#',
         },
         {
             label: 'Learn More',
-            href: '#learn-more',
+            href: '#',
         },
         {
             label: 'About Us',
-            href: '#About-Us',
+            href: '#',
         },
     ]
     return (
@@ -49,9 +49,9 @@ const Footer = () => {
                 <div className="">
                     <ul className="flex flex-col space-y-2 sm:space-y-4">
                         <li className="small-text !text-white">Company</li>
-                        {navLinks.map((link) => (
+                        {navLinks.map((link, index) => (
                             <li
-                                key={link.href}
+                                key={index}
                                 className="description transition-all duration-300 ease-in-out hover:!text-[#0082FF]"
                             >
                                 <Link href={link.href}>{link.label}</Link>

@@ -305,6 +305,7 @@ export const BtnPlusIcon = () => (
         <path
             d="M5.1875 11.2188H16.9375M11.0625 17.0938V5.34375"
             stroke="white"
+            className="transition-all duration-300 ease-in-out group-hover:stroke-[#0082FF]"
             strokeWidth="2.9375"
             strokeLinecap="round"
             strokeLinejoin="round"
@@ -317,6 +318,7 @@ export const BtnUpArrowIcon = () => (
         <path
             d="M5.1875 10.0469L11.0625 4.17188L16.9375 10.0469M11.0625 17.3906V5.64062"
             stroke="#0082FF"
+            className="transition-all duration-300 ease-in-out group-hover:stroke-white"
             strokeWidth="2.9375"
             strokeLinecap="round"
             strokeLinejoin="round"

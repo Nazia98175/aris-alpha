@@ -26,17 +26,21 @@ const Footer = () => {
                         much to allocate.
                     </p>
                     <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
-                        <div className="flex items-center gap-2">
+                        <div className="group flex cursor-pointer items-center gap-2">
                             <WhiteCheckIcon />
-                            <p className="text-lg font-medium text-[#d0d0d0] md:text-xl">Fast signal delivery</p>
+                            <p className="text-lg font-medium text-[#d0d0d0] transition-all duration-300 ease-in-out group-hover:text-[#2a64f6] md:text-xl">
+                                Fast signal delivery
+                            </p>
                         </div>
-                        <div className="flex items-center gap-2">
+                        <div className="group flex cursor-pointer items-center gap-2">
                             <WhiteCheckIcon />
-                            <p className="text-lg font-medium text-[#d0d0d0] md:text-xl">No overcomplication</p>
+                            <p className="text-lg font-medium text-[#d0d0d0] transition-all duration-300 ease-in-out group-hover:text-[#2a64f6] md:text-xl">
+                                No overcomplication
+                            </p>
                         </div>
-                        <div className="flex items-center gap-2">
+                        <div className="group flex cursor-pointer items-center gap-2">
                             <WhiteCheckIcon />
-                            <p className="text-lg font-medium text-[#d0d0d0] md:text-xl">
+                            <p className="text-lg font-medium text-[#d0d0d0] transition-all duration-300 ease-in-out group-hover:text-[#2a64f6] md:text-xl">
                                 Built by traders, not marketers
                             </p>
                         </div>
@@ -48,7 +52,7 @@ const Footer = () => {
                         {navLinks.map((link) => (
                             <li
                                 key={link.href}
-                                className="description hover:!text-primary transition-all duration-300 ease-in-out"
+                                className="description transition-all duration-300 ease-in-out hover:!text-[#0082FF]"
                             >
                                 <Link href={link.href}>{link.label}</Link>
                             </li>

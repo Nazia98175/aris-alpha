@@ -147,7 +147,7 @@
         @apply text-[40px] leading-[120%] font-semibold md:text-[50px] lg:text-[64px];
     }
     .secondary-heading {
-        @apply text-2xl leading-[120%] md:text-3xl lg:text-[48px];
+        @apply text-[26px] leading-[120%] md:text-3xl lg:text-[48px];
     }
     .description {
         @apply text-base leading-[130%] text-[#d0d0d0] md:text-lg;
@@ -159,7 +159,7 @@
         @apply text-xl leading-[120%] text-white md:text-2xl;
     }
     .large-text {
-        @apply text-2xl leading-[120%] text-white md:text-[28px] lg:text-[36px];
+        @apply text-[22px] leading-[120%] text-white lg:text-[36px];
     }
 
     .primary-button-gradient {

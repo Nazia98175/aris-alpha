@@ -185,4 +185,10 @@
 
         border-image-slice: 1;
     }
+    .gradient-text {
+        background: radial-gradient(70.71% 70.71% at 50% 50%, #fff 30%, rgba(255, 255, 255, 0.5) 84.77%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
 }

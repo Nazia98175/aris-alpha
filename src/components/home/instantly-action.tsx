@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import React from 'react'
 import { BlackChekcIcon } from './Icons'
+import Link from 'next/link'
 
 const InstantlyAction = () => {
     return (
@@ -37,9 +38,9 @@ const InstantlyAction = () => {
                                 <p className="text-lg font-medium text-[#3f3f3f] md:text-xl">Built for clarity</p>
                             </div>
                         </div>
-                        <button className="flex h-[45px] w-full max-w-[170px] cursor-pointer items-center justify-center rounded-[40px] border border-[#2A64F6] bg-[#2A64F6] text-base text-white shadow-[0px_0px_10px_0px_rgba(119,68,255,0.70)] transition-all duration-300 hover:bg-transparent hover:text-[#2A64F6] md:h-[63px]">
+                        <Link href={"/signup"} className="flex h-[45px] w-full max-w-[170px] cursor-pointer items-center justify-center rounded-[40px] border border-[#2A64F6] bg-[#2A64F6] text-base text-white shadow-[0px_0px_10px_0px_rgba(119,68,255,0.70)] transition-all duration-300 hover:bg-transparent hover:text-[#2A64F6] md:h-[63px]">
                             Get started
-                        </button>
+                        </Link>
                     </div>
                     <div className="static top-[50%] w-full max-w-[600px] transform lg:absolute lg:right-[-23%] lg:-translate-y-1/2 xl:right-[-35%] xl:max-w-[805px]">
                         <Image

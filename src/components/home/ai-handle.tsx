@@ -74,7 +74,7 @@ const AiHandle = () => {
     }, [])
 
     return (
-        <section className="relative py-10 sm:pt-16 sm:pb-20 xl:pb-28">
+        <section className="relative py-10 sm:pt-16 sm:pb-20 xl:pb-28" id='about-us'>
             <Image
                 className="w-full absolute opacity-[32%] z-[-1] mix-blend-hard-light"
                 unoptimized
@@ -165,7 +165,7 @@ const AiHandle = () => {
                 <CommonBtn
                     className="mx-auto mt-6 w-fit sm:mt-14 lg:!py-[18px]"
                     btnText="Get Started"
-                    btnUrl="/"
+                    btnUrl="/signup"
                     variant="primary"
                 />
             </div>

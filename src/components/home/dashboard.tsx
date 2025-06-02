@@ -3,7 +3,7 @@ import CommonBtn from '../ui/common-btn'
 
 const Dashboard = () => {
     return (
-        <section className="relative xl:pt-6">
+        <section className="relative xl:pt-6" id='dashboard'>
             <div className="custom-container pb-10">
                 <h3 className="mx-auto mb-6 sm:mb-8 lg:mb-12 xl:mb-14 gradient-text text-center text-3xl sm:text-4xl xl:text-[40px] leading-[120%] w-fit">
                     Trusted to Cut Through the Noise
@@ -19,7 +19,7 @@ const Dashboard = () => {
                 <CommonBtn
                     className="mx-auto mt-6 sm:mt-8 lg:mt-12 xl:mt-16 w-fit lg:!py-[18px]"
                     btnText="Get Started"
-                    btnUrl="/"
+                    btnUrl="/signup"
                     variant="primary"
                 />
             </div>

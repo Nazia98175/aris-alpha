@@ -1,4 +1,5 @@
 'use client'
+import CommonBtn from '@/components/ui/common-btn'
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
 
@@ -45,9 +46,7 @@ const Navbar = () => {
                             Dash Board
                         </Link>
                     </div>
-                    <button className="rounded-full border-[1.5px] border-[#2A64F6] px-6 py-3 text-sm shadow-[0px_0px_10px_0px_#2A64F6] duration-300 hover:bg-[#2A64F6] md:text-base lg:px-10 lg:py-[13px]">
-                        Get Started
-                    </button>
+                    <CommonBtn btnText="Get Started" btnUrl="/" variant="primary" />
                 </div>
             </nav>
 
@@ -86,7 +85,7 @@ const Navbar = () => {
                 <div
                     className={`fixed top-0 right-0 z-40 h-full w-full max-w-[350px] transform bg-[#0A0B1E] transition-transform duration-300 ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}
                 >
-                    <div className="flex h-full flex-col px-6 pt-24">
+                    <div className="flex h-full flex-col p-6 pt-24">
                         {/* Menu Links */}
                         <div className="mb-12 flex flex-col gap-8">
                             <Link
@@ -114,9 +113,7 @@ const Navbar = () => {
 
                         {/* Get Started Button */}
                         <div className="flex grow flex-col justify-end">
-                            <button className="mb-8 w-full rounded-full border-[1.5px] border-[#2A64F6] px-6 py-4 text-base shadow-[0px_0px_10px_0px_#2A64F6] duration-300 hover:bg-[#2A64F6]">
-                                Get Started
-                            </button>
+                            <CommonBtn btnText="Get Started" btnUrl="/" variant="primary" />
                         </div>
                     </div>
                 </div>

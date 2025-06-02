@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import CommonBtn from '../ui/common-btn'
 
 const Header = () => {
     const noiseOptions = [
@@ -10,7 +11,7 @@ const Header = () => {
     return (
         <section className="relative mx-auto max-w-[1440px] py-16 lg:py-[103px]">
             <div className="custom-container">
-                <h1 className="mb-6 w-fit bg-gradient-to-r from-white via-white to-white/20 bg-clip-text text-4xl md:text-5xl leading-[120%] font-semibold text-transparent lg:mb-10 lg:hidden xl:text-[64px]">
+                <h1 className="mb-6 w-fit bg-gradient-to-r from-white via-white to-white/20 bg-clip-text text-4xl leading-[120%] font-semibold text-transparent md:text-5xl lg:mb-10 lg:hidden xl:text-[64px]">
                     Trade with Signal. <br className="max-lg:hidden" /> Not Noise.
                 </h1>
                 <Image
@@ -24,7 +25,7 @@ const Header = () => {
                 <h1 className="mb-6 w-fit bg-gradient-to-r from-white via-white to-white/20 bg-clip-text text-5xl leading-[120%] font-semibold text-transparent max-lg:mt-10 max-lg:hidden lg:mb-10 xl:text-[64px]">
                     Trade with Signal. <br className="max-lg:hidden" /> Not Noise.
                 </h1>
-                <article className="rounded-3xl border border-[#2A64F6] p-6 backdrop-blur-2xl max-md:mt-0 max-lg:mt-12 lg:max-w-[344px] xl:max-w-[394px]">
+                <article className="rounded-3xl border border-[#2A64F6] p-6 backdrop-blur-md max-lg:mt-12 max-md:mt-0 lg:max-w-[344px] xl:max-w-[394px]">
                     <h6 className="mb-6 text-2xl text-white">What&apos;s Your Noise?</h6>
                     <div className="mb-10 space-y-4">
                         {noiseOptions.map((option, index) => (
@@ -53,9 +54,7 @@ const Header = () => {
                             </label>
                         ))}
                     </div>
-                    <button className="w-full rounded-full border-[1.5px] border-[#2A64F6] bg-[#2A64F6] px-6 py-3 text-sm duration-300 hover:bg-transparent hover:shadow-[0px_0px_10px_0px_#2A64F6] md:text-base lg:px-10 lg:py-[13px]">
-                        Get Started
-                    </button>
+                    <CommonBtn btnText="Get Started" btnUrl="/" variant="secondary" />
                 </article>
             </div>
         </section>

@@ -23,22 +23,31 @@ const InstantlyAction = () => {
                                 <span className="w-full max-w-[25px] sm:max-w-[34px]">
                                     <BlackChekcIcon />
                                 </span>
-                                <p className="text-lg font-medium text-[#3f3f3f] md:text-xl">Focused execution</p>
+                                <p className="text-base font-medium text-[#3f3f3f] sm:text-lg md:text-xl">
+                                    Focused execution
+                                </p>
                             </div>
                             <div className="flex items-center gap-2">
                                 <span className="w-full max-w-[25px] sm:max-w-[34px]">
                                     <BlackChekcIcon />
                                 </span>
-                                <p className="text-lg font-medium text-[#3f3f3f] md:text-xl">No guesswork</p>
+                                <p className="text-base font-medium text-[#3f3f3f] sm:text-lg md:text-xl">
+                                    No guesswork
+                                </p>
                             </div>
                             <div className="flex items-center gap-2">
                                 <span className="w-full max-w-[25px] sm:max-w-[34px]">
                                     <BlackChekcIcon />
                                 </span>
-                                <p className="text-lg font-medium text-[#3f3f3f] md:text-xl">Built for clarity</p>
+                                <p className="text-base font-medium text-[#3f3f3f] sm:text-lg md:text-xl">
+                                    Built for clarity
+                                </p>
                             </div>
                         </div>
-                        <Link href={"/signup"} className="flex h-[45px] w-full max-w-[170px] cursor-pointer items-center justify-center rounded-[40px] border border-[#2A64F6] bg-[#2A64F6] text-base text-white shadow-[0px_0px_10px_0px_rgba(119,68,255,0.70)] transition-all duration-300 hover:bg-transparent hover:text-[#2A64F6] md:h-[63px]">
+                        <Link
+                            href={'/signup'}
+                            className="flex h-[45px] w-full max-w-[170px] cursor-pointer items-center justify-center rounded-[40px] border border-[#2A64F6] bg-[#2A64F6] text-base text-white shadow-[0px_0px_10px_0px_rgba(119,68,255,0.70)] transition-all duration-300 hover:bg-transparent hover:text-[#2A64F6] md:h-[63px]"
+                        >
                             Get started
                         </Link>
                     </div>
@@ -47,8 +56,9 @@ const InstantlyAction = () => {
                             width={500}
                             height={500}
                             className="h-full w-full"
-                            src="/assets/homepage/webp/my-trades.webp"
+                            src="/assets/homepage/webp/my-trades2.webp"
                             alt="my trades"
+                            unoptimized
                         />
                     </div>
                 </div>

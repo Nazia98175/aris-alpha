@@ -8,18 +8,27 @@ import {
     MicroTradeUpIcon,
     MytradeIcon,
     SymbolsIcon,
-    TradeHomeIcon
+    TradeHomeIcon,
 } from './Icons'
 
 const AlphaBuild = () => {
+    const menuItems = [
+        { label: 'Overview', icon: <TradeHomeIcon /> },
+        { label: 'Symbols', icon: <SymbolsIcon /> },
+        { label: 'My trades', icon: <MytradeIcon /> },
+        { label: 'Overview', icon: <MytradeIcon /> },
+        { label: 'Symbols', icon: <SymbolsIcon /> },
+        { label: 'My trades', icon: <MytradeIcon /> },
+    ]
     return (
         <section className="relative">
             <Image
                 width={1440}
-                height={700}
-                className="absolute top-0 left-0 z-[-1] h-[700px] w-full object-cover object-right md:object-fill"
+                height={800}
+                className="absolute top-[-34%] left-0 z-[-1] h-[700px] w-full object-cover object-right md:object-fill lg:h-[1000px]"
                 src="/assets/homepage/webp/hero-bg.webp"
                 alt="background"
+                unoptimized
             />
             <div className="mx-auto max-w-[1004px] px-4 py-13 sm:pt-10 md:pb-[112px] lg:pb-[161px]">
                 <h2 className="gradient-text secondary-heading text-center">How Aris Alpha Builds Your Strategy</h2>
@@ -100,20 +109,19 @@ const AlphaBuild = () => {
                                             </div>
                                         )}
                                         {list.tradingNavigation && (
-                                            <div className="w-full max-w-fit sm:max-w-[200px]">
-                                                <div className="w-ful space-y-3">
-                                                    <div className="flex items-center gap-3">
-                                                        <TradeHomeIcon />
-                                                        <p className="font-outfit text-base text-[#0082FF]">Overview</p>
-                                                    </div>
-                                                    <div className="flex items-center gap-3">
-                                                        <SymbolsIcon />
-                                                        <p className="font-outfit text-base text-white">Symbols</p>
-                                                    </div>
-                                                    <div className="flex items-center gap-3">
-                                                        <MytradeIcon />
-                                                        <p className="font-outfit text-base text-white">My trades</p>
-                                                    </div>
+                                            <div className="w-full max-w-fit overflow-hidden sm:max-w-[200px]">
+                                                <div className="w-ful h-[118px] space-y-3 overflow-auto">
+                                                    {menuItems.map((item, index) => (
+                                                        <div
+                                                            key={index}
+                                                            className="group flex cursor-pointer items-center gap-3"
+                                                        >
+                                                            {item.icon && item.icon}
+                                                            <p className="font-outfit text-base text-white transition-all duration-300 ease-in-out group-hover:text-[#0082FF]">
+                                                                {item.label}
+                                                            </p>
+                                                        </div>
+                                                    ))}
                                                 </div>
                                             </div>
                                         )}

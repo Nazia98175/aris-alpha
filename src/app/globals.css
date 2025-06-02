@@ -159,7 +159,7 @@
         @apply text-xl leading-[120%] text-white md:text-2xl;
     }
     .large-text {
-        @apply text-[22px] leading-[120%] text-white lg:text-[36px];
+        @apply text-xl leading-[120%] text-white sm:text-[22px] lg:text-[36px];
     }
 
     .primary-button-gradient {

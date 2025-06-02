@@ -131,6 +131,20 @@
     }
 }
 
+@keyframes slide {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-33.333%);
+    }
+}
+
+.animate-slide {
+    animation: slide 15s linear infinite;
+}
+
 @layer utilities {
     .custom-container {
         @apply max-w-[760px] lg:max-w-[1172px] mx-auto px-4 w-full

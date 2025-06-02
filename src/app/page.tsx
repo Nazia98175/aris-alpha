@@ -7,6 +7,7 @@ import Footer from '@/components/layout/public/footer'
 import Navbar from '@/components/layout/public/Navbar'
 import { tradeData } from './actions/trade.actions'
 import Projects from '@/components/home/Projects'
+import Reviews from '@/components/home/reviews'
 
 export default async function Home() {
     const trade = await tradeData()
@@ -18,6 +19,7 @@ export default async function Home() {
                 <Header />
                 <Projects />
             </main>
+            <Reviews />
             <MarkIntelligence />
             <StayHead />
             <Chart trade={trade} />

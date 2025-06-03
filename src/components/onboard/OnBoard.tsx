@@ -8,9 +8,14 @@ import Step3 from './Step3'
 import Step4 from './Step4'
 import Step5 from './Step5'
 import StepIndicator from './StepIndicator'
+import StepCompleteModal from './StepCompleteModal'
+import BuildYourStrategyFeed from './BuildYourStrategyFeed'
 
+const TOTAL_STEPS = 5
 const OnBoard = () => {
     const [currentStep, setCurrentStep] = useState(1)
+    const [showConfirmation, setShowConfirmation] = useState(false)
+    const [isCompleted, setIsCompleted] = useState(false)
 
     // When the page loads, get the step from localStorage
     useEffect(() => {
@@ -26,7 +31,19 @@ const OnBoard = () => {
     }, [currentStep])
 
     const handleNext = () => {
-        setCurrentStep((prev) => Math.min(prev + 1, 5)) // max step 5
+        if (currentStep < TOTAL_STEPS) {
+            setShowConfirmation(true)
+            setTimeout(() => {
+                setShowConfirmation(false)
+                setCurrentStep((prev) => prev + 1)
+            }, 1000)
+        } else if (currentStep === TOTAL_STEPS) {
+            setShowConfirmation(true)
+            setTimeout(() => {
+                setShowConfirmation(false)
+                setIsCompleted(true)
+            }, 1000)
+        }
     }
 
     const handleBack = () => {
@@ -43,26 +60,46 @@ const OnBoard = () => {
         return null
     }
 
+    const progressBarWidth = `${(currentStep / 5) * 100}%`
     return (
-        <section className="mx-auto flex min-h-full w-full max-w-[477px] flex-col px-4 pb-8">
-            <div className="relative mt-5 flex items-center justify-between gap-4">
-                <div className="absolute top-1/2 left-0 z-0 h-1 w-full -translate-y-1/2 bg-[#808080]"></div>
-                {[1, 2, 3, 4, 5].map((step) => (
-                    <StepIndicator key={step} stepNumber={step} currentStep={currentStep} />
-                ))}
-            </div>
-
-            {renderStep()}
-
-            <div className="mt-7 flex w-full flex-col-reverse items-center justify-between gap-3 sm:flex-row">
-                <button onClick={handleNext} className="font-medium text-white/70 md:text-xl">
-                    Skip For Now
-                </button>
-                <div className="flex items-center gap-3">
-                    <BackBtn onClick={handleBack} />
-                    <NextBtn onClick={handleNext} />
+        <section
+            className={`mx-auto flex min-h-full w-full pb-8 ${!showConfirmation && !isCompleted ? 'max-w-[477px]' : ''} flex-col px-4`}
+        >
+            {showConfirmation ? (
+                <div className="mx-auto my-[72px] h-6 w-full max-w-[654px] overflow-hidden rounded-[67px] bg-[#3D4048]">
+                    <div
+                        style={{ width: progressBarWidth }}
+                        className="h-full rounded-[120px] bg-white transition-all duration-300 ease-in-out"
+                    ></div>
                 </div>
-            </div>
+            ) : (
+                <div className="relative mx-auto mt-5 flex w-full max-w-[477px] items-center justify-between gap-4">
+                    <div className="absolute top-1/2 left-0 z-0 h-1 w-full -translate-y-1/2 bg-[#808080]"></div>
+                    {[1, 2, 3, 4, 5].map((step) => (
+                        <StepIndicator key={step} stepNumber={step} currentStep={isCompleted ? 6 : currentStep} />
+                    ))}
+                </div>
+            )}
+
+            {showConfirmation ? (
+                <StepCompleteModal step={currentStep} />
+            ) : isCompleted ? (
+                <BuildYourStrategyFeed />
+            ) : (
+                renderStep()
+            )}
+
+            {!isCompleted && !showConfirmation && (
+                <div className="mt-7 flex w-full flex-col-reverse items-center justify-between gap-3 sm:flex-row">
+                    <button onClick={handleNext} className="font-medium text-white/70 md:text-xl">
+                        Skip For Now
+                    </button>
+                    <div className="flex items-center gap-3">
+                        <BackBtn onClick={handleBack} />
+                        <NextBtn onClick={handleNext} />
+                    </div>
+                </div>
+            )}
         </section>
     )
 }

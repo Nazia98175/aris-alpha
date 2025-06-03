@@ -1,4 +1,5 @@
 import React from 'react'
+import { CheckIcon } from './Icons'
 
 interface StepIndicatorProps {
     stepNumber: number
@@ -18,15 +19,7 @@ const StepIndicator = ({ stepNumber, currentStep }: StepIndicatorProps) => {
         <div className="relative z-10">
             {isCompleted ? (
                 <span className="flex max-h-[30px] min-h-[30px] w-full max-w-[30px] min-w-[30px] items-center justify-center rounded-full bg-[#2A64F6] p-2 shadow-[0px_0px_10px_rgba(119,68,255,0.7)]">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="15" height="11" viewBox="0 0 15 11" fill="none">
-                        <path
-                            d="M1.96387 6.25552L4.9847 9.27636L12.5368 1.72427"
-                            stroke="white"
-                            strokeWidth="3"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                        />
-                    </svg>
+                    <CheckIcon />
                 </span>
             ) : (
                 <div

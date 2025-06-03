@@ -36,13 +36,13 @@ const OnBoard = () => {
             setTimeout(() => {
                 setShowConfirmation(false)
                 setCurrentStep((prev) => prev + 1)
-            }, 1000)
+            }, 8000)
         } else if (currentStep === TOTAL_STEPS) {
             setShowConfirmation(true)
             setTimeout(() => {
                 setShowConfirmation(false)
                 setIsCompleted(true)
-            }, 1000)
+            }, 8000)
         }
     }
 
@@ -66,10 +66,10 @@ const OnBoard = () => {
             className={`mx-auto flex min-h-full w-full pb-8 ${!showConfirmation && !isCompleted ? 'max-w-[477px]' : ''} flex-col px-4`}
         >
             {showConfirmation ? (
-                <div className="mx-auto my-[72px] h-6 w-full max-w-[654px] overflow-hidden rounded-[67px] bg-[#3D4048]">
+                <div className="mx-auto my-[72px] h-3 w-full max-w-[654px] overflow-hidden rounded-[67px] bg-[#3D4048] md:h-5 xl:h-6">
                     <div
                         style={{ width: progressBarWidth }}
-                        className="h-full rounded-[120px] bg-white transition-all duration-300 ease-in-out"
+                        className="h-full w-full rounded-[120px] bg-white transition-all duration-300 ease-in-out"
                     ></div>
                 </div>
             ) : (

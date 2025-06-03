@@ -22,9 +22,9 @@ const StepIndicator = ({ stepNumber, currentStep }: StepIndicatorProps) => {
                         <path
                             d="M1.96387 6.25552L4.9847 9.27636L12.5368 1.72427"
                             stroke="white"
-                            stroke-width="3"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
+                            strokeWidth="3"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
                         />
                     </svg>
                 </span>

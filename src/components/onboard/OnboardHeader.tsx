@@ -13,7 +13,7 @@ const OnboardHeader = () => {
                     <button className="rounded-xl border border-[#2A64F6] p-2 shadow-[0px_0px_10px_0px_rgba(119,68,255,0.70)] duration-300 hover:rounded-sm sm:p-3">
                         <MenuIcon />
                     </button>
-                    <button className="flex items-center gap-2 rounded-xl border border-[#2A64F6] p-2 shadow-[0px_0px_10px_0px_rgba(119,68,255,0.70)] duration-300 hover:rounded-sm sm:gap-3 sm:p-3">
+                    <button className="flex items-center gap-1.5 rounded-xl border border-[#2A64F6] p-2 shadow-[0px_0px_10px_0px_rgba(119,68,255,0.70)] duration-300 hover:rounded-sm sm:gap-2 sm:p-3 md:gap-3">
                         <GlobalIcon />
                         <ContactIcon />
                     </button>

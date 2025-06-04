@@ -73,7 +73,9 @@ export default function Onboarding() {
     }, [stepIndex])
 
     return (
-        <div className={`relative mx-auto mt-5 px-4 ${showModal || showFinalScreen ? 'max-w-full' : 'max-w-[454px]'}`}>
+        <div
+            className={`relative mx-auto mt-5 mb-10 px-4 ${showModal || showFinalScreen ? 'max-w-full' : 'max-w-[486px]'}`}
+        >
             {/* Progress bar during modal transition */}
             {showModal && <ProgressBarAnimation startPercent={startPercent} targetPercent={progressPercent} />}
 
@@ -109,8 +111,8 @@ export default function Onboarding() {
                         Skip For Now
                     </button>
                     <div className="flex items-center gap-3">
-                        <NavigationButton variant="back" onClick={() => updateStep(Math.max(stepIndex - 1, 0))} />
-                        <NavigationButton variant="next" onClick={() => updateStep(stepIndex + 1)} />
+                        <NavigationButton variant="secondary" onClick={() => updateStep(Math.max(stepIndex - 1, 0))} />
+                        <NavigationButton variant="primary" onClick={() => updateStep(stepIndex + 1)} />
                     </div>
                 </div>
             )}

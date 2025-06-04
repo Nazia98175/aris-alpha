@@ -26,7 +26,7 @@ const ReadyToFilter = () => {
                             type="email"
                             required
                             placeholder="Enter email"
-                            className="h-14 w-full rounded-4xl border border-[#D0D0D0] p-5 text-sm backdrop-blur-sm placeholder:text-[#666361] focus:ring-2 focus:ring-[#2A64F6] focus:outline-none"
+                            className="h-[45px] w-full rounded-4xl border border-[#D0D0D0] p-5 text-sm backdrop-blur-sm placeholder:text-[#666361] focus:ring-2 focus:ring-[#2A64F6] focus:outline-none md:h-[63px]"
                         />
                     </div>
 

@@ -107,11 +107,16 @@ export default function Onboarding() {
             {/* Navigation controls hidden on modal and final screen */}
             {!showModal && !showFinalScreen && (
                 <div className="mt-7 flex w-full flex-col-reverse items-center justify-between gap-3 sm:flex-row">
-                    <button onClick={() => updateStep(steps.length)} className="font-medium text-white/70 md:text-xl">
+                    <button className="font-medium text-white/70 md:text-xl">Skip For Now</button>
+                    {/* <button onClick={() => updateStep(steps.length)} className="font-medium text-white/70 md:text-xl">
                         Skip For Now
-                    </button>
+                    </button> */}
                     <div className="flex items-center gap-3">
-                        <NavigationButton variant="secondary" onClick={() => updateStep(Math.max(stepIndex - 1, 0))} />
+                        <NavigationButton
+                            disabled={stepIndex === 0}
+                            variant="secondary"
+                            onClick={() => updateStep(Math.max(stepIndex - 1, 0))}
+                        />
                         <NavigationButton variant="primary" onClick={() => updateStep(stepIndex + 1)} />
                     </div>
                 </div>

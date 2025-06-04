@@ -5,23 +5,32 @@ type NavigationButtonProps = {
     variant: 'primary' | 'secondary'
     onClick: () => void
     children?: React.ReactNode
+    className?: string
+    disabled?: boolean
 }
 
-const NavigationButton: React.FC<NavigationButtonProps> = ({ variant, onClick, children }) => {
+const NavigationButton: React.FC<NavigationButtonProps> = ({
+    variant,
+    onClick,
+    children,
+    className,
+    disabled = false,
+}) => {
     const primary = variant === 'primary'
 
     return (
         <button
             onClick={onClick}
+            disabled={disabled}
             className={`flex items-center gap-2.5 rounded-3xl border-[1.5px] px-6 py-2.5 text-base leading-[120%] duration-300 sm:rounded-4xl sm:py-4 ${
                 primary
-                    ? 'border-[#FCF6F1] bg-transparent text-[#FCF6F1] hover:bg-[#FCF6F1] hover:text-[#010101]'
-                    : 'border-[#FCF6F1] bg-[#FCF6F1] text-[#010101] hover:bg-transparent hover:text-[#FCF6F1]'
-            } `}
+                    ? `border-[#FCF6F1] bg-[#FCF6F1] text-[#010101] ${!disabled ? 'hover:ring-1 hover:ring-white' : ''}`
+                    : `border-[#FCF6F1] bg-transparent text-[#FCF6F1] ${!disabled ? 'hover:rounded-xl' : ''}`
+            } ${disabled ? 'cursor-not-allowed opacity-80' : ''} ${className || ''}`}
         >
             {primary ? (
                 <>
-                    {children || 'primary'}
+                    {children || 'Next'}
                     <span className="rotate-180">
                         <ArrowIcon />
                     </span>

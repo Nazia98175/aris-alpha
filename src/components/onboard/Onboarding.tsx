@@ -1,27 +1,12 @@
 'use client'
-
-import { useEffect, useState } from 'react'
 import { useRouter, useSearchParams } from 'next/navigation'
-
-import StrategyFeed from './StrategyFeed'
-import FocusYourFeed from './FocusYourFeed'
-import TakeAction from './TakeAction'
-import CutNoise from './CutNoise'
-import MainObjective from './MainObjective'
-import BackBtn from './BackBtn'
-import NextBtn from './NextBtn'
+import { useEffect, useState } from 'react'
+import BuildYourStrategyFeed from './BuildYourStrategyFeed'
+import NavigationButton from './NavigationButton'
+import ProgressBarAnimation from './ProgressBarAnimation'
 import StepCompleteModal from './StepCompleteModal'
 import StepIndicator from './StepIndicator'
-import ProgressBarAnimation from './ProgressBarAnimation'
-import BuildYourStrategyFeed from './BuildYourStrategyFeed'
-
-const steps = [
-    { slug: 'strategy-feed', component: StrategyFeed },
-    { slug: 'focus-your-feed', component: FocusYourFeed },
-    { slug: 'take-action', component: TakeAction },
-    { slug: 'cut-noise', component: CutNoise },
-    { slug: 'main-objective', component: MainObjective },
-]
+import { steps } from './Helper'
 
 export default function Onboarding() {
     const searchParams = useSearchParams()
@@ -124,8 +109,8 @@ export default function Onboarding() {
                         Skip For Now
                     </button>
                     <div className="flex items-center gap-3">
-                        <BackBtn onClick={() => updateStep(Math.max(stepIndex - 1, 0))} />
-                        <NextBtn onClick={() => updateStep(stepIndex + 1)} />
+                        <NavigationButton variant="back" onClick={() => updateStep(Math.max(stepIndex - 1, 0))} />
+                        <NavigationButton variant="next" onClick={() => updateStep(stepIndex + 1)} />
                     </div>
                 </div>
             )}

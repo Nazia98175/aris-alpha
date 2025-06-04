@@ -1,4 +1,4 @@
-import { ListItem } from './Icons'
+import { ArrowIcon, ListItem } from './Icons'
 
 const ReadyToFilter = () => {
     const listItems = [
@@ -37,11 +37,11 @@ const ReadyToFilter = () => {
                         </label>
                     </div>
 
-                    <button
-                        type="submit"
-                        className="w-full rounded-full border-[1.5px] border-[#2A64F6] px-6 py-3 text-sm font-medium text-[#2A64F6] duration-300 hover:bg-[#2A64F6] hover:text-white md:text-base lg:px-10 lg:py-[13px]"
-                    >
-                        Unlock My Dashboard
+                    <button className="flex h-[45px] w-full cursor-pointer items-center justify-center gap-2.5 rounded-[40px] border border-[#2A64F6] bg-[#2A64F6] text-base text-white shadow-[0px_0px_10px_0px_rgba(119,68,255,0.70)] transition-all duration-300 hover:bg-transparent hover:text-[#2A64F6] md:h-[63px]">
+                        Unlock My Dashboard{' '}
+                        <span className="rotate-180">
+                            <ArrowIcon />
+                        </span>
                     </button>
                 </form>
 

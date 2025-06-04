@@ -1,59 +1,45 @@
 'use client'
-import { useRouter, useSearchParams } from 'next/navigation'
-import { useEffect, useState } from 'react'
+import { AnimatePresence, motion } from 'framer-motion'
 import BuildYourStrategyFeed from './BuildYourStrategyFeed'
 import NavigationButton from './NavigationButton'
 import ProgressBarAnimation from './ProgressBarAnimation'
 import StepCompleteModal from './StepCompleteModal'
 import StepIndicator from './StepIndicator'
 import { steps } from './Helper'
-import { AnimatePresence, motion } from 'framer-motion'
+import StrategyFeed from './StrategyFeed'
+import { useOnboarding } from './useOnboardinghook'
 
 export default function Onboarding() {
-    const searchParams = useSearchParams()
-    const router = useRouter()
-    const [showModal, setShowModal] = useState(false)
-    const [showFinalScreen, setShowFinalScreen] = useState(false)
-    const [progressPercent, setProgressPercent] = useState(0)
-    const [startPercent, setStartPercent] = useState(0)
+    const {
+        formData,
+        updateFormData,
+        showModal,
+        showFinalScreen,
+        progressPercent,
+        startPercent,
+        currentSlug,
+        stepIndex,
+        updateStep,
+        targetStepIndex, // new
+    } = useOnboarding()
 
-    const currentSlug = searchParams.get('step') || steps[0].slug
-    const stepIndex = steps.findIndex((s) => s.slug === currentSlug) || 0
-    const StepComponent = steps[stepIndex].component
-    const totalSteps = steps.length
+    const StepComponent = () => {
+        const step = steps[stepIndex].slug
+        const props = { formData, updateFormData }
 
-    const updateStep = (index: number) => {
-        if (index >= totalSteps) {
-            setStartPercent((stepIndex / totalSteps) * 100)
-            setProgressPercent(100)
-            setShowModal(true)
-            setTimeout(() => {
-                setShowModal(false)
-                setShowFinalScreen(true)
-                setTimeout(() => router.push('/onboarding/cta'), 2000)
-            }, 1800)
-            return
-        }
-
-        if (index > stepIndex) {
-            setStartPercent((stepIndex / totalSteps) * 100)
-            setProgressPercent((index / totalSteps) * 100)
-            setShowModal(true)
-            setTimeout(() => {
-                setShowModal(false)
-                router.push(`?step=${steps[index].slug}`)
-            }, 1800)
-        } else {
-            router.push(`?step=${steps[index].slug}`)
+        switch (step) {
+            case 'strategy-feed':
+                return <StrategyFeed {...props} />
+            default:
+                return steps[stepIndex].component(props)
         }
     }
 
-    useEffect(() => {
-        setProgressPercent((stepIndex / totalSteps) * 100)
-    }, [stepIndex, totalSteps])
+    // Use targetStepIndex for modal step to prevent flicker
+    const modalStepIndex = targetStepIndex !== null ? targetStepIndex : stepIndex
 
     return (
-        <div className={`relative mx-auto mt-5 mb-10 px-4`}>
+        <div className="relative mx-auto mt-5 mb-10 px-4">
             {showModal && <ProgressBarAnimation startPercent={startPercent} targetPercent={progressPercent} />}
 
             {!showModal && (
@@ -89,7 +75,7 @@ export default function Onboarding() {
                         exit={{ opacity: 0, scale: 0.95 }}
                         transition={{ duration: 0.4 }}
                     >
-                        <StepCompleteModal step={stepIndex} />
+                        <StepCompleteModal step={modalStepIndex} />
                     </motion.div>
                 ) : (
                     <motion.div
@@ -113,7 +99,12 @@ export default function Onboarding() {
                             variant="secondary"
                             onClick={() => updateStep(stepIndex - 1)}
                         />
-                        <NavigationButton variant="primary" onClick={() => updateStep(stepIndex + 1)} />
+                        <NavigationButton
+                            variant="primary"
+                            onClick={() => {
+                                if (!showModal) updateStep(stepIndex + 1)
+                            }}
+                        />
                     </div>
                 </div>
             )}

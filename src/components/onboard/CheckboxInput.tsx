@@ -5,10 +5,12 @@ interface CheckboxInputProps {
     title: string
     desc?: string
     icon?: React.ReactNode
-    value?: string
+    value: string
+    checked?: boolean
+    onChange?: () => void
 }
 
-const CheckboxInput: React.FC<CheckboxInputProps> = ({ id, title, desc, icon, value }) => {
+const CheckboxInput: React.FC<CheckboxInputProps> = ({ id, title, desc, icon, value, checked, onChange }) => {
     return (
         <label
             htmlFor={id}
@@ -36,9 +38,15 @@ const CheckboxInput: React.FC<CheckboxInputProps> = ({ id, title, desc, icon, va
             </div>
 
             <div className="relative">
-                <input type="checkbox" className="peer sr-only" id={id} value={value} />
+                <input
+                    type="checkbox"
+                    className="peer sr-only"
+                    id={id}
+                    value={value}
+                    checked={checked}
+                    onChange={onChange}
+                />
                 <div className="flex h-6 w-6 items-center justify-center rounded-full border-2 border-[#3F3F3F] transition-all duration-300 group-hover:border-white peer-checked:border-[#2A64F6] peer-checked:bg-[#2A64F6]">
-                    {/* Check Icon */}
                     <svg
                         className="h-full w-full scale-0 transition-transform duration-300 peer-checked:scale-100"
                         viewBox="0 0 24 24"
@@ -52,7 +60,6 @@ const CheckboxInput: React.FC<CheckboxInputProps> = ({ id, title, desc, icon, va
                             strokeLinejoin="round"
                         />
                     </svg>
-                    {/* Hover Icon */}
                     <svg
                         className="absolute opacity-0 transition-opacity duration-300 group-hover:opacity-100 peer-checked:opacity-0"
                         xmlns="http://www.w3.org/2000/svg"

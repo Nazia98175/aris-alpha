@@ -1,7 +1,7 @@
 import React from 'react'
 import CheckboxInput from './CheckboxInput'
 import StepLayout from './StepLayout'
-import { StepComponentProps } from './Onboarding'
+import { StepComponentProps } from './Helper'
 
 type TakeActionProps = StepComponentProps
 

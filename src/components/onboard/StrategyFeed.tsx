@@ -3,7 +3,7 @@ import React from 'react'
 import CheckboxInput from './CheckboxInput'
 import { Advisor, CalculatorIcon, ExploringIcon, LongTermIcon } from './Icons'
 import StepLayout from './StepLayout'
-import { StepComponentProps } from './Onboarding'
+import { StepComponentProps } from './Helper'
 
 type StrategyFeedProps = StepComponentProps
 const StrategyFeed: React.FC<StrategyFeedProps> = ({ formData, updateFormData }) => {

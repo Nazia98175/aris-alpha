@@ -3,7 +3,7 @@ import { StepCompletedIcon } from './Icons'
 
 const StepCompleteModal = ({ step }: { step: number }) => {
     return (
-        <div className="mx-auto flex w-full max-w-[606px] flex-col items-center justify-center rounded-4xl bg-[#FCF6F1] px-4 pt-12 pb-16 backdrop-blur-[10px] sm:px-6 md:px-7 md:pt-16 lg:px-11 lg:pt-[85px]">
+        <div className="mx-auto flex w-full max-w-[606px] flex-col items-center justify-center rounded-2xl bg-[#FCF6F1] px-4 pt-12 pb-16 backdrop-blur-[10px] sm:px-6 md:rounded-4xl md:px-7 md:pt-16 lg:px-11 lg:pt-[85px]">
             <span className="h-auto max-w-16 md:max-w-24 lg:max-w-[185px]">
                 <StepCompletedIcon />
             </span>

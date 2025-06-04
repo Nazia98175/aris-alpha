@@ -9,7 +9,7 @@ interface StepLayoutProps {
 
 const StepLayout = ({ title, description, children, bottomNote }: StepLayoutProps) => {
     return (
-        <div className="mt-7 space-y-5 sm:space-y-6 md:mt-10 md:space-y-8">
+        <div className="mx-auto mt-7 w-full max-w-[486px] space-y-5 sm:space-y-6 md:mt-10 md:space-y-8">
             <h3 className="mx-auto max-w-[422px] text-center text-2xl leading-[120%] sm:text-3xl md:text-[40px]">
                 {title}
             </h3>

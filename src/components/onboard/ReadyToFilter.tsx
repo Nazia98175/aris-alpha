@@ -30,9 +30,13 @@ const ReadyToFilter = () => {
                         />
                     </div>
 
-                    <div className="flex items-center gap-2 text-xs md:text-sm lg:text-base">
-                        <input id="updates" type="checkbox" className="h-4 w-4 accent-[#2A64F6]" />
-                        <label htmlFor="updates" className="font-medium">
+                    <div className="flex cursor-pointer items-center gap-2 text-xs md:text-sm lg:text-base">
+                        <input
+                            id="updates"
+                            type="checkbox"
+                            className="h-4 w-4 accent-[#2A64F6] shadow-[0px_0px_10px_0px_rgba(119,68,255,0.70)]"
+                        />
+                        <label htmlFor="updates" className="cursor-pointer font-medium">
                             Send me weekly market updates <span className="font-light italic">(Optional)</span>
                         </label>
                     </div>

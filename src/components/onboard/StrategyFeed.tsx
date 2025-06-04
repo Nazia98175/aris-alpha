@@ -3,7 +3,7 @@ import CheckboxInput from './CheckboxInput'
 import { Advisor, CalculatorIcon, ExploringIcon, LongTermIcon } from './Icons'
 import StepLayout from './StepLayout'
 
-const Step1 = () => {
+const StrategyFeed = () => {
     return (
         <StepLayout
             title={
@@ -53,4 +53,4 @@ const Step1 = () => {
     )
 }
 
-export default Step1
+export default StrategyFeed

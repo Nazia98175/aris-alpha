@@ -3,7 +3,7 @@ import CheckboxInput from './CheckboxInput'
 import { CommoditiesIcon, Crypto, EtfIcon, OptionsIcon, Stocks } from './Icons'
 import StepLayout from './StepLayout'
 
-const Step2 = () => {
+const FocusYourFeed = () => {
     return (
         <StepLayout
             title="Focus Your Feed"
@@ -19,4 +19,4 @@ const Step2 = () => {
     )
 }
 
-export default Step2
+export default FocusYourFeed

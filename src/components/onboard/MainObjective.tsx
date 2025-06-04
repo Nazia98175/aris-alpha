@@ -3,7 +3,7 @@ import CheckboxInput from './CheckboxInput'
 import StepLayout from './StepLayout'
 import { ConsistencyIcon, ImprovePerformanceIcon, SaveTimeIcon, TradeDecision } from './Icons'
 
-const Step5 = () => {
+const MainObjective = () => {
     return (
         <StepLayout
             title="What's Your Main Objective?"
@@ -38,4 +38,4 @@ const Step5 = () => {
     )
 }
 
-export default Step5
+export default MainObjective

@@ -2,11 +2,11 @@
 import { useEffect, useState } from 'react'
 import BackBtn from './BackBtn'
 import NextBtn from './NextBtn'
-import Step1 from './Step1'
+import Step1 from './StrategyFeed'
 import Step2 from './Step2'
-import Step3 from './Step3'
-import Step4 from './Step4'
-import Step5 from './Step5'
+import Step3 from './TakeAction'
+import Step4 from './CutNoise'
+import Step5 from './MainObjective'
 import StepIndicator from './StepIndicator'
 import StepCompleteModal from './StepCompleteModal'
 import BuildYourStrategyFeed from './BuildYourStrategyFeed'
@@ -65,6 +65,12 @@ const OnBoard = () => {
         <section
             className={`mx-auto flex min-h-full w-full pb-8 ${!showConfirmation && !isCompleted ? 'max-w-[477px]' : ''} flex-col px-4`}
         >
+            <div className="relative mb-10 flex justify-between">
+                <div className="absolute top-1/2 left-0 h-1.5 w-full -translate-y-1/2 bg-[#808080]" />
+                {steps.map((_, i) => (
+                    <StepIndicator key={i} stepNumber={i + 1} currentStep={stepIndex + 1} />
+                ))}
+            </div>
             {showConfirmation ? (
                 <div className="mx-auto my-[72px] h-3 w-full max-w-[654px] overflow-hidden rounded-[67px] bg-[#3D4048] md:h-5 xl:h-6">
                     <div

@@ -3,7 +3,7 @@ import CheckboxInput from './CheckboxInput'
 import StepLayout from './StepLayout'
 import { ExitTime, ExploringIcon, PoorPerformanceIcon, TooMuchNoise } from './Icons'
 
-const Step4 = () => {
+const CutNoise = () => {
     return (
         <StepLayout
             title="Cut the Noise"
@@ -33,4 +33,4 @@ const Step4 = () => {
     )
 }
 
-export default Step4
+export default CutNoise

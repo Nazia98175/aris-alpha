@@ -2,7 +2,7 @@ import React from 'react'
 import CheckboxInput from './CheckboxInput'
 import StepLayout from './StepLayout'
 
-const Step3 = () => {
+const TakeAction = () => {
     return (
         <StepLayout
             title={
@@ -21,4 +21,4 @@ const Step3 = () => {
     )
 }
 
-export default Step3
+export default TakeAction

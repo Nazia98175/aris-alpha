@@ -2,11 +2,10 @@ import React from 'react'
 import CheckboxInput from './CheckboxInput'
 import StepLayout from './StepLayout'
 import { StepComponentProps } from './Helper'
-
 type TakeActionProps = StepComponentProps
 
 const TakeAction: React.FC<TakeActionProps> = ({ formData, updateFormData }) => {
-    const selectedValues = formData.takeAction || [] // Expecting array of selected options
+    const selectedValues = formData.takeAction || []
 
     const handleCheckboxChange = (value: string) => {
         if (selectedValues.includes(value)) {

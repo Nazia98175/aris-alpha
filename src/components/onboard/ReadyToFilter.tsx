@@ -29,7 +29,7 @@ const ReadyToFilter = () => {
     ]
 
     return (
-        <section className="mx-auto my-10 flex w-full max-w-[589px] flex-col items-center justify-center px-4 py-10 text-white">
+        <section className="mx-auto my-10 flex w-full max-w-[589px] flex-col items-center justify-center px-4 text-white">
             <h1 className="gradient-text mx-auto mb-5 w-fit text-center text-4xl leading-[120%] md:text-5xl lg:mb-8 xl:text-[64px]">
                 Ready to Filter <br /> the Market?
             </h1>
@@ -37,7 +37,7 @@ const ReadyToFilter = () => {
                 Unlock personalized signals. No spam. Cancel anytime.
             </p>
 
-            <div className="rounded-2xl border border-[#2A64F6] bg-[#FCF6F1] px-2 py-4 text-[#010101] backdrop-blur-[10px] md:p-4 lg:rounded-[32px] lg:p-6">
+            <div className="w-full rounded-xl border border-[#2A64F6] bg-[#FCF6F1] px-3 py-4 text-[#010101] backdrop-blur-[10px] sm:rounded-2xl md:p-4 lg:rounded-4xl lg:p-6">
                 <form onSubmit={handleSubmit} className="space-y-4">
                     <div>
                         <label htmlFor="email" className="mb-1 block text-sm font-medium">

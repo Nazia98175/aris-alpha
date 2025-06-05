@@ -22,7 +22,7 @@ const CheckboxInput: React.FC<CheckboxInputProps> = ({ id, title, desc, icon, va
                         {icon}
                     </span>
                 ) : (
-                    <span className="max-h-9 min-h-9 max-w-9 min-w-9 rounded-full border-[1.5px] border-[#3F3F3F] transition-colors duration-300 group-hover:border-white sm:max-h-[42px] sm:min-h-[42px] sm:max-w-[42px] sm:min-w-[42px]" />
+                    <span className="max-h-8 min-h-8 max-w-8 min-w-8 rounded-full border-[1.5px] border-[#3F3F3F] transition-colors duration-300 group-hover:border-white sm:max-h-[42px] sm:min-h-[42px] sm:max-w-[42px] sm:min-w-[42px]" />
                 )}
 
                 <div className="w-full space-y-0.5 sm:space-y-1">

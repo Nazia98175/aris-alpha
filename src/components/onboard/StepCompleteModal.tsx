@@ -29,10 +29,10 @@ const StepCompleteModal = ({ step, onComplete }: { step: number; onComplete: () 
                 <span className="h-auto max-w-16 md:max-w-24 lg:max-w-[155px]">
                     <StepCompletedIcon />
                 </span>
-                <h2 className="mt-6 text-center leading-[120%] text-nowrap text-[#010101] sm:text-3xl md:mt-10 md:text-[40px]">
+                <h2 className="mt-6 text-center text-2xl leading-[120%] text-nowrap text-[#010101] sm:text-3xl md:mt-10 md:text-[40px]">
                     Step {step} Complete
                 </h2>
-                <p className="mx-auto mt-6 max-w-[80%] text-center text-xl text-[#3F3F3F] md:text-2xl lg:mt-8 xl:text-2xl">
+                <p className="mx-auto mt-6 max-w-[80%] text-center text-lg text-[#3F3F3F] md:text-2xl lg:mt-8 xl:text-2xl">
                     Got it. Your feed will sync with your style.
                 </p>
             </div>

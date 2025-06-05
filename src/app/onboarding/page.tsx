@@ -1,6 +1,13 @@
 import OnboardHeader from '@/components/onboard/OnboardHeader'
 import Onboarding from '@/components/onboard/Onboarding'
+import { Metadata } from 'next'
 import { Suspense } from 'react'
+
+export const metadata: Metadata = {
+    title: 'Onboarding | Aris Alpha',
+    description:
+        'Get started with our quick and interactive onboarding process. Learn how to build your strategy with ease.',
+}
 
 const OnBoardPage = () => {
     return (

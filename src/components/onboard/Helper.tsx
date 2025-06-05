@@ -7,22 +7,18 @@ import MainObjective from './MainObjective'
 export type StepComponentProps = {
     formData: {
         strategyFeed: string[]
-        takeAction: string[]
         focusYourFeed: string[]
+        takeAction: string[]
         cutNoise: string[]
         mainObjective: string[]
     }
     updateFormData: (key: keyof StepComponentProps['formData'], value: string[]) => void
 }
-type Step = {
-    slug: string
-    component: React.FC<StepComponentProps>
-}
 
-export const steps: Step[] = [
+export const steps: { slug: string; component: React.FC<StepComponentProps> }[] = [
+    { slug: 'cut-noise', component: CutNoise },
+    { slug: 'main-objective', component: MainObjective },
     { slug: 'strategy-feed', component: StrategyFeed },
     { slug: 'focus-your-feed', component: FocusYourFeed },
     { slug: 'take-action', component: TakeAction },
-    { slug: 'cut-noise', component: CutNoise },
-    { slug: 'main-objective', component: MainObjective },
 ]

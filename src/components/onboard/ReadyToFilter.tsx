@@ -29,11 +29,11 @@ const ReadyToFilter = () => {
     ]
 
     return (
-        <section className="mx-auto my-10 w-full max-w-[589px] px-4 text-white sm:my-14 md:my-16 lg:my-24 xl:my-[130px]">
-            <h1 className="gradient-text mx-auto mb-5 w-fit text-center text-4xl leading-tight md:text-5xl lg:mb-8 xl:text-[64px]">
+        <section className="mx-auto my-10 flex w-full max-w-[589px] flex-col items-center justify-center px-4 py-10 text-white">
+            <h1 className="gradient-text mx-auto mb-5 w-fit text-center text-4xl leading-[120%] md:text-5xl lg:mb-8 xl:text-[64px]">
                 Ready to Filter <br /> the Market?
             </h1>
-            <p className="mb-8 text-center text-base leading-relaxed font-medium text-white/70 sm:mb-7 md:mb-10 md:text-lg lg:mb-14 lg:text-xl">
+            <p className="mb-8 text-center text-base leading-[150%] font-medium text-white/70 sm:mb-7 md:mb-10 md:text-lg lg:mb-14 lg:text-xl">
                 Unlock personalized signals. No spam. Cancel anytime.
             </p>
 
@@ -54,16 +54,17 @@ const ReadyToFilter = () => {
                         />
                     </div>
 
-                    <div className="flex cursor-pointer items-start gap-1 text-xs sm:items-center md:gap-2 md:text-sm lg:text-base">
+                    <div className="flex cursor-pointer items-start gap-1 text-xs text-[#010101] sm:items-center md:gap-2 md:text-sm lg:text-base">
                         <input
                             id="updates"
                             type="checkbox"
                             checked={subscribedToUpdates}
                             onChange={handleCheckboxChange}
-                            className="h-4 w-4 accent-[#2A64F6] shadow-[0px_0px_10px_0px_rgba(119,68,255,0.70)]"
+                            className="h-5 w-5 rounded-[3px] accent-[#2A64F6]"
                         />
                         <label htmlFor="updates" className="cursor-pointer font-medium">
-                            Send me weekly market updates <span className="font-light italic">(Optional)</span>
+                            Send me weekly market updates{' '}
+                            <span className="font-light italic opacity-70">(Optional)</span>
                         </label>
                     </div>
 
@@ -78,7 +79,7 @@ const ReadyToFilter = () => {
                     </button>
                 </form>
 
-                <ul className="mt-6 space-y-2 text-sm font-medium">
+                <ul className="mt-6 space-y-2 text-sm lg:text-base">
                     {listItems.map((list, index) => (
                         <li key={index} className="flex items-center gap-2">
                             <span className="opacity-70">

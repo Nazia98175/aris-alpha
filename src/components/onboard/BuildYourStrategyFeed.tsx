@@ -15,7 +15,7 @@ const BuildYourStrategyFeed = () => {
                 height={696}
                 src="/assets/onboarding/webp/strategy-feed.webp"
                 alt=""
-                className="rounded-sm object-cover lg:rounded-4xl"
+                className="rounded-sm object-cover blur-[14px] lg:rounded-4xl"
             />
         </div>
     )

@@ -1,76 +1,44 @@
-// useOnboardinghook.ts
-import { useState, useEffect } from 'react'
+'use client'
 import { useRouter, useSearchParams } from 'next/navigation'
+import { useState } from 'react'
 import { steps } from './Helper'
 
 export function useOnboarding() {
     const router = useRouter()
     const searchParams = useSearchParams()
-
-    const [formData, setFormData] = useState({
-        strategyFeed: [] as string[],
-        focusYourFeed: [] as string[],
-        takeAction: [] as string[],
-        cutNoise: [] as string[],
-        mainObjective: [] as string[],
-    })
-    console.log(formData, 'form data')
-
-    const [showModal, setShowModal] = useState(false)
-    const [showFinalScreen, setShowFinalScreen] = useState(false)
-    const [progressPercent, setProgressPercent] = useState(0)
-    const [startPercent, setStartPercent] = useState(0)
-    const [targetStepIndex, setTargetStepIndex] = useState<number | null>(null)
-
     const currentSlug = searchParams.get('step') || steps[0].slug
     const stepIndex = steps.findIndex((s) => s.slug === currentSlug)
     const totalSteps = steps.length
+
+    const [formData, setFormData] = useState({
+        strategyFeed: [],
+        focusYourFeed: [],
+        takeAction: [],
+        cutNoise: [],
+        mainObjective: [],
+    })
+    const [showModal, setShowModal] = useState(false)
+    const [showFinalScreen, setShowFinalScreen] = useState(false)
 
     const updateFormData = (key: keyof typeof formData, value: string[]) => {
         setFormData((prev) => ({ ...prev, [key]: value }))
     }
 
     const updateStep = (index: number, skipModal = false) => {
-        if (index === stepIndex) return
+        if (index === stepIndex || index < 0) return
 
         if (index >= totalSteps) {
-            const finalStepIndex = totalSteps
-            setStartPercent((stepIndex / totalSteps) * 100)
-            setProgressPercent(100)
             setShowModal(true)
-            setTargetStepIndex(finalStepIndex)
-
-            setTimeout(() => {
-                setShowModal(false)
-                setShowFinalScreen(true)
-                setTimeout(() => router.push('/onboarding/cta'), 2000)
-            }, 1800)
             return
         }
 
-        const goingForward = index > stepIndex
-
-        if (goingForward && !skipModal) {
-            setTargetStepIndex(index)
-            setStartPercent((stepIndex / totalSteps) * 100)
-            setProgressPercent((index / totalSteps) * 100)
-            setShowModal(true)
-
-            setTimeout(() => {
-                router.push(`?step=${steps[index].slug}`)
-                setShowModal(false)
-                setTargetStepIndex(null)
-            }, 1800)
-        } else {
-            setTargetStepIndex(index)
+        if (skipModal || index < stepIndex) {
             router.push(`?step=${steps[index].slug}`)
-            setTargetStepIndex(null)
+            return
         }
-    }
 
-    useEffect(() => {
-        setProgressPercent((stepIndex / totalSteps) * 100)
-    }, [stepIndex, totalSteps])
+        setShowModal(true)
+    }
 
     return {
         formData,
@@ -79,12 +47,8 @@ export function useOnboarding() {
         setShowModal,
         showFinalScreen,
         setShowFinalScreen,
-        progressPercent,
-        startPercent,
         currentSlug,
         stepIndex,
-        totalSteps,
         updateStep,
-        targetStepIndex,
     }
 }

@@ -33,10 +33,11 @@ export function useOnboarding() {
         if (index === stepIndex) return
 
         if (index >= totalSteps) {
+            const finalStepIndex = totalSteps
             setStartPercent((stepIndex / totalSteps) * 100)
             setProgressPercent(100)
             setShowModal(true)
-            setTargetStepIndex(null)
+            setTargetStepIndex(finalStepIndex)
 
             setTimeout(() => {
                 setShowModal(false)

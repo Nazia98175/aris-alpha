@@ -4,7 +4,7 @@ import { ContactIcon, GlobalIcon, MenuIcon } from './Icons'
 
 const OnboardHeader = () => {
     return (
-        <nav className="h-20 sm:h-24 lg:h-[110px]">
+        <nav className="sticky top-0 z-30 h-20 sm:h-24 lg:h-[110px]">
             <div className="custom-container flex h-full items-center justify-between">
                 <Link className="inline-block text-2xl leading-[120%] sm:text-3xl md:text-[40px]" href={'/'}>
                     ARIS

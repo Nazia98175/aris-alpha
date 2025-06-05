@@ -20,7 +20,7 @@ export default function Onboarding() {
         currentSlug,
         stepIndex,
         updateStep,
-        targetStepIndex, // new
+        targetStepIndex,
     } = useOnboarding()
 
     const StepComponent = () => {
@@ -35,7 +35,6 @@ export default function Onboarding() {
         }
     }
 
-    // Use targetStepIndex for modal step to prevent flicker
     const modalStepIndex = targetStepIndex !== null ? targetStepIndex : stepIndex
 
     return (
@@ -70,7 +69,7 @@ export default function Onboarding() {
                 ) : showModal ? (
                     <motion.div
                         key="modal"
-                        initial={{ opacity: 0, scale: 0.6 }}
+                        initial={{ opacity: 0, scale: 0.5 }}
                         animate={{ opacity: 1, scale: 1 }}
                         exit={{ opacity: 0, scale: 0.95 }}
                         transition={{ duration: 0.4 }}

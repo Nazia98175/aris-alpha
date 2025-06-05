@@ -29,7 +29,7 @@ export function useOnboarding() {
         setFormData((prev) => ({ ...prev, [key]: value }))
     }
 
-    const updateStep = (index: number) => {
+    const updateStep = (index: number, skipModal = false) => {
         if (index === stepIndex) return
 
         if (index >= totalSteps) {
@@ -49,7 +49,7 @@ export function useOnboarding() {
 
         const goingForward = index > stepIndex
 
-        if (goingForward) {
+        if (goingForward && !skipModal) {
             setTargetStepIndex(index)
             setStartPercent((stepIndex / totalSteps) * 100)
             setProgressPercent((index / totalSteps) * 100)

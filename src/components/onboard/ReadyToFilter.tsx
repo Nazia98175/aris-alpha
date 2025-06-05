@@ -50,7 +50,7 @@ const ReadyToFilter = () => {
                             onChange={handleChangeEmail}
                             required
                             placeholder="Enter email"
-                            className="h-[45px] w-full rounded-4xl border border-[#D0D0D0] p-5 text-sm backdrop-blur-sm placeholder:text-[#666361] focus:ring-2 focus:ring-[#2A64F6] focus:outline-none md:h-[63px]"
+                            className="h-[45px] w-full rounded-4xl border border-[#D0D0D0] p-5 text-base backdrop-blur-sm placeholder:text-[#666361] focus:ring-2 focus:ring-[#2A64F6] focus:outline-none md:h-[63px]"
                         />
                     </div>
 
@@ -60,7 +60,7 @@ const ReadyToFilter = () => {
                             type="checkbox"
                             checked={subscribedToUpdates}
                             onChange={handleCheckboxChange}
-                            className="h-5 w-5 rounded-[3px] accent-[#2A64F6]"
+                            className="h-5 w-5 cursor-pointer rounded-[3px] accent-[#2A64F6]"
                         />
                         <label htmlFor="updates" className="cursor-pointer font-medium">
                             Send me weekly market updates{' '}

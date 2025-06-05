@@ -39,8 +39,8 @@ export default function Onboarding() {
     return (
         <div className="mx-auto mt-5 mb-10 w-full px-4">
             {!showModal && (
-                <div className="relative z-20 mx-auto flex w-full max-w-[395px] justify-between">
-                    <div className="absolute top-1/2 left-0 h-1.5 w-full -translate-y-1/2 bg-[#808080]" />
+                <div className="relative z-20 mx-auto flex w-full max-w-[90%] justify-between sm:max-w-[395px]">
+                    <div className="absolute top-1/2 left-0 h-1 w-full -translate-y-1/2 bg-[#808080] sm:h-1.5" />
                     {steps.map((_, i) => (
                         <StepIndicator
                             key={i}
@@ -86,9 +86,9 @@ export default function Onboarding() {
                 ) : (
                     <motion.div
                         key={currentSlug}
-                        initial={{ opacity: 0, x: -60 }}
+                        initial={{ opacity: 0, x: 60 }}
                         animate={{ opacity: 1, x: 0 }}
-                        exit={{ opacity: 0, x: 60 }}
+                        exit={{ opacity: 0, x: -60 }}
                         transition={{ duration: 0.5 }}
                     >
                         <StepContent formData={formData} updateFormData={updateFormData} />
@@ -99,7 +99,7 @@ export default function Onboarding() {
             {!showModal && !showFinalScreen && (
                 <div className="mx-auto mt-7 flex w-full max-w-[486px] flex-col-reverse items-center justify-between gap-3 sm:flex-row">
                     <button
-                        className="font-medium text-white/70 md:text-xl"
+                        className="font-medium text-white/70 hover:underline md:text-xl"
                         onClick={() => updateStep(stepIndex + 1, true)}
                     >
                         Skip For Now

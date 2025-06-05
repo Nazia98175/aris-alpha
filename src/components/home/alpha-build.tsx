@@ -38,7 +38,7 @@ const AlphaBuild = () => {
             <Image
                 width={1440}
                 height={800}
-                className="absolute top-[-34%] left-0 z-[-1] h-[700px] w-full object-cover object-right md:object-fill lg:h-[1000px]"
+                className="absolute top-0 left-0 z-[-1] h-[700px] w-full object-cover object-right md:object-fill lg:h-[1000px]"
                 src="/assets/homepage/webp/hero-bg.webp"
                 alt="background"
                 unoptimized

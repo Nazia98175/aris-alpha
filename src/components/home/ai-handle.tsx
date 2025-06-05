@@ -71,7 +71,7 @@ const AiHandle = () => {
     return (
         <section 
             ref={containerRef}
-            className="relative py-10 sm:pt-16 sm:pb-20 xl:pb-28 md:min-h-screen md:snap-start md:snap-always" 
+            className="relative py-10 sm:pt-16 sm:pb-20 xl:pb-28 md:min-h-screen md:snap-start md:snap-always overflow-clip" 
             id='about-us'
             style={{
                 // Ensure clean snap behavior

@@ -4,7 +4,7 @@ import { Metadata } from 'next'
 import { Suspense } from 'react'
 
 export const metadata: Metadata = {
-    title: 'Onboarding | Aris Alpha',
+    title: 'Aris Alpha | Onboarding ',
     description:
         'Get started with our quick and interactive onboarding process. Learn how to build your strategy with ease.',
 }

@@ -1,11 +1,33 @@
+'use client'
+import { useState } from 'react'
 import { ArrowIcon, ListItem } from './Icons'
 
 const ReadyToFilter = () => {
+    const [email, setEmail] = useState('')
+    const [subscribedToUpdates, setSubscribedToUpdates] = useState(false)
+
+    const handleChangeEmail = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setEmail(e.target.value)
+    }
+
+    const handleCheckboxChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setSubscribedToUpdates(e.target.checked)
+    }
+
+    const handleSubmit = (e: React.FormEvent) => {
+        e.preventDefault()
+        console.log('Submitted Email:', email)
+        console.log('Subscribed to updates:', subscribedToUpdates)
+        setEmail('')
+        setSubscribedToUpdates(false)
+    }
+
     const listItems = [
         { label: 'Built by traders, not marketers' },
         { label: 'Fast, focused, frictionless' },
         { label: 'Join other tactical investors' },
     ]
+
     return (
         <section className="mx-auto my-10 w-full max-w-[589px] px-4 text-white sm:my-14 md:my-16 lg:my-24 xl:my-[130px]">
             <h1 className="gradient-text mx-auto mb-5 w-fit text-center text-4xl leading-tight md:text-5xl lg:mb-8 xl:text-[64px]">
@@ -16,7 +38,7 @@ const ReadyToFilter = () => {
             </p>
 
             <div className="rounded-2xl border border-[#2A64F6] bg-[#FCF6F1] px-2 py-4 text-[#010101] backdrop-blur-[10px] md:p-4 lg:rounded-[32px] lg:p-6">
-                <form action="#" className="space-y-4">
+                <form onSubmit={handleSubmit} className="space-y-4">
                     <div>
                         <label htmlFor="email" className="mb-1 block text-sm font-medium">
                             Email<span className="text-red-500">*</span>
@@ -24,6 +46,8 @@ const ReadyToFilter = () => {
                         <input
                             id="email"
                             type="email"
+                            value={email}
+                            onChange={handleChangeEmail}
                             required
                             placeholder="Enter email"
                             className="h-[45px] w-full rounded-4xl border border-[#D0D0D0] p-5 text-sm backdrop-blur-sm placeholder:text-[#666361] focus:ring-2 focus:ring-[#2A64F6] focus:outline-none md:h-[63px]"
@@ -34,6 +58,8 @@ const ReadyToFilter = () => {
                         <input
                             id="updates"
                             type="checkbox"
+                            checked={subscribedToUpdates}
+                            onChange={handleCheckboxChange}
                             className="h-4 w-4 accent-[#2A64F6] shadow-[0px_0px_10px_0px_rgba(119,68,255,0.70)]"
                         />
                         <label htmlFor="updates" className="cursor-pointer font-medium">
@@ -41,7 +67,10 @@ const ReadyToFilter = () => {
                         </label>
                     </div>
 
-                    <button className="flex h-[45px] w-full cursor-pointer items-center justify-center gap-2.5 rounded-[40px] border border-[#2A64F6] bg-[#2A64F6] text-base text-white shadow-[0px_0px_10px_0px_rgba(119,68,255,0.70)] transition-all duration-300 hover:bg-transparent hover:text-[#2A64F6] md:h-[63px]">
+                    <button
+                        type="submit"
+                        className="flex h-[45px] w-full cursor-pointer items-center justify-center gap-2.5 rounded-[40px] border border-[#2A64F6] bg-[#2A64F6] text-base text-white shadow-[0px_0px_10px_0px_rgba(119,68,255,0.70)] transition-all duration-300 hover:bg-transparent hover:text-[#2A64F6] md:h-[63px]"
+                    >
                         Unlock My Dashboard{' '}
                         <span className="rotate-180">
                             <ArrowIcon />

@@ -14,6 +14,7 @@ export function useOnboarding() {
         cutNoise: [] as string[],
         mainObjective: [] as string[],
     })
+    console.log(formData, 'form data')
 
     const [showModal, setShowModal] = useState(false)
     const [showFinalScreen, setShowFinalScreen] = useState(false)

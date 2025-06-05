@@ -30,7 +30,7 @@ const ReadyToFilter = () => {
                         />
                     </div>
 
-                    <div className="flex cursor-pointer items-center gap-2 text-xs md:text-sm lg:text-base">
+                    <div className="flex cursor-pointer items-start gap-1 text-xs sm:items-center md:gap-2 md:text-sm lg:text-base">
                         <input
                             id="updates"
                             type="checkbox"

@@ -6,6 +6,7 @@ import { steps } from './Helper'
 export function useOnboarding() {
     const router = useRouter()
     const searchParams = useSearchParams()
+
     const currentSlug = searchParams.get('step') || steps[0].slug
     const stepIndex = steps.findIndex((s) => s.slug === currentSlug)
     const totalSteps = steps.length
@@ -17,8 +18,12 @@ export function useOnboarding() {
         cutNoise: [],
         mainObjective: [],
     })
+
     const [showModal, setShowModal] = useState(false)
     const [showFinalScreen, setShowFinalScreen] = useState(false)
+
+    // Track the next step index to go after modal
+    const [nextStepIndex, setNextStepIndex] = useState<number | null>(null)
 
     const updateFormData = (key: keyof typeof formData, value: string[]) => {
         setFormData((prev) => ({ ...prev, [key]: value }))
@@ -28,6 +33,8 @@ export function useOnboarding() {
         if (index === stepIndex || index < 0) return
 
         if (index >= totalSteps) {
+            // No next step, show final modal
+            setNextStepIndex(null)
             setShowModal(true)
             return
         }
@@ -37,6 +44,8 @@ export function useOnboarding() {
             return
         }
 
+        // For normal forward navigation, save next step then show modal
+        setNextStepIndex(index)
         setShowModal(true)
     }
 
@@ -50,5 +59,6 @@ export function useOnboarding() {
         currentSlug,
         stepIndex,
         updateStep,
+        nextStepIndex,
     }
 }

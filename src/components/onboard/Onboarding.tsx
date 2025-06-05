@@ -1,4 +1,5 @@
 'use client'
+import { useEffect, useRef } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import BuildYourStrategyFeed from './BuildYourStrategyFeed'
 import NavigationButton from './NavigationButton'
@@ -19,11 +20,21 @@ export default function Onboarding() {
         currentSlug,
         stepIndex,
         updateStep,
+        nextStepIndex,
     } = useOnboarding()
 
     const StepContent = steps[stepIndex].component
-
     const router = useRouter()
+
+    // Track previous slug to close modal after URL change
+    const prevSlug = useRef(currentSlug)
+
+    useEffect(() => {
+        if (showModal && currentSlug !== prevSlug.current) {
+            setShowModal(false)
+        }
+        prevSlug.current = currentSlug
+    }, [currentSlug, showModal, setShowModal])
 
     return (
         <div className="mx-auto mt-5 mb-10 w-full px-4">
@@ -58,18 +69,16 @@ export default function Onboarding() {
                         initial={{ opacity: 0, scale: 0.2 }}
                         animate={{ opacity: 1, scale: 1 }}
                         exit={{ opacity: 0, scale: 0.2 }}
-                        transition={{ duration: 0.4 }}
                     >
                         <StepCompleteModal
                             step={stepIndex + 1}
                             onComplete={() => {
-                                if (stepIndex + 1 >= steps.length) {
+                                if (nextStepIndex === null || nextStepIndex >= steps.length) {
                                     setShowModal(false)
                                     setShowFinalScreen(true)
                                     setTimeout(() => router.push('/onboarding/cta'), 3000)
                                 } else {
-                                    router.push(`?step=${steps[stepIndex + 1].slug}`)
-                                    setShowModal(false)
+                                    router.push(`?step=${steps[nextStepIndex].slug}`)
                                 }
                             }}
                         />

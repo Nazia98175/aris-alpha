@@ -171,7 +171,7 @@ const AiHandle = () => {
                 <CommonBtn
                     className="mx-auto mt-6 w-fit sm:mt-14 lg:!py-[18px]"
                     btnText="Get Started"
-                    btnUrl="/onboard"
+                    btnUrl="/onboarding"
                     variant="primary"
                 />
             </div>

@@ -36,7 +36,7 @@ const Navbar = () => {
                         ARIS
                     </Link>
                     <div className="flex items-center gap-6 text-sm text-[#D0D0D0] md:text-base lg:gap-10">
-                        <Link className="hover:text-primary duration-300" href={'/onboard'}>
+                        <Link className="hover:text-primary duration-300" href={'/onboarding'}>
                             Learn More
                         </Link>
                         <Link className="hover:text-primary duration-300" href={'#about-us'}>
@@ -46,7 +46,7 @@ const Navbar = () => {
                             Dash Board
                         </Link>
                     </div>
-                    <CommonBtn btnText="Get Started" btnUrl="/onboard" variant="primary" />
+                    <CommonBtn btnText="Get Started" btnUrl="/onboarding" variant="primary" />
                 </div>
             </nav>
 
@@ -90,7 +90,7 @@ const Navbar = () => {
                         <div className="mb-12 flex flex-col gap-8">
                             <Link
                                 className="border-b border-[#1A1B2E] pb-2 text-lg text-[#D0D0D0] duration-300 hover:text-[#2A64F6]"
-                                href={'/onboard'}
+                                href={'/onboarding'}
                                 onClick={closeMenu}
                             >
                                 Learn More
@@ -113,7 +113,7 @@ const Navbar = () => {
 
                         {/* Get Started Button */}
                         <div className="flex grow flex-col justify-end">
-                            <CommonBtn btnText="Get Started" btnUrl="/onboard" variant="primary" />
+                            <CommonBtn btnText="Get Started" btnUrl="/onboarding" variant="primary" />
                         </div>
                     </div>
                 </div>

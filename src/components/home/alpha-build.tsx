@@ -18,6 +18,7 @@ import {
     TechIcon,
     TradeHomeIcon,
 } from './Icons'
+import Link from 'next/link'
 
 const AlphaBuild = () => {
     const menuItems = [
@@ -110,14 +111,20 @@ const AlphaBuild = () => {
                                         {list.startTradebtn && (
                                             <div className="flex w-full max-w-[239px] items-center justify-center sm:p-4">
                                                 <div className="w-full max-w-[188px] space-y-3">
-                                                    <button className="group flex h-[49px] w-full max-w-[188px] cursor-pointer items-center justify-center gap-3 rounded-[24px] border border-[#0082ff] bg-[#0082FF] text-lg text-white shadow-[0px_11.75px_14.688px_-5.875px_rgba(0,130,255,0.30)] transition-all duration-300 ease-in-out hover:bg-transparent hover:text-[#0082FF] md:text-xl">
+                                                    <Link
+                                                        href={'/onboarding'}
+                                                        className="group flex h-[49px] w-full max-w-[188px] cursor-pointer items-center justify-center gap-3 rounded-[24px] border border-[#0082ff] bg-[#0082FF] text-lg text-white shadow-[0px_11.75px_14.688px_-5.875px_rgba(0,130,255,0.30)] transition-all duration-300 ease-in-out hover:bg-transparent hover:text-[#0082FF] md:text-xl"
+                                                    >
                                                         <BtnPlusIcon />
                                                         Start Trade
-                                                    </button>
-                                                    <button className="group shadow-[0px_8.813px_26.438px -2.937px #E2E6EE] flex h-[49px] w-full max-w-[188px] cursor-pointer items-center justify-center gap-3 rounded-[24px] bg-white text-lg text-[#0082FF] transition-all duration-300 ease-in-out hover:bg-[#0082FF] hover:text-white md:text-xl">
+                                                    </Link>
+                                                    <Link
+                                                        href={'/onboarding'}
+                                                        className="group shadow-[0px_8.813px_26.438px -2.937px #E2E6EE] flex h-[49px] w-full max-w-[188px] cursor-pointer items-center justify-center gap-3 rounded-[24px] bg-white text-lg text-[#0082FF] transition-all duration-300 ease-in-out hover:bg-[#0082FF] hover:text-white md:text-xl"
+                                                    >
                                                         <BtnUpArrowIcon />
                                                         Start Trade
-                                                    </button>
+                                                    </Link>
                                                 </div>
                                             </div>
                                         )}
@@ -150,7 +157,7 @@ const AlphaBuild = () => {
                 <div className="flex items-center justify-center pt-10">
                     <CommonBtn
                         btnText="Get Started"
-                        btnUrl="/onboard"
+                        btnUrl="/onboarding"
                         variant="primary"
                         className="h-[45px] w-full sm:w-fit md:h-[63px]"
                     />

@@ -13,21 +13,21 @@ const Footer = () => {
                         much to allocate.
                     </p>
                     <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
-                        <div className="group flex cursor-pointer items-center gap-2">
+                        <div className="flex items-center gap-2">
                             <WhiteCheckIcon />
-                            <p className="text-base font-medium text-[#d0d0d0] transition-all duration-300 ease-in-out group-hover:text-[#2a64f6] sm:text-lg md:text-xl">
+                            <p className="text-base font-medium text-[#d0d0d0] sm:text-lg md:text-xl">
                                 Fast signal delivery
                             </p>
                         </div>
-                        <div className="group flex cursor-pointer items-center gap-2">
+                        <div className="flex items-center gap-2">
                             <WhiteCheckIcon />
-                            <p className="text-base font-medium text-[#d0d0d0] transition-all duration-300 ease-in-out group-hover:text-[#2a64f6] sm:text-lg md:text-xl">
+                            <p className="text-base font-medium text-[#d0d0d0] sm:text-lg md:text-xl">
                                 No overcomplication
                             </p>
                         </div>
-                        <div className="group flex cursor-pointer items-center gap-2">
+                        <div className="flex items-center gap-2">
                             <WhiteCheckIcon />
-                            <p className="text-base font-medium text-[#d0d0d0] transition-all duration-300 ease-in-out group-hover:text-[#2a64f6] sm:text-lg md:text-xl">
+                            <p className="text-base font-medium text-[#d0d0d0] sm:text-lg md:text-xl">
                                 Built by traders, not marketers
                             </p>
                         </div>

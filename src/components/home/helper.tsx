@@ -28,7 +28,7 @@ export const footerLinks = [
     },
     {
         label: 'Learn More',
-        href: '/onboard',
+        href: '/onboarding',
     },
     {
         label: 'About Us',

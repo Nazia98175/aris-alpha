@@ -20,14 +20,16 @@ const StepIndicator = ({ stepNumber, currentStep, isFinalScreen = false }: StepI
     return (
         <div className="relative z-10">
             {isCompleted ? (
-                <span className="flex h-[30px] w-[30px] items-center justify-center rounded-full bg-[#2A64F6] p-2 shadow-[0px_0px_10px_rgba(42,100,246,0.7)]">
+                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-[#2A64F6] p-1 shadow-[0px_0px_10px_rgba(42,100,246,0.7)] sm:h-[30px] sm:w-[30px] sm:p-2">
                     <CheckIcon />
                 </span>
             ) : (
                 <div
-                    className={`flex h-[30px] w-[30px] items-center justify-center rounded-full border-4 ${outerClass} bg-[#000103]`}
+                    className={`flex h-6 w-6 items-center justify-center rounded-full border-[3.5px] sm:h-[30px] sm:w-[30px] sm:border-4 ${outerClass} bg-[#000103]`}
                 >
-                    {showInner && <div className={`h-[11.24px] w-[11.24px] rounded-full ${innerClass}`} />}
+                    {showInner && (
+                        <div className={`h-2 w-2 rounded-full sm:h-[11.24px] sm:w-[11.24px] ${innerClass}`} />
+                    )}
                 </div>
             )}
         </div>

@@ -42,7 +42,7 @@ export default function Onboarding() {
             {showModal && <ProgressBarAnimation startPercent={startPercent} targetPercent={progressPercent} />}
 
             {!showModal && (
-                <div className="relative z-20 mx-auto mb-10 flex w-full max-w-[395px] justify-between">
+                <div className="relative z-20 mx-auto flex w-full max-w-[395px] justify-between">
                     <div className="absolute top-1/2 left-0 h-1.5 w-full -translate-y-1/2 bg-[#808080]" />
                     {steps.map((_, i) => (
                         <StepIndicator

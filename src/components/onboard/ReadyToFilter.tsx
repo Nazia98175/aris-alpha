@@ -1,6 +1,6 @@
 'use client'
 import { useState } from 'react'
-import { ArrowIcon, ListItem } from './Icons'
+import { ArrowIcon, ListItem, TickIcon } from './Icons'
 
 const ReadyToFilter = () => {
     const [email, setEmail] = useState('')
@@ -53,7 +53,7 @@ const ReadyToFilter = () => {
                             className="h-[45px] w-full rounded-4xl border border-[#D0D0D0] p-5 text-base backdrop-blur-sm placeholder:text-[#666361] focus:ring-2 focus:ring-[#2A64F6] focus:outline-none md:h-[63px]"
                         />
                     </div>
-
+                    {/* 
                     <div className="flex cursor-pointer items-start gap-1 text-xs text-[#010101] sm:items-center md:gap-2 md:text-sm lg:text-base">
                         <input
                             id="updates"
@@ -66,7 +66,28 @@ const ReadyToFilter = () => {
                             Send me weekly market updates{' '}
                             <span className="font-light italic opacity-70">(Optional)</span>
                         </label>
-                    </div>
+                    </div> */}
+                    <label htmlFor="updates" className="flex cursor-pointer items-start gap-2 text-sm text-[#010101]">
+                        {/* Hidden native checkbox with peer class */}
+                        <input
+                            id="updates"
+                            type="checkbox"
+                            checked={subscribedToUpdates}
+                            onChange={handleCheckboxChange}
+                            className="peer sr-only"
+                        />
+
+                        {/* Custom checkbox UI */}
+                        <div className="mt-0.5 flex h-3 w-3 items-center justify-center rounded-[3px] border border-[#C5C5C5] bg-white transition-colors peer-checked:border-[#2A64F6] peer-checked:bg-[#2A64F6] sm:h-5 sm:w-5">
+                            <TickIcon />
+                        </div>
+
+                        {/* Label Text */}
+                        <span className="text-xs font-medium sm:text-sm md:text-base">
+                            Send me weekly market updates{' '}
+                            <span className="font-light italic opacity-70">(Optional)</span>
+                        </span>
+                    </label>
 
                     <button
                         type="submit"

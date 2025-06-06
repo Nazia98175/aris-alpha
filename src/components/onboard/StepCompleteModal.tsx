@@ -25,7 +25,7 @@ const StepCompleteModal = ({ step, onComplete }: { step: number; onComplete: () 
             </div>
 
             {/* Modal content */}
-            <div className="mx-auto flex w-full max-w-[506px] flex-col items-center justify-center rounded-2xl bg-[#FCF6F1] px-4 pt-12 pb-16 backdrop-blur-[10px] sm:px-6 md:rounded-4xl md:px-7 md:pt-16 lg:px-11 lg:pt-[85px]">
+            <div className="mx-auto flex w-full max-w-[506px] flex-col items-center justify-center rounded-2xl bg-[#FCF6F1] px-4 py-12 backdrop-blur-[10px] sm:px-6 sm:py-16 md:rounded-4xl md:px-7">
                 <span className="h-auto max-w-16 md:max-w-24 lg:max-w-[155px]">
                     <StepCompletedIcon />
                 </span>

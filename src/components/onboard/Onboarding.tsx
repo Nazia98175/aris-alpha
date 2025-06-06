@@ -37,10 +37,10 @@ export default function Onboarding() {
     }, [currentSlug, showModal, setShowModal])
 
     return (
-        <div className="mx-auto mt-5 mb-10 w-full px-4">
+        <div className="mx-auto mt-8 mb-10 w-full px-4 sm:mt-5">
             {!showModal && (
                 <div className="relative z-20 mx-auto flex w-full max-w-[90%] justify-between sm:max-w-[395px]">
-                    <div className="absolute top-1/2 left-0 h-1 w-full -translate-y-1/2 bg-[#808080] sm:h-1.5" />
+                    <div className="absolute top-1/2 left-1/2 h-1 w-full max-w-[97%] -translate-x-1/2 -translate-y-1/2 bg-[#808080] sm:h-1.5" />
                     {steps.map((_, i) => (
                         <StepIndicator
                             key={i}
@@ -99,7 +99,7 @@ export default function Onboarding() {
             {!showModal && !showFinalScreen && (
                 <div className="mx-auto mt-7 flex w-full max-w-[486px] flex-col-reverse items-center justify-between gap-3 sm:flex-row">
                     <button
-                        className="font-medium text-white/70 hover:underline md:text-xl"
+                        className="text-white/70 hover:underline sm:font-medium md:text-xl"
                         onClick={() => updateStep(stepIndex + 1, true)}
                     >
                         Skip For Now

@@ -19,7 +19,7 @@ const Dashboard = () => {
                 <CommonBtn
                     className="mx-auto mt-6 sm:mt-8 lg:mt-12 xl:mt-16 w-fit lg:!py-[18px]"
                     btnText="Get Started"
-                    btnUrl="/onboard"
+                    btnUrl="/onboarding"
                     variant="primary"
                 />
             </div>

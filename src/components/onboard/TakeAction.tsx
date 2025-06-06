@@ -50,11 +50,11 @@ const TakeAction: React.FC<TakeActionProps> = ({ formData, updateFormData }) => 
                 onChange={() => handleCheckboxChange('occasionally')}
             />
             <CheckboxInput
-                id="rarely"
-                title="Rarely – mostly observing"
-                value="rarely"
-                checked={selectedValues.includes('rarely')}
-                onChange={() => handleCheckboxChange('rarely')}
+                id="daily"
+                title="Daily"
+                value="daily"
+                checked={selectedValues.includes('daily')}
+                onChange={() => handleCheckboxChange('daily')}
             />
         </StepLayout>
     )

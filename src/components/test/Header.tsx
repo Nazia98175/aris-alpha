@@ -7,11 +7,23 @@ interface HeaderProps {
 
 export const Header: React.FC<HeaderProps> = ({ onSidebarToggle }) => {
     const [mobileSearchOpen, setMobileSearchOpen] = useState(false)
-
-    const toggleSearch = () => {
-        setMobileSearchOpen(!mobileSearchOpen)
-    }
+    const [searchValue, setSearchValue] = useState('')
     const searchRef = useRef<HTMLDivElement>(null)
+
+    const toggleSearch = () => setMobileSearchOpen(!mobileSearchOpen)
+
+    const handleSearch = () => {
+        if (searchValue.trim() === '') return
+        console.log('Search triggered:', searchValue)
+        setSearchValue('')
+    }
+
+    const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+        if (e.key === 'Enter') {
+            e.preventDefault()
+            handleSearch()
+        }
+    }
 
     useEffect(() => {
         const handleClickOutside = (event: MouseEvent) => {
@@ -48,6 +60,9 @@ export const Header: React.FC<HeaderProps> = ({ onSidebarToggle }) => {
             >
                 <input
                     type="text"
+                    value={searchValue}
+                    onChange={(e) => setSearchValue(e.target.value)}
+                    onKeyDown={handleKeyDown}
                     placeholder="Search..."
                     className="w-full rounded-md border border-gray-600 bg-[#121212] px-4 py-2 text-sm text-white placeholder-gray-400 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 focus:outline-none"
                 />
@@ -61,13 +76,22 @@ export const Header: React.FC<HeaderProps> = ({ onSidebarToggle }) => {
                     <h1 className="text-xl font-semibold text-white">ARIS</h1>
                 </div>
 
-                <div className="hidden w-full lg:block lg:max-w-md">
+                <form
+                    onSubmit={(e) => {
+                        e.preventDefault() // Prevent form submission refreshing page
+                        handleSearch()
+                    }}
+                    className="hidden w-full lg:block lg:max-w-md"
+                >
                     <input
                         type="text"
+                        value={searchValue}
+                        onChange={(e) => setSearchValue(e.target.value)}
+                        onKeyDown={handleKeyDown}
                         placeholder="Search..."
                         className="w-full rounded-md border border-gray-600 bg-[#121212] px-4 py-2 text-sm text-white placeholder-gray-400 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 focus:outline-none"
                     />
-                </div>
+                </form>
 
                 <div className="flex items-center gap-4">
                     <button

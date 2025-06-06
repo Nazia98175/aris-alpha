@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import React from 'react'
 
 interface SidebarProps {
@@ -6,13 +7,14 @@ interface SidebarProps {
     onToggle: () => void
 }
 
-export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onToggle }) => {
+const Sidebar: React.FC<SidebarProps> = ({ isOpen, onToggle }) => {
+    const pathname = usePathname()
     const menuItems = [
-        { label: 'Dashboard', link: '' },
-        { label: 'Institutional', link: '/institutional' },
-        { label: 'Strategy', link: '/strategy' },
-        { label: 'Product', link: '/product' },
-        { label: 'Settings', link: '/settings' },
+        { label: 'Dashboard', link: '/test' },
+        { label: 'Institutional', link: '/' },
+        { label: 'Strategy', link: '/' },
+        { label: 'Product', link: '/' },
+        { label: 'Settings', link: '/' },
     ]
 
     return (
@@ -26,18 +28,23 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onToggle }) => {
                 </div>
 
                 <nav>
-                    {menuItems.map((obj, index) => (
-                        <Link
-                            key={index}
-                            href={obj.link}
-                            className="mb-2 flex cursor-pointer items-center gap-3.5 rounded p-3 hover:bg-gray-800"
-                        >
-                            <div className="h-4 w-4 rounded bg-gray-600"></div>
-                            <span>{obj.label}</span>
-                        </Link>
-                    ))}
+                    {menuItems.map((obj, index) => {
+                        const isActive = pathname === obj.link
+                        return (
+                            <Link
+                                key={index}
+                                href={obj.link}
+                                className={` ${isActive ? 'bg-[#2A64F6]' : ''} hover:bg-gray-800" mb-2 flex cursor-pointer items-center gap-3.5 rounded p-3`}
+                            >
+                                <div className="h-4 w-4 rounded bg-white"></div>
+                                <span>{obj.label}</span>
+                            </Link>
+                        )
+                    })}
                 </nav>
             </div>
         </aside>
     )
 }
+
+export default Sidebar

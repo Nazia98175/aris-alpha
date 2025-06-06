@@ -64,32 +64,26 @@ export default function Onboarding() {
                         <BuildYourStrategyFeed />
                     </motion.div>
                 ) : showModal ? (
-                    <motion.div
+                    <StepCompleteModal
                         key="modal"
-                        initial={{ opacity: 0, scale: 0.2 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        exit={{ opacity: 0, scale: 0.2 }}
-                    >
-                        <StepCompleteModal
-                            step={stepIndex + 1}
-                            onComplete={() => {
-                                if (nextStepIndex === null || nextStepIndex >= steps.length) {
-                                    setShowModal(false)
-                                    setShowFinalScreen(true)
-                                    setTimeout(() => router.push('/onboarding/cta'), 3000)
-                                } else {
-                                    router.push(`?step=${steps[nextStepIndex].slug}`)
-                                }
-                            }}
-                        />
-                    </motion.div>
+                        step={stepIndex + 1}
+                        onComplete={() => {
+                            if (nextStepIndex === null || nextStepIndex >= steps.length) {
+                                setShowModal(false)
+                                setShowFinalScreen(true)
+                                setTimeout(() => router.push('/onboarding/cta'), 3000)
+                            } else {
+                                router.push(`?step=${steps[nextStepIndex].slug}`)
+                            }
+                        }}
+                    />
                 ) : (
                     <motion.div
                         key={currentSlug}
                         initial={{ opacity: 0, x: 60 }}
                         animate={{ opacity: 1, x: 0 }}
                         exit={{ opacity: 0, x: -60 }}
-                        transition={{ duration: 0.5 }}
+                        transition={{ duration: 0.6, delay: 0.1 }}
                     >
                         <StepContent formData={formData} updateFormData={updateFormData} />
                     </motion.div>

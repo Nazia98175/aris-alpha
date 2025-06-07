@@ -12,11 +12,11 @@ export function useOnboarding() {
     const totalSteps = steps.length
 
     const [formData, setFormData] = useState({
+        cutNoise: [],
+        mainObjective: [],
         strategyFeed: [],
         focusYourFeed: [],
         takeAction: [],
-        cutNoise: [],
-        mainObjective: [],
     })
     console.log(formData)
 

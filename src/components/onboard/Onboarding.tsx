@@ -8,7 +8,6 @@ import StepIndicator from './StepIndicator'
 import { steps } from './Helper'
 import { useOnboarding } from './useOnboardinghook'
 import { useRouter } from 'next/navigation'
-
 export default function Onboarding() {
     const {
         formData,
@@ -22,24 +21,20 @@ export default function Onboarding() {
         updateStep,
         nextStepIndex,
     } = useOnboarding()
-
     const StepContent = steps[stepIndex].component
     const router = useRouter()
-
     // Track previous slug to close modal after URL change
     const prevSlug = useRef(currentSlug)
-
     useEffect(() => {
         if (showModal && currentSlug !== prevSlug.current) {
             setShowModal(false)
         }
         prevSlug.current = currentSlug
     }, [currentSlug, showModal, setShowModal])
-
     return (
         <div className="mx-auto mt-8 mb-10 w-full px-4 sm:mt-5">
             {!showModal && (
-                <div className="relative z-20 mx-auto flex w-full max-w-[90%] justify-between sm:max-w-[395px]">
+                <div className="relative z-20 mx-auto flex w-full max-w-[85%] justify-between sm:max-w-[395px]">
                     <div className="absolute top-1/2 left-1/2 h-1 w-full max-w-[97%] -translate-x-1/2 -translate-y-1/2 bg-[#808080] sm:h-1.5" />
                     {steps.map((_, i) => (
                         <StepIndicator
@@ -51,7 +46,6 @@ export default function Onboarding() {
                     ))}
                 </div>
             )}
-
             <AnimatePresence mode="wait">
                 {showFinalScreen ? (
                     <motion.div
@@ -64,40 +58,35 @@ export default function Onboarding() {
                         <BuildYourStrategyFeed />
                     </motion.div>
                 ) : showModal ? (
-                    <motion.div
+                    <StepCompleteModal
                         key="modal"
-                        initial={{ opacity: 0, scale: 0.2 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        exit={{ opacity: 0, scale: 0.2 }}
-                    >
-                        <StepCompleteModal
-                            step={stepIndex + 1}
-                            onComplete={() => {
-                                if (nextStepIndex === null || nextStepIndex >= steps.length) {
-                                    setShowModal(false)
-                                    setShowFinalScreen(true)
-                                    setTimeout(() => router.push('/onboarding/cta'), 3000)
-                                } else {
-                                    router.push(`?step=${steps[nextStepIndex].slug}`)
-                                }
-                            }}
-                        />
-                    </motion.div>
+                        step={stepIndex + 1}
+                        desc={steps[stepIndex].desc}
+                        icon={steps[stepIndex].icon}
+                        onComplete={() => {
+                            if (nextStepIndex === null || nextStepIndex >= steps.length) {
+                                setShowModal(false)
+                                setShowFinalScreen(true)
+                                setTimeout(() => router.push('/onboarding/cta'), 3000)
+                            } else {
+                                router.push(`?step=${steps[nextStepIndex].slug}`)
+                            }
+                        }}
+                    />
                 ) : (
                     <motion.div
                         key={currentSlug}
                         initial={{ opacity: 0, x: 60 }}
                         animate={{ opacity: 1, x: 0 }}
                         exit={{ opacity: 0, x: -60 }}
-                        transition={{ duration: 0.5 }}
+                        transition={{ duration: 0.6, delay: 0.1 }}
                     >
                         <StepContent formData={formData} updateFormData={updateFormData} />
                     </motion.div>
                 )}
             </AnimatePresence>
-
             {!showModal && !showFinalScreen && (
-                <div className="mx-auto mt-7 flex w-full max-w-[486px] flex-col-reverse items-center justify-between gap-3 sm:flex-row">
+                <div className="mx-auto mt-5 flex w-full max-w-[486px] flex-col-reverse items-center justify-between gap-3 sm:flex-row xl:mt-7">
                     <button
                         className="text-white/70 hover:underline sm:font-medium md:text-xl"
                         onClick={() => updateStep(stepIndex + 1, true)}
@@ -106,8 +95,8 @@ export default function Onboarding() {
                     </button>
                     <div className="flex items-center gap-3">
                         <NavigationButton
-                            disabled={stepIndex === 0}
                             variant="secondary"
+                            className={`${stepIndex === 0 ? 'hidden' : ''}`}
                             onClick={() => updateStep(stepIndex - 1)}
                         />
                         <NavigationButton variant="primary" onClick={() => updateStep(stepIndex + 1)} />

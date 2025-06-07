@@ -22,7 +22,7 @@ const MainObjective: React.FC<StepComponentProps> = ({ formData, updateFormData 
         <StepLayout
             title="What's Your Main Objective?"
             description="What outcome matters most to you?"
-            bottomNote="We'll filter out distractions and surface clarity."
+            bottomNote=" Your dashboard will center around this goal."
         >
             <CheckboxInput
                 id="improve-performance"
@@ -34,7 +34,7 @@ const MainObjective: React.FC<StepComponentProps> = ({ formData, updateFormData 
             />
             <CheckboxInput
                 id="clear-decisions"
-                title="Clearer trade decisions"
+                title="Make clearer trade decisions"
                 icon={<TradeDecision />}
                 value="clearer_trade_decisions"
                 checked={selectedValues.includes('clearer_trade_decisions')}

@@ -25,9 +25,16 @@ const TakeAction: React.FC<TakeActionProps> = ({ formData, updateFormData }) => 
                     How Often Do You <br /> Take Action?
                 </>
             }
-            description="How often do you act on new ideas or positions?"
-            bottomNote="This guides how often we prompt signal shifts."
+            description="How often do you take action on new opportunities?"
+            bottomNote="This helps guide the rhythm of your signals."
         >
+            <CheckboxInput
+                id="daily"
+                title="Daily"
+                value="daily"
+                checked={selectedValues.includes('daily')}
+                onChange={() => handleCheckboxChange('daily')}
+            />
             <CheckboxInput
                 id="weekly"
                 title="Weekly"
@@ -48,13 +55,6 @@ const TakeAction: React.FC<TakeActionProps> = ({ formData, updateFormData }) => 
                 value="occasionally"
                 checked={selectedValues.includes('occasionally')}
                 onChange={() => handleCheckboxChange('occasionally')}
-            />
-            <CheckboxInput
-                id="daily"
-                title="Daily"
-                value="daily"
-                checked={selectedValues.includes('daily')}
-                onChange={() => handleCheckboxChange('daily')}
             />
         </StepLayout>
     )

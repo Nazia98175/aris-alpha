@@ -91,7 +91,7 @@ export default function Onboarding() {
             </AnimatePresence>
 
             {!showModal && !showFinalScreen && (
-                <div className="mx-auto mt-7 flex w-full max-w-[486px] flex-col-reverse items-center justify-between gap-3 sm:flex-row">
+                <div className="mx-auto mt-5 flex w-full max-w-[486px] flex-col-reverse items-center justify-between gap-3 sm:flex-row xl:mt-7">
                     <button
                         className="text-white/70 hover:underline sm:font-medium md:text-xl"
                         onClick={() => updateStep(stepIndex + 1, true)}

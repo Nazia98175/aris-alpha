@@ -100,8 +100,8 @@ export default function Onboarding() {
                     </button>
                     <div className="flex items-center gap-3">
                         <NavigationButton
-                            disabled={stepIndex === 0}
                             variant="secondary"
+                            className={`${stepIndex === 0 ? 'hidden' : ''}`}
                             onClick={() => updateStep(stepIndex - 1)}
                         />
                         <NavigationButton variant="primary" onClick={() => updateStep(stepIndex + 1)} />

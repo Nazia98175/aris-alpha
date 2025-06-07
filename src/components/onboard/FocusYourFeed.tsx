@@ -21,8 +21,8 @@ const FocusYourFeed: React.FC<StepComponentProps> = ({ formData, updateFormData 
     return (
         <StepLayout
             title="Focus Your Feed"
-            description="Which markets do you want us to track for you?"
-            bottomNote="We’ll filter your signals to what matters."
+            description="Which markets should we prioritize for you?"
+            bottomNote="We’ll focus your signals on what matters."
         >
             <CheckboxInput
                 id="us-stocks"

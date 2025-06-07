@@ -13,7 +13,7 @@ const StepCompleteModal = ({ step, onComplete }: { step: number; onComplete: () 
             // Step 1: Animate progress bar fill over 2 seconds (card hidden)
             await progressControls.start({
                 width: '100%',
-                transition: { duration: 2, ease: 'linear' },
+                transition: { duration: 1, ease: 'linear' },
             })
 
             // Step 2: Animate card fade/slide in over 0.6s
@@ -24,7 +24,7 @@ const StepCompleteModal = ({ step, onComplete }: { step: number; onComplete: () 
             })
 
             // Step 3: Wait 3 seconds with card visible
-            await new Promise((resolve) => setTimeout(resolve, 3000))
+            await new Promise((resolve) => setTimeout(resolve, 1500))
 
             // Step 4: Animate fade out and slide down of entire modal (progress bar + card)
             await modalControls.start({

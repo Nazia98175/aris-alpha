@@ -27,7 +27,7 @@ const StrategyFeed: React.FC<StrategyFeedProps> = ({ formData, updateFormData })
                     Let’s Tune Your <br /> Strategy Feed
                 </>
             }
-            description="How do you typically manage your portfolio?"
+            description=" How do you typically manage your portfolio?"
             bottomNote="We’ll pace your signals to match your rhythm."
         >
             <CheckboxInput

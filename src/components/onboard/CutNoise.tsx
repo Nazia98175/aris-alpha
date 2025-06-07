@@ -22,7 +22,7 @@ const CutNoise: React.FC<StepComponentProps> = ({ formData, updateFormData }) =>
         <StepLayout
             title="Cut the Noise"
             description="What slows you down in today’s market?"
-            bottomNote="We'll filter out distractions and surface clarity."
+            bottomNote="We’ll simplify and filter your signal stream."
         >
             <CheckboxInput
                 id="too-much-noise"
@@ -34,7 +34,7 @@ const CutNoise: React.FC<StepComponentProps> = ({ formData, updateFormData }) =>
             />
             <CheckboxInput
                 id="bad-timing"
-                title="Bad entry/exit timing"
+                title="Poor timing on entries/exits"
                 icon={<ExitTime />}
                 value="bad_entry_exit_timing"
                 checked={selectedValues.includes('bad_entry_exit_timing')}
@@ -42,7 +42,7 @@ const CutNoise: React.FC<StepComponentProps> = ({ formData, updateFormData }) =>
             />
             <CheckboxInput
                 id="poor-performance"
-                title="Poor performance"
+                title="Inconsistent performance"
                 icon={<PoorPerformanceIcon />}
                 value="poor_performance"
                 checked={selectedValues.includes('poor_performance')}
@@ -50,7 +50,7 @@ const CutNoise: React.FC<StepComponentProps> = ({ formData, updateFormData }) =>
             />
             <CheckboxInput
                 id="no-plan"
-                title="No clear plan to follow"
+                title="No clear game plan"
                 icon={<ExploringIcon />}
                 value="no_clear_plan"
                 checked={selectedValues.includes('no_clear_plan')}

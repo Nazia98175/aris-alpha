@@ -67,6 +67,8 @@ export default function Onboarding() {
                     <StepCompleteModal
                         key="modal"
                         step={stepIndex + 1}
+                        desc={steps[stepIndex].desc}
+                        icon={steps[stepIndex].icon}
                         onComplete={() => {
                             if (nextStepIndex === null || nextStepIndex >= steps.length) {
                                 setShowModal(false)

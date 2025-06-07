@@ -1,9 +1,18 @@
 'use client'
 import { motion, useAnimation } from 'framer-motion'
 import { useEffect } from 'react'
-import { StepCompletedIcon } from './Icons'
 
-const StepCompleteModal = ({ step, onComplete }: { step: number; onComplete: () => void }) => {
+const StepCompleteModal = ({
+    step,
+    onComplete,
+    desc,
+    icon: IconComponent,
+}: {
+    step: number
+    icon: React.ComponentType<React.SVGProps<SVGSVGElement>>
+    desc: string
+    onComplete: () => void
+}) => {
     const progressControls = useAnimation()
     const cardControls = useAnimation()
     const modalControls = useAnimation()
@@ -62,13 +71,13 @@ const StepCompleteModal = ({ step, onComplete }: { step: number; onComplete: () 
                     className="mx-auto w-full max-w-[486px] rounded-2xl bg-[#FCF6F1] px-4 py-12 backdrop-blur-[10px] sm:px-6 sm:py-16 md:rounded-4xl md:px-7"
                 >
                     <span className="mx-auto block h-auto max-w-16 md:max-w-24 lg:max-w-[145px]">
-                        <StepCompletedIcon />
+                        <IconComponent className="h-full w-full text-[#2A64F6]" />
                     </span>
                     <h2 className="mt-6 text-center text-2xl leading-[120%] text-nowrap text-[#010101] sm:text-3xl md:mt-10 md:text-[40px]">
                         Step {step} Complete
                     </h2>
                     <p className="mx-auto mt-6 max-w-[80%] text-center text-lg text-[#3F3F3F] md:text-2xl lg:mt-8 xl:text-[27px]">
-                        Got it. Your feed will sync with your style.
+                        {desc}
                     </p>
                 </motion.div>
             </div>

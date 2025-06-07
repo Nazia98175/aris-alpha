@@ -19,8 +19,8 @@ const AiHandle = () => {
     const features: FeatureCard[] = [
         {
             id: 1,
-            title: 'Buy/Sell Alerts',
-            description: 'No guessing. We flag the moment.',
+            title: 'Momentum Alerts',
+            description: 'We highlight the moment, you decide what to do.',
             image: '/assets/homepage/png/buy-sell.png',
         },
         {
@@ -172,7 +172,7 @@ const AiHandle = () => {
                     className="mx-auto mt-6 w-fit sm:mt-14 lg:!py-[18px]"
                     btnText="Get Started"
                     btnUrl="/onboarding"
-                    variant="primary"
+                    variant="secondary"
                 />
             </div>
         </section>

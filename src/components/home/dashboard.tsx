@@ -20,7 +20,7 @@ const Dashboard = () => {
                     className="mx-auto mt-6 sm:mt-8 lg:mt-12 xl:mt-16 w-fit lg:!py-[18px]"
                     btnText="Get Started"
                     btnUrl="/onboarding"
-                    variant="primary"
+                    variant="secondary"
                 />
             </div>
             <Image

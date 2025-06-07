@@ -5,6 +5,8 @@ import { useEffect, useState } from 'react'
 
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false)
+    const [prevScrollPos, setPrevScrollPos] = useState(0)
+    const [visible, setVisible] = useState(true)
 
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen)
@@ -13,6 +15,29 @@ const Navbar = () => {
     const closeMenu = () => {
         setIsMenuOpen(false)
     }
+
+    // Handle scroll behavior
+    useEffect(() => {
+        const handleScroll = () => {
+            const currentScrollPos = window.scrollY
+
+            // Show navbar when scrolling up or at the top
+            if (prevScrollPos > currentScrollPos || currentScrollPos < 10) {
+                setVisible(true)
+            }
+            // Hide navbar when scrolling down
+            else {
+                setVisible(false)
+            }
+
+            setPrevScrollPos(currentScrollPos)
+        }
+
+        window.addEventListener('scroll', handleScroll)
+
+        return () => window.removeEventListener('scroll', handleScroll)
+    }, [prevScrollPos])
+
     // Handle body overflow
     useEffect(() => {
         if (isMenuOpen) {
@@ -30,7 +55,11 @@ const Navbar = () => {
     return (
         <>
             {/* Desktop Navbar - Hidden on mobile, visible from sm: breakpoint */}
-            <nav className="hidden h-24 bg-[#010314] sm:block lg:h-[110px]">
+            <nav
+                className={`fixed top-0 right-0 left-0 z-50 hidden h-24 bg-[#010314] transition-transform duration-300 sm:block lg:h-[110px] ${
+                    visible ? 'translate-y-0' : '-translate-y-full'
+                }`}
+            >
                 <div className="custom-container flex h-full items-center justify-between">
                     <Link className="inline-block text-3xl leading-[120%] md:text-[40px]" href={'/'}>
                         ARIS
@@ -46,12 +75,16 @@ const Navbar = () => {
                             Dash Board
                         </Link>
                     </div>
-                    <CommonBtn btnText="Get Started" btnUrl="/onboarding" variant="primary" />
+                    <CommonBtn btnText="Get Started" btnUrl="/onboarding" variant="secondary" />
                 </div>
             </nav>
 
             {/* Mobile Navbar - Visible only on mobile */}
-            <nav className="relative bg-[#010314] sm:hidden">
+            <nav
+                className={`fixed top-0 right-0 left-0 z-50 bg-[#010314] transition-transform duration-300 sm:hidden ${
+                    visible ? 'translate-y-0' : '-translate-y-full'
+                }`}
+            >
                 <div className="flex h-16 items-center justify-between px-4">
                     <Link className="inline-block text-2xl leading-[120%]" href={'/'}>
                         ARIS
@@ -77,13 +110,13 @@ const Navbar = () => {
 
                 {/* Mobile Menu Overlay */}
                 <div
-                    className={`bg-opacity-50 fixed inset-0 z-40 bg-black transition-opacity duration-300 ${isMenuOpen ? 'opacity-100' : 'pointer-events-none opacity-0'}`}
+                    className={`bg-opacity-50 fixed inset-0 z-40 bg-black transition-opacity duration-300 h-screen ${isMenuOpen ? 'opacity-100' : 'pointer-events-none opacity-0'}`}
                     onClick={closeMenu}
                 ></div>
 
                 {/* Mobile Menu */}
                 <div
-                    className={`fixed top-0 right-0 z-40 h-full w-full max-w-[350px] transform bg-[#0A0B1E] transition-transform duration-300 ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}
+                    className={`fixed top-0 right-0 z-40 h-screen w-full max-w-[350px] transform bg-[#0A0B1E] transition-transform duration-300 ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}
                 >
                     <div className="flex h-full flex-col p-6 pt-24">
                         {/* Menu Links */}
@@ -113,11 +146,14 @@ const Navbar = () => {
 
                         {/* Get Started Button */}
                         <div className="flex grow flex-col justify-end">
-                            <CommonBtn btnText="Get Started" btnUrl="/onboarding" variant="primary" />
+                            <CommonBtn btnText="Get Started" btnUrl="/onboarding" variant="secondary" />
                         </div>
                     </div>
                 </div>
             </nav>
+
+            {/* Spacer to prevent content from being hidden under fixed navbar */}
+            <div className="h-16 sm:h-24 lg:h-[110px]"></div>
         </>
     )
 }

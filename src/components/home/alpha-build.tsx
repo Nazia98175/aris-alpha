@@ -158,7 +158,7 @@ const AlphaBuild = () => {
                     <CommonBtn
                         btnText="Get Started"
                         btnUrl="/onboarding"
-                        variant="primary"
+                        variant="secondary"
                         className="h-[45px] w-full sm:w-fit md:h-[63px]"
                     />
                 </div>

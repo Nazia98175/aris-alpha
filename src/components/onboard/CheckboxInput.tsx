@@ -18,7 +18,7 @@ const CheckboxInput: React.FC<CheckboxInputProps> = ({ id, title, desc, icon, va
         >
             <div className="flex w-full items-center gap-3 transition-colors duration-300 ease-in-out">
                 {icon ? (
-                    <span className="flex max-h-9 min-h-9 max-w-9 min-w-9 items-center justify-center rounded-full bg-[#E7E7F1] p-1 text-[#2A64F6] backdrop-blur-[64px] transition-all duration-300 ease-in-out group-hover:bg-[#3F74F7] group-hover:text-white sm:max-h-[42px] sm:min-h-[42px] sm:max-w-[42px] sm:min-w-[42px] sm:p-2.5">
+                    <span className="flex max-h-8 min-h-8 max-w-8 min-w-8 items-center justify-center rounded-full bg-[#E7E7F1] p-1 text-[#2A64F6] backdrop-blur-[64px] transition-all duration-300 ease-in-out group-hover:bg-[#3F74F7] group-hover:text-white sm:max-h-[42px] sm:min-h-[42px] sm:max-w-[42px] sm:min-w-[42px] sm:p-2.5">
                         {icon}
                     </span>
                 ) : (
@@ -46,7 +46,7 @@ const CheckboxInput: React.FC<CheckboxInputProps> = ({ id, title, desc, icon, va
                     checked={checked}
                     onChange={onChange}
                 />
-                <div className="flex h-4 w-4 items-center justify-center rounded-full border-2 border-[#3F3F3F] transition-all duration-300 group-hover:border-white peer-checked:border-[#2A64F6] peer-checked:bg-[#2A64F6] sm:h-6 sm:w-6">
+                <div className="flex h-4 w-4 items-center justify-center rounded-full border-2 border-[#3F3F3F] transition-all duration-300 group-hover:border-white peer-checked:border-[#2A64F6] peer-checked:bg-[#2A64F6] group-hover:peer-checked:border-white sm:h-6 sm:w-6">
                     <svg
                         className="h-full w-full scale-0 transition-transform duration-300 peer-checked:scale-100"
                         viewBox="0 0 24 24"

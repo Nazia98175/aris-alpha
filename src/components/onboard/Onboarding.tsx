@@ -35,7 +35,7 @@ export default function Onboarding() {
         <div className="mx-auto my-5 w-full px-4">
             {!showModal && (
                 <div className="relative z-20 mx-auto flex w-full max-w-[85%] justify-between min-[350px]:max-w-[320px] sm:max-w-[395px]">
-                    <div className="absolute top-1/2 left-1/2 h-0.5 w-full max-w-[97%] -translate-x-1/2 -translate-y-1/2 bg-[#808080] sm:h-1 lg:h-1.5" />
+                    <div className="absolute top-1/2 left-1/2 h-[3px] w-full max-w-[97%] -translate-x-1/2 -translate-y-1/2 bg-[#808080] sm:h-1 lg:h-1.5" />
                     {steps.map((_, i) => (
                         <StepIndicator
                             key={i}

@@ -14,7 +14,7 @@ const CheckboxInput: React.FC<CheckboxInputProps> = ({ id, title, desc, icon, va
     return (
         <label
             htmlFor={id}
-            className="group flex w-full cursor-pointer items-center justify-between gap-2 rounded-xl border border-transparent bg-[#FCF6F1] p-3 backdrop-blur-lg transition-colors duration-300 ease-in-out hover:border-[#638EFA] hover:bg-[#2A64F6] sm:rounded-2xl md:p-4"
+            className="group 3xl:p-4 flex w-full cursor-pointer items-center justify-between gap-2 rounded-xl border border-transparent bg-[#FCF6F1] p-3 backdrop-blur-lg transition-colors duration-300 ease-in-out hover:border-[#638EFA] hover:bg-[#2A64F6] sm:rounded-2xl"
         >
             <div className="flex w-full items-center gap-3 transition-colors duration-300 ease-in-out">
                 {icon ? (

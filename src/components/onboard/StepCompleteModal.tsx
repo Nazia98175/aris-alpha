@@ -59,9 +59,9 @@ const StepCompleteModal = ({ step, onComplete }: { step: number; onComplete: () 
                 <motion.div
                     initial={{ opacity: 0, y: 100 }}
                     animate={cardControls}
-                    className="mx-auto w-full max-w-[506px] rounded-2xl bg-[#FCF6F1] px-4 py-12 backdrop-blur-[10px] sm:px-6 sm:py-16 md:rounded-4xl md:px-7"
+                    className="mx-auto w-full max-w-[486px] rounded-2xl bg-[#FCF6F1] px-4 py-12 backdrop-blur-[10px] sm:px-6 sm:py-16 md:rounded-4xl md:px-7"
                 >
-                    <span className="mx-auto block h-auto max-w-16 md:max-w-24 lg:max-w-[155px]">
+                    <span className="mx-auto block h-auto max-w-16 md:max-w-24 lg:max-w-[145px]">
                         <StepCompletedIcon />
                     </span>
                     <h2 className="mt-6 text-center text-2xl leading-[120%] text-nowrap text-[#010101] sm:text-3xl md:mt-10 md:text-[40px]">

@@ -9,7 +9,7 @@ import InstantlyAction from '@/components/home/instantly-action'
 import Projects from '@/components/home/Projects'
 import Reviews from '@/components/home/reviews'
 import Footer from '@/components/layout/public/footer'
-import Navbar from '@/components/layout/public/navbar'
+import Navbar from '@/components/layout/public/Navbar'
 import Image from 'next/image'
 
 export default function Home() {

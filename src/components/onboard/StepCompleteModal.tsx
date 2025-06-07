@@ -1,7 +1,6 @@
 'use client'
 import { motion, useAnimation } from 'framer-motion'
 import { useEffect } from 'react'
-
 const StepCompleteModal = ({
     step,
     onComplete,
@@ -16,7 +15,6 @@ const StepCompleteModal = ({
     const progressControls = useAnimation()
     const cardControls = useAnimation()
     const modalControls = useAnimation()
-
     useEffect(() => {
         const runSequence = async () => {
             // Step 1: Animate progress bar fill over 2 seconds (card hidden)
@@ -24,30 +22,24 @@ const StepCompleteModal = ({
                 width: '100%',
                 transition: { duration: 1, ease: 'linear' },
             })
-
             // Step 2: Animate card fade/slide in over 0.6s
             await cardControls.start({
                 opacity: 1,
                 y: 0,
                 transition: { duration: 0.6, ease: 'easeOut' },
             })
-
             // Step 3: Wait 3 seconds with card visible
             await new Promise((resolve) => setTimeout(resolve, 1500))
-
             // Step 4: Animate fade out and slide down of entire modal (progress bar + card)
             await modalControls.start({
                 opacity: 0,
                 y: 50,
                 transition: { duration: 0.5, ease: 'easeInOut' },
             })
-
             onComplete()
         }
-
         runSequence()
     }, [progressControls, cardControls, modalControls, onComplete])
-
     return (
         <motion.div initial={{ opacity: 1, y: 0 }} animate={modalControls} className="flex items-center justify-center">
             <div className="w-full max-w-[554px] px-4">
@@ -63,7 +55,6 @@ const StepCompleteModal = ({
                         className="h-full rounded-[120px] bg-white"
                     />
                 </motion.div>
-
                 {/* Card */}
                 <motion.div
                     initial={{ opacity: 0, y: 100 }}
@@ -84,5 +75,4 @@ const StepCompleteModal = ({
         </motion.div>
     )
 }
-
 export default StepCompleteModal

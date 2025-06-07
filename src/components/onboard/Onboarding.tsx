@@ -8,7 +8,6 @@ import StepIndicator from './StepIndicator'
 import { steps } from './Helper'
 import { useOnboarding } from './useOnboardinghook'
 import { useRouter } from 'next/navigation'
-
 export default function Onboarding() {
     const {
         formData,
@@ -22,20 +21,16 @@ export default function Onboarding() {
         updateStep,
         nextStepIndex,
     } = useOnboarding()
-
     const StepContent = steps[stepIndex].component
     const router = useRouter()
-
     // Track previous slug to close modal after URL change
     const prevSlug = useRef(currentSlug)
-
     useEffect(() => {
         if (showModal && currentSlug !== prevSlug.current) {
             setShowModal(false)
         }
         prevSlug.current = currentSlug
     }, [currentSlug, showModal, setShowModal])
-
     return (
         <div className="mx-auto mt-8 mb-10 w-full px-4 sm:mt-5">
             {!showModal && (
@@ -51,7 +46,6 @@ export default function Onboarding() {
                     ))}
                 </div>
             )}
-
             <AnimatePresence mode="wait">
                 {showFinalScreen ? (
                     <motion.div
@@ -91,7 +85,6 @@ export default function Onboarding() {
                     </motion.div>
                 )}
             </AnimatePresence>
-
             {!showModal && !showFinalScreen && (
                 <div className="mx-auto mt-5 flex w-full max-w-[486px] flex-col-reverse items-center justify-between gap-3 sm:flex-row xl:mt-7">
                     <button

@@ -26,7 +26,7 @@ const CheckboxInput: React.FC<CheckboxInputProps> = ({ id, title, desc, icon, va
                 )}
 
                 <div className="w-full space-y-0.5 sm:space-y-1">
-                    <h4 className="text-base leading-[126%] font-semibold text-[#010101] transition-colors duration-300 group-hover:text-white sm:text-lg sm:text-nowrap">
+                    <h4 className="text-base leading-[130%] font-semibold text-[#010101] transition-colors duration-300 group-hover:text-white sm:text-lg sm:text-nowrap">
                         {title}
                     </h4>
                     {desc && (

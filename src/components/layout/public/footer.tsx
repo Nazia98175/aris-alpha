@@ -8,9 +8,13 @@ const Footer = () => {
             <div className="flex flex-col items-start justify-between gap-8 sm:gap-12 lg:flex-row">
                 <div className="w-full max-w-[710px]">
                     <FooterLogoIcon />
-                    <p className="small-text py-4">
-                        Al-powered alerts that show what to buy, when to buy, <br className="hidden md:block" /> and how
-                        much to allocate.
+                    <p className="small-text pt-4 pb-2">
+                        Filtered signals and allocation cues—built so you don’t have to overthink.
+                    </p>
+                    <p className="small-text pb-4">
+                        Aris Alpha provides signal-based insights for informational purposes only. Nothing on this site
+                        constitutes financial advice or a recommendation to buy or sell any security. Please consult a
+                        licensed financial advisor before making investment decisions.
                     </p>
                     <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
                         <div className="flex items-center gap-2">

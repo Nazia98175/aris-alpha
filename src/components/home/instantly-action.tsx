@@ -10,10 +10,11 @@ const InstantlyAction = () => {
                 <div className="flex flex-col-reverse items-center justify-between gap-7 lg:flex-row">
                     <div className="w-full md:max-w-[618px]">
                         <h3 className="secondary-heading text-[#010101]">
-                            Turn Signals Into Action <br className="hidden lg:block" /> — Instantly
+                            {/* Turn Signals Into Action <br className="hidden lg:block" /> — Instantly */}
+                            Cut the Noise. Act with Clarity.
                         </h3>
                         <p className="small-text pt-3 !text-[#3f3f3f] sm:pt-4">
-                            You don’t need more data. You need direction.
+                            Skip the overload. See what matters, when it matters.
                         </p>
                         <h4 className="medium-text pt-3 !text-[#3f3f3f] sm:pt-5 lg:pt-[36px]">
                             We cut the noise so you can move with confidence.

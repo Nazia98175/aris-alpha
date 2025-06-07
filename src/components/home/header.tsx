@@ -11,7 +11,7 @@ const Header = () => {
     return (
         <section className="relative mx-auto max-w-[1440px] py-16 lg:py-[103px]" id="home">
             <div className="custom-container">
-                <h1 className="gradient-text mb-6 w-fit text-4xl leading-[120%] font-semibold md:text-5xl lg:mb-10 lg:hidden xl:text-[64px]">
+                <h1 className="text-white mb-6 w-fit text-4xl leading-[120%] font-semibold md:text-5xl lg:mb-10 lg:hidden xl:text-[64px]">
                     Trade with Signal. <br className="max-lg:hidden" /> Not Noise.
                 </h1>
                 <Image
@@ -22,7 +22,7 @@ const Header = () => {
                     src={'/assets/homepage/webp/hero-img.webp'}
                     alt="/"
                 />
-                <h1 className="gradient-text mb-6 w-fit text-5xl leading-[120%] font-semibold max-lg:mt-10 max-lg:hidden lg:mb-10 xl:text-[64px]">
+                <h1 className="text-white mb-6 w-fit text-5xl leading-[120%] font-semibold max-lg:mt-10 max-lg:hidden lg:mb-10 xl:text-[64px]">
                     Trade with Signal. <br className="max-lg:hidden" /> Not Noise.
                 </h1>
                 <article className="relative overflow-hidden rounded-3xl p-6 backdrop-blur-md max-lg:mt-12 max-md:mt-0 lg:max-w-[344px] xl:max-w-[394px]">

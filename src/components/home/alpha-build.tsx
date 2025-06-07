@@ -45,7 +45,7 @@ const AlphaBuild = () => {
                 unoptimized
             />
             <div className="mx-auto max-w-[1004px] px-4 py-13 sm:pt-10 md:pb-[112px] lg:pb-[161px]">
-                <h2 className="gradient-text secondary-heading text-center">How Aris Alpha Builds Your Strategy</h2>
+                <h2 className="text-white secondary-heading text-center">How Aris Alpha Builds Your Strategy</h2>
                 <div className="pt-[45px] md:pt-[60px]">
                     <div className="flex justify-between gap-7">
                         <div className="relative hidden max-w-[50px] pt-[45px] md:block">

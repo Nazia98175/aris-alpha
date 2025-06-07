@@ -88,7 +88,7 @@ const AiHandle = () => {
                 alt={"AiHandle"}
             />
             <div className="custom-container">
-                <h2 className="gradient-text secondary-heading mx-auto mb-6 w-fit text-center sm:mb-8 lg:mb-12 xl:mb-[72px]">
+                <h2 className="text-white secondary-heading mx-auto mb-6 w-fit text-center sm:mb-8 lg:mb-12 xl:mb-[72px]">
                     Let the AI Handle the Chaos
                 </h2>
                 {/* Mobile/Tablet Layout - Static Cards */}

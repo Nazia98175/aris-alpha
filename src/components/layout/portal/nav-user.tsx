@@ -20,7 +20,10 @@ const NavUser = () => {
 
     const handleLogout = async () => {
         await supabase.auth.signOut()
-        window.location.reload()
+        window.location.replace('/')
+        if (sessionStorage.getItem('onBoardData')) {
+            sessionStorage.removeItem('onBoardData')
+        }
     }
 
     return (

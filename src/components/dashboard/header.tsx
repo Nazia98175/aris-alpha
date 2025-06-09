@@ -3,15 +3,27 @@
 import { Button } from '../ui/button'
 import { Menu } from 'lucide-react'
 import NavUser from '../layout/portal/nav-user'
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useAuth } from '@/hooks/use-auth'
 import { useSidebar } from '../ui/sidebar'
-
 const Header = () => {
-    const { subscription } = useAuth()
+    const { subscription, user } = useAuth()
     const { setOpenMobile } = useSidebar()
 
     const paidPlan = subscription?.status === 'active'
+
+    async function handleUser() {
+        const isValid = user?.isOnBoarded
+        if (!isValid) {
+            window.location.replace('/onboarding')
+        } else {
+            return
+        }
+    }
+
+    useEffect(() => {
+        handleUser()
+    }, [])
 
     return (
         <div>

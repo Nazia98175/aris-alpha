@@ -46,7 +46,7 @@ const Navbar = () => {
                             About Us
                         </Link>
                         <Link className="hover:text-primary duration-300" href={'#dashboard'}>
-                            Dash Board
+                            Dashboard
                         </Link>
                     </div>
                     <CommonBtn btnText="Get Started" btnUrl="/onboarding" variant="secondary" />

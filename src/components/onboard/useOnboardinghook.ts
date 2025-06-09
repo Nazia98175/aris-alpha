@@ -18,7 +18,6 @@ export function useOnboarding() {
         focusYourFeed: [],
         takeAction: [],
     })
-    console.log(formData)
 
     const [showModal, setShowModal] = useState(false)
     const [showFinalScreen, setShowFinalScreen] = useState(false)

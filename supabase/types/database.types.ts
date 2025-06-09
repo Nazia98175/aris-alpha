@@ -1,260 +1,283 @@
-export type Json =
-  | string
-  | number
-  | boolean
-  | null
-  | { [key: string]: Json | undefined }
-  | Json[]
+export type Json = string | number | boolean | null | { [key: string]: Json | undefined } | Json[]
 
 export type Database = {
-  public: {
-    Tables: {
-      subscribers: {
-        Row: {
-          created_at: string | null
-          email: string
-          id: string
-          updated_at: string | null
+    public: {
+        Tables: {
+            subscribers: {
+                Row: {
+                    created_at: string | null
+                    email: string
+                    id: string
+                    updated_at: string | null
+                }
+                Insert: {
+                    created_at?: string | null
+                    email: string
+                    id?: string
+                    updated_at?: string | null
+                }
+                Update: {
+                    created_at?: string | null
+                    email?: string
+                    id?: string
+                    updated_at?: string | null
+                }
+                Relationships: []
+            }
+            subscriptions: {
+                Row: {
+                    current_period_end: number | null
+                    current_period_start: number | null
+                    id: string
+                    latest_invoice: string | null
+                    status: Database['public']['Enums']['subscription_status']
+                    uid: string
+                    user_id: string
+                }
+                Insert: {
+                    current_period_end?: number | null
+                    current_period_start?: number | null
+                    id?: string
+                    latest_invoice?: string | null
+                    status: Database['public']['Enums']['subscription_status']
+                    uid: string
+                    user_id: string
+                }
+                Update: {
+                    current_period_end?: number | null
+                    current_period_start?: number | null
+                    id?: string
+                    latest_invoice?: string | null
+                    status?: Database['public']['Enums']['subscription_status']
+                    uid?: string
+                    user_id?: string
+                }
+                Relationships: [
+                    {
+                        foreignKeyName: 'subscriptions_user_id_fkey'
+                        columns: ['user_id']
+                        isOneToOne: false
+                        referencedRelation: 'users'
+                        referencedColumns: ['id']
+                    },
+                ]
+            }
+            users: {
+                Row: {
+                    email: string
+                    first_name: string
+                    id: string
+                    last_name: string
+                    uid: string | null
+                    isOnBoarded: boolean
+                }
+                Insert: {
+                    email: string
+                    first_name: string
+                    id?: string
+                    last_name: string
+                    uid?: string | null
+                    isOnBoarded?: boolean
+                }
+                Update: {
+                    email?: string
+                    first_name?: string
+                    id?: string
+                    last_name?: string
+                    uid?: string | null
+                    isOnBoarded?: boolean
+                }
+                Relationships: []
+            }
+            waitlists: {
+                Row: {
+                    created_at: string | null
+                    email: string
+                    id: string
+                    updated_at: string | null
+                }
+                Insert: {
+                    created_at?: string | null
+                    email: string
+                    id?: string
+                    updated_at?: string | null
+                }
+                Update: {
+                    created_at?: string | null
+                    email?: string
+                    id?: string
+                    updated_at?: string | null
+                }
+                Relationships: []
+            }
+            onboarding: {
+                Row: {
+                    created_at: string | null
+                    cutNoise: Json
+                    focusYourFeed: Json
+                    mainObjective: Json
+                    strategyFeed: Json
+                    takeAction: Json
+                    id: string | null
+                    updated_at: string | null
+                    user_id: string | null
+                }
+                Insert: {
+                    created_at?: string | null
+                    cutNoise: Json
+                    focusYourFeed: Json
+                    mainObjective: Json
+                    strategyFeed: Json
+                    takeAction: Json
+                    id?: string
+                    updated_at?: string | null
+                    user_id: string
+                }
+                Update: {
+                    created_at?: string | null
+                    cutNoise: Json
+                    focusYourFeed: Json
+                    mainObjective: Json
+                    strategyFeed: Json
+                    takeAction: Json
+                    id?: string
+                    updated_at?: string | null
+                    user_id: string
+                }
+                Relationships: []
+            }
         }
-        Insert: {
-          created_at?: string | null
-          email: string
-          id?: string
-          updated_at?: string | null
+        Views: {
+            [_ in never]: never
         }
-        Update: {
-          created_at?: string | null
-          email?: string
-          id?: string
-          updated_at?: string | null
+        Functions: {
+            [_ in never]: never
         }
-        Relationships: []
-      }
-      subscriptions: {
-        Row: {
-          current_period_end: number | null
-          current_period_start: number | null
-          id: string
-          latest_invoice: string | null
-          status: Database["public"]["Enums"]["subscription_status"]
-          uid: string
-          user_id: string
+        Enums: {
+            subscription_status:
+                | 'incomplete'
+                | 'incomplete_expired'
+                | 'trialing'
+                | 'active'
+                | 'past_due'
+                | 'canceled'
+                | 'unpaid'
+                | 'paused'
         }
-        Insert: {
-          current_period_end?: number | null
-          current_period_start?: number | null
-          id?: string
-          latest_invoice?: string | null
-          status: Database["public"]["Enums"]["subscription_status"]
-          uid: string
-          user_id: string
+        CompositeTypes: {
+            [_ in never]: never
         }
-        Update: {
-          current_period_end?: number | null
-          current_period_start?: number | null
-          id?: string
-          latest_invoice?: string | null
-          status?: Database["public"]["Enums"]["subscription_status"]
-          uid?: string
-          user_id?: string
-        }
-        Relationships: [
-          {
-            foreignKeyName: "subscriptions_user_id_fkey"
-            columns: ["user_id"]
-            isOneToOne: false
-            referencedRelation: "users"
-            referencedColumns: ["id"]
-          },
-        ]
-      }
-      users: {
-        Row: {
-          email: string
-          first_name: string
-          id: string
-          last_name: string
-          uid: string | null
-        }
-        Insert: {
-          email: string
-          first_name: string
-          id?: string
-          last_name: string
-          uid?: string | null
-        }
-        Update: {
-          email?: string
-          first_name?: string
-          id?: string
-          last_name?: string
-          uid?: string | null
-        }
-        Relationships: []
-      }
-      waitlists: {
-        Row: {
-          created_at: string | null
-          email: string
-          id: string
-          updated_at: string | null
-        }
-        Insert: {
-          created_at?: string | null
-          email: string
-          id?: string
-          updated_at?: string | null
-        }
-        Update: {
-          created_at?: string | null
-          email?: string
-          id?: string
-          updated_at?: string | null
-        }
-        Relationships: []
-      }
     }
-    Views: {
-      [_ in never]: never
-    }
-    Functions: {
-      [_ in never]: never
-    }
-    Enums: {
-      subscription_status:
-        | "incomplete"
-        | "incomplete_expired"
-        | "trialing"
-        | "active"
-        | "past_due"
-        | "canceled"
-        | "unpaid"
-        | "paused"
-    }
-    CompositeTypes: {
-      [_ in never]: never
-    }
-  }
 }
 
-type DefaultSchema = Database[Extract<keyof Database, "public">]
+type DefaultSchema = Database[Extract<keyof Database, 'public'>]
 
 export type Tables<
-  DefaultSchemaTableNameOrOptions extends
-    | keyof (DefaultSchema["Tables"] & DefaultSchema["Views"])
-    | { schema: keyof Database },
-  TableName extends DefaultSchemaTableNameOrOptions extends {
-    schema: keyof Database
-  }
-    ? keyof (Database[DefaultSchemaTableNameOrOptions["schema"]]["Tables"] &
-        Database[DefaultSchemaTableNameOrOptions["schema"]]["Views"])
-    : never = never,
-> = DefaultSchemaTableNameOrOptions extends { schema: keyof Database }
-  ? (Database[DefaultSchemaTableNameOrOptions["schema"]]["Tables"] &
-      Database[DefaultSchemaTableNameOrOptions["schema"]]["Views"])[TableName] extends {
-      Row: infer R
+    DefaultSchemaTableNameOrOptions extends
+        | keyof (DefaultSchema['Tables'] & DefaultSchema['Views'])
+        | { schema: keyof Database },
+    TableName extends DefaultSchemaTableNameOrOptions extends {
+        schema: keyof Database
     }
-    ? R
-    : never
-  : DefaultSchemaTableNameOrOptions extends keyof (DefaultSchema["Tables"] &
-        DefaultSchema["Views"])
-    ? (DefaultSchema["Tables"] &
-        DefaultSchema["Views"])[DefaultSchemaTableNameOrOptions] extends {
-        Row: infer R
+        ? keyof (Database[DefaultSchemaTableNameOrOptions['schema']]['Tables'] &
+              Database[DefaultSchemaTableNameOrOptions['schema']]['Views'])
+        : never = never,
+> = DefaultSchemaTableNameOrOptions extends { schema: keyof Database }
+    ? (Database[DefaultSchemaTableNameOrOptions['schema']]['Tables'] &
+          Database[DefaultSchemaTableNameOrOptions['schema']]['Views'])[TableName] extends {
+          Row: infer R
       }
-      ? R
+        ? R
+        : never
+    : DefaultSchemaTableNameOrOptions extends keyof (DefaultSchema['Tables'] & DefaultSchema['Views'])
+      ? (DefaultSchema['Tables'] & DefaultSchema['Views'])[DefaultSchemaTableNameOrOptions] extends {
+            Row: infer R
+        }
+          ? R
+          : never
       : never
-    : never
 
 export type TablesInsert<
-  DefaultSchemaTableNameOrOptions extends
-    | keyof DefaultSchema["Tables"]
-    | { schema: keyof Database },
-  TableName extends DefaultSchemaTableNameOrOptions extends {
-    schema: keyof Database
-  }
-    ? keyof Database[DefaultSchemaTableNameOrOptions["schema"]]["Tables"]
-    : never = never,
-> = DefaultSchemaTableNameOrOptions extends { schema: keyof Database }
-  ? Database[DefaultSchemaTableNameOrOptions["schema"]]["Tables"][TableName] extends {
-      Insert: infer I
+    DefaultSchemaTableNameOrOptions extends keyof DefaultSchema['Tables'] | { schema: keyof Database },
+    TableName extends DefaultSchemaTableNameOrOptions extends {
+        schema: keyof Database
     }
-    ? I
-    : never
-  : DefaultSchemaTableNameOrOptions extends keyof DefaultSchema["Tables"]
-    ? DefaultSchema["Tables"][DefaultSchemaTableNameOrOptions] extends {
-        Insert: infer I
+        ? keyof Database[DefaultSchemaTableNameOrOptions['schema']]['Tables']
+        : never = never,
+> = DefaultSchemaTableNameOrOptions extends { schema: keyof Database }
+    ? Database[DefaultSchemaTableNameOrOptions['schema']]['Tables'][TableName] extends {
+          Insert: infer I
       }
-      ? I
+        ? I
+        : never
+    : DefaultSchemaTableNameOrOptions extends keyof DefaultSchema['Tables']
+      ? DefaultSchema['Tables'][DefaultSchemaTableNameOrOptions] extends {
+            Insert: infer I
+        }
+          ? I
+          : never
       : never
-    : never
 
 export type TablesUpdate<
-  DefaultSchemaTableNameOrOptions extends
-    | keyof DefaultSchema["Tables"]
-    | { schema: keyof Database },
-  TableName extends DefaultSchemaTableNameOrOptions extends {
-    schema: keyof Database
-  }
-    ? keyof Database[DefaultSchemaTableNameOrOptions["schema"]]["Tables"]
-    : never = never,
-> = DefaultSchemaTableNameOrOptions extends { schema: keyof Database }
-  ? Database[DefaultSchemaTableNameOrOptions["schema"]]["Tables"][TableName] extends {
-      Update: infer U
+    DefaultSchemaTableNameOrOptions extends keyof DefaultSchema['Tables'] | { schema: keyof Database },
+    TableName extends DefaultSchemaTableNameOrOptions extends {
+        schema: keyof Database
     }
-    ? U
-    : never
-  : DefaultSchemaTableNameOrOptions extends keyof DefaultSchema["Tables"]
-    ? DefaultSchema["Tables"][DefaultSchemaTableNameOrOptions] extends {
-        Update: infer U
+        ? keyof Database[DefaultSchemaTableNameOrOptions['schema']]['Tables']
+        : never = never,
+> = DefaultSchemaTableNameOrOptions extends { schema: keyof Database }
+    ? Database[DefaultSchemaTableNameOrOptions['schema']]['Tables'][TableName] extends {
+          Update: infer U
       }
-      ? U
+        ? U
+        : never
+    : DefaultSchemaTableNameOrOptions extends keyof DefaultSchema['Tables']
+      ? DefaultSchema['Tables'][DefaultSchemaTableNameOrOptions] extends {
+            Update: infer U
+        }
+          ? U
+          : never
       : never
-    : never
 
 export type Enums<
-  DefaultSchemaEnumNameOrOptions extends
-    | keyof DefaultSchema["Enums"]
-    | { schema: keyof Database },
-  EnumName extends DefaultSchemaEnumNameOrOptions extends {
-    schema: keyof Database
-  }
-    ? keyof Database[DefaultSchemaEnumNameOrOptions["schema"]]["Enums"]
-    : never = never,
+    DefaultSchemaEnumNameOrOptions extends keyof DefaultSchema['Enums'] | { schema: keyof Database },
+    EnumName extends DefaultSchemaEnumNameOrOptions extends {
+        schema: keyof Database
+    }
+        ? keyof Database[DefaultSchemaEnumNameOrOptions['schema']]['Enums']
+        : never = never,
 > = DefaultSchemaEnumNameOrOptions extends { schema: keyof Database }
-  ? Database[DefaultSchemaEnumNameOrOptions["schema"]]["Enums"][EnumName]
-  : DefaultSchemaEnumNameOrOptions extends keyof DefaultSchema["Enums"]
-    ? DefaultSchema["Enums"][DefaultSchemaEnumNameOrOptions]
-    : never
+    ? Database[DefaultSchemaEnumNameOrOptions['schema']]['Enums'][EnumName]
+    : DefaultSchemaEnumNameOrOptions extends keyof DefaultSchema['Enums']
+      ? DefaultSchema['Enums'][DefaultSchemaEnumNameOrOptions]
+      : never
 
 export type CompositeTypes<
-  PublicCompositeTypeNameOrOptions extends
-    | keyof DefaultSchema["CompositeTypes"]
-    | { schema: keyof Database },
-  CompositeTypeName extends PublicCompositeTypeNameOrOptions extends {
-    schema: keyof Database
-  }
-    ? keyof Database[PublicCompositeTypeNameOrOptions["schema"]]["CompositeTypes"]
-    : never = never,
+    PublicCompositeTypeNameOrOptions extends keyof DefaultSchema['CompositeTypes'] | { schema: keyof Database },
+    CompositeTypeName extends PublicCompositeTypeNameOrOptions extends {
+        schema: keyof Database
+    }
+        ? keyof Database[PublicCompositeTypeNameOrOptions['schema']]['CompositeTypes']
+        : never = never,
 > = PublicCompositeTypeNameOrOptions extends { schema: keyof Database }
-  ? Database[PublicCompositeTypeNameOrOptions["schema"]]["CompositeTypes"][CompositeTypeName]
-  : PublicCompositeTypeNameOrOptions extends keyof DefaultSchema["CompositeTypes"]
-    ? DefaultSchema["CompositeTypes"][PublicCompositeTypeNameOrOptions]
-    : never
+    ? Database[PublicCompositeTypeNameOrOptions['schema']]['CompositeTypes'][CompositeTypeName]
+    : PublicCompositeTypeNameOrOptions extends keyof DefaultSchema['CompositeTypes']
+      ? DefaultSchema['CompositeTypes'][PublicCompositeTypeNameOrOptions]
+      : never
 
 export const Constants = {
-  public: {
-    Enums: {
-      subscription_status: [
-        "incomplete",
-        "incomplete_expired",
-        "trialing",
-        "active",
-        "past_due",
-        "canceled",
-        "unpaid",
-        "paused",
-      ],
+    public: {
+        Enums: {
+            subscription_status: [
+                'incomplete',
+                'incomplete_expired',
+                'trialing',
+                'active',
+                'past_due',
+                'canceled',
+                'unpaid',
+                'paused',
+            ],
+        },
     },
-  },
 } as const

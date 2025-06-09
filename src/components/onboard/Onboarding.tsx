@@ -1,13 +1,14 @@
 'use client'
-import { useEffect, useRef } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
+import { useRouter } from 'next/navigation'
+import { useEffect, useRef } from 'react'
 import BuildYourStrategyFeed from './BuildYourStrategyFeed'
+import { steps } from './Helper'
 import NavigationButton from './NavigationButton'
 import StepCompleteModal from './StepCompleteModal'
 import StepIndicator from './StepIndicator'
-import { steps } from './Helper'
 import { useOnboarding } from './useOnboardinghook'
-import { useRouter } from 'next/navigation'
+import { supabase } from '@/lib/supabase/client'
 export default function Onboarding() {
     const {
         formData,
@@ -25,6 +26,43 @@ export default function Onboarding() {
     const router = useRouter()
     // Track previous slug to close modal after URL change
     const prevSlug = useRef(currentSlug)
+    async function handleOnboardingComplete() {
+        const { data } = await supabase.auth.getUser()
+        if (data.user) {
+            const { data: user, error } = await supabase
+                .from('users')
+                .select('*')
+                .eq('email', data.user.email as string)
+                .maybeSingle()
+
+            if (!user || error) throw new Error('Unauthorized user')
+            await supabase.from('onboarding').upsert(
+                {
+                    user_id: user.id,
+                    cutNoise: JSON.stringify(formData.cutNoise),
+                    focusYourFeed: JSON.stringify(formData.focusYourFeed),
+                    mainObjective: JSON.stringify(formData.mainObjective),
+                    takeAction: JSON.stringify(formData.takeAction),
+                    strategyFeed: JSON.stringify(formData.strategyFeed),
+                },
+                {
+                    onConflict: 'user_id',
+                },
+            )
+            if (!user.isOnBoarded) {
+                await supabase
+                    .from('users')
+                    .update({ isOnBoarded: true })
+                    .eq('email', data.user.email as string)
+            }
+            return router.push('/dashboard')
+        } else {
+            setShowModal(false)
+            setShowFinalScreen(true)
+            sessionStorage.setItem('onBoardData', JSON.stringify(formData))
+            setTimeout(() => router.push('/onboarding/cta'), 3000)
+        }
+    }
     useEffect(() => {
         if (showModal && currentSlug !== prevSlug.current) {
             setShowModal(false)
@@ -65,9 +103,7 @@ export default function Onboarding() {
                         icon={steps[stepIndex].icon}
                         onComplete={() => {
                             if (nextStepIndex === null || nextStepIndex >= steps.length) {
-                                setShowModal(false)
-                                setShowFinalScreen(true)
-                                setTimeout(() => router.push('/onboarding/cta'), 3000)
+                                handleOnboardingComplete()
                             } else {
                                 router.push(`?step=${steps[nextStepIndex].slug}`)
                             }

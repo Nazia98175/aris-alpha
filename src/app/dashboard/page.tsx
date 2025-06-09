@@ -10,7 +10,6 @@ const page = async () => {
         <DashboardLayout>
             <div className="flex h-full w-full flex-col space-y-5 sm:space-y-10">
                 <Header />
-
                 <div className="grow">
                     <Chart data={trade} />
                 </div>

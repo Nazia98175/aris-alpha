@@ -140,7 +140,7 @@ const AiHandle = () => {
                     </div>
                     {/* Right side - Sticky Image */}
                     <div className="max-w-[400px] lg:max-w-[550px] xl:max-w-[656px]">
-                        <div className="sticky top-10">
+                        <div className="sticky top-[120px]">
                             <div className="relative overflow-hidden rounded-2xl">
                                 {features.map((feature, index) => (
                                     <div

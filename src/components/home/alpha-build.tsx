@@ -110,7 +110,7 @@ const AlphaBuild = () => {
                                         )}
                                         {list.startTradebtn && (
                                             <div className="flex w-full max-w-[239px] items-center justify-center sm:p-4">
-                                                <div className="w-full max-w-[188px] space-y-3">
+                                                <div className="w-full max-w-[188px] space-y-3 max-md:pointer-events-none">
                                                     <Link
                                                         href={'/onboarding'}
                                                         className="group flex h-[49px] w-full max-w-[188px] cursor-pointer items-center justify-center gap-3 rounded-[24px] border border-[#0082ff] bg-[#0082FF] text-lg text-white shadow-[0px_11.75px_14.688px_-5.875px_rgba(0,130,255,0.30)] transition-all duration-300 ease-in-out hover:bg-transparent hover:text-[#0082FF] md:text-xl"
@@ -134,7 +134,7 @@ const AlphaBuild = () => {
                                                     {menuItems.map((item, index) => (
                                                         <div
                                                             key={index}
-                                                            className="group flex cursor-pointer items-center gap-3"
+                                                            className="md:group flex md:cursor-pointer items-center gap-3 max-md:pointer-events-none"
                                                         >
                                                             {item.icon && item.icon}
                                                             <p className="font-outfit text-base text-white transition-all duration-300 ease-in-out group-hover:text-[#0082FF]">

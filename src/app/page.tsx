@@ -9,8 +9,8 @@ import InstantlyAction from '@/components/home/instantly-action'
 import Projects from '@/components/home/Projects'
 import Reviews from '@/components/home/reviews'
 import Footer from '@/components/layout/public/footer'
-import Navbar from '@/components/layout/public/navbar'
 import Image from 'next/image'
+import Navbar from '@/components/layout/navbar'
 
 export default function Home() {
     const [aiHandleScrolled, setAiHandleScrolled] = useState(false)

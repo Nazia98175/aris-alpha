@@ -11,11 +11,6 @@ const Footer = () => {
                     <p className="small-text pt-4 pb-2">
                         Filtered signals and allocation cues—built so you don’t have to overthink.
                     </p>
-                    <p className="small-text pb-4">
-                        Aris Alpha provides signal-based insights for informational purposes only. Nothing on this site
-                        constitutes financial advice or a recommendation to buy or sell any security. Please consult a
-                        licensed financial advisor before making investment decisions.
-                    </p>
                     <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
                         <div className="flex items-center gap-2">
                             <WhiteCheckIcon />
@@ -52,7 +47,12 @@ const Footer = () => {
                 </div>
             </div>
             <div className="text-secondary mt-[40px] bg-[#010314] px-2 py-4 text-center text-sm sm:mt-[60px] md:mt-[77px] md:py-6">
-                © ©Aris Capital, 30 Wall Street, New York City, NY 10005 USA
+                <p>
+                    Aris Alpha provides signal-based insights for informational purposes only. Nothing on this site
+                    constitutes financial advice or a recommendation to buy or sell any security. Please consult a
+                    licensed financial advisor before making investment decisions.
+                </p>
+                <p className="mt-3">© ©Aris Capital, 30 Wall Street, New York City, NY 10005 USA</p>
             </div>
         </footer>
     )

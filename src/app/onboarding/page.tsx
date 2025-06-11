@@ -15,7 +15,7 @@ const OnBoardPage = () => {
         <section className="flex min-h-screen flex-col bg-[url('/assets/backgrounds/onboard-bg.webp')] bg-cover bg-fixed bg-center">
             <OnboardHeader />
             <Suspense fallback={<LoaderSpinner />}>
-                <div className="flex flex-1 flex-col">
+                <div className="flex flex-1 flex-col justify-center">
                     <Onboarding />
                 </div>
             </Suspense>

@@ -109,24 +109,79 @@ const AlphaBuild = () => {
                                             </div>
                                         )}
                                         {list.startTradebtn && (
-                                            <div className="flex w-full max-w-[239px] items-center justify-center sm:p-4">
-                                                <div className="w-full max-w-[188px] space-y-3 max-md:pointer-events-none">
-                                                    <Link
-                                                        href={'/onboarding'}
-                                                        className="group flex h-[49px] w-full max-w-[188px] cursor-pointer items-center justify-center gap-3 rounded-[24px] border border-[#0082ff] bg-[#0082FF] text-lg text-white shadow-[0px_11.75px_14.688px_-5.875px_rgba(0,130,255,0.30)] transition-all duration-300 ease-in-out hover:bg-transparent hover:text-[#0082FF] md:text-xl"
-                                                    >
-                                                        <BtnPlusIcon />
-                                                        Start Trade
-                                                    </Link>
-                                                    <Link
-                                                        href={'/onboarding'}
-                                                        className="group shadow-[0px_8.813px_26.438px -2.937px #E2E6EE] flex h-[49px] w-full max-w-[188px] cursor-pointer items-center justify-center gap-3 rounded-[24px] bg-white text-lg text-[#0082FF] transition-all duration-300 ease-in-out hover:bg-[#0082FF] hover:text-white md:text-xl"
-                                                    >
-                                                        <BtnUpArrowIcon />
-                                                        Start Trade
-                                                    </Link>
+                                            <>
+                                                {/* Desktop View - Original Buttons */}
+                                                <div className="hidden w-full max-w-[239px] items-center justify-center sm:p-4 md:flex">
+                                                    <div className="w-full max-w-[188px] space-y-3">
+                                                        <Link
+                                                            href={'/onboarding'}
+                                                            className="group flex h-[49px] w-full max-w-[188px] cursor-pointer items-center justify-center gap-3 rounded-[24px] border border-[#0082ff] bg-[#0082FF] text-lg text-white shadow-[0px_11.75px_14.688px_-5.875px_rgba(0,130,255,0.30)] transition-all duration-300 ease-in-out hover:bg-transparent hover:text-[#0082FF] md:text-xl"
+                                                        >
+                                                            <BtnPlusIcon />
+                                                            Start Trade
+                                                        </Link>
+                                                        <Link
+                                                            href={'/onboarding'}
+                                                            className="group shadow-[0px_8.813px_26.438px -2.937px #E2E6EE] flex h-[49px] w-full max-w-[188px] cursor-pointer items-center justify-center gap-3 rounded-[24px] bg-white text-lg text-[#0082FF] transition-all duration-300 ease-in-out hover:bg-[#0082FF] hover:text-white md:text-xl"
+                                                        >
+                                                            <BtnUpArrowIcon />
+                                                            Start Trade
+                                                        </Link>
+                                                    </div>
                                                 </div>
-                                            </div>
+
+                                                {/* Mobile View - Information Card */}
+                                                <div className="w-full max-w-[280px] md:hidden">
+                                                    <div className="rounded-xl border border-[#3F3F3F] bg-[#1a1a1a] p-4">
+                                                        <div className="mb-3 flex items-center gap-3">
+                                                            <div className="rounded-lg bg-[#0082FF]/20 p-2">
+                                                                <svg
+                                                                    width="20"
+                                                                    height="20"
+                                                                    viewBox="0 0 20 20"
+                                                                    fill="none"
+                                                                    xmlns="http://www.w3.org/2000/svg"
+                                                                >
+                                                                    <path
+                                                                        d="M10 18C14.4183 18 18 14.4183 18 10C18 5.58172 14.4183 2 10 2C5.58172 2 2 5.58172 2 10C2 14.4183 5.58172 18 10 18Z"
+                                                                        stroke="#0082FF"
+                                                                        strokeWidth="1.5"
+                                                                    />
+                                                                    <path
+                                                                        d="M10 6V10M10 14H10.01"
+                                                                        stroke="#0082FF"
+                                                                        strokeWidth="1.5"
+                                                                        strokeLinecap="round"
+                                                                        strokeLinejoin="round"
+                                                                    />
+                                                                </svg>
+                                                            </div>
+                                                            <h5 className="font-medium text-white">Trading Options</h5>
+                                                        </div>
+
+                                                        <div className="space-y-2">
+                                                            <div className="flex items-center gap-2 text-[#808080]">
+                                                                <div className="rounded bg-[#0082FF]/10 p-1">
+                                                                    <BtnPlusIcon />
+                                                                </div>
+                                                                <span className="text-sm">Start Trade</span>
+                                                            </div>
+                                                            <div className="flex items-center gap-2 text-[#808080]">
+                                                                <div className="rounded bg-white/10 p-1">
+                                                                    <BtnUpArrowIcon />
+                                                                </div>
+                                                                <span className="text-sm">Advanced Trade</span>
+                                                            </div>
+                                                        </div>
+
+                                                        <div className="mt-3 border-t border-[#3F3F3F] pt-3">
+                                                            <p className="text-center text-xs text-[#808080]">
+                                                                Available on desktop
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </>
                                         )}
                                         {list.tradingNavigation && (
                                             <div className="w-full max-w-fit overflow-hidden sm:max-w-[200px]">

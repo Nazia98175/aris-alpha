@@ -75,7 +75,7 @@ const StepCompleteModal = ({
                     <h2 className="mt-6 text-center text-2xl leading-[120%] text-nowrap text-[#010101] sm:text-3xl xl:text-4xl">
                         Step {step} Complete
                     </h2>
-                    <p className="mx-auto mt-4 max-w-[80%] text-center text-lg text-[#3F3F3F]">{displayedText}</p>
+                    <p className="mx-auto mt-4 max-w-[80%] text-center text-lg text-[#3F3F3F] min-h-[55px]">{displayedText}</p>
                 </motion.div>
             </div>
         </motion.div>

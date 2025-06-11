@@ -39,13 +39,13 @@ const AlphaBuild = () => {
             <Image
                 width={1440}
                 height={800}
-                className="absolute top-0 left-0 z-[-1] h-[700px] w-full object-cover object-right md:object-fill lg:h-[1000px]"
+                className="absolute top-0 left-0 z-[-1] h-[700px] w-full object-cover object-right max-sm:object-top md:object-fill lg:h-[1000px]"
                 src="/assets/homepage/webp/hero-bg.webp"
                 alt="background"
                 unoptimized
             />
             <div className="mx-auto max-w-[1004px] px-4 py-13 sm:pt-10 md:pb-[112px] lg:pb-[161px]">
-                <h2 className="text-white secondary-heading text-center">How Aris Alpha Builds Your Strategy</h2>
+                <h2 className="secondary-heading text-center text-white">How Aris Alpha Builds Your Strategy</h2>
                 <div className="pt-[45px] md:pt-[60px]">
                     <div className="flex justify-between gap-7">
                         <div className="relative hidden max-w-[50px] pt-[45px] md:block">
@@ -134,7 +134,7 @@ const AlphaBuild = () => {
                                                     {menuItems.map((item, index) => (
                                                         <div
                                                             key={index}
-                                                            className="md:group flex md:cursor-pointer items-center gap-3 max-md:pointer-events-none"
+                                                            className="md:group flex items-center gap-3 max-md:pointer-events-none md:cursor-pointer"
                                                         >
                                                             {item.icon && item.icon}
                                                             <p className="font-outfit text-base text-white transition-all duration-300 ease-in-out group-hover:text-[#0082FF]">

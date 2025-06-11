@@ -157,7 +157,7 @@ const ReadyToFilter = () => {
     }, [])
     return (
         <section className="mx-auto my-10 flex w-full max-w-[589px] flex-col items-center justify-center px-4 text-white">
-            <h1 className="gradient-text mx-auto mb-5 w-fit text-center text-4xl leading-[120%] md:text-5xl lg:mb-8 xl:text-[64px]">
+            <h1 className="mx-auto mb-5 w-fit text-center text-4xl leading-[120%] text-white md:text-5xl lg:mb-8 xl:text-[64px]">
                 Get Real-Time Signals. Unlock Your Dashboard.
             </h1>
             <p className="mb-8 text-center text-base leading-[150%] font-medium text-white/70 sm:mb-7 md:mb-10 md:text-lg lg:mb-14 lg:text-xl">
@@ -206,7 +206,7 @@ const ReadyToFilter = () => {
                             value={formData.email}
                             name="email"
                             onChange={handleInputChange}
-                            placeholder="Enter email"
+                            placeholder="Enter your email"
                             className={`h-[45px] w-full rounded-4xl border ${errors.email ? 'border-red-500' : 'border-[#D0D0D0]'} p-5 text-base backdrop-blur-sm placeholder:text-[#666361] focus:ring-2 focus:ring-[#2A64F6] focus:outline-none md:h-[63px]`}
                         />
                         {errors.email && <p className="mt-1 text-xs text-red-500">{errors.email}</p>}
@@ -227,10 +227,10 @@ const ReadyToFilter = () => {
                         {errors.password && <p className="mt-1 text-xs text-red-500">{errors.password}</p>}
                     </div>
 
-                    <div className="flex items-center gap-2">
+                    <div className="">
                         <label
                             htmlFor="updates"
-                            className="flex cursor-pointer items-start gap-1 text-sm text-[#010101] sm:gap-2"
+                            className="flex cursor-pointer items-center gap-2 text-sm text-[#010101] sm:gap-2"
                         >
                             <input
                                 id="updates"
@@ -243,18 +243,22 @@ const ReadyToFilter = () => {
                             <div className="mt-0.5 flex h-4 w-4 items-center justify-center rounded-[3px] border border-[#C5C5C5] bg-white transition-colors peer-checked:border-[#2A64F6] peer-checked:bg-[#2A64F6] sm:h-5 sm:w-5">
                                 <TickIcon />
                             </div>
+                            <span className="text-xs font-medium sm:text-sm md:text-base">
+                                Send me weekly market updates{' '}
+                                <span className="font-light italic opacity-70">(Optional)</span>
+                            </span>
                         </label>
-                        <span className="text-xs font-medium sm:text-sm md:text-base">
+                        {/* <span className="text-xs font-medium sm:text-sm md:text-base">
                             Send me weekly market updates{' '}
                             <span className="font-light italic opacity-70">(Optional)</span>
-                        </span>
+                        </span> */}
                     </div>
 
                     <button
                         type="submit"
                         className="flex h-[45px] w-full cursor-pointer items-center justify-center gap-2.5 rounded-[40px] border border-[#2A64F6] bg-[#2A64F6] text-base text-white shadow-[0px_0px_10px_0px_rgba(119,68,255,0.70)] transition-all duration-300 hover:bg-transparent hover:text-[#2A64F6] md:h-[63px]"
                     >
-                        Create Account & View Dashboard
+                        Create Account <span className="max-sm:hidden">& View Dashboard</span>
                         <span className="rotate-180">
                             <ArrowIcon />
                         </span>

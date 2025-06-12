@@ -57,7 +57,7 @@ const FormPasswordInput = <T extends FieldValues>({
                                 }}
                                 className={cn('pr-12', startIcon && 'pl-12', inputClassName)}
                             />
-                            <div className="[&>*:first-child]:text-muted-foreground absolute top-1/2 right-4 -translate-y-1/2 transform cursor-pointer [&>*:first-child]:size-5">
+                            <div className="absolute top-1/2 right-4 -translate-y-1/2 transform cursor-pointer [&>*:first-child]:size-5 [&>*:first-child]:text-[#4d4d4d]">
                                 {!showPassword ? (
                                     <EyeOff onClick={handleShowPassword} className="cursor-pointer" />
                                 ) : (
@@ -65,7 +65,7 @@ const FormPasswordInput = <T extends FieldValues>({
                                 )}
                             </div>
                             {startIcon ? (
-                                <div className="[&>*:first-child]:text-muted-foreground absolute top-1/2 left-4 -translate-y-1/2 transform [&>*:first-child]:size-5">
+                                <div className="absolute top-1/2 left-4 -translate-y-1/2 transform [&>*:first-child]:size-5 [&>*:first-child]:text-[#4d4d4d]">
                                     {startIcon}
                                 </div>
                             ) : null}

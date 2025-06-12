@@ -6,10 +6,10 @@ export default function AuthLayout({
     children: React.ReactNode
 }>) {
     return (
-        <div className="relative overflow-hidden bg-[#010318] p-4 sm:p-8">
+        <div className="relative overflow-hidden bg-[#010101] p-4 sm:p-8">
             {children}
 
-            <div
+            {/* <div
                 className="absolute -top-[8%] left-[20%] h-[50vh] w-12 -rotate-45 blur-3xl"
                 style={{
                     background:
@@ -44,7 +44,7 @@ export default function AuthLayout({
                     background:
                         'linear-gradient(258.8deg, rgba(115, 0, 255, 0.7) 16.35%, rgba(255, 150, 21, 0.7) 77.56%)',
                 }}
-            />
+            /> */}
         </div>
     )
 }

@@ -61,7 +61,7 @@ const FormInput = <T extends FieldValues>({
                                 {...props}
                             />
                             {startIcon ? (
-                                <div className="[&>*:first-child]:text-muted-foreground absolute top-1/2 left-4 -translate-y-1/2 transform [&>*:first-child]:size-5">
+                                <div className="[&>*:first-child]:text-[#010101] absolute top-1/2 left-4 -translate-y-1/2 transform [&>*:first-child]:size-5">
                                     {startIcon}
                                 </div>
                             ) : null}

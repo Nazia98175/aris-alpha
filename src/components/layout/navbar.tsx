@@ -2,9 +2,44 @@
 import CommonBtn from '@/components/ui/common-btn'
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
+import { supabase } from '@/lib/supabase/client'
+import { User } from '@supabase/supabase-js'
 
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false)
+    const [user, setUser] = useState<User | null>(null)
+    const [loading, setLoading] = useState(true)
+
+    // Check authentication status with Supabase
+    useEffect(() => {
+        // Get initial auth state
+        const checkUser = async () => {
+            try {
+                const {
+                    data: { user },
+                } = await supabase.auth.getUser()
+                setUser(user)
+            } catch (error) {
+                console.error('Error checking auth status:', error)
+            } finally {
+                setLoading(false)
+            }
+        }
+
+        checkUser()
+
+        // Listen for auth state changes
+        const {
+            data: { subscription },
+        } = supabase.auth.onAuthStateChange((_event, session) => {
+            setUser(session?.user ?? null)
+        })
+
+        // Cleanup subscription
+        return () => {
+            subscription.unsubscribe()
+        }
+    }, [])
 
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen)
@@ -49,7 +84,20 @@ const Navbar = () => {
                             Dashboard
                         </Link>
                     </div>
-                    <CommonBtn btnText="Get Started" btnUrl="/onboarding" variant="secondary" />
+                    <div className="flex items-center gap-4">
+                        {!loading &&
+                            (user ? (
+                                <CommonBtn
+                                    btnText="My Dashboard"
+                                    btnUrl="/dashboard"
+                                    variant="primary"
+                                    onClick={closeMenu}
+                                />
+                            ) : (
+                                <CommonBtn btnText="Log In" btnUrl="/login" variant="primary" />
+                            ))}
+                        <CommonBtn btnText="Get Started" btnUrl="/onboarding" variant="secondary" />
+                    </div>
                 </div>
             </nav>
 
@@ -114,8 +162,19 @@ const Navbar = () => {
                             </Link>
                         </div>
 
-                        {/* Get Started Button */}
-                        <div className="flex grow flex-col justify-end">
+                        {/* Auth Button and Get Started Button */}
+                        <div className="flex grow flex-col justify-end gap-4">
+                            {!loading &&
+                                (user ? (
+                                    <CommonBtn
+                                        btnText="My Dashboard"
+                                        btnUrl="/dashboard"
+                                        variant="primary"
+                                        onClick={closeMenu}
+                                    />
+                                ) : (
+                                    <CommonBtn onClick={closeMenu} btnText="Log In" btnUrl="/login" variant="primary" />
+                                ))}
                             <CommonBtn btnText="Get Started" btnUrl="/onboarding" variant="secondary" />
                         </div>
                     </div>

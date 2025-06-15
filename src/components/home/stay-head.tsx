@@ -88,7 +88,7 @@ const StayHead = () => {
                         </div>
                     ))}
                 </div>
-                <Link href="/signup" className="mx-auto">
+                <Link href="/onboarding" className="mx-auto">
                     <Button size="xl">Access Your First Signals - Free</Button>
                 </Link>
             </Container>

@@ -73,7 +73,7 @@ const Navbar = () => {
                     <Link className="inline-block text-3xl leading-[120%] md:text-[40px]" href={'/'}>
                         ARIS
                     </Link>
-                    <div className="flex items-center gap-6 text-sm text-[#D0D0D0] md:text-base lg:gap-10">
+                    <div className="flex items-center gap-3 md:gap-4 text-xs text-[#D0D0D0] md:text-sm lg:text-base lg:gap-10">
                         <Link className="hover:text-primary duration-300" href={'/onboarding'}>
                             Learn More
                         </Link>
@@ -134,7 +134,7 @@ const Navbar = () => {
 
                 {/* Mobile Menu */}
                 <div
-                    className={`fixed top-0 right-0 z-40 h-screen w-full max-w-[350px] transform bg-[#0A0B1E] transition-transform duration-300 ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}
+                    className={`fixed top-0 right-0 z-40 h-full w-full max-w-[350px] transform bg-[#0A0B1E] transition-transform duration-300 ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}
                 >
                     <div className="flex h-full flex-col p-6 pt-24">
                         {/* Menu Links */}

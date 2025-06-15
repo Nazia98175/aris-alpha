@@ -4,8 +4,10 @@ import Link from 'next/link'
 import { useEffect, useState } from 'react'
 import { supabase } from '@/lib/supabase/client'
 import { User } from '@supabase/supabase-js'
-
-const Navbar = () => {
+interface NavbarProps {
+    navBg: string
+}
+const Navbar = ({ navBg }: NavbarProps) => {
     const [isMenuOpen, setIsMenuOpen] = useState(false)
     const [user, setUser] = useState<User | null>(null)
     const [loading, setLoading] = useState(true)
@@ -67,13 +69,13 @@ const Navbar = () => {
         <>
             {/* Desktop Navbar - Hidden on mobile, visible from sm: breakpoint */}
             <nav
-                className={`fixed top-0 right-0 left-0 z-50 hidden h-24 bg-[#010314] transition-transform duration-300 sm:block lg:h-[110px]`}
+                className={`fixed top-0 right-0 left-0 z-50 hidden h-24 bg-[#010314] transition-transform duration-300 sm:block lg:h-[110px] ${navBg && navBg}`}
             >
                 <div className="custom-container flex h-full items-center justify-between">
                     <Link className="inline-block text-3xl leading-[120%] md:text-[40px]" href={'/'}>
                         ARIS
                     </Link>
-                    <div className="flex items-center gap-3 md:gap-4 text-xs text-[#D0D0D0] md:text-sm lg:text-base lg:gap-10">
+                    <div className="flex items-center gap-3 text-xs text-[#D0D0D0] md:gap-4 md:text-sm lg:gap-10 lg:text-base">
                         <Link className="hover:text-primary duration-300" href={'/onboarding'}>
                             Learn More
                         </Link>
@@ -102,7 +104,9 @@ const Navbar = () => {
             </nav>
 
             {/* Mobile Navbar - Visible only on mobile */}
-            <nav className={`fixed top-0 right-0 left-0 z-50 bg-[#010314] transition-transform duration-300 sm:hidden`}>
+            <nav
+                className={`fixed top-0 right-0 left-0 z-50 bg-[#010314] transition-transform duration-300 sm:hidden ${navBg && navBg}`}
+            >
                 <div className="flex h-16 items-center justify-between px-4">
                     <Link className="inline-block text-2xl leading-[120%]" href={'/'}>
                         ARIS
@@ -163,7 +167,7 @@ const Navbar = () => {
                         </div>
 
                         {/* Auth Button and Get Started Button */}
-                        <div className="flex grow flex-col justify-end gap-4">
+                        <div className="flex flex-col justify-end gap-4">
                             {!loading &&
                                 (user ? (
                                     <CommonBtn

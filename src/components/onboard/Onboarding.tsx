@@ -9,6 +9,7 @@ import StepCompleteModal from './StepCompleteModal'
 import StepIndicator from './StepIndicator'
 import { useOnboarding } from './useOnboardinghook'
 import { supabase } from '@/lib/supabase/client'
+
 export default function Onboarding() {
     const {
         formData,
@@ -26,16 +27,54 @@ export default function Onboarding() {
     const router = useRouter()
     // Track previous slug to close modal after URL change
     const prevSlug = useRef(currentSlug)
+
     async function handleOnboardingComplete() {
-        const { data } = await supabase.auth.getUser()
-        if (data.user) {
-            const { data: user, error } = await supabase
+        try {
+            const { data, error: authError } = await supabase.auth.getUser()
+
+            if (authError || !data.user) {
+                // No authenticated user - save to session and redirect to CTA
+                setShowModal(false)
+                setShowFinalScreen(true)
+                sessionStorage.setItem('onBoardData', JSON.stringify(formData))
+                setTimeout(() => router.push('/onboarding/cta'), 3000)
+                return
+            }
+
+            // Check if user exists in users table
+            let { data: user, error } = await supabase
                 .from('users')
                 .select('*')
                 .eq('email', data.user.email as string)
                 .maybeSingle()
 
-            if (!user || error) throw new Error('Unauthorized user')
+            if (error) {
+                console.error('Error fetching user:', error)
+                throw new Error('Failed to fetch user data')
+            }
+
+            if (!user) {
+                // User authenticated but not in users table - create the user
+                const { data: newUser, error: createError } = await supabase
+                    .from('users')
+                    .insert({
+                        email: data.user.email!,
+                        // Add other required fields based on your schema
+                        // For example: first_name, last_name, etc.
+                    })
+                    .select()
+                    .single()
+
+                if (createError) {
+                    console.error('Error creating user:', createError)
+                    throw new Error('Failed to create user record')
+                }
+
+                // Use the newly created user
+                user = newUser
+            }
+
+            // Save onboarding data
             await supabase.from('onboarding').upsert(
                 {
                     user_id: user.id,
@@ -49,28 +88,32 @@ export default function Onboarding() {
                     onConflict: 'user_id',
                 },
             )
+
+            // Update onboarding status if needed
             if (!user.isOnBoarded) {
-                await supabase
-                    .from('users')
-                    .update({ isOnBoarded: true })
-                    .eq('email', data.user.email as string)
+                await supabase.from('users').update({ isOnBoarded: true }).eq('id', user.id)
             }
+
             return router.push('/dashboard')
-        } else {
+        } catch (error) {
+            console.error('Onboarding error:', error)
+            // Fallback to non-authenticated flow
             setShowModal(false)
             setShowFinalScreen(true)
             sessionStorage.setItem('onBoardData', JSON.stringify(formData))
             setTimeout(() => router.push('/onboarding/cta'), 3000)
         }
     }
+
     useEffect(() => {
         if (showModal && currentSlug !== prevSlug.current) {
             setShowModal(false)
         }
         prevSlug.current = currentSlug
     }, [currentSlug, showModal, setShowModal])
+
     return (
-        <div className="mx-auto my-20 w-full px-4">
+        <div className="y-4 mx-auto w-full px-4 sm:my-6">
             {!showModal && (
                 <div className="relative z-20 mx-auto flex w-full max-w-[85%] justify-between min-[350px]:max-w-[320px] sm:max-w-[395px]">
                     <div className="absolute top-1/2 left-1/2 h-[3px] w-full max-w-[97%] -translate-x-1/2 -translate-y-1/2 bg-[#808080] sm:h-1 lg:h-1.5" />
@@ -122,7 +165,7 @@ export default function Onboarding() {
                 )}
             </AnimatePresence>
             {!showModal && !showFinalScreen && (
-                <div className="mx-auto mt-5 flex w-full max-w-[486px] flex-col-reverse items-center justify-between gap-3 sm:flex-row xl:mt-7">
+                <div className="mx-auto mt-3 flex w-full max-w-[486px] flex-col-reverse items-center justify-between gap-3 sm:mt-7 sm:flex-row xl:mt-3">
                     <button
                         className="text-white/70 hover:underline sm:font-medium md:text-xl"
                         onClick={() => updateStep(stepIndex + 1, true)}

@@ -1,14 +1,13 @@
 'use client'
-import React, { useState } from 'react'
+import React from 'react'
 import { Header } from './Header'
-import Sidebar from './Sidebar'
 
 interface LayoutProps {
     children: React.ReactNode
 }
 
 export const TestLayout: React.FC<LayoutProps> = ({ children }) => {
-    const [sidebarOpen, setSidebarOpen] = useState(false)
+    // const [sidebarOpen, setSidebarOpen] = useState(false)
 
     // const toggleSidebar = () => {
     //     setSidebarOpen(!sidebarOpen)

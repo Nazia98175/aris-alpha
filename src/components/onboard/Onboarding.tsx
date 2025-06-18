@@ -28,6 +28,14 @@ export default function Onboarding() {
     // Track previous slug to close modal after URL change
     const prevSlug = useRef(currentSlug)
 
+    useEffect(() => {
+        console.log('🔝 Scrolling to top - Step:', stepIndex, 'Slug:', currentSlug)
+        const scrollBefore = window.scrollY
+        window.scrollTo(0, 0)
+        const scrollAfter = window.scrollY
+        console.log(`📏 Scroll: ${scrollBefore}px → ${scrollAfter}px`)
+    }, [stepIndex, currentSlug])
+
     async function handleOnboardingComplete() {
         try {
             const { data, error: authError } = await supabase.auth.getUser()
@@ -42,7 +50,7 @@ export default function Onboarding() {
             }
 
             // Check if user exists in users table
-            let { data: user, error } = await supabase
+            const { data: userData, error } = await supabase
                 .from('users')
                 .select('*')
                 .eq('email', data.user.email as string)
@@ -53,14 +61,17 @@ export default function Onboarding() {
                 throw new Error('Failed to fetch user data')
             }
 
+            let user = userData
+
             if (!user) {
                 // User authenticated but not in users table - create the user
                 const { data: newUser, error: createError } = await supabase
                     .from('users')
                     .insert({
                         email: data.user.email!,
+                        first_name: '', // Add default values or extract from auth metadata
+                        last_name: '', // Add default values or extract from auth metadata
                         // Add other required fields based on your schema
-                        // For example: first_name, last_name, etc.
                     })
                     .select()
                     .single()

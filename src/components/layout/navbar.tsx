@@ -77,14 +77,14 @@ const Navbar = ({ navBg }: NavbarProps) => {
                     </Link>
                     <div className="flex items-center gap-3 text-xs text-[#D0D0D0] md:gap-4 md:text-sm lg:gap-10 lg:text-base">
                         <Link className="hover:text-primary duration-300" href={'/onboarding'}>
-                            Learn More
+                            Why It Works
                         </Link>
                         <Link className="hover:text-primary duration-300" href={'#about-us'}>
-                            About Us
+                            Why Us
                         </Link>
-                        <Link className="hover:text-primary duration-300" href={'#dashboard'}>
+                        {/* <Link className="hover:text-primary duration-300" href={'#dashboard'}>
                             Dashboard
-                        </Link>
+                        </Link> */}
                     </div>
                     <div className="flex items-center gap-4">
                         {!loading &&
@@ -148,22 +148,22 @@ const Navbar = ({ navBg }: NavbarProps) => {
                                 href={'/onboarding'}
                                 onClick={closeMenu}
                             >
-                                Learn More
+                                Why It Works
                             </Link>
                             <Link
                                 className="border-b border-[#1A1B2E] pb-2 text-lg text-[#D0D0D0] duration-300 hover:text-[#2A64F6]"
                                 href={'#about-us'}
                                 onClick={closeMenu}
                             >
-                                About Us
+                                Why Us
                             </Link>
-                            <Link
+                            {/* <Link
                                 className="border-b border-[#1A1B2E] pb-2 text-lg text-[#D0D0D0] duration-300 hover:text-[#2A64F6]"
                                 href={'#dashboard'}
                                 onClick={closeMenu}
                             >
                                 Dash Board
-                            </Link>
+                            </Link> */}
                         </div>
 
                         {/* Auth Button and Get Started Button */}

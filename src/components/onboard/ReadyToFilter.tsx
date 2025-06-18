@@ -168,7 +168,7 @@ const ReadyToFilter = () => {
                 <form onSubmit={handleSubmit} className="space-y-4">
                     <div>
                         <label htmlFor="firstName" className="mb-1 block text-sm font-medium">
-                            Firstname<span className="text-red-500">*</span>
+                            First Name<span className="text-red-500">*</span>
                         </label>
                         <input
                             id="firstName"
@@ -244,7 +244,7 @@ const ReadyToFilter = () => {
                                 <TickIcon />
                             </div>
                             <span className="text-xs font-medium sm:text-sm md:text-base">
-                                Send me weekly market updates{' '}
+                               Alert me to major market moves
                                 <span className="font-light italic opacity-70">(Optional)</span>
                             </span>
                         </label>

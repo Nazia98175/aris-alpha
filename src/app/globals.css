@@ -5,6 +5,16 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
+    --color-darker: #1a1a1a;
+    --color-primaryblue: #2a64f6;
+    --color-darkbrown: #504b4b;
+    --color-darkblack: #121212;
+    --color-lightsand: #282828;
+    --color-lightblack: #202020;
+    --color-grey: #999999;
+    --color-lightgrey: #595959;
+    --color-fadeblack: #171717;
+    --color-darksand: #303030;
     --color-background: var(--background);
     --color-foreground: var(--foreground);
     --font-sans: var(--font-poppins);

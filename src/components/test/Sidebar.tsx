@@ -19,7 +19,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onToggle }) => {
 
     return (
         <aside
-            className={`fixed top-0 left-0 z-40 h-screen w-full transition-transform duration-300 ease-in-out lg:static ${isOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'} max-w-[350px] bg-[#202020] text-white lg:max-w-[240px]`}
+            className={`fixed top-0 left-0 z-40 h-screen w-full transition-transform duration-300 ease-in-out lg:static ${isOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'} bg-lightblack max-w-[350px] text-white lg:max-w-[240px]`}
         >
             <div className="p-4">
                 <div className="mb-8 flex items-center justify-between lg:hidden">
@@ -34,7 +34,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onToggle }) => {
                             <Link
                                 key={index}
                                 href={obj.link}
-                                className={` ${isActive ? 'bg-[#2A64F6]' : ''} hover:bg-gray-800" mb-2 flex cursor-pointer items-center gap-3.5 rounded p-3`}
+                                className={` ${isActive ? 'bg-primaryblue' : ''} hover:bg-gray-800" mb-2 flex cursor-pointer items-center gap-3.5 rounded p-3`}
                             >
                                 <div className="h-4 w-4 rounded bg-white"></div>
                                 <span>{obj.label}</span>

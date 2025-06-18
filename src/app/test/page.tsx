@@ -1,16 +1,22 @@
-// File: src/app/dashboard/page.tsx
+'use client'
+
+import React, { useState } from 'react'
 import TabNavigation from '@/components/test/TabNavigation'
 import { TestLayout } from '@/components/test/TestLayout'
-import React from 'react'
+import AccountContent from '@/components/test/AccountContent'
 
 const TestDashboard = () => {
+    const [activeTab, setActiveTab] = useState('Overview')
+
     return (
         <TestLayout>
             <div className="flex w-full max-w-full items-center justify-center">
-                <TabNavigation />
+                <TabNavigation activeTab={activeTab} setActiveTab={setActiveTab} />
             </div>
-            {/* Overview Page Content */}
-            <div className="mt-6 text-white">Overview Content Here</div>
+
+            <div className="mt-6 text-white">
+                {activeTab === 'Overview' ? <div>Overview Content Here</div> : <AccountContent />}
+            </div>
         </TestLayout>
     )
 }

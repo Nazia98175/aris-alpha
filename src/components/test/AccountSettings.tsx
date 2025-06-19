@@ -13,7 +13,7 @@ const AccountSettings = () => {
     const [telegramNotifications, setTelegramNotifications] = useState(false)
 
     return (
-        <div className="rounded-lg bg-white/[3%] p-6">
+        <div className="rounded-lg bg-white/[3%] p-3 md:p-6">
             <div className="h-auto w-full max-w-[780px] space-y-6 text-base font-normal backdrop-blur-[32px]">
                 {/* PROFILE INFORMATION */}
                 <SettingsGroup title="Profile Information">

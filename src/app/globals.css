@@ -11,10 +11,20 @@
     --color-darkblack: #121212;
     --color-lightsand: #282828;
     --color-lightblack: #202020;
+    --color-mediumgrey: #BCBCBC;
     --color-grey: #999999;
+    --color-lightyellow: #f0d85a;
+    --color-lightgreen: #10AE51;
+    --color-offwhite: #d1d1d1;
+    --color-richwhite: #fafafa;
     --color-lightgrey: #595959;
+    --color-slate: #a3a3a3;
+    --color-richslate: #8D8D8D;
+    --color-lightslate: #B9B9B9;
+    --color-sand: #272727;
     --color-fadeblack: #171717;
     --color-darksand: #303030;
+    --color-richsand: #2B2B2B;
     --color-background: var(--background);
     --color-foreground: var(--foreground);
     --font-sans: var(--font-poppins);
@@ -52,12 +62,16 @@
     --radius-md: calc(var(--radius) - 2px);
     --radius-lg: var(--radius);
     --radius-xl: calc(var(--radius) + 4px);
+    --breakpoint-xs: 450px;
     --breakpoint-3xl: 1920px;
     --color-primary-gradient: radial-gradient(
         50.91% 97.54% at 50% 2.46%,
         rgba(0, 26, 255, 0.6) 0%,
         rgba(0, 26, 255, 0.3) 100%
     );
+
+    --text-custom-xs: 8px;
+    --text-custom-sm: 10px;
 }
 
 :root {

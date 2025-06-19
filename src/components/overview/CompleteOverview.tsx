@@ -96,7 +96,7 @@ const CompleteOverview = () => {
                                 </button>
                             </div>
                         </div>
-                        <div className="overflow-auto">{renderCardContent(card)}</div>
+                        <div>{renderCardContent(card)}</div>
                     </div>
                 ))}
             </div>

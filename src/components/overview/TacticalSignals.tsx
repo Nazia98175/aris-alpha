@@ -165,7 +165,9 @@ const TacticalSignals = ({ expanded }: TacticalSignalsProps) => {
                         </div>
                     ))}
                 </div>
-                <p className='font-normal italic rounded-[10px] text-center text-offgrey mx-auto py-2 '>Model-generated signals for informational use only. Not financial advice</p>
+                <p className="text-offgrey text-custom-sm mx-auto rounded-[10px] py-2 text-center font-normal italic">
+                    Model-generated signals for informational use only. Not financial advice
+                </p>
             </div>
         )
     }
@@ -241,7 +243,7 @@ const TacticalSignals = ({ expanded }: TacticalSignalsProps) => {
                     </div>
                 ))}
             </div>
-            <p className="text-offgrey mx-auto rounded-[10px] pt-6 pb-5 text-center font-normal italic">
+            <p className="text-offgrey text-custom-sm mx-auto rounded-[10px] pt-6 pb-5 text-center font-normal italic">
                 Model-generated signals for informational use only. Not financial advice
             </p>
         </div>

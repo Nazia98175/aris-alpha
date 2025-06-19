@@ -1,3 +1,4 @@
+<<<<<<< HEAD:src/app/test/overview/page.tsx
 'use client'
 import { Maximize2, Minimize2, MoreVertical } from 'lucide-react'
 import { useState } from 'react'
@@ -593,37 +594,19 @@ const Page = () => {
         if (b.expanded) return 1
         return 0
     })
+=======
+import CompleteOverview from '@/components/overview/CompleteOverview'
+import React from 'react'
+>>>>>>> e5ae6d9278a454642d18e580c4e9a119fa925212:src/app/overview/page.tsx
 
+const page = () => {
     return (
-        <section className="min-h-screen bg-black p-6 text-white">
-            <div className="mx-auto max-w-7xl">
-                <div className={`grid gap-4 ${cards.some((c) => c.expanded) ? 'grid-cols-3' : 'grid-cols-2'}`}>
-                    {sortedCards.map((card, index) => (
-                        <div
-                            key={index}
-                            className={`rounded-xl border border-gray-800 bg-gray-950 p-4 ${getCardClass(card)}`}
-                        >
-                            <div className="mb-4 flex items-center justify-between">
-                                <h2 className="text-lg font-semibold">{card.title}</h2>
-                                <div className="flex items-center gap-2">
-                                    <button className="text-gray-400 hover:text-white">
-                                        <MoreVertical size={20} />
-                                    </button>
-                                    <button
-                                        onClick={() => toggleCard(card.id)}
-                                        className="text-gray-400 transition-colors hover:text-white"
-                                    >
-                                        {card.expanded ? <Minimize2 size={20} /> : <Maximize2 size={20} />}
-                                    </button>
-                                </div>
-                            </div>
-                            <div className="overflow-auto">{renderCardContent(card)}</div>
-                        </div>
-                    ))}
-                </div>
+        <div className="bg-fadeblack pt-10 pb-14 min-h-screen px-4 lg:px-6">
+            <div className="mx-auto w-full max-w-[1360px]">
+                <CompleteOverview />
             </div>
-        </section>
+        </div>
     )
 }
 
-export default Page
+export default page

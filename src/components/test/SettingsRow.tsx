@@ -9,12 +9,12 @@ interface SettingsRowProps {
 
 const SettingsRow: React.FC<SettingsRowProps> = ({ icon, label, description, rightElement }) => {
     return (
-        <div className="flex items-center justify-between rounded-md py-2">
+        <div className="flex items-center justify-between rounded-md py-1.5 md:py-2">
             <div className="flex items-center gap-4">
-                {icon && <span className="text-base">{icon}</span>}
+                {icon && <span className="text-sm md:text-base">{icon}</span>}
                 <div>
-                    <p className="text-white">{label}</p>
-                    {description && <p className="text-sm text-white/80">{description}</p>}
+                    <p className="text-sm text-white md:text-base">{label}</p>
+                    {description && <p className="text-xs text-white/80 md:text-sm">{description}</p>}
                 </div>
             </div>
             {rightElement}

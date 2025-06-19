@@ -14,10 +14,10 @@ const AccountSettings = () => {
 
     return (
         <div className="rounded-lg bg-white/[3%] p-3 md:p-6">
-            <div className="h-auto w-full max-w-[780px] space-y-6 text-base font-normal backdrop-blur-[32px]">
+            <div className="h-auto w-full max-w-[780px] space-y-3 text-base font-normal backdrop-blur-[32px] md:space-y-6">
                 {/* PROFILE INFORMATION */}
                 <SettingsGroup title="Profile Information">
-                    <div className="flex flex-wrap gap-14">
+                    <div className="flex flex-wrap justify-between gap-3 md:justify-start md:gap-14">
                         <SettingsRow icon={<UserName />} label="User Name" description="John Smith" />
                         <SettingsRow icon={<EmailAddress />} label="Email Address" description="user@example.com" />
                     </div>
@@ -57,13 +57,19 @@ const AccountSettings = () => {
 
                 {/* SUBSCRIPTION */}
                 <SettingsGroup title="Subscription Management">
-                    <p className="mb-3 text-white">Manage your billing and subscription through our secure provider.</p>
-                    <CommonBtn className="my-5 w-fit px-5 py-2" btnText="Manage Subscription" variant="secondary" />
+                    <p className="text-xs text-white md:text-base">
+                        Manage your billing and subscription through our secure provider.
+                    </p>
+                    <CommonBtn
+                        className="my-3 w-fit !px-5 !py-2 md:my-5"
+                        btnText="Manage Subscription"
+                        variant="secondary"
+                    />
                 </SettingsGroup>
 
                 {/* LEGAL */}
                 <SettingsGroup title="Legal & Compliance">
-                    <p className="text-white">
+                    <p className="whitespace-wrap text-xs text-white md:text-base lg:whitespace-nowrap">
                         All insights and tools are for informational purposes only and do not constitute financial or
                         investment advice.
                     </p>

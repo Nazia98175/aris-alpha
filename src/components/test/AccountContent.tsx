@@ -1,24 +1,31 @@
 'use client'
 
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import AccountSettings from './AccountSettings'
 import FeedPreferences from './FeedPreferences'
+import { useSearchParams, useRouter } from 'next/navigation'
 import { motion } from 'framer-motion'
 
 const AccountContent = () => {
-    const [activeTab, setActiveTab] = useState<'Account' | 'Feed Preferences'>('Account')
+    const searchParams = useSearchParams()
+    const router = useRouter()
+    const tabParam = searchParams.get('tab') || 'account'
 
-    const tabs = ['Account', 'Feed Preferences']
+    const [activeTab, setActiveTab] = useState<'account' | 'feed-preferences'>(
+        tabParam === 'feed-preferences' ? 'feed-preferences' : 'account',
+    )
+
+    const tabs = [
+        { label: 'Account', value: 'account' },
+        { label: 'Feed Preferences', value: 'feed-preferences' },
+    ]
+
+    useEffect(() => {
+        router.replace(`?tab=${activeTab}`)
+    }, [activeTab, router])
 
     const getTranslateX = () => {
-        switch (activeTab) {
-            case 'Account':
-                return 'translate-x-0'
-            case 'Feed Preferences':
-                return 'translate-x-full'
-            default:
-                return ''
-        }
+        return activeTab === 'account' ? 'translate-x-0' : 'translate-x-full'
     }
 
     return (
@@ -26,19 +33,17 @@ const AccountContent = () => {
             {/* Tab Navigation */}
             <div className="bg-darkbrown relative mx-auto mb-2 w-fit rounded-full sm:mx-0 md:mb-4">
                 <div className="relative flex w-full max-w-[361px] overflow-hidden rounded-full">
-                    {/* Sliding background */}
                     <motion.div
                         layout
                         className={`bg-primaryblue absolute top-0 left-0 h-full w-1/2 rounded-full shadow-[0px_0px_10px_0px_#2A64F6] transition-transform duration-300 ease-in-out ${getTranslateX()}`}
                     />
-                    {/* Tabs */}
                     {tabs.map((tab) => (
                         <button
-                            key={tab}
-                            onClick={() => setActiveTab(tab as 'Account' | 'Feed Preferences')}
-                            className="relative z-10 flex w-1/2 items-center justify-center px-[14px] py-1 text-sm font-medium whitespace-normal text-white transition-colors duration-300 md:px-[39px] md:py-[5.5px] md:text-base md:whitespace-nowrap"
+                            key={tab.value}
+                            onClick={() => setActiveTab(tab.value as 'account' | 'feed-preferences')}
+                            className="relative z-10 flex w-1/2 items-center justify-center px-[24px] py-1.5 text-sm font-medium whitespace-nowrap text-white transition-colors duration-300 md:px-[39px] md:py-[5.5px] md:text-base"
                         >
-                            {tab}
+                            {tab.label}
                         </button>
                     ))}
                 </div>
@@ -46,7 +51,7 @@ const AccountContent = () => {
 
             <p className="mb-6 text-sm text-white/80">User settings, preferences, and controls</p>
 
-            {activeTab === 'Account' ? <AccountSettings /> : <FeedPreferences />}
+            {activeTab === 'account' ? <AccountSettings /> : <FeedPreferences />}
         </div>
     )
 }

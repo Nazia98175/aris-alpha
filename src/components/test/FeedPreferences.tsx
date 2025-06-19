@@ -5,9 +5,9 @@ import PreferenceGroup from './PreferenceGroup'
 
 const FeedPreferences = () => {
     return (
-        <div className="rounded-lg bg-white/[3%] p-6">
+        <div className="rounded-lg bg-white/[3%] p-3 md:p-6">
             <div className="h-auto w-full max-w-[780px] backdrop-blur-[32px]">
-                <div className="grid grid-cols-1 gap-8">
+                <div className="grid grid-cols-1 gap-3 md:gap-8">
                     <PreferenceGroup
                         title="Asset Classes"
                         options={['Stocks', 'Crypto', 'ETFs', 'Options', 'Commodities']}

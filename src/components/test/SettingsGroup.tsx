@@ -9,7 +9,7 @@ interface SettingsGroupProps {
 const SettingsGroup: React.FC<SettingsGroupProps> = ({ title, children }) => {
     return (
         <div>
-            <p className="mb-2 text-white/80 uppercase">{title}</p>
+            <p className="mb-2 text-sm text-white/80 uppercase md:text-base">{title}</p>
             {children}
         </div>
     )

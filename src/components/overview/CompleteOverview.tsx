@@ -77,14 +77,16 @@ const CompleteOverview = () => {
                 {sortedCards.map((card, index) => (
                     <div
                         key={index}
-                        className={`border-sand bg-darker rounded-xl border pt-3 px-3 sm:pt-5 sm:px-5 ${getCardClass(card, index)}`}
+                        className={`border-sand bg-darker rounded-xl border px-3 pt-3 sm:px-5 sm:pt-5 ${getCardClass(card, index)}`}
                     >
                         <div className="mb-5 flex justify-between">
                             <div>
                                 <h2 className="text-lg !leading-[120%] font-medium tracking-normal text-white sm:text-xl">
                                     {card.title}
                                 </h2>
-                                <p className='mt-2 font-normal text-sm !leading-[128%] tracking-normal text-offwhite'>{card.description}</p>
+                                <p className="text-offwhite mt-2 text-sm !leading-[128%] font-normal tracking-normal">
+                                    {card.description}
+                                </p>
                             </div>
                             <div className="flex items-center gap-2">
                                 <button onClick={() => toggleCard(card.id)}>

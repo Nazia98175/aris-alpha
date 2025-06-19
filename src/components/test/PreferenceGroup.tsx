@@ -9,11 +9,11 @@ interface PreferenceGroupProps {
 const PreferenceGroup: React.FC<PreferenceGroupProps> = ({ title, options, defaultChecked = [] }) => {
     return (
         <div>
-            <p className="mb-2 text-sm font-normal text-white/80 uppercase">{title}</p>
+            <p className="mb-2 text-xs font-normal text-white/80 uppercase md:text-sm">{title}</p>
             {options.map((item) => (
                 <label
                     key={item}
-                    className="flex cursor-pointer items-center gap-3 py-1 text-base font-normal text-white"
+                    className="flex cursor-pointer items-center gap-3 py-1 text-sm font-normal text-white md:text-base"
                 >
                     <input
                         type="checkbox"

@@ -1,6 +1,8 @@
-"use client"
+'use client'
 import { Maximize2, Minimize2, MoreVertical } from 'lucide-react'
 import { useState } from 'react'
+import { TestLayout } from '@/components/test/TestLayout'
+import TabNavigation from '@/components/test/TabNavigation'
 
 interface CardData {
     id: string
@@ -403,7 +405,9 @@ const Page = () => {
         if (!expanded) {
             return (
                 <div className="flex h-full flex-col">
-                    <div className="mb-3 text-xs text-gray-400">Know where you&apos;re positioned — and why it matters.</div>
+                    <div className="mb-3 text-xs text-gray-400">
+                        Know where you&apos;re positioned — and why it matters.
+                    </div>
                     <div className="mb-4 flex flex-1 items-center justify-center">
                         <div className="relative h-48 w-48">
                             <svg viewBox="0 0 42 42" className="h-full w-full -rotate-90">
@@ -482,7 +486,9 @@ const Page = () => {
 
         return (
             <div className="h-full">
-                <div className="mb-4 text-sm text-gray-400">Know where you&apos;re positioned — and why it matters.</div>
+                <div className="mb-4 text-sm text-gray-400">
+                    Know where you&apos;re positioned — and why it matters.
+                </div>
                 <div className="grid grid-cols-2 gap-8">
                     <div className="flex items-center justify-center">
                         <div className="relative h-64 w-64">

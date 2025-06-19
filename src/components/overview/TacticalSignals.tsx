@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { BitcoinLogo, MiniGraph, RightTopArrow } from '../home/Icons'
+// import Image from 'next/image'
 
 interface TacticalSignalsProps {
     expanded: boolean
@@ -122,14 +123,13 @@ const TacticalSignals = ({ expanded }: TacticalSignalsProps) => {
                         </div>
                     </div>
                     <div className="mb-3 h-16">
-                        <svg viewBox="0 0 100 40" className="h-full w-full">
-                            <polyline
-                                fill="none"
-                                stroke="#10b981"
-                                strokeWidth="2"
-                                points="0,35 20,30 40,32 60,20 80,15 100,10"
-                            />
-                        </svg>
+                 {/* <Image
+                 src={signal.image}
+                 alt='graph'
+                 width={283}
+                 height={94}
+                 unoptimized
+                 /> */}
                     </div>
                     <p className="text-xs text-gray-500">
                         30% held support on weekly, cross momentum looking from $396 level.

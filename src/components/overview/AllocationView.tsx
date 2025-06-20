@@ -1,3 +1,5 @@
+import Image from 'next/image'
+
 interface AllocationViewProps {
     expanded: boolean
 }
@@ -32,75 +34,24 @@ const AllocationView = ({ expanded }: AllocationViewProps) => {
 
     if (!expanded) {
         return (
-            <div className="flex h-full flex-col">
-                <div className="mb-3 text-xs text-gray-400">
-                    Know where you&apos;re positioned — and why it matters.
-                </div>
-                <div className="mb-4 flex flex-1 items-center justify-center">
-                    <div className="relative h-48 w-48">
-                        <svg viewBox="0 0 42 42" className="h-full w-full -rotate-90">
-                            <circle cx="21" cy="21" r="15.915" fill="transparent" stroke="#374151" strokeWidth="3" />
-                            <circle
-                                cx="21"
-                                cy="21"
-                                r="15.915"
-                                fill="transparent"
-                                stroke="#10b981"
-                                strokeWidth="3"
-                                strokeDasharray="45 55"
-                                strokeDashoffset="0"
-                            />
-                            <circle
-                                cx="21"
-                                cy="21"
-                                r="15.915"
-                                fill="transparent"
-                                stroke="#f97316"
-                                strokeWidth="3"
-                                strokeDasharray="20 80"
-                                strokeDashoffset="-45"
-                            />
-                            <circle
-                                cx="21"
-                                cy="21"
-                                r="15.915"
-                                fill="transparent"
-                                stroke="#8b5cf6"
-                                strokeWidth="3"
-                                strokeDasharray="25 75"
-                                strokeDashoffset="-65"
-                            />
-                            <circle
-                                cx="21"
-                                cy="21"
-                                r="15.915"
-                                fill="transparent"
-                                stroke="#ef4444"
-                                strokeWidth="3"
-                                strokeDasharray="10 90"
-                                strokeDashoffset="-90"
-                            />
-                        </svg>
-                        <div className="absolute inset-0 flex items-center justify-center">
-                            <div className="text-center">
-                                <div className="text-2xl font-bold text-white">100%</div>
-                                <div className="text-xs text-gray-400">Total</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div className="grid grid-cols-2 gap-2">
+            <div className="flex items-center gap-8 mt-6">
+                <Image
+                    className="max-h-[229px] w-full max-w-[256px]"
+                    src="/assets/dashboard/webp/allocated.webp"
+                    alt="percentage chart"
+                    width={256}
+                    height={229}
+                    unoptimized
+                />
+                <div className="flex flex-col">
                     {allocations.map((item, i) => (
                         <div key={i} className="flex items-center gap-2">
-                            <div className={`h-3 w-3 rounded-full ${item.color}`} />
-                            <span className="text-xs text-gray-400">{item.name}</span>
-                            <span className="ml-auto text-xs text-white">{item.percentage}%</span>
+                            <div className={`h-2.5 w-2.5 rounded-full ${item.color}`} />
+                            <span className="text-sm font-normal !leading-[104.4%] tracking-normal text-richwhite">{item.name}</span>
                         </div>
                     ))}
                 </div>
-                <div className="mt-3 text-xs text-gray-500">
-                    Suggested allocations are model-based and not tailored to individual portfolios.
-                </div>
+                
             </div>
         )
     }

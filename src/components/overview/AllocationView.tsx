@@ -8,128 +8,128 @@ const AllocationView = ({ expanded }: AllocationViewProps) => {
     const allocations = [
         {
             name: 'Equities',
-            percentage: 45,
-            color: 'bg-green-500',
-            desc: 'Balanced exposure based on strong earnings momentum and improving macro data.',
+            percentage: '45%',
+            color: 'bg-lightgreen/10',
+            border: 'border-lightgreen',
+            desc: 'Raised exposure based on strong earnings momentum and improving macro data.',
         },
         {
             name: 'Crypto',
-            percentage: 20,
-            color: 'bg-orange-500',
+            percentage: '20%',
+            color: 'bg-brown/10',
+            border: 'border-brown',
             desc: 'Maintained current weight as BTC continues to respect key support and upside trend.',
         },
         {
             name: 'Fixed Income',
-            percentage: 25,
-            color: 'bg-purple-500',
+            percentage: '25%',
+            color: 'bg-darkpurple/10',
+            border: 'border-darkpurple',
             desc: 'Holding overweight position amid stable yields and defensive tilt in market sentiment.',
         },
         {
             name: 'Alternative',
-            percentage: 10,
-            color: 'bg-red-500',
+            percentage: '10%',
+            color: 'bg-mediumred/10',
+            border: 'border-mediumred',
             desc: 'Reduced slightly to fund tactical increases in equities and crypto.',
         },
     ]
 
     if (!expanded) {
         return (
-            <div className="flex items-center gap-8 mt-6">
-                <Image
-                    className="max-h-[229px] w-full max-w-[256px]"
-                    src="/assets/dashboard/webp/allocated.webp"
-                    alt="percentage chart"
-                    width={256}
-                    height={229}
-                    unoptimized
-                />
-                <div className="flex flex-col">
-                    {allocations.map((item, i) => (
-                        <div key={i} className="flex items-center gap-2">
-                            <div className={`h-2.5 w-2.5 rounded-full ${item.color}`} />
-                            <span className="text-sm font-normal !leading-[104.4%] tracking-normal text-richwhite">{item.name}</span>
+            <div>
+                <div className="max-xs:flex-col xs:justify-between mt-6 flex max-w-[550px] items-center gap-5 sm:gap-8 xl:max-w-[436px]">
+                    <Image
+                        className="xs:max-h-[229px] xs:max-w-[256px] w-full max-w-[290px]"
+                        src="/assets/dashboard/webp/allocated.webp"
+                        alt="percentage chart"
+                        width={256}
+                        height={229}
+                        unoptimized
+                    />
+                    <div className="flex flex-col gap-5">
+                        <div className="flex items-center gap-5">
+                            <div className="flex items-center gap-2">
+                                <div className="bg-lightblue h-2.5 w-2.5 rounded-full"></div>
+                                <span className="text-richwhite text-sm !leading-[104.4%] font-normal tracking-normal">
+                                    Equities
+                                </span>
+                            </div>
+                            <div className="flex items-center gap-2">
+                                <div className="bg-darkred h-2.5 w-2.5 rounded-full"></div>
+                                <span className="text-richwhite text-sm !leading-[104.4%] font-normal tracking-normal">
+                                    ETFs
+                                </span>
+                            </div>
                         </div>
-                    ))}
+                        <div className="flex items-center gap-5">
+                            <div className="flex items-center gap-2">
+                                <div className="bg-lightorange h-2.5 w-2.5 rounded-full"></div>
+                                <span className="text-richwhite text-sm !leading-[104.4%] font-normal tracking-normal">
+                                    Crypto
+                                </span>
+                            </div>
+                            <div className="flex items-center gap-2">
+                                <div className="bg-darkgreen h-2.5 w-2.5 rounded-full"></div>
+                                <span className="text-richwhite text-sm !leading-[104.4%] font-normal tracking-normal">
+                                    Cash
+                                </span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                
+                <div className="bg-richsand mt-5 mb-5 w-full rounded-md px-2.5 py-1.5 xl:mt-3.5">
+                    <p className="text-custom-sm text-mediumgrey font-normal tracking-normal italic">
+                        Suggested allocations are model-based and not tailored to individual portfolios.
+                    </p>
+                </div>
             </div>
         )
     }
 
     return (
         <div className="h-full">
-            <div className="mb-4 text-sm text-gray-400">Know where you&apos;re positioned — and why it matters.</div>
-            <div className="grid grid-cols-2 gap-8">
-                <div className="flex items-center justify-center">
-                    <div className="relative h-64 w-64">
-                        <svg viewBox="0 0 42 42" className="h-full w-full -rotate-90">
-                            <circle cx="21" cy="21" r="15.915" fill="transparent" stroke="#374151" strokeWidth="3" />
-                            <circle
-                                cx="21"
-                                cy="21"
-                                r="15.915"
-                                fill="transparent"
-                                stroke="#10b981"
-                                strokeWidth="3"
-                                strokeDasharray="45 55"
-                                strokeDashoffset="0"
-                            />
-                            <circle
-                                cx="21"
-                                cy="21"
-                                r="15.915"
-                                fill="transparent"
-                                stroke="#f97316"
-                                strokeWidth="3"
-                                strokeDasharray="20 80"
-                                strokeDashoffset="-45"
-                            />
-                            <circle
-                                cx="21"
-                                cy="21"
-                                r="15.915"
-                                fill="transparent"
-                                stroke="#8b5cf6"
-                                strokeWidth="3"
-                                strokeDasharray="25 75"
-                                strokeDashoffset="-65"
-                            />
-                            <circle
-                                cx="21"
-                                cy="21"
-                                r="15.915"
-                                fill="transparent"
-                                stroke="#ef4444"
-                                strokeWidth="3"
-                                strokeDasharray="10 90"
-                                strokeDashoffset="-90"
-                            />
-                        </svg>
-                        <div className="absolute inset-0 flex items-center justify-center">
-                            <div className="text-center">
-                                <div className="text-3xl font-bold text-white">100%</div>
-                                <div className="text-sm text-gray-400">Asset Allocation</div>
-                            </div>
-                        </div>
-                    </div>
+            <div className="bg-darkgrey rounded-[10px] p-3 sm:p-5">
+                <div className="flex flex-col">
+                    <span className="text-richwhite text-sm font-normal tracking-normal">Asset Allocation</span>
+                    <span className="text-richwhite text-2xl font-semibold tracking-normal">100%</span>
                 </div>
-                <div className="space-y-4">
-                    {allocations.map((item, i) => (
-                        <div key={i} className="rounded-lg bg-gray-900 p-4">
-                            <div className="mb-2 flex items-center justify-between">
-                                <div className="flex items-center gap-3">
-                                    <div className={`h-4 w-4 rounded-full ${item.color}`} />
-                                    <span className="font-medium text-white">{item.name}</span>
+                <div className="mt-5 w-full grid grid-cols-2 xs:grid-cols-4 items-end gap-4 md:gap-6">
+                    {allocations.map((obj, index) => (
+                        <div key={index} className="w-full max-w-[293px]">
+                            <div className="flex flex-col gap-4">
+                                <div
+                                    className={`flex items-end justify-center border-t-2 ${obj.border} ${obj.color} 
+                                    ${ index === 0 && 'h-[213px]'} 
+                                    ${index === 1 && 'h-[143px]'} 
+                                    ${index === 2 && 'h-[169px]'}
+                                     ${index === 3 && 'h-[82px]'} 
+                                     `}
+                                >
+                                    <div className="mb-4 lg:mb-6 flex max-lg:flex-col items-center gap-1 lg:gap-5 xl:gap-8 px-4">
+                                        <span className="text-tealgreen max-lg:text-center text-xs !leading-[150%] font-normal tracking-normal">
+                                            {obj.name}
+                                        </span>
+                                        <span className="text-base md:text-lg font-semibold tracking-normal text-white">
+                                            {obj.percentage}
+                                        </span>
+                                    </div>
                                 </div>
-                                <span className="text-2xl font-bold text-white">{item.percentage}%</span>
+                                <div className="bg-darkslate w-full rounded-md px-2.5 py-1.5">
+                                    <p className="text-custom-sm text-richwhite line-clamp-2 mx-auto max-w-[273px] text-center font-normal tracking-normal italic">
+                                        {obj.desc}
+                                    </p>
+                                </div>
                             </div>
-                            <p className="text-sm text-gray-400">{item.desc}</p>
                         </div>
                     ))}
                 </div>
             </div>
-            <div className="mt-6 text-xs text-gray-500">
-                Suggested allocations are model-based and not tailored to individual portfolios.
+            <div className="bg-richsand mt-4 mb-5 w-fit rounded-md px-2.5 py-1.5">
+                <p className="text-custom-sm text-mediumgrey font-normal tracking-normal italic">
+                    Suggested allocations are model-based and not tailored to individual portfolios.
+                </p>
             </div>
         </div>
     )

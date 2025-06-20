@@ -41,7 +41,6 @@ const CompleteOverview = () => {
 
     const getCardClass = (card: CardData, index: number) => {
         if (card.expanded) return 'col-span-3'
-        // When not expanded and in 2-column grid, make first and third cards wider
         if (!cards.some((c) => c.expanded)) {
             return index === 0 || index === 2 ? 'xl:col-span-3' : 'col-span-2'
         }

@@ -8,13 +8,37 @@ const MomentumAlerts = ({ expanded }: MomentumAlertsProps) => {
             time: '10:32 AM',
             coin: 'BTC',
             trigger: 'Volume Surge',
-            desc: 'BTC volume spiked 2x the hourly average, indicating strong market activity.',
+            desc: 'BTC volume spiked 2x hourly avg — possible breakout.',
         },
         {
             time: '10:22 AM',
             coin: 'ETH',
             trigger: 'RSI Oversold (30)',
-            desc: 'ETH may reverse - oversold levels seen on hourly RSI.',
+            desc: 'ETH may reverse — oversold levels seen on hourly RSI.',
+        },
+        {
+            time: '10:32 AM',
+            coin: 'SOL',
+            trigger: 'MA Cross (10/50)',
+            desc: 'Short-term bullish: 10DMA crossed above 50DMA.',
+        },
+        {
+            time: '10:32 AM',
+            coin: 'AVAX',
+            trigger: 'Breakout ($38)',
+            desc: 'AVAX volume spiked 2x hourly avg - possible breakout.',
+        },
+        {
+            time: '10:32 AM',
+            coin: 'BTC',
+            trigger: 'Volume Surge',
+            desc: 'BTC volume spiked 2x hourly avg — possible breakout.',
+        },
+        {
+            time: '10:22 AM',
+            coin: 'ETH',
+            trigger: 'RSI Oversold (30)',
+            desc: 'ETH may reverse — oversold levels seen on hourly RSI.',
         },
         {
             time: '10:32 AM',
@@ -32,94 +56,103 @@ const MomentumAlerts = ({ expanded }: MomentumAlertsProps) => {
 
     if (!expanded) {
         return (
-            <div className="space-y-2">
-                <div className="mb-2 text-xs text-gray-400">Unfiltered alerts just as momentum builds.</div>
-                <table className="w-full">
+            <div className="pb-3 sm:pb-5 max-sm:overflow-x-auto sm:overflow-x-visible">
+                <table className="w-full max-sm:min-w-[580px]">
                     <thead>
-                        <tr className="border-b border-gray-800 text-xs text-gray-500">
-                            <th className="pb-2 text-left">TIMESTAMP</th>
-                            <th className="pb-2 text-left">ASSET</th>
-                            <th className="pb-2 text-left">TRIGGER</th>
-                            <th className="pb-2 text-left">INSIGHT</th>
+                        <tr className="text-mediumsand bg-mediumslate text-xs !leading-[150%] font-medium tracking-normal uppercase">
+                            <th className="rounded-tl-[10px] px-4 py-2.5 text-left">TIMESTAMP</th>
+                            <th className="px-4 py-2.5 text-left">ASSET</th>
+                            <th className="px-4 py-2.5 text-left">TRIGGER</th>
+                            <th className="rounded-tr-[10px] px-4 py-2.5 text-left">INSIGHT</th>
                         </tr>
                     </thead>
                     <tbody>
-                        {alerts.map((alert, i) => (
-                            <tr key={i} className="border-b border-gray-800 text-sm">
-                                <td className="py-2 text-gray-400">{alert.time}</td>
-                                <td className="py-2">
+                        {alerts.slice(0,4).map((alert, i) => (
+                            <tr key={i} className={`${i % 2 === 0 ? 'bg-lightblack' : 'bg-mediumslate'}`}>
+                                <td
+                                    className={`text-richwhite px-4 py-4 sm:py-[18px] text-sm font-normal tracking-normal ${i === alerts.slice(0,4).length - 1 && 'rounded-bl-[10px]'}`}
+                                >
+                                    {alert.time}
+                                </td>
+                                <td className="px-4 py-4 sm:py-[18px]">
                                     <span
-                                        className={`rounded px-2 py-1 text-xs ${
+                                        className={`text-sm font-normal tracking-normal ${
                                             alert.coin === 'BTC'
-                                                ? 'bg-yellow-500/20 text-yellow-400'
+                                                ? 'text-orange'
                                                 : alert.coin === 'ETH'
-                                                  ? 'bg-purple-500/20 text-purple-400'
+                                                  ? 'text-purple'
                                                   : alert.coin === 'SOL'
-                                                    ? 'bg-pink-500/20 text-pink-400'
-                                                    : 'bg-blue-500/20 text-blue-400'
+                                                    ? 'text-lightred'
+                                                    : 'text-green'
                                         }`}
                                     >
                                         {alert.coin}
                                     </span>
                                 </td>
-                                <td className="py-2 text-white">{alert.trigger}</td>
-                                <td className="py-2 text-xs text-gray-400">{alert.desc}</td>
+                                <td className="px-4 py-4 sm:py-[18px] text-sm font-normal tracking-normal">{alert.trigger}</td>
+                                <td
+                                    className={`px-4 py-4 sm:py-[18px] text-sm font-normal tracking-normal ${i === alerts.slice(0,4).length - 1 && 'rounded-br-[10px]'}`}
+                                >
+                                    {alert.desc}
+                                </td>
                             </tr>
                         ))}
                     </tbody>
                 </table>
-                <div className="mt-3 text-xs text-gray-500">
-                    All alerts are informational and do not constitute a recommendation to buy or sell.
-                </div>
             </div>
         )
     }
 
     return (
-        <div>
-            <div className="mb-4 text-sm text-gray-400">Unfiltered alerts just as momentum builds.</div>
-            <table className="w-full">
+        <div className="max-sm:overflow-x-auto sm:overflow-x-visible">
+            <table className="w-full max-sm:min-w-[580px]">
                 <thead>
-                    <tr className="border-b border-gray-800 text-xs text-gray-500">
-                        <th className="pb-3 text-left">TIMESTAMP</th>
-                        <th className="pb-3 text-left">ASSET</th>
-                        <th className="pb-3 text-left">TRIGGER</th>
-                        <th className="pb-3 text-left">INSIGHT</th>
-                        <th className="pb-3 text-left">PRICE</th>
-                        <th className="pb-3 text-left">CHANGE</th>
-                        <th className="pb-3 text-left">VOLUME</th>
+                    <tr className="text-mediumsand bg-mediumslate text-xs !leading-[150%] font-medium tracking-normal uppercase">
+                        <th className="rounded-tl-[10px] px-4 py-2.5 text-left">TIMESTAMP</th>
+                        <th className="px-4 py-2.5 text-left">ASSET</th>
+                        <th className="px-4 py-2.5 text-left">TRIGGER</th>
+                        <th className="rounded-tr-[10px] px-4 py-2.5 text-left">INSIGHT</th>
                     </tr>
                 </thead>
                 <tbody>
-                    {[...alerts, ...alerts].map((alert, i) => (
-                        <tr key={i} className="border-b border-gray-800 text-sm">
-                            <td className="py-3 text-gray-400">{alert.time}</td>
-                            <td className="py-3">
+                    {alerts.map((alert, i) => (
+                        <tr key={i} className={`${i % 2 === 0 ? 'bg-lightblack' : 'bg-mediumslate'}`}>
+                            <td
+                                className={`text-richwhite px-4 py-4 text-sm font-normal tracking-normal sm:py-[18px] ${i === alerts.length - 1 && 'rounded-bl-[10px]'}`}
+                            >
+                                {alert.time}
+                            </td>
+                            <td className="px-4 py-4 sm:py-[18px]">
                                 <span
-                                    className={`rounded px-3 py-1 text-xs ${
+                                    className={`text-sm font-normal tracking-normal ${
                                         alert.coin === 'BTC'
-                                            ? 'bg-yellow-500/20 text-yellow-400'
+                                            ? 'text-orange'
                                             : alert.coin === 'ETH'
-                                              ? 'bg-purple-500/20 text-purple-400'
+                                              ? 'text-purple'
                                               : alert.coin === 'SOL'
-                                                ? 'bg-pink-500/20 text-pink-400'
-                                                : 'bg-blue-500/20 text-blue-400'
+                                                ? 'text-lightred'
+                                                : 'text-green'
                                     }`}
                                 >
                                     {alert.coin}
                                 </span>
                             </td>
-                            <td className="py-3 text-white">{alert.trigger}</td>
-                            <td className="py-3 text-gray-400">{alert.desc}</td>
-                            <td className="py-3 text-white">$68,245</td>
-                            <td className="py-3 text-green-400">+2.3%</td>
-                            <td className="py-3 text-gray-400">$1.2B</td>
+                            <td className="px-4 py-4 text-sm font-normal tracking-normal sm:py-[18px]">
+                                {alert.trigger}
+                            </td>
+                            <td
+                                className={`px-4 py-4 text-sm font-normal tracking-normal sm:py-[18px] ${i === alerts.length - 1 && 'rounded-br-[10px]'}`}
+                            >
+                                {alert.desc}
+                            </td>
                         </tr>
                     ))}
                 </tbody>
             </table>
-            <div className="mt-4 text-xs text-gray-500">
-                All alerts are informational and do not constitute a recommendation to buy or sell.
+            <div className="bg-richsand mt-4 mb-5 w-full rounded-md px-2.5 py-1.5">
+                <p className="text-custom-sm text-mediumgrey font-normal tracking-normal italic">
+                    All alerts are informational and do not constitute a recommendation to buy or sell.
+                </p>
             </div>
         </div>
     )

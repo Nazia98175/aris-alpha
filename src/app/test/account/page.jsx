@@ -1,11 +1,12 @@
 'use client'
 import AccountContent from '@/components/test/AccountContent'
+import { Suspense } from 'react'
 
 const AccountPage = () => {
     return (
-        <div>
+        <Suspense>
             <AccountContent />
-        </div>
+        </Suspense>
     )
 }
 

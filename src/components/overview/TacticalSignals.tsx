@@ -120,7 +120,7 @@ const TacticalSignals = ({ expanded, isSingleExpanded }: TacticalSignalsProps) =
             <div>
                 <div
                     className={`grid gap-4 ${
-                        isSingleExpanded ? 'xs:grid-cols-2 lg:grid-cols-4 xl:grid-cols-2a grid-cols-1' : 'xs:grid-cols-2 grid-cols-1 md:grid-cols-4'
+                        isSingleExpanded ? 'xs:grid-cols-2 lg:grid-cols-4 xl:grid-cols-2 grid-cols-1' : 'xs:grid-cols-2 grid-cols-1 md:grid-cols-4'
                     }`}
                 >
                     {visibleSignals.map((signal, i) => (

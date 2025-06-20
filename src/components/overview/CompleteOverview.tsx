@@ -242,9 +242,11 @@ const CompleteOverview = () => {
     }
 
     const renderCardContent = (card: CardData) => {
+        const isSingleExpanded = expandedCards.length === 1
+
         switch (card.id) {
             case 'tactical':
-                return <TacticalSignals isSingleExpanded={expandedCards.length === 1} expanded={card.expanded} />
+                return <TacticalSignals isSingleExpanded={isSingleExpanded} expanded={card.expanded} />
             case 'market':
                 return <MarketSnapshot expanded={card.expanded} />
             case 'momentum':

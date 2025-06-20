@@ -56,8 +56,8 @@ const MomentumAlerts = ({ expanded }: MomentumAlertsProps) => {
 
     if (!expanded) {
         return (
-            <div className="pb-3 sm:pb-5 max-sm:overflow-x-auto sm:overflow-x-visible">
-                <table className="w-full max-sm:min-w-[580px]">
+            <div className="pb-3 sm:pb-5 overflow-x-auto">
+                <table className="w-full min-w-[580px]">
                     <thead>
                         <tr className="text-mediumsand bg-mediumslate text-xs !leading-[150%] font-medium tracking-normal uppercase">
                             <th className="rounded-tl-[10px] px-4 py-2.5 text-left">TIMESTAMP</th>

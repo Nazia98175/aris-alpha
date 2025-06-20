@@ -1,12 +1,14 @@
 import Link from 'next/link'
 import { BitcoinLogo, MiniGraph, RightTopArrow } from '../home/Icons'
 import Image from 'next/image'
+import { useEffect, useState } from 'react'
 
 interface TacticalSignalsProps {
     expanded: boolean
+    isSingleExpanded: boolean
 }
 
-const TacticalSignals = ({ expanded }: TacticalSignalsProps) => {
+const TacticalSignals = ({ expanded, isSingleExpanded }: TacticalSignalsProps) => {
     const signals = [
         {
             coin: 'Bitcoin',
@@ -99,12 +101,29 @@ const TacticalSignals = ({ expanded }: TacticalSignalsProps) => {
             current: 425,
         },
     ]
+    const [isXL, setIsXL] = useState(false)
 
+    useEffect(() => {
+        const checkScreen = () => {
+            setIsXL(window.innerWidth >= 1280)
+        }
+
+        checkScreen()
+        window.addEventListener('resize', checkScreen)
+
+        return () => window.removeEventListener('resize', checkScreen)
+    }, [])
+    const shouldSliceToTwo = isSingleExpanded && isXL
+    const visibleSignals = signals.slice(0, shouldSliceToTwo ? 2 : 4)
     if (!expanded) {
         return (
             <div>
-                <div className="xs:grid-cols-2 grid grid-cols-1 gap-4 md:grid-cols-4">
-                    {signals.slice(0, 4).map((signal, i) => (
+                <div
+                    className={`grid gap-4 ${
+                        isSingleExpanded ? 'xs:grid-cols-2 lg:grid-cols-4 xl:grid-cols-2 grid-cols-1' : 'xs:grid-cols-2 grid-cols-1 md:grid-cols-4'
+                    }`}
+                >
+                    {visibleSignals.map((signal, i) => (
                         <div key={i} className="bg-lightblack rounded-[10px] p-3 sm:p-4">
                             <div className="mb-4 flex justify-between gap-3">
                                 <div className="flex items-center gap-3">

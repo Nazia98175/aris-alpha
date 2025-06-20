@@ -110,8 +110,8 @@ const MarketSnapshot = ({ expanded }: MarketSnapshotProps) => {
     if (!expanded) {
         return (
             <div className="rounded-[10px] pb-3 sm:pb-5">
-                <div className="overflow-x-auto md:overflow-x-visible">
-                    <table className="w-full max-sm:min-w-[450px]">
+                <div className="overflow-x-auto">
+                    <table className="w-full min-w-[450px]">
                         <thead>
                             <tr className="text-mediumsand bg-mediumslate text-xs !leading-[150%] font-medium tracking-normal uppercase">
                                 <th className="rounded-tl-[10px] px-4 py-2.5 text-left">NAME</th>

@@ -1,8 +1,6 @@
 import Navbar from '@/components/layout/navbar'
 import Footer from '@/components/layout/public/footer'
 import WhoAreWe from '@/components/why-us/WhoAreWe'
-import { Metadata } from 'next'
-import Image from 'next/image'
 
 // export const metadata: Metadata = {
 //     title: 'Working | CTA',

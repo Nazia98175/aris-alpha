@@ -1,5 +1,5 @@
 import { footerLinks } from '@/components/home/helper'
-import { CheckIcon, FooterLogoIcon, WhiteCheckIcon } from '@/components/home/Icons'
+import { CheckIcon, FooterLogoIcon } from '@/components/home/Icons'
 import Link from 'next/link'
 
 const Footer = () => {

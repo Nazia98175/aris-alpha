@@ -6,9 +6,6 @@ import ThatsWhyItWorks from '@/components/why-it-works/ThatsWhyItWorks'
 import WhatYouGet from '@/components/why-it-works/WhatYouGet'
 import WhyItOutperforms from '@/components/why-it-works/WhyItOutperforms'
 import WhyItWorks from '@/components/why-it-works/WhyItWorks'
-import WorkingFooter from '@/components/why-it-works/WorkingFooter'
-import { Metadata } from 'next'
-import Image from 'next/image'
 
 // export const metadata: Metadata = {
 //     title: 'Working | CTA',

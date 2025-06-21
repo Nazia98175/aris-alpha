@@ -1,10 +1,10 @@
 'use client'
 import AllocationView from '@/components/overview/AllocationView'
+import { CardData, OVERVIEW_CARDS_DATA } from '@/components/overview/Helper'
 import MarketSnapshot from '@/components/overview/MarketSnapshot'
 import MomentumAlerts from '@/components/overview/MomentumAlerts'
 import TacticalSignals from '@/components/overview/TacticalSignals'
 import { useState } from 'react'
-import { OVERVIEW_CARDS_DATA, CardData } from '@/components/overview/Helper'
 import SortedCards from './SortedCards'
 
 const CompleteOverview = () => {
@@ -119,7 +119,6 @@ const CompleteOverview = () => {
         if (!a.expanded && b.expanded) return 1
         return 0
     })
-
 
     return (
         <div className="w-full">

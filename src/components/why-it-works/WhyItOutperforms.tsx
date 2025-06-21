@@ -15,7 +15,7 @@ const arisPoints = [
 const WhyItOutperforms = () => {
     return (
         <section className="mx-auto flex w-full max-w-[908px] flex-col items-center px-6 py-10 text-white md:py-20 xl:px-0">
-            <h2 className="mb-12 text-center text-3xl font-semibold md:text-4xl">Why It Outperforms</h2>
+            <h2 className="main-heading mb-12 text-center !font-normal">Why It Outperforms</h2>
 
             <div className="flex w-full max-w-[908px] flex-col items-center justify-center gap-6 md:justify-between lg:flex-row">
                 {/* Traditional Tools */}
@@ -24,7 +24,7 @@ const WhyItOutperforms = () => {
                         <h3 className="border-b border-[#D0D0D0] pb-4 text-[26px] font-normal md:text-[32px] lg:text-[40px]">
                             Traditional Tools
                         </h3>
-                        <div className="absolute top-[54px] z-10 h-[2px] w-24 bg-[#A03E3A] md:top-[63px] lg:top-[75px]" />
+                        <div className="absolute top-[53px] z-10 h-[3px] w-[120px] bg-[#A03E3A] md:top-[61px] md:h-[4px] lg:top-[73px]" />
                     </div>
                     <ul className="ml-3 space-y-6 text-xl leading-[130%] font-normal text-white/80 xl:text-2xl">
                         {traditionalPoints.map((point, index) => (
@@ -46,7 +46,7 @@ const WhyItOutperforms = () => {
                         <h3 className="border-b border-[#D0D0D0] pb-4 text-[26px] font-normal md:text-[32px] lg:text-[40px]">
                             Aris Alpha
                         </h3>
-                        <div className="absolute top-[54px] z-10 h-[2px] w-24 bg-[#2A64F6] md:top-[63px] lg:top-[75px]" />
+                        <div className="absolute top-[53px] z-10 h-[3px] w-[120px] bg-[#2A64F6] md:top-[61px] md:h-[4px] lg:top-[73px]" />
                     </div>
                     {/* <div className="pointer-events-none absolute inset-0 z-0 bg-[url('/noise.png')] opacity-10 mix-blend-screen" /> */}
                     <ul className="ml-3 space-y-6 text-xl leading-[130%] font-normal text-white/80 xl:text-2xl">

@@ -1,17 +1,18 @@
 'use client'
+
 import React from 'react'
 import { TargetIcon, ZapIcon, PieChartIcon } from '../home/Icons'
 
 const whatYouGet = [
     {
         icon: <TargetIcon />,
-        title: 'Signals with clear\nentry logic',
+        title: 'Signals with clear entry logic',
         special: false,
     },
     {
         icon: <PieChartIcon />,
         title: 'Suggested allocation ranges',
-        special: true, // Middle glowing container
+        special: true,
     },
     {
         icon: <ZapIcon />,
@@ -26,19 +27,29 @@ const WhatYouGet = () => {
             <h2 className="main-heading mb-10 text-center !font-normal">What You Get</h2>
 
             <div className="grid max-w-full grid-cols-1 gap-6 lg:grid-cols-3">
-                {whatYouGet.map((item, idx) => (
-                    <div
-                        key={idx}
-                        className={`flex h-auto w-full max-w-full flex-col items-center justify-center gap-5 rounded-[15px] px-2 py-6 text-center text-white transition-shadow duration-300 md:h-[266px] md:rounded-[30px] md:px-4 md:py-8 lg:max-w-[364px] ${
-                            item.special
-                                ? 'relative overflow-hidden border-y-2 border-transparent bg-white/[6%] backdrop-blur-[32px]'
-                                : 'bg-white/[6%]'
-                        }`}
-                    >
-                        <div>{item.icon}</div>
-                        <p className="medium-text !font-normal">{item.title}</p>
-                    </div>
-                ))}
+                {whatYouGet.map((item, idx) => {
+                    const isSpecial = item.special
+
+                    return (
+                        <div
+                            key={idx}
+                            className={`relative flex h-[182px] w-full flex-col items-center justify-center gap-5 overflow-hidden rounded-[15px] px-4 py-8 text-center text-white backdrop-blur-[20px] md:min-h-[266px] md:rounded-[30px] ${
+                                isSpecial ? 'bg-white/[4%]' : 'bg-white/[6%]'
+                            }`}
+                        >
+                            {/* Gradient Top & Bottom Borders */}
+                            {isSpecial && (
+                                <>
+                                    <span className="absolute top-0 left-0 h-[2px] w-full rounded-t-[15px] bg-gradient-to-r from-[#2A64F633] via-[#2A64F633] to-[#2A64F633] md:rounded-t-[30px]" />
+                                    <span className="absolute bottom-0 left-0 h-[2px] w-full rounded-b-[15px] bg-gradient-to-r from-[#2A64F633] via-[#2A64F633] to-[#2A64F633] md:rounded-b-[30px]" />
+                                </>
+                            )}
+
+                            <div>{item.icon}</div>
+                            <p className="medium-text !font-poppins !font-normal">{item.title}</p>
+                        </div>
+                    )
+                })}
             </div>
         </section>
     )

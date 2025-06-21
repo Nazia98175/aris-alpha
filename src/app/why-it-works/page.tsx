@@ -23,14 +23,12 @@ const WhyItWorksPage = () => {
             <WhyItWorks />
             <SignalClarity />
             <BuiltAroundReality />
-            <section className="relative min-h-screen bg-[url('/assets/backgrounds/second-working-bg.webp')] bg-contain bg-center">
-                <div className="relative bg-black/50">
-                    <WhatYouGet />
-                    <WhyItOutperforms />
-                    <ThatsWhyItWorks />
-                    {/* <WorkingFooter /> */}
-                    <Footer />
-                </div>
+            <section className="relative min-h-screen bg-[url('/assets/backgrounds/working-bg.webp')] bg-no-repeat md:bg-contain md:bg-center">
+                <WhatYouGet />
+                <WhyItOutperforms />
+                <ThatsWhyItWorks />
+                {/* <WorkingFooter /> */}
+                <Footer />
             </section>
         </section>
     )

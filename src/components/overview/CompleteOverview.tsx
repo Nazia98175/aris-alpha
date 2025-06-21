@@ -71,41 +71,33 @@ const CompleteOverview = () => {
             // SCENARIO 2: ONE CARD EXPANDED
             // ========================================
             case 1:
+                const expandedCard = expandedCards[0]
+
                 if (isExpanded) {
-                    // THE EXPANDED CARD: Gets majority of space (6-9 columns out of 12)
-                    // Different cards get different amounts of space based on content importance
-                    switch (card.id) {
-                        case 'tactical': // Most important - gets 12
-                            colSpanClass = 'col-span-12'
-                            break
-                        case 'market': // Second priority - gets 12
-                            colSpanClass = 'col-span-12'
-                            break
-                        case 'momentum': // Medium priority - gets 12
-                            colSpanClass = 'col-span-12'
-                            break
-                        case 'allocation': // Highest priority - 12
-                            colSpanClass = 'col-span-12'
-                            break
-                        default:
-                            colSpanClass = 'col-span-12'
-                    }
+                    // Expanded card always takes full width
+                    colSpanClass = 'col-span-12'
                 } else {
-                    // THE 3 NON-EXPANDED CARDS: Share remaining space equally
-                    // Space depends on which card is expanded
-                    const expandedCard = expandedCards[0]
+                    // Custom logic for the 3 non-expanded cards when one is expanded
                     switch (expandedCard.id) {
-                        case 'tactical': // Tactical takes 12, others get 4
-                            colSpanClass = 'col-span-12 xl:col-span-4'
+                        case 'tactical':
+                            if (card.id === 'market') colSpanClass = 'col-span-12 xl:col-span-5'
+                            else if (card.id === 'momentum') colSpanClass = 'col-span-12 xl:col-span-4'
+                            else if (card.id === 'allocation') colSpanClass = 'col-span-12 xl:col-span-3'
                             break
-                        case 'market': // Market takes 12, others get 4
-                            colSpanClass = 'col-span-12 xl:col-span-4'
+                        case 'market':
+                            if (card.id === 'tactical') colSpanClass = 'col-span-12 xl:col-span-4'
+                            else if (card.id === 'momentum') colSpanClass = 'col-span-12 xl:col-span-5'
+                            else if (card.id === 'allocation') colSpanClass = 'col-span-12 xl:col-span-3'
                             break
-                        case 'momentum': // Momentum takes 12, others get 4
-                            colSpanClass = 'col-span-12 xl:col-span-4'
+                        case 'momentum':
+                            if (card.id === 'tactical') colSpanClass = 'col-span-12 xl:col-span-4'
+                            else if (card.id === 'market') colSpanClass = 'col-span-12 xl:col-span-5'
+                            else if (card.id === 'allocation') colSpanClass = 'col-span-12 xl:col-span-3'
                             break
-                        case 'allocation': // Allocation takes 12, others get 4
-                            colSpanClass = 'col-span-12 xl:col-span-4'
+                        case 'allocation':
+                            if (card.id === 'tactical') colSpanClass = 'col-span-12 xl:col-span-3'
+                            else if (card.id === 'market') colSpanClass = 'col-span-12 xl:col-span-5'
+                            else if (card.id === 'momentum') colSpanClass = 'col-span-12 xl:col-span-4'
                             break
                         default:
                             colSpanClass = 'col-span-12 xl:col-span-4'
@@ -243,16 +235,33 @@ const CompleteOverview = () => {
 
     const renderCardContent = (card: CardData) => {
         const isSingleExpanded = expandedCards.length === 1
+        const isSingleExpandedCardOne = expandedCards.length === 1 && expandedCards[0].id === 'tactical'
+        const isSingleExpandedCardTwo = expandedCards.length === 1 && expandedCards[0].id === 'market'
+        const isSingleExpandedCardThree = expandedCards.length === 1 && expandedCards[0].id === 'momentum'
+        const isSingleExpandedCardFour = expandedCards.length === 1 && expandedCards[0].id === 'allocation'
 
         switch (card.id) {
             case 'tactical':
-                return <TacticalSignals isSingleExpanded={isSingleExpanded} expanded={card.expanded} />
+                return (
+                    <TacticalSignals
+                        isSingleExpandedCardFour={isSingleExpandedCardFour}
+                        isSingleExpanded={isSingleExpanded}
+                        expanded={card.expanded}
+                    />
+                )
             case 'market':
-                return <MarketSnapshot expanded={card.expanded} />
+                return <MarketSnapshot isSingleExpandedCardFour={isSingleExpandedCardFour} expanded={card.expanded} />
             case 'momentum':
-                return <MomentumAlerts expanded={card.expanded} />
+                return <MomentumAlerts isSingleExpandedCardOne={isSingleExpandedCardOne} expanded={card.expanded} />
             case 'allocation':
-                return <AllocationView expanded={card.expanded} />
+                return (
+                    <AllocationView
+                        isSingleExpandedCardOne={isSingleExpandedCardOne}
+                        isSingleExpandedCardTwo={isSingleExpandedCardTwo}
+                        isSingleExpandedCardThree={isSingleExpandedCardThree}
+                        expanded={card.expanded}
+                    />
+                )
             default:
                 return null
         }
@@ -293,6 +302,7 @@ const CompleteOverview = () => {
                 return 'grid-cols-12 gap-4'
         }
     }
+    const singleExpanded = expandedCards.length === 1
 
     return (
         <div className="w-full">
@@ -303,7 +313,7 @@ const CompleteOverview = () => {
                         className={`border-sand bg-darker rounded-xl border px-3 pt-3 sm:px-5 sm:pt-5 ${getCardClass(card, expandedCards)}`}
                     >
                         {/* Card Header: Title, description, and expand/collapse button */}
-                        <div className="mb-5 flex justify-between">
+                        <div className={`${singleExpanded && 'items-start'} mb-5 flex justify-between`}>
                             <div>
                                 <h2 className="text-lg !leading-[120%] font-medium tracking-normal text-white sm:text-xl">
                                     {card.title}

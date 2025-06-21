@@ -2,9 +2,17 @@ import Image from 'next/image'
 
 interface AllocationViewProps {
     expanded: boolean
+    isSingleExpandedCardThree: boolean
+    isSingleExpandedCardTwo: boolean
+    isSingleExpandedCardOne: boolean
 }
 
-const AllocationView = ({ expanded }: AllocationViewProps) => {
+const AllocationView = ({
+    expanded,
+    isSingleExpandedCardThree,
+    isSingleExpandedCardTwo,
+    isSingleExpandedCardOne,
+}: AllocationViewProps) => {
     const allocations = [
         {
             name: 'Equities',
@@ -38,16 +46,19 @@ const AllocationView = ({ expanded }: AllocationViewProps) => {
 
     if (!expanded) {
         return (
-            <div>
-                <div className="max-xs:flex-col xs:justify-between mt-6 flex max-w-[550px] items-center gap-5 sm:gap-8 xl:max-w-[436px]">
-                    <Image
-                        className="xs:max-h-[229px] xs:max-w-[256px] w-full max-w-[290px]"
-                        src="/assets/dashboard/webp/allocated.webp"
-                        alt="percentage chart"
-                        width={256}
-                        height={229}
-                        unoptimized
-                    />
+            <div
+                className={`${isSingleExpandedCardOne ? 'min-h-[298px]' : ''} ${isSingleExpandedCardTwo ? 'min-h-[260px]' : ''} ${isSingleExpandedCardThree ? 'min-h-[298px]' : ''} flex h-full w-full flex-col justify-between gap-5 pb-3 sm:pb-5 xl:gap-3.5`}
+            >
+                <div className="max-xs:flex-col xs:justify-between mt-6 flex w-full max-w-[550px] items-center gap-5 sm:gap-8 xl:max-w-[436px]">
+                    <div className="xs:max-w-[256px] xs:max-h-[229px] max-xs:max-w-[290px] relative aspect-[256/229] w-full">
+                        <Image
+                            src="/assets/dashboard/webp/allocated.webp"
+                            alt="percentage chart"
+                            fill
+                            className="object-contain"
+                            unoptimized
+                        />
+                    </div>
                     <div className="flex flex-col gap-5">
                         <div className="flex items-center gap-5">
                             <div className="flex items-center gap-2">
@@ -79,7 +90,7 @@ const AllocationView = ({ expanded }: AllocationViewProps) => {
                         </div>
                     </div>
                 </div>
-                <div className="bg-richsand mt-5 mb-5 w-full rounded-md px-2.5 py-1.5 xl:mt-3.5">
+                <div className="bg-richsand w-full rounded-md px-2.5 py-1.5">
                     <p className="text-custom-sm text-mediumgrey font-normal tracking-normal italic">
                         Suggested allocations are model-based and not tailored to individual portfolios.
                     </p>
@@ -95,29 +106,24 @@ const AllocationView = ({ expanded }: AllocationViewProps) => {
                     <span className="text-richwhite text-sm font-normal tracking-normal">Asset Allocation</span>
                     <span className="text-richwhite text-2xl font-semibold tracking-normal">100%</span>
                 </div>
-                <div className="mt-5 w-full grid grid-cols-2 xs:grid-cols-4 items-end gap-4 md:gap-6">
+                <div className="xs:grid-cols-4 mt-5 grid w-full grid-cols-2 items-end gap-4 md:gap-6">
                     {allocations.map((obj, index) => (
                         <div key={index} className="w-full max-w-[293px]">
                             <div className="flex flex-col gap-4">
                                 <div
-                                    className={`flex items-end justify-center border-t-2 ${obj.border} ${obj.color} 
-                                    ${ index === 0 && 'h-[213px]'} 
-                                    ${index === 1 && 'h-[143px]'} 
-                                    ${index === 2 && 'h-[169px]'}
-                                     ${index === 3 && 'h-[82px]'} 
-                                     `}
+                                    className={`flex items-end justify-center border-t-2 ${obj.border} ${obj.color} ${index === 0 && 'h-[213px]'} ${index === 1 && 'h-[143px]'} ${index === 2 && 'h-[169px]'} ${index === 3 && 'h-[82px]'} `}
                                 >
-                                    <div className="mb-4 lg:mb-6 flex max-lg:flex-col items-center gap-1 lg:gap-5 xl:gap-8 px-4">
-                                        <span className="text-tealgreen max-lg:text-center text-xs !leading-[150%] font-normal tracking-normal">
+                                    <div className="mb-4 flex items-center gap-1 px-4 max-lg:flex-col lg:mb-6 lg:gap-5 xl:gap-8">
+                                        <span className="text-tealgreen text-xs !leading-[150%] font-normal tracking-normal max-lg:text-center">
                                             {obj.name}
                                         </span>
-                                        <span className="text-base md:text-lg font-semibold tracking-normal text-white">
+                                        <span className="text-base font-semibold tracking-normal text-white md:text-lg">
                                             {obj.percentage}
                                         </span>
                                     </div>
                                 </div>
                                 <div className="bg-darkslate w-full rounded-md px-2.5 py-1.5">
-                                    <p className="text-custom-sm text-richwhite line-clamp-2 mx-auto max-w-[273px] text-center font-normal tracking-normal italic">
+                                    <p className="text-custom-sm text-richwhite mx-auto line-clamp-2 max-w-[273px] text-center font-normal tracking-normal italic">
                                         {obj.desc}
                                     </p>
                                 </div>

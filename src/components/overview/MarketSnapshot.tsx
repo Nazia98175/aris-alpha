@@ -2,9 +2,10 @@ import { BitcoinWhite, GreenRightArrowCircle, RedDownArrowCircle } from '../home
 
 interface MarketSnapshotProps {
     expanded: boolean
+     isSingleExpandedCardFour:boolean
 }
 
-const MarketSnapshot = ({ expanded }: MarketSnapshotProps) => {
+const MarketSnapshot = ({ expanded, isSingleExpandedCardFour }: MarketSnapshotProps) => {
     const markets = [
         {
             name: 'Bitcoin',
@@ -109,9 +110,9 @@ const MarketSnapshot = ({ expanded }: MarketSnapshotProps) => {
 
     if (!expanded) {
         return (
-            <div className="rounded-[10px] pb-3 sm:pb-5">
-                <div className="overflow-x-auto">
-                    <table className="w-full min-w-[450px]">
+            <div className={`${isSingleExpandedCardFour ?" !pb-0":""} pb-3 sm:pb-5`}>
+                <div className="max-sm:overflow-x-auto">
+                    <table className="w-full max-sm:min-w-[450px]">
                         <thead>
                             <tr className="text-mediumsand bg-mediumslate text-xs !leading-[150%] font-medium tracking-normal uppercase">
                                 <th className="rounded-tl-[10px] px-4 py-2.5 text-left">NAME</th>
@@ -170,6 +171,11 @@ const MarketSnapshot = ({ expanded }: MarketSnapshotProps) => {
                         </tbody>
                     </table>
                 </div>
+                <p
+                    className={`${isSingleExpandedCardFour ? 'block' : 'hidden'} text-offgrey text-custom-sm mx-auto rounded-[10px] pt-1.5 pb-1 text-center font-normal italic`}
+                >
+                    Model-generated signals for informational use only. Not financial advice
+                </p>
             </div>
         )
     }

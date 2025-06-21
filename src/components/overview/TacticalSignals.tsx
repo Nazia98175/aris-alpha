@@ -2,6 +2,7 @@ import Link from 'next/link'
 import { BitcoinLogo, MiniGraph, RightTopArrow } from '../home/Icons'
 import Image from 'next/image'
 import { useEffect, useState } from 'react'
+import { TACTICAL_SIGNALS_DATA_LIST } from './Helper'
 
 interface TacticalSignalsProps {
     expanded: boolean
@@ -10,98 +11,7 @@ interface TacticalSignalsProps {
 }
 
 const TacticalSignals = ({ expanded, isSingleExpanded, isSingleExpandedCardFour }: TacticalSignalsProps) => {
-    const signals = [
-        {
-            coin: 'Bitcoin',
-            image: '/assets/dashboard/webp/graph1.webp',
-            symbol: 'BTC',
-            status: 'BUY',
-            allocation: '15%',
-            range: [420, 430],
-            current: 425,
-        },
-        {
-            coin: 'SPY',
-            image: '/assets/dashboard/webp/graph2.webp',
-            symbol: 'SPY',
-            status: 'BUY',
-            allocation: '10%',
-            range: [420, 430],
-            current: 425,
-        },
-        {
-            coin: 'QQQ',
-            image: '/assets/dashboard/webp/graph3.webp',
-            symbol: 'QQQ',
-            status: 'BUY',
-            allocation: '15%',
-            range: [420, 430],
-            current: 425,
-        },
-        {
-            coin: 'SPY',
-            image: '/assets/dashboard/webp/graph4.webp',
-            symbol: 'SPY',
-            status: 'BUY',
-            allocation: '15%',
-            range: [420, 430],
-            current: 425,
-        },
-        {
-            coin: 'Bitcoin',
-            image: '/assets/dashboard/webp/graph1.webp',
-            symbol: 'BTC',
-            status: 'BUY',
-            allocation: '15%',
-            range: [420, 430],
-            current: 425,
-        },
-        {
-            coin: 'SPY',
-            image: '/assets/dashboard/webp/graph2.webp',
-            symbol: 'SPY',
-            status: 'BUY',
-            allocation: '10%',
-            range: [420, 430],
-            current: 425,
-        },
-        {
-            coin: 'QQQ',
-            image: '/assets/dashboard/webp/graph3.webp',
-            symbol: 'QQQ',
-            status: 'BUY',
-            allocation: '15%',
-            range: [420, 430],
-            current: 425,
-        },
-        {
-            coin: 'SPY',
-            image: '/assets/dashboard/webp/graph4.webp',
-            symbol: 'SPY',
-            status: 'BUY',
-            allocation: '15%',
-            range: [420, 430],
-            current: 425,
-        },
-        {
-            coin: 'Bitcoin',
-            image: '/assets/dashboard/webp/graph1.webp',
-            symbol: 'BTC',
-            status: 'BUY',
-            allocation: '15%',
-            range: [420, 430],
-            current: 425,
-        },
-        {
-            coin: 'SPY',
-            image: '/assets/dashboard/webp/graph2.webp',
-            symbol: 'SPY',
-            status: 'BUY',
-            allocation: '10%',
-            range: [420, 430],
-            current: 425,
-        },
-    ]
+
     const [isXL, setIsXL] = useState(false)
 
     useEffect(() => {
@@ -115,7 +25,7 @@ const TacticalSignals = ({ expanded, isSingleExpanded, isSingleExpandedCardFour 
         return () => window.removeEventListener('resize', checkScreen)
     }, [])
     const shouldSliceToTwo = isSingleExpanded && isXL
-    const visibleSignals = signals.slice(0, shouldSliceToTwo ? 2 : 4)
+    const visibleSignals = TACTICAL_SIGNALS_DATA_LIST.slice(0, shouldSliceToTwo ? 2 : 4)
     if (!expanded) {
         return (
             <div>
@@ -204,7 +114,7 @@ const TacticalSignals = ({ expanded, isSingleExpanded, isSingleExpandedCardFour 
     return (
         <div>
             <div className="xs:grid-cols-2 grid grid-cols-1 gap-4 lg:grid-cols-3 xl:grid-cols-5">
-                {signals.map((signal, i) => (
+                {TACTICAL_SIGNALS_DATA_LIST.map((signal, i) => (
                     <div key={i} className="bg-lightblack rounded-[10px] p-3 sm:p-4">
                         <div className="mb-4 flex justify-between">
                             <div className="flex items-center gap-3">

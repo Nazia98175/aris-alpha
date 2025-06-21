@@ -1,4 +1,5 @@
 import { BitcoinWhite, GreenRightArrowCircle, RedDownArrowCircle } from '../home/Icons'
+import { MARKET_SNAPSHOT_DATA_LIST } from './Helper'
 
 interface MarketSnapshotProps {
     expanded: boolean
@@ -6,111 +7,10 @@ interface MarketSnapshotProps {
 }
 
 const MarketSnapshot = ({ expanded, isSingleExpandedCardFour }: MarketSnapshotProps) => {
-    const markets = [
-        {
-            name: 'Bitcoin',
-            symbol: 'BTC',
-            sentiment: 'BULLISH',
-            comment: 'Low volume grind',
-            percentage: '109%',
-            status: '109%',
-            trend: 'up',
-        },
-        {
-            name: 'Bitcoin',
-            symbol: 'BTC',
-            sentiment: 'BEARISH',
-            comment: 'Low volume grind',
-            percentage: '109%',
-            status: '109%',
-            trend: 'down',
-        },
-        {
-            name: 'Bitcoin',
-            symbol: 'BTC',
-            sentiment: 'BULLISH',
-            comment: 'Low volume grind',
-            percentage: '109%',
-            status: '109%',
-            trend: 'up',
-        },
-        {
-            name: 'Bitcoin',
-            symbol: 'BTC',
-            sentiment: 'BEARISH',
-            comment: 'Low volume grind',
-            percentage: '109%',
-            status: '109%',
-            trend: 'down',
-        },
-        {
-            name: 'Bitcoin',
-            symbol: 'BTC',
-            sentiment: 'BULLISH',
-            comment: 'Low volume grind',
-            percentage: '109%',
-            status: '109%',
-            trend: 'up',
-        },
-        {
-            name: 'Bitcoin',
-            symbol: 'BTC',
-            sentiment: 'BULLISH',
-            comment: 'Low volume grind',
-            percentage: '109%',
-            status: '109%',
-            trend: 'up',
-        },
-        {
-            name: 'Bitcoin',
-            symbol: 'BTC',
-            sentiment: 'BEARISH',
-            comment: 'Low volume grind',
-            percentage: '109%',
-            status: '109%',
-            trend: 'down',
-        },
-        {
-            name: 'Bitcoin',
-            symbol: 'BTC',
-            sentiment: 'BULLISH',
-            comment: 'Low volume grind',
-            percentage: '109%',
-            status: '109%',
-            trend: 'up',
-        },
-        {
-            name: 'Bitcoin',
-            symbol: 'BTC',
-            sentiment: 'BEARISH',
-            comment: 'Low volume grind',
-            percentage: '109%',
-            status: '109%',
-            trend: 'down',
-        },
-        {
-            name: 'Bitcoin',
-            symbol: 'BTC',
-            sentiment: 'BULLISH',
-            comment: 'Low volume grind',
-            percentage: '109%',
-            status: '109%',
-            trend: 'up',
-        },
-        {
-            name: 'Bitcoin',
-            symbol: 'BTC',
-            sentiment: 'BEARISH',
-            comment: 'Low volume grind',
-            percentage: '109%',
-            status: '109%',
-            trend: 'down',
-        },
-    ]
 
     if (!expanded) {
         return (
-            <div className={`${isSingleExpandedCardFour ?" !pb-0":""} pb-3 sm:pb-5`}>
+            <div className={`${isSingleExpandedCardFour ? '!pb-0' : ''} pb-3 sm:pb-5`}>
                 <div className="max-sm:overflow-x-auto">
                     <table className="w-full max-sm:min-w-[450px]">
                         <thead>
@@ -122,10 +22,10 @@ const MarketSnapshot = ({ expanded, isSingleExpandedCardFour }: MarketSnapshotPr
                             </tr>
                         </thead>
                         <tbody>
-                            {markets.slice(0, 5).map((market, i) => (
+                            {MARKET_SNAPSHOT_DATA_LIST.slice(0, 5).map((market, i) => (
                                 <tr key={i} className={`text-sm ${i % 2 === 0 ? 'bg-lightblack' : 'bg-mediumslate'}`}>
                                     <td
-                                        className={`px-4 py-4 ${i === markets.slice(0, 5).length - 1 && 'rounded-bl-[10px]'}`}
+                                        className={`px-4 py-4 ${i === MARKET_SNAPSHOT_DATA_LIST.slice(0, 5).length - 1 && 'rounded-bl-[10px]'}`}
                                     >
                                         <div className="flex items-center gap-2">
                                             <BitcoinWhite />
@@ -154,7 +54,7 @@ const MarketSnapshot = ({ expanded, isSingleExpandedCardFour }: MarketSnapshotPr
                                         </div>
                                     </td>
                                     <td
-                                        className={`px-4 py-4 text-right ${i === markets.slice(0, 5).length - 1 && 'rounded-br-[10px]'}`}
+                                        className={`px-4 py-4 text-right ${i === MARKET_SNAPSHOT_DATA_LIST.slice(0, 5).length - 1 && 'rounded-br-[10px]'}`}
                                     >
                                         <span
                                             className={`rounded-[30px] border bg-transparent px-2.5 py-0.5 text-xs !leading-[150%] font-medium tracking-normal ${
@@ -195,9 +95,11 @@ const MarketSnapshot = ({ expanded, isSingleExpandedCardFour }: MarketSnapshotPr
                         </tr>
                     </thead>
                     <tbody>
-                        {markets.map((market, i) => (
+                        {MARKET_SNAPSHOT_DATA_LIST.map((market, i) => (
                             <tr key={i} className={`text-sm ${i % 2 === 0 ? 'bg-lightblack' : 'bg-mediumslate'}`}>
-                                <td className={`px-4 py-4 ${i === markets.length - 1 && 'rounded-bl-[10px]'}`}>
+                                <td
+                                    className={`px-4 py-4 ${i === MARKET_SNAPSHOT_DATA_LIST.length - 1 && 'rounded-bl-[10px]'}`}
+                                >
                                     <div className="flex items-center gap-2">
                                         <BitcoinWhite />
                                         <span className="text-richwhite text-sm font-medium tracking-normal">
@@ -235,7 +137,9 @@ const MarketSnapshot = ({ expanded, isSingleExpandedCardFour }: MarketSnapshotPr
                                 <td className="text-richwhite pl-4 text-right text-sm font-normal tracking-normal text-nowrap">
                                     {market.comment}
                                 </td>
-                                <td className={`px-4 text-right ${i === markets.length - 1 && 'rounded-br-[10px]'}`}>
+                                <td
+                                    className={`px-4 text-right ${i === MARKET_SNAPSHOT_DATA_LIST.length - 1 && 'rounded-br-[10px]'}`}
+                                >
                                     <span
                                         className={`rounded-[30px] border bg-transparent px-2.5 py-0.5 text-xs !leading-[150%] font-medium tracking-normal ${
                                             market.trend === 'up'

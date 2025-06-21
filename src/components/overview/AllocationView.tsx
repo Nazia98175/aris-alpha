@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import { ALLOCATION_DATA_LIST } from './Helper'
 
 interface AllocationViewProps {
     expanded: boolean
@@ -13,36 +14,7 @@ const AllocationView = ({
     isSingleExpandedCardTwo,
     isSingleExpandedCardOne,
 }: AllocationViewProps) => {
-    const allocations = [
-        {
-            name: 'Equities',
-            percentage: '45%',
-            color: 'bg-lightgreen/10',
-            border: 'border-lightgreen',
-            desc: 'Raised exposure based on strong earnings momentum and improving macro data.',
-        },
-        {
-            name: 'Crypto',
-            percentage: '20%',
-            color: 'bg-brown/10',
-            border: 'border-brown',
-            desc: 'Maintained current weight as BTC continues to respect key support and upside trend.',
-        },
-        {
-            name: 'Fixed Income',
-            percentage: '25%',
-            color: 'bg-darkpurple/10',
-            border: 'border-darkpurple',
-            desc: 'Holding overweight position amid stable yields and defensive tilt in market sentiment.',
-        },
-        {
-            name: 'Alternative',
-            percentage: '10%',
-            color: 'bg-mediumred/10',
-            border: 'border-mediumred',
-            desc: 'Reduced slightly to fund tactical increases in equities and crypto.',
-        },
-    ]
+  
 
     if (!expanded) {
         return (
@@ -107,7 +79,7 @@ const AllocationView = ({
                     <span className="text-richwhite text-2xl font-semibold tracking-normal">100%</span>
                 </div>
                 <div className="xs:grid-cols-4 mt-5 grid w-full grid-cols-2 items-end gap-4 md:gap-6">
-                    {allocations.map((obj, index) => (
+                    {ALLOCATION_DATA_LIST.map((obj, index) => (
                         <div key={index} className="w-full max-w-[293px]">
                             <div className="flex flex-col gap-4">
                                 <div

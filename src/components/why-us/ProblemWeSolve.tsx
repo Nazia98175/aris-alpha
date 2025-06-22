@@ -6,10 +6,10 @@ import { CompoundCircle } from '../onboard/Icons'
 
 const ProblemWeSolve = () => {
     return (
-        <section className="w-full px-6 py-12 text-white md:py-20">
-            <div className="mx-auto flex h-[450px] w-full max-w-[1140px] flex-col items-center justify-between md:flex-row">
+        <section className="w-full px-6 py-10 text-white md:py-20 xl:px-0">
+            <div className="mx-auto flex h-[450px] w-full max-w-[1140px] flex-col items-center justify-between lg:flex-row">
                 {/* Text Column */}
-                <div className="font-poppins w-full max-w-[542px]">
+                <div className="font-poppins w-full max-w-full lg:max-w-[542px]">
                     <h2 className="secondary-heading mb-6">The Problem We Solve</h2>
                     <p className="description mb-6 !text-[#D0D0D0]/[80%]">
                         Today’s investors face a brutal paradox: too much data, too little clarity. Markets are flooded

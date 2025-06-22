@@ -4,9 +4,9 @@ import Image from 'next/image'
 
 export const OurPhilosophy = () => {
     return (
-        <section className="w-full px-4 py-16 text-white xl:px-0">
+        <section className="w-full px-6 py-10 text-white md:py-20 xl:px-0">
             <div className="mx-auto w-full max-w-[1140px]">
-                <div className="relative h-auto rounded-[20px] border bg-[#1F1D2D] px-0 pt-6 backdrop-blur-[33.3px] md:pt-10 xl:h-[586px] xl:px-0">
+                <div className="relative h-auto rounded-[32px] border bg-[#1F1D2D] px-0 pt-6 backdrop-blur-[33.3px] md:pt-10 xl:h-[586px] xl:px-0">
                     <div className="relative z-10">
                         <h2 className="secondary-heading text-center">Our Philosophy</h2>
 
@@ -21,7 +21,7 @@ export const OurPhilosophy = () => {
                         alt="Alpha strategy performance graph"
                         width={1139}
                         height={487}
-                        className="relative top-0 z-0 h-auto w-full rounded-[20px] object-contain xl:-top-21"
+                        className="relative top-0 z-0 h-auto w-full rounded-[32px] object-contain xl:-top-21"
                         priority
                     />
                 </div>

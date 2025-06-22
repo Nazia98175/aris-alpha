@@ -23,7 +23,7 @@ const solutions = [
 
 export const OurSolution = () => {
     return (
-        <section className="w-full bg-transparent px-4 py-16 text-white">
+        <section className="w-full bg-transparent px-6 py-10 text-white md:py-20 xl:px-0">
             <div className="mx-auto w-full max-w-[1140px] text-center">
                 <h2 className="secondary-heading">Our Solution</h2>
                 <p className="description mx-auto mt-4 max-w-[691px] !text-[#D0D0D0]/[80%]">
@@ -36,11 +36,11 @@ export const OurSolution = () => {
                     We fuse AI, systematic research, and institutional-grade execution into a unified alpha engine:
                 </p>
 
-                <div className="mt-10 grid gap-6 md:grid-cols-3">
+                <div className="mt-10 grid justify-center gap-6 lg:grid-cols-3">
                     {solutions.map((item, index) => (
                         <div
                             key={index}
-                            className="h-[455px] w-full max-w-[364px] rounded-[20px] bg-white/[4%] p-[26px] text-left shadow-[0px_0px_10px_0px_rgba(42,100,246,0.15)] backdrop-blur-[40px]"
+                            className="h-auto w-full max-w-full rounded-[30px] bg-white/[4%] p-[16px] text-left shadow-[0px_0px_10px_0px_rgba(42,100,246,0.15)] backdrop-blur-[40px] lg:h-[455px] lg:max-w-[364px] xl:p-[26px]"
                         >
                             <div className="mx-auto mb-4 flex w-full justify-center">
                                 <CheckSquare />

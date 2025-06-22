@@ -541,7 +541,8 @@ export const CheckIcon = () => (
 )
 
 export const CompoundCircle = () => (
-    <svg width="810" height="920" viewBox="0 0 810 920" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg width="810" height="920" viewBox="0 0 810 920" fill="none" xmlns="http://www.w3.org/2000/svg"
+    className="xl:w-[810px] h-[920px]">
         <g opacity="0.3" filter="url(#filter0_f_2743_4230)">
             <circle cx="470.75" cy="464.5" r="100.75" fill="url(#paint0_linear_2743_4230)" />
         </g>

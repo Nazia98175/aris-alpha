@@ -1,5 +1,8 @@
 import Navbar from '@/components/layout/navbar'
 import Footer from '@/components/layout/public/footer'
+import { OurPhilosophy } from '@/components/why-us/OurPhilosophy'
+import { OurSolution } from '@/components/why-us/OurSolution'
+import ProblemWeSolve from '@/components/why-us/ProblemWeSolve'
 import WhoAreWe from '@/components/why-us/WhoAreWe'
 
 // export const metadata: Metadata = {
@@ -13,12 +16,13 @@ const WhyUsPage = () => {
             <Navbar navBg="!bg-[#000103]" />
             {/* <ReadyToFilter /> */}
             <WhoAreWe />
-
-            <section className="relative min-h-screen bg-[url('/assets/backgrounds/second-working-bg.webp')] bg-contain bg-center">
-                <div className="relative bg-black/50">
-                    {/* <WorkingFooter /> */}
-                    <Footer />
-                </div>
+            <ProblemWeSolve />
+            <section className="relative bg-[url('/assets/backgrounds/working-bg.webp')] bg-no-repeat md:bg-contain md:bg-top">
+                <OurSolution />
+                <section className="relative bg-[url('/assets/backgrounds/working-bg.webp')] bg-no-repeat md:bg-contain md:bg-center">
+                    <OurPhilosophy />
+                </section>
+                <Footer />
             </section>
         </section>
     )

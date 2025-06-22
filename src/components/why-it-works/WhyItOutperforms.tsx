@@ -26,7 +26,7 @@ const WhyItOutperforms = () => {
                         </h3>
                         <div className="absolute top-[53px] z-10 h-[3px] w-[120px] bg-[#A03E3A] md:top-[61px] md:h-[4px] lg:top-[73px]" />
                     </div>
-                    <ul className="ml-3 space-y-6 text-xl leading-[130%] font-normal text-white/80 xl:text-2xl">
+                    <ul className="ml-3 space-y-6 text-xl leading-[130%] font-normal text-[#D0D0D0] xl:text-2xl">
                         {traditionalPoints.map((point, index) => (
                             <li key={index} className="ml-5 list-disc">
                                 {point}
@@ -49,7 +49,7 @@ const WhyItOutperforms = () => {
                         <div className="absolute top-[53px] z-10 h-[3px] w-[120px] bg-[#2A64F6] md:top-[61px] md:h-[4px] lg:top-[73px]" />
                     </div>
                     {/* <div className="pointer-events-none absolute inset-0 z-0 bg-[url('/noise.png')] opacity-10 mix-blend-screen" /> */}
-                    <ul className="ml-3 space-y-6 text-xl leading-[130%] font-normal text-white/80 xl:text-2xl">
+                    <ul className="ml-3 space-y-6 text-xl leading-[130%] font-normal text-[#D0D0D0] xl:text-2xl">
                         {arisPoints.map((point, index) => (
                             <li key={index} className="flex items-center gap-2">
                                 <CheckIcon />

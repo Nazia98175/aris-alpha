@@ -21,7 +21,7 @@ const BuiltAroundReality = () => {
             {/* Right: Content */}
             <div className="w-full max-w-full lg:max-w-[433px]">
                 <h2 className="secondary-heading">Built Around Market Reality</h2>
-                <p className="description mb-3 md:mb-6">
+                <p className="description mb-3 !text-[#D0D0D0]/[80%] md:mb-6">
                     The best traders don’t guess. They move early — when conviction starts to build.
                 </p>
 
@@ -31,7 +31,7 @@ const BuiltAroundReality = () => {
                 </div>
 
                 {/* Features List */}
-                <ul className="space-y-3 text-sm text-[#D0D0D0] md:text-base">
+                <ul className="space-y-3 text-base text-[#D0D0D0]/[80%] md:text-lg">
                     <li className="flex items-center gap-2">
                         <span>
                             <CheckIcon />

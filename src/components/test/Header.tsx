@@ -1,6 +1,8 @@
 'use client'
+
 import React, { useEffect, useRef, useState } from 'react'
 import Image from 'next/image'
+import TabNavigation from './TabNavigation' // Adjust path if needed
 
 export const Header = () => {
     const [mobileSearchOpen, setMobileSearchOpen] = useState(false)
@@ -50,6 +52,7 @@ export const Header = () => {
         <header className="bg-darkblack relative border-b border-white/[7%] px-4 py-3 lg:px-6">
             <div className="mx-auto w-full max-w-[1920px]">
                 {/* Mobile Search */}
+                {/* 
                 <div
                     ref={searchRef}
                     className={`bg-darkblack absolute top-full left-0 z-20 transform px-4 py-3 transition-all duration-300 ease-in-out lg:hidden ${
@@ -64,15 +67,16 @@ export const Header = () => {
                         placeholder="Search..."
                         className="focus:border-primaryblue focus:ring-primaryblue border-lightsand bg-lightblack placeholder-grey w-full rounded-md border px-4 py-2 text-sm text-white focus:ring-1 focus:outline-none"
                     />
-                </div>
+                </div> 
+                */}
 
-                <div className="flex flex-nowrap items-center justify-between gap-4">
+                <div className="flex flex-wrap items-center justify-between gap-4 md:flex-nowrap">
                     {/* Logo and mobile controls */}
-                    <div className="flex w-[80%] max-w-full items-center justify-between md:w-[70%] lg:w-auto">
+                    <div className="flex w-fit max-w-full items-center justify-between md:w-[50%] lg:w-full">
                         <h1 className="text-[28px] leading-[120%] font-normal text-white md:text-[36px] lg:text-[43.33px]">
                             ARIS
                         </h1>
-
+                        {/* 
                         <div className="flex items-center gap-4 lg:hidden">
                             <button onClick={toggleSearch} aria-label="Toggle Search" className="text-white">
                                 <svg
@@ -85,36 +89,16 @@ export const Header = () => {
                                     <path d="M10 2a8 8 0 0 1 6.32 12.906l4.387 4.387a1 1 0 0 1-1.414 1.414l-4.387-4.387A8 8 0 1 1 10 2zm0 2a6 6 0 1 0 0 12 6 6 0 0 0 0-12z" />
                                 </svg>
                             </button>
-                        </div>
+                        </div> */}
                     </div>
 
-                    {/* Desktop Search */}
-                    <form
-                        onSubmit={(e) => {
-                            e.preventDefault()
-                            handleSearch()
-                        }}
-                        className="hidden w-full max-w-md flex-grow lg:flex"
-                    >
-                        <div className="relative w-full">
-                            <span className="absolute top-1/2 left-3 -translate-y-1/2 text-white">
-                                <svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20">
-                                    <path d="M12.9 14.32a8 8 0 1 1 1.414-1.414l4.387 4.387a1 1 0 0 1-1.414 1.414l-4.387-4.387zM14 8a6 6 0 1 0-12 0 6 6 0 0 0 12 0z" />
-                                </svg>
-                            </span>
-                            <input
-                                type="text"
-                                value={searchValue}
-                                onChange={(e) => setSearchValue(e.target.value)}
-                                onKeyDown={handleKeyDown}
-                                placeholder="Search"
-                                className="focus:ring-primaryblue placeholder-grey border-lightsand bg-lightblack w-full rounded-full border py-2 pr-4 pl-10 text-sm text-white focus:ring-1 focus:outline-none"
-                            />
-                        </div>
-                    </form>
+                    {/* Desktop Tab Navigation in place of search */}
+                    <div className="hidden w-fit md:flex">
+                        <TabNavigation />
+                    </div>
 
                     {/* Right Section */}
-                    <div className="flex items-center gap-4 whitespace-nowrap xl:gap-6">
+                    <div className="flex w-fit items-center justify-center gap-4 whitespace-nowrap md:w-full lg:justify-end xl:gap-6">
                         <div className="text-grey flex cursor-pointer items-center gap-2 text-sm">
                             <svg
                                 width="16"
@@ -128,17 +112,7 @@ export const Header = () => {
                                     fill="#999999"
                                 />
                             </svg>
-                            {/* <div className="hidden cursor-pointer flex-col leading-tight lg:flex">
-                            <span className="text-grey text-xs">Portfolio Balance</span>
-                            <span className="text-sm text-white">$623,098.17</span>
-                        </div> */}
                         </div>
-
-                        {/* <div className="hidden cursor-pointer flex-col text-sm leading-tight lg:flex">
-                        <span className="text-grey text-xs">Available Funds</span>
-
-                        <span className="text-sm text-white">$122,912.50</span>
-                    </div> */}
 
                         <div className="bg-lightgrey hidden h-[15.03px] w-px md:block" />
 
@@ -155,6 +129,9 @@ export const Header = () => {
                                 <span className="text-grey text-xs">Account: 4453728992</span>
                             </div>
                         </div>
+                    </div>
+                    <div className="flex w-full justify-center md:hidden md:justify-start">
+                        <TabNavigation />
                     </div>
                 </div>
             </div>

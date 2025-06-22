@@ -3,8 +3,8 @@ import React from 'react'
 
 const page = () => {
     return (
-        <div className="bg-fadeblack pt-10 pb-14 min-h-screen px-4 lg:px-6">
-            <div className="mx-auto w-full max-w-[1360px]">
+        <div className="bg-fadeblack min-h-screen pb-14">
+            <div className="mx-auto w-full max-w-[1920px]">
                 <CompleteOverview />
             </div>
         </div>

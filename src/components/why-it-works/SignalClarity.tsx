@@ -12,8 +12,10 @@ const SignalClarity = () => {
                     Signal Clarity Over <br className="hidden md:block" /> Chaos
                 </h2>
 
-                <p className="description mt-4">Most platforms flood you with alerts. We don’t.</p>
-                <p className="description mt-8">
+                <p className="description mt-4 !text-[#D0D0D0]/[80%]">
+                    Most platforms flood you with alerts. We don’t.
+                </p>
+                <p className="description mt-8 !text-[#D0D0D0]/[80%]">
                     Aris Alpha filters thousands of data points and surfaces only high-conviction setups — the kind
                     elite investors act on.
                 </p>

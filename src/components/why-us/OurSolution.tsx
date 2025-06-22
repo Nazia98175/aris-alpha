@@ -1,6 +1,5 @@
 'use client'
 
-import { CheckIcon } from 'lucide-react'
 import { CheckSquare } from '../onboard/Icons'
 
 const solutions = [

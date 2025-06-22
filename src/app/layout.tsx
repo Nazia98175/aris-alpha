@@ -1,9 +1,9 @@
 import './globals.css'
 
+import { Toaster } from '@/components/ui/sonner'
+import ReactQueryProvider from '@/providers/react-query'
 import type { Metadata } from 'next'
 import { Poppins } from 'next/font/google'
-import ReactQueryProvider from '@/providers/react-query'
-import { Toaster } from '@/components/ui/sonner'
 
 const poppins = Poppins({
     variable: '--font-poppins',

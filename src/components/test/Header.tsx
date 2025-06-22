@@ -1,28 +1,28 @@
 'use client'
 
-import React, { useEffect, useRef, useState } from 'react'
 import Image from 'next/image'
-import TabNavigation from './TabNavigation' // Adjust path if needed
+import React, { useEffect, useRef, useState } from 'react'
+import TabNavigation from './TabNavigation'; // Adjust path if needed
 
 export const Header = () => {
     const [mobileSearchOpen, setMobileSearchOpen] = useState(false)
-    const [searchValue, setSearchValue] = useState('')
+    // const [searchValue, setSearchValue] = useState('')
     const searchRef = useRef<HTMLDivElement>(null)
 
-    const toggleSearch = () => setMobileSearchOpen(!mobileSearchOpen)
+    // const toggleSearch = () => setMobileSearchOpen(!mobileSearchOpen)
 
-    const handleSearch = () => {
-        if (searchValue.trim() === '') return
-        console.log('Search triggered:', searchValue)
-        setSearchValue('')
-    }
+    // const handleSearch = () => {
+    //     if (searchValue.trim() === '') return
+    //     console.log('Search triggered:', searchValue)
+    //     setSearchValue('')
+    // }
 
-    const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
-        if (e.key === 'Enter') {
-            e.preventDefault()
-            handleSearch()
-        }
-    }
+    // const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    //     if (e.key === 'Enter') {
+    //         e.preventDefault()
+    //         handleSearch()
+    //     }
+    // }
 
     useEffect(() => {
         const handleClickOutside = (event: MouseEvent) => {

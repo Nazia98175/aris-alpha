@@ -72,15 +72,18 @@ const Navbar = ({ navBg }: NavbarProps) => {
                 className={`fixed top-0 right-0 left-0 z-50 hidden h-24 bg-[#010314] transition-transform duration-300 sm:block lg:h-[110px] ${navBg && navBg}`}
             >
                 <div className="custom-container flex h-full items-center justify-between">
-                    <Link className="inline-block text-3xl leading-[120%] md:text-[40px]" href={'/'}>
+                    <Link className="inline-block w-[20%] text-3xl leading-[120%] md:text-[40px]" href={'/'}>
                         ARIS
                     </Link>
                     <div className="flex items-center gap-3 text-xs text-[#D0D0D0] md:gap-4 md:text-sm lg:gap-10 lg:text-base">
-                        <Link className="hover:text-primary duration-300" href={'/onboarding'}>
+                        <Link className="hover:text-primary duration-300" href={'/why-it-works'}>
                             Why It Works
                         </Link>
-                        <Link className="hover:text-primary duration-300" href={'#about-us'}>
+                        <Link className="hover:text-primary duration-300" href={'/why-us'}>
                             Why Us
+                        </Link>
+                        <Link className="hover:text-primary duration-300" href={'/dashboard'}>
+                            Dashboard
                         </Link>
                         {/* <Link className="hover:text-primary duration-300" href={'#dashboard'}>
                             Dashboard
@@ -156,6 +159,9 @@ const Navbar = ({ navBg }: NavbarProps) => {
                                 onClick={closeMenu}
                             >
                                 Why Us
+                            </Link>
+                            <Link className="hover:text-primary duration-300" href={'/dashboard'}>
+                                Dashboard
                             </Link>
                             {/* <Link
                                 className="border-b border-[#1A1B2E] pb-2 text-lg text-[#D0D0D0] duration-300 hover:text-[#2A64F6]"

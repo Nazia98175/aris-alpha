@@ -24,7 +24,7 @@ export const reviewSlider = [
 export const footerLinks = [
     {
         label: 'Home',
-        href: '#home',
+        href: '/',
     },
     {
         label: 'Learn More',
@@ -32,7 +32,7 @@ export const footerLinks = [
     },
     {
         label: 'About Us',
-        href: '#about-us',
+        href: '/test',
     },
 ]
 

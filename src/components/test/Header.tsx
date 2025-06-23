@@ -9,7 +9,7 @@ export const Header = () => {
     const [searchValue, setSearchValue] = useState('')
     const searchRef = useRef<HTMLDivElement>(null)
 
-    const toggleSearch = () => setMobileSearchOpen(!mobileSearchOpen)
+    // const toggleSearch = () => setMobileSearchOpen(!mobileSearchOpen)
 
     const handleSearch = () => {
         if (searchValue.trim() === '') return
@@ -17,12 +17,12 @@ export const Header = () => {
         setSearchValue('')
     }
 
-    const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
-        if (e.key === 'Enter') {
-            e.preventDefault()
-            handleSearch()
-        }
-    }
+    // const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    //     if (e.key === 'Enter') {
+    //         e.preventDefault()
+    //         handleSearch()
+    //     }
+    // }
 
     useEffect(() => {
         const handleClickOutside = (event: MouseEvent) => {

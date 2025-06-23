@@ -4,8 +4,8 @@ import { OurPhilosophy } from '@/components/why-us/OurPhilosophy'
 import { OurSolution } from '@/components/why-us/OurSolution'
 import ProblemWeSolve from '@/components/why-us/ProblemWeSolve'
 import WhoAreWe from '@/components/why-us/WhoAreWe'
-import { Metadata } from 'next'
-import Image from 'next/image'
+// import { Metadata } from 'next'
+// import Image from 'next/image'
 
 // export const metadata: Metadata = {
 //     title: 'Working | CTA',

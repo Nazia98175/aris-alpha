@@ -14,7 +14,6 @@ const WhyUsPage = () => {
     return (
         <section className="relative">
             <Navbar navBg="!bg-[#000103]" />
-            {/* <ReadyToFilter /> */}
             <WhoAreWe />
             <ProblemWeSolve />
             <section className="relative bg-[url('/assets/backgrounds/working-bg.webp')] bg-no-repeat md:bg-contain md:bg-top">

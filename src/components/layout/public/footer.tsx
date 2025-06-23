@@ -14,19 +14,19 @@ const Footer = () => {
                     <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
                         <div className="flex items-center gap-2">
                             <WhiteCheckIcon />
-                            <p className="text-base font-medium text-[#d0d0d0] sm:text-lg md:text-xl">
+                            <p className="text-base font-medium text-waterwhite sm:text-lg md:text-xl">
                                 Fast signal delivery
                             </p>
                         </div>
                         <div className="flex items-center gap-2">
                             <WhiteCheckIcon />
-                            <p className="text-base font-medium text-[#d0d0d0] sm:text-lg md:text-xl">
+                            <p className="text-base font-medium text-waterwhite sm:text-lg md:text-xl">
                                 No overcomplication
                             </p>
                         </div>
                         <div className="flex items-center gap-2">
                             <WhiteCheckIcon />
-                            <p className="text-base font-medium text-[#d0d0d0] sm:text-lg md:text-xl">
+                            <p className="text-base font-medium text-waterwhite sm:text-lg md:text-xl">
                                 Built by traders, not marketers
                             </p>
                         </div>
@@ -46,7 +46,7 @@ const Footer = () => {
                     </ul>
                 </div>
             </div>
-            <div className="text-secondary mt-[40px] bg-[#010314] px-2 py-4 text-center text-sm sm:mt-[60px] md:mt-[77px] md:py-6">
+            <div className="text-secondary bg-knightblack mt-10 px-2 py-4 text-center text-sm sm:mt-[60px] md:mt-[77px] md:py-6">
                 <p>
                     Aris Alpha provides signal-based insights for informational purposes only. Nothing on this site
                     constitutes financial advice or a recommendation to buy or sell any security. Please consult a

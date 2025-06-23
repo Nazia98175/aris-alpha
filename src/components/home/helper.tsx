@@ -77,3 +77,21 @@ export const stepInstractions = [
         tradingNavigation: true,
     },
 ]
+
+export const solutions = [
+    {
+        title: 'AI-Augmented Intelligence',
+        description:
+            'We leverage state-of-the-art large language models to parse earnings calls, macro reports, institutional filings, and sentiment data — identifying early inflection points and regime transitions before they surface in price.',
+    },
+    {
+        title: 'Quantitative Research Core',
+        description:
+            'Thousands of simulations across strategy archetypes, filtered by forward predictive power, stress-tested across crisis periods, clustered by robustness, and blended through ensemble methods. Our research engine is designed for iteration, validation, and survivability.',
+    },
+    {
+        title: 'Live Capital Deployment',
+        description:
+            'Every strategy we build trades live. Backed by disciplined risk management and tight execution systems, our strategies are walk-forward validated, monitored in real-time, and structured to scale only what survives.',
+    },
+]

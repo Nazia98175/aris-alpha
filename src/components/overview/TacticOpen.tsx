@@ -1,7 +1,7 @@
-import Image from 'next/image'
 import Link from 'next/link'
 import { BitcoinLogo, RightTopArrow } from '../home/Icons'
 import { TACTICAL_SIGNALS_DATA_LIST } from './Helper'
+import CandlestickChart from './CandleStickChart'
 
 const TacticOpen = () => {
     return (
@@ -59,14 +59,9 @@ const TacticOpen = () => {
                                 </span>
                             </div>
                         </div>
-                        <Image
-                            className="mx-auto xl:h-[94px] w-full max-w-[283px]"
-                            src={signal.image}
-                            alt="graph"
-                            width={283}
-                            height={94}
-                            unoptimized
-                        />
+                        <div className="mx-auto h-[94px] w-full xl:h-[94px]">
+                            <CandlestickChart symbol={signal.symbol} />
+                        </div>
                         <div className="gradient-border-tactic my-3.5 h-[1px] w-full"></div>
                         <span className="text-richwhite text-custom-sm font-semibold tracking-normal">Entry Logic</span>
                         {signal.entryLogic && (

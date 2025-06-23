@@ -2,7 +2,7 @@ import Link from 'next/link'
 import { useEffect, useState } from 'react'
 import { BitcoinLogo, RightTopArrow } from '../home/Icons'
 import { TACTICAL_SIGNALS_DATA_LIST } from './Helper'
-import Image from 'next/image'
+import CandlestickChart from './CandleStickChart'
 
 interface TacticClosedProps {
     isSingleExpanded: boolean
@@ -80,14 +80,9 @@ const TacticClosed = ({ isSingleExpanded, isSingleExpandedCardFour }: TacticClos
                                     ${signal.range[0]}-${signal.range[1]}
                                 </span>
                             </div>
-                            <Image
-                                className="mx-auto w-full max-w-[155px] xl:h-[52px]"
-                                src={signal.image}
-                                alt="graph"
-                                width={155}
-                                height={52}
-                                unoptimized
-                            />
+                            <div className="mx-auto h-[52px] w-full">
+                                <CandlestickChart symbol={signal.symbol} height={52} />
+                            </div>
                             <div className={`my-2.5 ${isSingleExpanded && 'mb-0'}`}>
                                 <span className="text-custom-sm text-richslate font-light tracking-normal">
                                     Updated 1 min ago

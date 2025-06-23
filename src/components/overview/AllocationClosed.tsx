@@ -103,7 +103,7 @@ const AllocationClosed = ({
                     </ResponsiveContainer>
                 </div>
                 <div className="flex flex-col gap-5">
-                    <div className={`flex gap-5 ${isSingleExpanded ? 'flex-col' : 'items-center'}`}>
+                    <div className={`flex gap-5 ${isSingleExpanded ? 'xl:flex-col' : 'items-center'}`}>
                         <div className="flex items-center gap-2">
                             <div className="bg-lightblue h-2.5 w-2.5 rounded-full"></div>
                             <span className="text-richwhite text-sm !leading-[104.4%] font-normal tracking-normal">
@@ -117,7 +117,7 @@ const AllocationClosed = ({
                             </span>
                         </div>
                     </div>
-                    <div className={`flex gap-5 ${isSingleExpanded ? 'flex-col' : 'items-center'}`}>
+                    <div className={`flex gap-5 ${isSingleExpanded ? 'xl:flex-col' : 'items-center'}`}>
                         <div className="flex items-center gap-2">
                             <div className="bg-lightorange h-2.5 w-2.5 rounded-full"></div>
                             <span className="text-richwhite text-sm !leading-[104.4%] font-normal tracking-normal">

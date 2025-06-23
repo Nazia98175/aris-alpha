@@ -8,7 +8,7 @@ const Chart = dynamic(() => import('react-apexcharts'), { ssr: false })
 
 interface CandlestickChartProps {
     symbol: string
-    height?: number 
+    height?: number
 }
 
 const CandlestickChart: React.FC<CandlestickChartProps> = ({ symbol, height = 94 }) => {
@@ -17,53 +17,33 @@ const CandlestickChart: React.FC<CandlestickChartProps> = ({ symbol, height = 94
         const data = []
         let currentPrice = basePrice
 
-        // Create data with higher volatility for more dramatic movements
+        // Create CLEAR three-phase pattern: UP → DOWN → UP
         const volatilityPattern = [
-            0.035, 0.028, 0.042, 0.025, 0.055, 0.038, 0.031, 0.048, 0.033, 0.062, 0.071, 0.045, 0.039, 0.033, 0.027,
-            0.041, 0.035, 0.052, 0.029, 0.037, 0.033, 0.058, 0.044, 0.036, 0.023, 0.039, 0.041, 0.049, 0.056, 0.043,
+            // Phase 1: Strong uptrend (candles 0-9) - lower volatility for cleaner trend
+            0.08, 0.06, 0.07, 0.05, 0.09, 0.06, 0.07, 0.08, 0.06, 0.07,
+            // Phase 2: Strong downtrend (candles 10-19) - higher volatility for dramatic crash
+            0.12, 0.15, 0.13, 0.16, 0.14, 0.17, 0.15, 0.14, 0.18, 0.16,
+            // Phase 3: Strong recovery (candles 20-29) - moderate volatility for steady climb
+            0.09, 0.08, 0.1, 0.07, 0.11, 0.08, 0.09, 0.1, 0.08, 0.09,
         ]
 
-        // Create a pattern similar to your image with more dramatic swings
+        // Create CLEAR directional trends: STRONG UP → STRONG DOWN → STRONG UP
         const trendPattern = [
-            1,
-            1.2,
-            0.8,
-            1.5,
-            0.6,
-            1.3,
-            0.9,
-            1.1,
-            1.4,
-            0.7, // volatile uptrend
-            -0.8,
-            -1.4,
-            -1.1,
-            -1.6,
-            -0.9,
-            -1.2,
-            -1.5,
-            -0.7,
-            -1.3,
-            -1.8, // dramatic downtrend
-            -1.2,
-            -0.6,
-            -1.4,
-            -0.8,
-            -1.1, // continued volatility
-            0.9,
-            1.2,
-            0.7,
-            1.5,
-            1.1, // volatile recovery
+            // Phase 1: Consistent uptrend - all positive, increasing momentum
+            2.5, 2.8, 3.1, 2.6, 3.4, 2.9, 3.2, 3.5, 2.7, 3.8,
+            // Phase 2: Brutal downtrend - all negative, accelerating selling
+            -3.2, -3.8, -4.1, -3.5, -4.5, -3.9, -4.2, -4.8, -3.6, -5.1,
+            // Phase 3: Strong recovery - all positive, building momentum back up
+            2.8, 3.1, 2.5, 3.6, 2.9, 3.3, 3.7, 2.6, 3.4, 4.0,
         ]
 
         for (let i = 0; i < 30; i++) {
             const date = new Date()
             date.setHours(date.getHours() - (30 - i))
 
-            const volatility = volatilityPattern[i] || 0.035
+            const volatility = volatilityPattern[i] || 0.08
             const trend = trendPattern[i] || 0
-            const trendStrength = 0.008 // Increased trend strength
+            const trendStrength = 0.025 // Strong but controlled trend movements
 
             const trendChange = trend * trendStrength
             const randomChange = (Math.random() - 0.5) * 2 * volatility
@@ -72,13 +52,25 @@ const CandlestickChart: React.FC<CandlestickChartProps> = ({ symbol, height = 94
             const open = currentPrice
             const close = open * (1 + totalChange)
 
-            // Create much longer wicks for dramatic effect
-            const upperWickExtension = Math.random() * 0.015 + 0.01 // 1-2.5% upper wick
-            const lowerWickExtension = Math.random() * 0.015 + 0.01 // 1-2.5% lower wick
+            // Create phase-appropriate wick behavior
+            let upperWickExtension, lowerWickExtension, wickMultiplier
 
-            // Sometimes create extremely long wicks for dramatic candles
-            const isDramaticCandle = Math.random() < 0.3 // 30% chance
-            const wickMultiplier = isDramaticCandle ? 1.5 : 1
+            if (i < 10) {
+                // Phase 1: Uptrend - longer lower wicks (buying dips), shorter upper wicks
+                upperWickExtension = Math.random() * 0.03 + 0.015 // 1.5-4.5% upper wick
+                lowerWickExtension = Math.random() * 0.06 + 0.04 // 4-10% lower wick
+                wickMultiplier = Math.random() < 0.7 ? 2.0 : 1.5 // 70% chance for dramatic lower wicks
+            } else if (i < 20) {
+                // Phase 2: Downtrend - longer upper wicks (selling rallies), shorter lower wicks
+                upperWickExtension = Math.random() * 0.08 + 0.05 // 5-13% upper wick
+                lowerWickExtension = Math.random() * 0.03 + 0.02 // 2-5% lower wick
+                wickMultiplier = Math.random() < 0.8 ? 2.5 : 2.0 // 80% chance for dramatic upper wicks
+            } else {
+                // Phase 3: Recovery - longer lower wicks (strong buying), moderate upper wicks
+                upperWickExtension = Math.random() * 0.04 + 0.02 // 2-6% upper wick
+                lowerWickExtension = Math.random() * 0.07 + 0.045 // 4.5-11.5% lower wick
+                wickMultiplier = Math.random() < 0.75 ? 2.2 : 1.8 // 75% chance for dramatic lower wicks
+            }
 
             const bodyHigh = Math.max(open, close)
             const bodyLow = Math.min(open, close)
@@ -168,7 +160,85 @@ const CandlestickChart: React.FC<CandlestickChartProps> = ({ symbol, height = 94
                 show: false,
             },
             tooltip: {
-                enabled: false,
+                enabled: true,
+                theme: 'dark',
+                style: {
+                    fontSize: '12px',
+                    fontFamily: 'inherit',
+                },
+                custom: function ({ seriesIndex, dataPointIndex, w }) {
+                    const data = w.globals.initialSeries[seriesIndex].data[dataPointIndex]
+                    const [open, high, low, close] = data.y
+                    const date = new Date(data.x)
+                    const isGreen = close > open
+                    const change = close - open
+                    const changePercent = ((change / open) * 100).toFixed(2)
+
+                    // Format price based on symbol
+                    const formatPrice = (price: number) => {
+                        if (symbol === 'BTC') {
+                            return `${price.toLocaleString('en-US', { maximumFractionDigits: 0 })}`
+                        }
+                        return `${price.toFixed(2)}`
+                    }
+
+                    return `
+                        <div style="
+                            background: #1f2937; 
+                            border: 1px solid #374151; 
+                            border-radius: 8px; 
+                            padding: 12px; 
+                            min-width: 180px;
+                            font-family: inherit;
+                        ">
+                            <div style="
+                                color: #f9fafb; 
+                                font-weight: 600; 
+                                margin-bottom: 8px; 
+                                font-size: 13px;
+                                border-bottom: 1px solid #374151;
+                                padding-bottom: 6px;
+                            ">
+                                ${symbol} • ${date.toLocaleDateString('en-US', {
+                                    month: 'short',
+                                    day: 'numeric',
+                                    hour: '2-digit',
+                                    minute: '2-digit',
+                                })}
+                            </div>
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 4px;">
+                                <span style="color: #9ca3af;">Open:</span>
+                                <span style="color: #f9fafb; font-weight: 500;">${formatPrice(open)}</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 4px;">
+                                <span style="color: #9ca3af;">High:</span>
+                                <span style="color: #10b981; font-weight: 500;">${formatPrice(high)}</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 4px;">
+                                <span style="color: #9ca3af;">Low:</span>
+                                <span style="color: #ef4444; font-weight: 500;">${formatPrice(low)}</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+                                <span style="color: #9ca3af;">Close:</span>
+                                <span style="color: #f9fafb; font-weight: 500;">${formatPrice(close)}</span>
+                            </div>
+                            <div style="
+                                display: flex; 
+                                justify-content: space-between; 
+                                padding-top: 6px;
+                                border-top: 1px solid #374151;
+                            ">
+                                <span style="color: #9ca3af;">Change:</span>
+                                <span style="
+                                    color: ${isGreen ? '#10b981' : '#ef4444'}; 
+                                    font-weight: 600;
+                                ">
+                                    ${isGreen ? '+' : ''}${formatPrice(change)} (${isGreen ? '+' : ''}${changePercent}%)
+                                </span>
+                            </div>
+                        </div>
+                    `
+                },
             },
             legend: {
                 show: false,

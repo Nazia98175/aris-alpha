@@ -75,7 +75,7 @@ const AllocationClosed = ({
 
     return (
         <div
-            className={`${isSingleExpandedCardOne ? 'min-h-[298px]' : ''} ${isSingleExpandedCardTwo ? 'min-h-[260px]' : ''} ${isSingleExpandedCardThree ? 'min-h-[298px]' : ''} flex h-full w-full flex-col justify-between gap-5 pb-3 sm:pb-5 xl:gap-3.5`}
+            className={`${isSingleExpandedCardOne ? 'min-h-[350px]' : ''} ${isSingleExpandedCardTwo ? 'min-h-[260px]' : ''} ${isSingleExpandedCardThree ? 'min-h-[298px]' : ''} flex h-full w-full flex-col justify-between gap-5 pb-3 sm:pb-5 xl:gap-3.5`}
         >
             <div
                 className={`max-xs:flex-col xs:justify-between mt-6 flex w-full max-w-[600px] items-center xl:max-w-[400px] ${isSingleExpanded ? 'gap-5 sm:gap-6 xl:gap-4' : 'gap-5 sm:gap-8'}`}

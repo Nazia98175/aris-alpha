@@ -4,11 +4,17 @@ import MarketOpen from './MarketOpen'
 interface MarketSnapshotProps {
     expanded: boolean
     isSingleExpandedCardFour: boolean
+    isSingleExpandedCardOne: boolean
 }
 
-const MarketSnapshot = ({ expanded, isSingleExpandedCardFour }: MarketSnapshotProps) => {
+const MarketSnapshot = ({ expanded, isSingleExpandedCardFour, isSingleExpandedCardOne }: MarketSnapshotProps) => {
     if (!expanded) {
-        return <MarketClosed isSingleExpandedCardFour={isSingleExpandedCardFour} />
+        return (
+            <MarketClosed
+                isSingleExpandedCardOne={isSingleExpandedCardOne}
+                isSingleExpandedCardFour={isSingleExpandedCardFour}
+            />
+        )
     }
 
     return <MarketOpen />

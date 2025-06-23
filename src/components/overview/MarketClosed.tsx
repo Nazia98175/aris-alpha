@@ -3,9 +3,10 @@ import { MARKET_SNAPSHOT_DATA_LIST } from './Helper'
 
 interface MarketClosedProps {
     isSingleExpandedCardFour: boolean
+    isSingleExpandedCardOne: boolean
 }
 
-const MarketClosed = ({ isSingleExpandedCardFour }: MarketClosedProps) => {
+const MarketClosed = ({ isSingleExpandedCardFour, isSingleExpandedCardOne }: MarketClosedProps) => {
     return (
         <div className={`${isSingleExpandedCardFour ? '!pb-0' : ''} pb-3 sm:pb-5`}>
             <div className="max-sm:overflow-x-auto">
@@ -19,10 +20,10 @@ const MarketClosed = ({ isSingleExpandedCardFour }: MarketClosedProps) => {
                         </tr>
                     </thead>
                     <tbody>
-                        {MARKET_SNAPSHOT_DATA_LIST.slice(0, 5).map((market, i) => (
+                        {MARKET_SNAPSHOT_DATA_LIST.slice(0, isSingleExpandedCardOne ? 6 : 5).map((market, i) => (
                             <tr key={i} className={`text-sm ${i % 2 === 0 ? 'bg-lightblack' : 'bg-mediumslate'}`}>
                                 <td
-                                    className={`px-4 py-4 ${i === MARKET_SNAPSHOT_DATA_LIST.slice(0, 5).length - 1 && 'rounded-bl-[10px]'}`}
+                                    className={`px-4 py-4 ${i === MARKET_SNAPSHOT_DATA_LIST.slice(0, isSingleExpandedCardOne ? 6 : 5).length - 1 && 'rounded-bl-[10px]'}`}
                                 >
                                     <div className="flex items-center gap-2">
                                         <BitcoinWhite />
@@ -51,7 +52,7 @@ const MarketClosed = ({ isSingleExpandedCardFour }: MarketClosedProps) => {
                                     </div>
                                 </td>
                                 <td
-                                    className={`px-4 py-4 text-right ${i === MARKET_SNAPSHOT_DATA_LIST.slice(0, 5).length - 1 && 'rounded-br-[10px]'}`}
+                                    className={`px-4 py-4 text-right ${i === MARKET_SNAPSHOT_DATA_LIST.slice(0, isSingleExpandedCardOne ? 6 : 5).length - 1 && 'rounded-br-[10px]'}`}
                                 >
                                     <span
                                         className={`rounded-[30px] border bg-transparent px-2.5 py-0.5 text-xs !leading-[150%] font-medium tracking-normal ${

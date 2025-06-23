@@ -89,13 +89,21 @@ const CompleteOverview = () => {
             case 'tactical':
                 return (
                     <TacticalSignals
+                        isSingleExpandedCardThree={isSingleExpandedCardThree}
+                        isSingleExpandedCardTwo={isSingleExpandedCardTwo}
                         isSingleExpandedCardFour={isSingleExpandedCardFour}
                         isSingleExpanded={isSingleExpanded}
                         expanded={card.expanded}
                     />
                 )
             case 'market':
-                return <MarketSnapshot isSingleExpandedCardFour={isSingleExpandedCardFour} expanded={card.expanded} />
+                return (
+                    <MarketSnapshot
+                        isSingleExpandedCardOne={isSingleExpandedCardOne}
+                        isSingleExpandedCardFour={isSingleExpandedCardFour}
+                        expanded={card.expanded}
+                    />
+                )
             case 'momentum':
                 return <MomentumAlerts isSingleExpandedCardOne={isSingleExpandedCardOne} expanded={card.expanded} />
             case 'allocation':

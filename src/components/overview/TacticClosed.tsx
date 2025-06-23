@@ -7,9 +7,16 @@ import CandlestickChart from './CandleStickChart'
 interface TacticClosedProps {
     isSingleExpanded: boolean
     isSingleExpandedCardFour: boolean
+    isSingleExpandedCardTwo: boolean
+    isSingleExpandedCardThree: boolean
 }
 
-const TacticClosed = ({ isSingleExpanded, isSingleExpandedCardFour }: TacticClosedProps) => {
+const TacticClosed = ({
+    isSingleExpanded,
+    isSingleExpandedCardFour,
+    isSingleExpandedCardTwo,
+    isSingleExpandedCardThree,
+}: TacticClosedProps) => {
     const [isXL, setIsXL] = useState(false)
     const shouldSliceToTwo = isSingleExpanded && isXL
     const visibleSignals = TACTICAL_SIGNALS_DATA_LIST.slice(0, shouldSliceToTwo ? 2 : 4)
@@ -100,7 +107,7 @@ const TacticClosed = ({ isSingleExpanded, isSingleExpandedCardFour }: TacticClos
                 </div>
             </div>
             <p
-                className={`${isSingleExpandedCardFour ? 'pt-5 pb-3.5 text-start' : ''} text-offgrey text-custom-sm mx-auto rounded-[10px] py-2 text-center font-normal italic`}
+                className={`${isSingleExpandedCardFour ? 'pt-5 pb-3.5 text-start' : ''} ${isSingleExpandedCardTwo || isSingleExpandedCardThree ? 'pt-3.5 sm:pt-5 xl:pt-6' : ''} text-offgrey text-custom-sm mx-auto rounded-[10px] py-2 text-center font-normal italic`}
             >
                 Model-generated signals for informational use only. Not financial advice
             </p>

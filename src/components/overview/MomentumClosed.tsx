@@ -18,10 +18,10 @@ const MomentumClosed = ({ isSingleExpandedCardOne }: MomentumClosedProps) => {
                     </tr>
                 </thead>
                 <tbody>
-                    {MOMENTUM_ALERTS_DATA_LIST.slice(0, 4).map((alert, i) => (
+                    {MOMENTUM_ALERTS_DATA_LIST.slice(0, 5).map((alert, i) => (
                         <tr key={i} className={`${i % 2 === 0 ? 'bg-lightblack' : 'bg-mediumslate'}`}>
                             <td
-                                className={`text-richwhite px-4 py-[13.5px] text-sm font-normal tracking-normal ${i === MOMENTUM_ALERTS_DATA_LIST.slice(0, 4).length - 1 && 'rounded-bl-[10px]'}`}
+                                className={`text-richwhite px-4 py-[13.5px] text-sm font-normal tracking-normal ${i === MOMENTUM_ALERTS_DATA_LIST.slice(0, 5).length - 1 && 'rounded-bl-[10px]'}`}
                             >
                                 {alert.time}
                             </td>
@@ -44,7 +44,7 @@ const MomentumClosed = ({ isSingleExpandedCardOne }: MomentumClosedProps) => {
                                 <span className="line-clamp-1">{alert.trigger}</span>
                             </td>
                             <td
-                                className={`px-4 py-[13.5px] text-sm font-normal tracking-normal ${i === MOMENTUM_ALERTS_DATA_LIST.slice(0, 4).length - 1 && 'rounded-br-[10px]'}`}
+                                className={`px-4 py-[13.5px] text-sm font-normal tracking-normal ${i === MOMENTUM_ALERTS_DATA_LIST.slice(0, 5).length - 1 && 'rounded-br-[10px]'}`}
                             >
                                 <span className="line-clamp-1">{alert.desc}</span>
                             </td>

@@ -42,6 +42,8 @@
     --color-fadeblack: #171717;
     --color-darksand: #303030;
     --color-richsand: #2b2b2b;
+    --color-howlblack: #1f1d2d;
+    --color-waterwhite: #d0d0d0;
     --color-background: var(--background);
     --color-foreground: var(--foreground);
     --font-sans: var(--font-poppins);
@@ -197,7 +199,7 @@
     .small-text {
         @apply font-outfit text-base leading-[130%] text-[#d0d0d0];
     }
-    .medium-text {
+    .strokeLinejoin {
         @apply text-xl leading-[120%] text-white md:text-2xl;
     }
     .large-text {

@@ -541,8 +541,14 @@ export const CheckIcon = () => (
 )
 
 export const CompoundCircle = () => (
-    <svg width="810" height="920" viewBox="0 0 810 920" fill="none" xmlns="http://www.w3.org/2000/svg"
-    className="xl:w-[810px] h-[920px]">
+    <svg
+        width="810"
+        height="920"
+        viewBox="0 0 810 920"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        className="hidden h-[920px] w-[810px] lg:block"
+    >
         <g opacity="0.3" filter="url(#filter0_f_2743_4230)">
             <circle cx="470.75" cy="464.5" r="100.75" fill="url(#paint0_linear_2743_4230)" />
         </g>
@@ -563,7 +569,7 @@ export const CompoundCircle = () => (
             <path
                 d="M460 310C542.843 310 610 377.157 610 460C610 542.843 542.843 610 460 610C377.157 610 310 542.843 310 460C310 377.157 377.157 310 460 310Z"
                 fill="white"
-                fill-opacity="0.03"
+                fillOpacity="0.03"
             />
             <path
                 d="M460 310V311C542.29 311 609 377.71 609 460H610H611C611 376.605 543.395 309 460 309V310ZM610 460H609C609 542.29 542.29 609 460 609V610V611C543.395 611 611 543.395 611 460H610ZM460 610V609C377.71 609 311 542.29 311 460H310H309C309 543.395 376.605 611 460 611V610ZM310 460H311C311 377.71 377.71 311 460 311V310V309C376.605 309 309 376.605 309 460H310Z"
@@ -580,7 +586,7 @@ export const CompoundCircle = () => (
             cy="460"
             r="199.5"
             stroke="url(#paint2_linear_2743_4230)"
-            stroke-dasharray="8 8"
+            strokeDasharray="8 8"
         />
         <circle
             opacity="0.3"
@@ -588,7 +594,7 @@ export const CompoundCircle = () => (
             cy="460"
             r="174.5"
             stroke="url(#paint3_linear_2743_4230)"
-            stroke-dasharray="8 8"
+            strokeDasharray="8 8"
         />
         <path
             d="M399.773 445.439C403.903 442.122 407.138 439.406 409.48 437.293C411.821 435.146 413.789 432.919 415.382 430.61C417.008 428.268 417.822 425.975 417.822 423.731C417.822 421.618 417.301 419.959 416.261 418.756C415.252 417.52 413.61 416.902 411.334 416.902C409.122 416.902 407.399 417.601 406.163 419C404.96 420.366 404.309 422.203 404.212 424.512H399.919C400.049 420.87 401.155 418.057 403.236 416.073C405.317 414.089 408 413.097 411.285 413.097C414.634 413.097 417.285 414.024 419.236 415.878C421.22 417.731 422.212 420.284 422.212 423.536C422.212 426.235 421.399 428.87 419.773 431.439C418.179 433.975 416.358 436.219 414.309 438.171C412.26 440.089 409.643 442.333 406.456 444.902H423.236V448.61H399.773V445.439ZM427.831 445.439C431.961 442.122 435.197 439.406 437.539 437.293C439.88 435.146 441.848 432.919 443.441 430.61C445.067 428.268 445.88 425.975 445.88 423.731C445.88 421.618 445.36 419.959 444.319 418.756C443.311 417.52 441.669 416.902 439.392 416.902C437.181 416.902 435.457 417.601 434.221 419C433.018 420.366 432.368 422.203 432.27 424.512H427.978C428.108 420.87 429.213 418.057 431.295 416.073C433.376 414.089 436.059 413.097 439.343 413.097C442.693 413.097 445.344 414.024 447.295 415.878C449.279 417.731 450.27 420.284 450.27 423.536C450.27 426.235 449.457 428.87 447.831 431.439C446.238 433.975 444.417 436.219 442.368 438.171C440.319 440.089 437.701 442.333 434.514 444.902H451.295V448.61H427.831V445.439ZM455.451 421.683C455.451 419.471 456.117 417.715 457.451 416.414C458.784 415.081 460.491 414.414 462.573 414.414C464.654 414.414 466.361 415.081 467.695 416.414C469.028 417.715 469.695 419.471 469.695 421.683C469.695 423.927 469.028 425.715 467.695 427.049C466.361 428.349 464.654 429 462.573 429C460.491 429 458.784 428.349 457.451 427.049C456.117 425.715 455.451 423.927 455.451 421.683ZM483.939 414.951L464.183 449H459.792L479.549 414.951H483.939ZM462.573 417.146C461.467 417.146 460.589 417.536 459.939 418.317C459.321 419.065 459.012 420.187 459.012 421.683C459.012 423.179 459.321 424.317 459.939 425.097C460.589 425.878 461.467 426.268 462.573 426.268C463.679 426.268 464.557 425.878 465.207 425.097C465.857 424.284 466.183 423.146 466.183 421.683C466.183 420.187 465.857 419.065 465.207 418.317C464.557 417.536 463.679 417.146 462.573 417.146ZM474.134 442.268C474.134 440.024 474.801 438.252 476.134 436.951C477.467 435.618 479.175 434.951 481.256 434.951C483.337 434.951 485.028 435.618 486.329 436.951C487.663 438.252 488.329 440.024 488.329 442.268C488.329 444.48 487.663 446.252 486.329 447.585C485.028 448.919 483.337 449.585 481.256 449.585C479.175 449.585 477.467 448.935 476.134 447.634C474.801 446.301 474.134 444.512 474.134 442.268ZM481.207 437.732C480.101 437.732 479.223 438.122 478.573 438.902C477.923 439.65 477.597 440.772 477.597 442.268C477.597 443.732 477.923 444.854 478.573 445.634C479.223 446.382 480.101 446.756 481.207 446.756C482.313 446.756 483.191 446.382 483.841 445.634C484.492 444.854 484.817 443.732 484.817 442.268C484.817 440.772 484.492 439.65 483.841 438.902C483.191 438.122 482.313 437.732 481.207 437.732ZM519.539 433.049H509.148V443.585H505.002V433.049H494.66V429.292H505.002V418.707H509.148V429.292H519.539V433.049Z"
@@ -612,9 +618,9 @@ export const CompoundCircle = () => (
                 width="448.5"
                 height="448.5"
                 filterUnits="userSpaceOnUse"
-                color-interpolation-filters="sRGB"
+                colorInterpolationFilters="sRGB"
             >
-                <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                <feFlood floodOpacity="0" result="BackgroundImageFix" />
                 <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
                 <feGaussianBlur stdDeviation="61.75" result="effect1_foregroundBlur_2743_4230" />
             </filter>
@@ -628,9 +634,9 @@ export const CompoundCircle = () => (
                 width="920"
                 height="920"
                 filterUnits="userSpaceOnUse"
-                color-interpolation-filters="sRGB"
+                colorInterpolationFilters="sRGB"
             >
-                <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                <feFlood floodOpacity="0" result="BackgroundImageFix" />
                 <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
                 <feGaussianBlur stdDeviation="200" result="effect1_foregroundBlur_2743_4230" />
             </filter>
@@ -642,9 +648,9 @@ export const CompoundCircle = () => (
                 y2="513.382"
                 gradientUnits="userSpaceOnUse"
             >
-                <stop stop-color="#18C8FF" />
-                <stop offset="0.504545" stop-color="#5C7DFE" />
-                <stop offset="1" stop-color="#933FFE" />
+                <stop stopColor="#18C8FF" />
+                <stop offset="0.504545" stopColor="#5C7DFE" />
+                <stop offset="1" stopColor="#933FFE" />
             </linearGradient>
             <linearGradient
                 id="paint1_linear_2743_4230"
@@ -654,9 +660,9 @@ export const CompoundCircle = () => (
                 y2="532.777"
                 gradientUnits="userSpaceOnUse"
             >
-                <stop stop-color="#18C8FF" />
-                <stop offset="0.504545" stop-color="#5C7DFE" />
-                <stop offset="1" stop-color="#933FFE" />
+                <stop stopColor="#18C8FF" />
+                <stop offset="0.504545" stopColor="#5C7DFE" />
+                <stop offset="1" stopColor="#933FFE" />
             </linearGradient>
             <linearGradient
                 id="paint2_linear_2743_4230"
@@ -666,9 +672,9 @@ export const CompoundCircle = () => (
                 y2="557.037"
                 gradientUnits="userSpaceOnUse"
             >
-                <stop stop-color="#18C8FF" />
-                <stop offset="0.504545" stop-color="#5C7DFE" />
-                <stop offset="1" stop-color="#933FFE" />
+                <stop stopColor="#18C8FF" />
+                <stop offset="0.504545" stopColor="#5C7DFE" />
+                <stop offset="1" stopColor="#933FFE" />
             </linearGradient>
             <linearGradient
                 id="paint3_linear_2743_4230"
@@ -678,9 +684,9 @@ export const CompoundCircle = () => (
                 y2="544.907"
                 gradientUnits="userSpaceOnUse"
             >
-                <stop stop-color="#18C8FF" />
-                <stop offset="0.504545" stop-color="#5C7DFE" />
-                <stop offset="1" stop-color="#933FFE" />
+                <stop stopColor="#18C8FF" />
+                <stop offset="0.504545" stopColor="#5C7DFE" />
+                <stop offset="1" stopColor="#933FFE" />
             </linearGradient>
             <linearGradient
                 id="paint4_linear_2743_4230"
@@ -690,9 +696,9 @@ export const CompoundCircle = () => (
                 y2="564.197"
                 gradientUnits="userSpaceOnUse"
             >
-                <stop stop-color="#18C8FF" />
-                <stop offset="0.504545" stop-color="#5C7DFE" />
-                <stop offset="1" stop-color="#933FFE" />
+                <stop stopColor="#18C8FF" />
+                <stop offset="0.504545" stopColor="#5C7DFE" />
+                <stop offset="1" stopColor="#933FFE" />
             </linearGradient>
             <linearGradient
                 id="paint5_linear_2743_4230"
@@ -702,9 +708,9 @@ export const CompoundCircle = () => (
                 y2="409.809"
                 gradientUnits="userSpaceOnUse"
             >
-                <stop stop-color="#18C8FF" />
-                <stop offset="0.504545" stop-color="#5C7DFE" />
-                <stop offset="1" stop-color="#933FFE" />
+                <stop stopColor="#18C8FF" />
+                <stop offset="0.504545" stopColor="#5C7DFE" />
+                <stop offset="1" stopColor="#933FFE" />
             </linearGradient>
             <linearGradient
                 id="paint6_linear_2743_4230"
@@ -714,9 +720,9 @@ export const CompoundCircle = () => (
                 y2="288.304"
                 gradientUnits="userSpaceOnUse"
             >
-                <stop stop-color="#18C8FF" />
-                <stop offset="0.504545" stop-color="#5C7DFE" />
-                <stop offset="1" stop-color="#933FFE" />
+                <stop stopColor="#18C8FF" />
+                <stop offset="0.504545" stopColor="#5C7DFE" />
+                <stop offset="1" stopColor="#933FFE" />
             </linearGradient>
             <linearGradient
                 id="paint7_linear_2743_4230"
@@ -726,9 +732,9 @@ export const CompoundCircle = () => (
                 y2="371.656"
                 gradientUnits="userSpaceOnUse"
             >
-                <stop stop-color="#18C8FF" />
-                <stop offset="0.504545" stop-color="#5C7DFE" />
-                <stop offset="1" stop-color="#933FFE" />
+                <stop stopColor="#18C8FF" />
+                <stop offset="0.504545" stopColor="#5C7DFE" />
+                <stop offset="1" stopColor="#933FFE" />
             </linearGradient>
             <linearGradient
                 id="paint8_linear_2743_4230"
@@ -738,22 +744,29 @@ export const CompoundCircle = () => (
                 y2="644.373"
                 gradientUnits="userSpaceOnUse"
             >
-                <stop stop-color="#18C8FF" />
-                <stop offset="0.504545" stop-color="#5C7DFE" />
-                <stop offset="1" stop-color="#933FFE" />
+                <stop stopColor="#18C8FF" />
+                <stop offset="0.504545" stopColor="#5C7DFE" />
+                <stop offset="1" stopColor="#933FFE" />
             </linearGradient>
         </defs>
     </svg>
 )
 
 export const CheckSquare = () => (
-    <svg width="66" height="68" viewBox="0 0 66 68" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg
+        width="66"
+        height="68"
+        viewBox="0 0 66 68"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        className="h-[48px] w-[44px] md:h-[68px] md:w-[66px]"
+    >
         <path
             d="M24.75 31.1667L33 39.6667L60.5 11.3333M57.75 34V53.8333C57.75 55.3362 57.1705 56.7776 56.1391 57.8403C55.1076 58.903 53.7087 59.5 52.25 59.5H13.75C12.2913 59.5 10.8924 58.903 9.86091 57.8403C8.82946 56.7776 8.25 55.3362 8.25 53.8333V14.1667C8.25 12.6638 8.82946 11.2224 9.86091 10.1597C10.8924 9.09702 12.2913 8.5 13.75 8.5H44"
             stroke="white"
-            stroke-width="4"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeWidth="4"
+            strokeLinecap="round"
+            strokeLinejoin="round"
         />
     </svg>
 )

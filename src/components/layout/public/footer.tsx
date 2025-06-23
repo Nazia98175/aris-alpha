@@ -46,7 +46,7 @@ const Footer = () => {
                     </ul>
                 </div>
             </div>
-            <div className="text-secondary mt-[40px] bg-[#010314] px-2 py-4 text-center text-sm sm:mt-[60px] md:mt-[77px] md:py-6">
+            <div className="text-secondary mt-10 bg-[#010314] px-2 py-4 text-center text-sm sm:mt-[60px] md:mt-[77px] md:py-6">
                 <p>
                     Aris Alpha provides signal-based insights for informational purposes only. Nothing on this site
                     constitutes financial advice or a recommendation to buy or sell any security. Please consult a

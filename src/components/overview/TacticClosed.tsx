@@ -1,7 +1,8 @@
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
-import { BitcoinLogo, MiniGraph, RightTopArrow } from '../home/Icons'
+import { BitcoinLogo, RightTopArrow } from '../home/Icons'
 import { TACTICAL_SIGNALS_DATA_LIST } from './Helper'
+import Image from 'next/image'
 
 interface TacticClosedProps {
     isSingleExpanded: boolean
@@ -79,9 +80,14 @@ const TacticClosed = ({ isSingleExpanded, isSingleExpandedCardFour }: TacticClos
                                     ${signal.range[0]}-${signal.range[1]}
                                 </span>
                             </div>
-                            <div className="h-[58px]">
-                                <MiniGraph />
-                            </div>
+                            <Image
+                                className="mx-auto w-full max-w-[155px] xl:h-[52px]"
+                                src={signal.image}
+                                alt="graph"
+                                width={155}
+                                height={52}
+                                unoptimized
+                            />
                             <div className={`my-2.5 ${isSingleExpanded && 'mb-0'}`}>
                                 <span className="text-custom-sm text-richslate font-light tracking-normal">
                                     Updated 1 min ago

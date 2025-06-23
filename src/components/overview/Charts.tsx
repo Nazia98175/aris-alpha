@@ -63,6 +63,7 @@ const AllocationOpen = () => {
         return borderMap[borderClass] || '#6b7280'
     }
 
+    // Custom bar shape with top border
     const CustomBar = (props: CustomBarProps) => {
         const { fill, x, y, width, height, payload, index } = props
 
@@ -92,32 +93,14 @@ const AllocationOpen = () => {
 
         const data = payload || (index !== undefined ? chartData[index] : null)
         const centerX = x + width / 2
-        const labelY = y + height - 30
-        const isMobile = typeof window !== 'undefined' && window.innerWidth < 640
-        const nameFontSize = isMobile ? 10 : 12
-        const percentageFontSize = isMobile ? 14 : 18
-        const percentageYOffset = isMobile ? 18 : 25 // Adjust vertical spacing on mobile
+        const labelY = y + height - 20 // Position near bottom of bar
 
         return (
             <g>
-                <text
-                    x={centerX}
-                    y={labelY}
-                    textAnchor="middle"
-                    fill="#D4D3D6"
-                    fontSize={nameFontSize}
-                    fontWeight="normal"
-                >
+                <text x={centerX} y={labelY} textAnchor="middle" fill="#D4D3D6" fontSize="12" fontWeight="normal">
                     {data?.name || ''}
                 </text>
-                <text
-                    x={centerX}
-                    y={labelY + percentageYOffset}
-                    textAnchor="middle"
-                    fill="white"
-                    fontSize={percentageFontSize}
-                    fontWeight="600"
-                >
+                <text x={centerX} y={labelY + 15} textAnchor="middle" fill="white" fontSize="18" fontWeight="600">
                     {data?.percentage || `${value || 0}%`}
                 </text>
             </g>
@@ -137,12 +120,12 @@ const AllocationOpen = () => {
                         <BarChart
                             data={chartData}
                             margin={{ top: 0, right: 0, left: 0, bottom: 0 }}
-                            barCategoryGap="5%" // Space between bars
+                            barCategoryGap="4%" // Space between bars
                         >
                             <XAxis dataKey="name" hide />
                             <YAxis
                                 hide
-                                domain={[0, 0]} // Set max height based on largest value (45%)
+                                domain={[0, 50]} // Set max height based on largest value (45%)
                             />
                             <Bar dataKey="value" shape={<CustomBar />} label={<CustomLabel />}>
                                 {chartData.map((entry, index) => (
@@ -154,18 +137,16 @@ const AllocationOpen = () => {
                 </div>
 
                 {/* Descriptions below the chart */}
-                <div className='px-1 xs:px-2 lg:px-3.5 2xl:px-[18px] '>
-                    <div className="xs:grid-cols-4 mt-4 grid grid-cols-2 gap-4  lg:gap-7 2xl:gap-9">
-                        {ALLOCATION_DATA_LIST.map((obj, index) => (
-                            <div key={index} className="w-full">
-                                <div className="bg-darkslate w-full rounded-md px-1.5 lg:px-2.5 py-1.5">
-                                    <p className="text-custom-sm text-richwhite mx-auto line-clamp-2 max-w-[270px] text-center font-normal tracking-normal italic">
-                                        {obj.desc}
-                                    </p>
-                                </div>
+                <div className="xs:grid-cols-4 mt-4 grid grid-cols-2 gap-4 md:gap-6">
+                    {ALLOCATION_DATA_LIST.map((obj, index) => (
+                        <div key={index} className="w-full">
+                            <div className="bg-darkslate w-full rounded-md px-2.5 py-1.5">
+                                <p className="text-custom-sm text-richwhite mx-auto line-clamp-2 text-center font-normal tracking-normal italic">
+                                    {obj.desc}
+                                </p>
                             </div>
-                        ))}
-                    </div>
+                        </div>
+                    ))}
                 </div>
             </div>
 

@@ -9,7 +9,7 @@ interface SettingsRowProps {
 
 const SettingsRow: React.FC<SettingsRowProps> = ({ icon, label, description, rightElement }) => {
     return (
-        <div className="flex items-center justify-between rounded-md py-1.5 md:py-2">
+        <div className="flex items-center max-w-[300px] justify-between rounded-md py-1.5 md:py-2">
             <div className="flex items-center gap-4">
                 {icon && <span className="text-sm md:text-base">{icon}</span>}
                 <div>

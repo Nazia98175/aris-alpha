@@ -60,18 +60,25 @@ const TacticOpen = () => {
                             </div>
                         </div>
                         <Image
-                            className="mx-auto h-[94px] w-full max-w-[283px]"
+                            className="mx-auto xl:h-[94px] w-full max-w-[283px]"
                             src={signal.image}
                             alt="graph"
                             width={283}
                             height={94}
                             unoptimized
                         />
-                        <div className="bg-richsand mt-4 w-full rounded-md px-2.5 py-1.5">
-                            <p className="text-custom-sm text-mediumgrey font-normal tracking-normal italic">
-                                &quot;BTC held support on weekly close, momentum building from $69K base.&quot;{' '}
+                        <div className="gradient-border-tactic my-3.5 h-[1px] w-full"></div>
+                        <span className="text-richwhite text-custom-sm font-semibold tracking-normal">Entry Logic</span>
+                        {signal.entryLogic && (
+                            <div className="bg-richsand mt-3 w-full rounded-[4px] px-[5px] py-2.5">
+                                <div className="h-10">{signal.entryLogic}</div>
+                            </div>
+                        )}
+                        {signal.desc && (
+                            <p className="text-custom-sm text-smoke mt-3 !leading-[180%] font-normal tracking-normal">
+                                {signal.desc}
                             </p>
-                        </div>
+                        )}
                     </div>
                 ))}
             </div>

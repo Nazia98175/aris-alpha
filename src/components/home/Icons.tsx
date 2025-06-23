@@ -564,27 +564,6 @@ export const RightTopArrow = () => (
         />
     </svg>
 )
-export const MiniGraph = () => (
-    <svg width="100%" height="100%" viewBox="0 0 155 58" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path
-            d="M6.45833 38.7301L0 46.5484V58H77.5H116.25H155V0L148.197 10.2675L142.083 20.3935L135.625 24.8165L129.167 21.9987L122.708 21.1702L116.25 23.2195L109.792 32.1729L103.333 22.8661L96.875 20.7506L90.4167 22.4376L83.9583 22.7493L77.5 18.1402L71.0417 26.2486L64.5833 27.1006L58.125 22.3177L51.6667 37.3743L45.2083 34.7805L38.75 40.8139L32.2917 36.7286L25.8333 40.8228L19.375 40.82L12.9167 35.0427L6.45833 38.7301Z"
-            fill="url(#paint0_linear_2686_1041)"
-        />
-        <defs>
-            <linearGradient
-                id="paint0_linear_2686_1041"
-                x1="77.5"
-                y1="8.5206"
-                x2="77.5"
-                y2="58"
-                gradientUnits="userSpaceOnUse"
-            >
-                <stop stopColor="#65F295" />
-                <stop offset="1" stopColor="#65F295" stopOpacity="0" />
-            </linearGradient>
-        </defs>
-    </svg>
-)
 export const BitcoinWhite = () => (
     <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
         <rect width="18" height="18" rx="9" fill="#F7931A" />
@@ -777,3 +756,13 @@ export const NextVector = () => (
         </defs>
     </svg>
 )
+export const TacticEntryLogic = () => (
+    <svg width="100%" height="100%" viewBox="0 0 217 41" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path
+            d="M1 40L17.3901 27L30.4058 40L41.9753 18.3333L57.4013 32.2963L70.417 27L80.5404 40L102.233 27L112.839 32.2963L122.962 40L135.978 32.2963L146.583 40L160.563 27L171.65 32.2963L189.004 18.3333L200.574 27L207.805 12.5556L216 1"
+            stroke="white"
+            strokeOpacity="0.5"
+        />
+    </svg>
+)
+

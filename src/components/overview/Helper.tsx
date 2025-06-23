@@ -1,3 +1,5 @@
+import { TacticEntryLogic } from "../home/Icons"
+
 export interface CardData {
     id: string
     title: string
@@ -72,6 +74,7 @@ export const TACTICAL_SIGNALS_DATA_LIST = [
         allocation: '15%',
         range: [420, 430],
         current: 425,
+        desc: 'The RSI has crossed above 30 level, suggesting a shift towaris bullish momentum.',
     },
     {
         coin: 'SPY',
@@ -81,6 +84,8 @@ export const TACTICAL_SIGNALS_DATA_LIST = [
         allocation: '10%',
         range: [420, 430],
         current: 425,
+        desc: 'RSI crossed 30, hinting bullish momentum.',
+        entryLogic: <TacticEntryLogic />,
     },
     {
         coin: 'QQQ',
@@ -90,6 +95,7 @@ export const TACTICAL_SIGNALS_DATA_LIST = [
         allocation: '15%',
         range: [420, 430],
         current: 425,
+        desc: 'The RSI has crossed above 30 level, suggesting a shift towaris bullish momentum.',
     },
     {
         coin: 'SPY',
@@ -99,6 +105,8 @@ export const TACTICAL_SIGNALS_DATA_LIST = [
         allocation: '15%',
         range: [420, 430],
         current: 425,
+        desc: 'RSI crossed 30, hinting bullish momentum.',
+        entryLogic: <TacticEntryLogic />,
     },
     {
         coin: 'Bitcoin',
@@ -108,6 +116,8 @@ export const TACTICAL_SIGNALS_DATA_LIST = [
         allocation: '15%',
         range: [420, 430],
         current: 425,
+        desc: 'RSI crossed 30, hinting bullish momentum.',
+        entryLogic: <TacticEntryLogic />,
     },
     {
         coin: 'SPY',
@@ -117,6 +127,7 @@ export const TACTICAL_SIGNALS_DATA_LIST = [
         allocation: '10%',
         range: [420, 430],
         current: 425,
+        desc: 'The RSI has crossed above 30 level, suggesting a shift towaris bullish momentum.',
     },
     {
         coin: 'QQQ',
@@ -126,6 +137,8 @@ export const TACTICAL_SIGNALS_DATA_LIST = [
         allocation: '15%',
         range: [420, 430],
         current: 425,
+        desc: 'RSI crossed 30, hinting bullish momentum.',
+        entryLogic: <TacticEntryLogic />,
     },
     {
         coin: 'SPY',
@@ -135,7 +148,9 @@ export const TACTICAL_SIGNALS_DATA_LIST = [
         allocation: '15%',
         range: [420, 430],
         current: 425,
+        desc: 'The RSI has crossed above 30 level, suggesting a shift towaris bullish momentum.',
     },
+
     {
         coin: 'Bitcoin',
         image: '/assets/dashboard/webp/graph1.webp',
@@ -144,6 +159,8 @@ export const TACTICAL_SIGNALS_DATA_LIST = [
         allocation: '15%',
         range: [420, 430],
         current: 425,
+        desc: 'RSI crossed 30, hinting bullish momentum.',
+        entryLogic: <TacticEntryLogic />,
     },
     {
         coin: 'SPY',
@@ -153,6 +170,8 @@ export const TACTICAL_SIGNALS_DATA_LIST = [
         allocation: '10%',
         range: [420, 430],
         current: 425,
+        desc: 'RSI crossed 30, hinting bullish momentum.',
+        entryLogic: <TacticEntryLogic />,
     },
 ]
 
@@ -307,4 +326,10 @@ export const MOMENTUM_ALERTS_DATA_LIST = [
         trigger: 'Breakout ($38)',
         desc: 'AVAX volume spiked 2x hourly avg - possible breakout.',
     },
+]
+export const ALLOCATION_CLOSED_DATA = [
+    { name: 'Equities', value: 35, color: '#3366CC' },
+    { name: 'Cash', value: 20, color: '#109618' },
+    { name: 'Crypto', value: 25, color: '#FF9900' },
+    { name: 'ETFs', value: 20, color: '#DC3912' },
 ]

@@ -101,6 +101,7 @@ const CompleteOverview = () => {
             case 'allocation':
                 return (
                     <AllocationView
+                        isSingleExpanded={isSingleExpanded}
                         isSingleExpandedCardOne={isSingleExpandedCardOne}
                         isSingleExpandedCardTwo={isSingleExpandedCardTwo}
                         isSingleExpandedCardThree={isSingleExpandedCardThree}

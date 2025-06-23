@@ -6,10 +6,12 @@ interface AllocationViewProps {
     isSingleExpandedCardThree: boolean
     isSingleExpandedCardTwo: boolean
     isSingleExpandedCardOne: boolean
+    isSingleExpanded:boolean
 }
 
 const AllocationView = ({
     expanded,
+    isSingleExpanded,
     isSingleExpandedCardThree,
     isSingleExpandedCardTwo,
     isSingleExpandedCardOne,
@@ -17,6 +19,7 @@ const AllocationView = ({
     if (!expanded) {
         return (
             <AllocationClosed
+                isSingleExpanded={isSingleExpanded}
                 isSingleExpandedCardOne={isSingleExpandedCardOne}
                 isSingleExpandedCardTwo={isSingleExpandedCardTwo}
                 isSingleExpandedCardThree={isSingleExpandedCardThree}

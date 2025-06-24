@@ -117,14 +117,14 @@ const CandlestickChart: React.FC<CandlestickChartProps> = ({ symbol, height = 94
                 },
                 background: 'transparent',
                 animations: {
-                    enabled: false,
+                    enabled: true,
                 },
             },
             plotOptions: {
                 candlestick: {
                     colors: {
-                        upward: '#10B981', // Green for bullish candles
-                        downward: '#EF4444', // Red for bearish candles
+                        upward: '#00B266', 
+                        downward: '#E54C4C', 
                     },
                     wick: {
                         useFillColor: true,
@@ -188,12 +188,11 @@ const CandlestickChart: React.FC<CandlestickChartProps> = ({ symbol, height = 94
 
                     return `
                         <div style="
-                            background: #1f2937; 
-                            border: 1px solid #374151; 
-                            border-radius: 8px; 
+                            background: #202020; 
+                            border: 1px solid #272727; 
+                            border-radius: 10px; 
                             padding: 12px; 
                             min-width: 180px;
-                            font-family: inherit;
                         ">
                             <div style="
                                 color: #f9fafb; 

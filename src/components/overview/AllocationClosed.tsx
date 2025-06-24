@@ -65,7 +65,7 @@ const AllocationClosed = ({
     const CustomTooltip = ({ active, payload }: CustomTooltipProps) => {
         if (active && payload && payload.length > 0) {
             return (
-                <div className="rounded-lg border border-gray-600 bg-gray-800 p-3 shadow-lg">
+                <div className="rounded-lg border border-gray-400 bg-lightblack p-3 shadow-lg">
                     <p className="text-sm font-medium text-white">{`${payload[0].name}: ${payload[0].value}%`}</p>
                 </div>
             )

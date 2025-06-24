@@ -9,7 +9,7 @@ interface PreferenceGroupProps {
 const PreferenceGroup: React.FC<PreferenceGroupProps> = ({ title, options, defaultChecked = [] }) => {
     return (
         <div>
-            <p className="mb-2 text-xs font-normal text-white/80 uppercase md:text-sm">{title}</p>
+            <p className="font-poppins mb-2 text-xs font-normal text-white/70 uppercase md:text-sm">{title}</p>
             {options.map((item) => (
                 <label
                     key={item}

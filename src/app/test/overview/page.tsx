@@ -8,13 +8,13 @@ export const metadata: Metadata = {
     openGraph: {
         title: 'Aris Alpha | Overview',
         description: 'Real-time trading dashboard with candlestick charts, market insights, and portfolio analytics.',
-        images: ['/assets/dashboard/webp/overview-seo.webp'],
+        images: ['https://i.ibb.co/rfp53L5Y/overview-seo.webp'],
     },
     twitter: {
         card: 'summary_large_image',
         title: 'Aris Alpha | Overview',
         description: 'Real-time trading dashboard with candlestick charts, market insights, and portfolio analytics.',
-        images: ['/assets/dashboard/webp/overview-seo.webp'],
+        images: ['https://i.ibb.co/rfp53L5Y/overview-seo.webp'],
     },
 }
 const page = () => {

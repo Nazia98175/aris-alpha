@@ -6,6 +6,8 @@ import ThatsWhyItWorks from '@/components/why-it-works/ThatsWhyItWorks'
 import WhatYouGet from '@/components/why-it-works/WhatYouGet'
 import WhyItOutperforms from '@/components/why-it-works/WhyItOutperforms'
 import WhyItWorks from '@/components/why-it-works/WhyItWorks'
+// import { Metadata } from 'next'
+// import Image from 'next/image'
 
 // export const metadata: Metadata = {
 //     title: 'Working | CTA',
@@ -16,15 +18,13 @@ const WhyItWorksPage = () => {
     return (
         <section className="relative">
             <Navbar navBg="!bg-[#000103]" />
-            {/* <ReadyToFilter /> */}
             <WhyItWorks />
             <SignalClarity />
             <BuiltAroundReality />
-            <section className="relative min-h-screen bg-[url('/assets/backgrounds/working-bg.webp')] bg-no-repeat md:bg-contain md:bg-center">
-                <WhatYouGet />
+            <WhatYouGet />
+            <section className="relative h-auto bg-[url('/assets/backgrounds/working-bg.webp')] bg-no-repeat md:bg-contain md:bg-center">
                 <WhyItOutperforms />
                 <ThatsWhyItWorks />
-                {/* <WorkingFooter /> */}
                 <Footer />
             </section>
         </section>

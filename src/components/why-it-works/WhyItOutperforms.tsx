@@ -14,8 +14,8 @@ const arisPoints = [
 
 const WhyItOutperforms = () => {
     return (
-        <section className="mx-auto flex w-full max-w-[908px] flex-col items-center px-6 py-10 text-white md:py-20 xl:px-0">
-            <h2 className="main-heading mb-12 text-center !font-normal">Why It Outperforms</h2>
+        <section className="mx-auto flex w-full max-w-[908px] flex-col items-center px-4 py-10 text-white md:py-20 xl:px-0">
+            <h2 className="secondary-heading mb-12 text-center !font-normal">Why It Outperforms</h2>
 
             <div className="flex w-full max-w-[908px] flex-col items-center justify-center gap-6 md:justify-between lg:flex-row">
                 {/* Traditional Tools */}

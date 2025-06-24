@@ -4,6 +4,8 @@ import { OurPhilosophy } from '@/components/why-us/OurPhilosophy'
 import { OurSolution } from '@/components/why-us/OurSolution'
 import ProblemWeSolve from '@/components/why-us/ProblemWeSolve'
 import WhoAreWe from '@/components/why-us/WhoAreWe'
+// import { Metadata } from 'next'
+// import Image from 'next/image'
 
 // export const metadata: Metadata = {
 //     title: 'Working | CTA',
@@ -16,13 +18,13 @@ const WhyUsPage = () => {
             <Navbar navBg="!bg-[#000103]" />
             <WhoAreWe />
             <ProblemWeSolve />
-            <section className="relative bg-[url('/assets/backgrounds/working-bg.webp')] bg-no-repeat md:bg-contain md:bg-top">
+            <section className="relative h-auto bg-[url('/assets/backgrounds/working-bg.webp')] bg-no-repeat md:bg-contain md:bg-center xl:h-[804px]">
                 <OurSolution />
-                <section className="relative bg-[url('/assets/backgrounds/working-bg.webp')] bg-no-repeat md:bg-contain md:bg-center">
-                    <OurPhilosophy />
-                </section>
-                <Footer />
             </section>
+            <section className="relative h-auto bg-[url('/assets/backgrounds/working-bg.webp')] bg-no-repeat md:bg-contain md:bg-bottom xl:h-[804px]">
+                <OurPhilosophy />
+            </section>
+            <Footer />
         </section>
     )
 }

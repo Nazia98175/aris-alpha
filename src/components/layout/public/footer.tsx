@@ -14,19 +14,19 @@ const Footer = () => {
                     <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
                         <div className="flex items-center gap-2">
                             <WhiteCheckIcon />
-                            <p className="text-base font-medium text-waterwhite sm:text-lg md:text-xl">
+                            <p className="text-waterwhite text-base font-medium sm:text-lg md:text-xl">
                                 Fast signal delivery
                             </p>
                         </div>
                         <div className="flex items-center gap-2">
                             <WhiteCheckIcon />
-                            <p className="text-base font-medium text-waterwhite sm:text-lg md:text-xl">
+                            <p className="text-waterwhite text-base font-medium sm:text-lg md:text-xl">
                                 No overcomplication
                             </p>
                         </div>
                         <div className="flex items-center gap-2">
                             <WhiteCheckIcon />
-                            <p className="text-base font-medium text-waterwhite sm:text-lg md:text-xl">
+                            <p className="text-waterwhite text-base font-medium sm:text-lg md:text-xl">
                                 Built by traders, not marketers
                             </p>
                         </div>

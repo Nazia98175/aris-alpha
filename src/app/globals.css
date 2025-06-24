@@ -94,6 +94,8 @@
 
     --text-custom-xs: 8px;
     --text-custom-sm: 10px;
+    --text-custom-3xl: 28px;
+    --text-custom-4xl: 32px;
 }
 
 :root {

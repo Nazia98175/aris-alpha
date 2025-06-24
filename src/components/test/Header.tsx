@@ -49,7 +49,7 @@ export const Header = () => {
     }, [mobileSearchOpen])
 
     return (
-        <header className="bg-darkblack relative border-b border-white/[7%] px-4 py-3 lg:px-6">
+        <header className="bg-darkblack relative border-b border-white/[7%] px-4 py-3 sm:pb-4 md:pb-3 lg:px-6">
             <div className="mx-auto w-full max-w-[1920px]">
                 {/* Mobile Search */}
                 {/* 
@@ -70,10 +70,10 @@ export const Header = () => {
                 </div> 
                 */}
 
-                <div className="flex flex-wrap items-center justify-between gap-4 md:flex-nowrap">
+                <div className="flex flex-wrap items-center justify-between gap-3 sm:gap-4 md:flex-nowrap">
                     {/* Logo and mobile controls */}
                     <div className="flex w-fit max-w-full items-center justify-between md:w-[50%] lg:w-full">
-                        <h1 className="text-[28px] leading-[120%] font-normal text-white md:text-[36px] lg:text-[43.33px]">
+                        <h1 className="text-custom-3xl leading-[120%] font-normal text-white md:!text-custom-4xl">
                             ARIS
                         </h1>
                         {/* 

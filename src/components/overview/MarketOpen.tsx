@@ -62,15 +62,15 @@ const MarketOpen = () => {
                                 <td
                                     className={`px-4 text-right ${i === MARKET_SNAPSHOT_DATA_LIST.length - 1 && 'rounded-br-[10px]'}`}
                                 >
-                                    <span
-                                        className={`rounded-[30px] border bg-transparent px-2.5 py-0.5 text-xs !leading-[150%] font-medium tracking-normal ${
+                                    <div
+                                        className={`rounded-[30px] ml-auto text-center border bg-transparent min-w-[70px] w-fit px-2.5 py-0.5 text-xs !leading-[150%] font-medium tracking-normal ${
                                             market.trend === 'up'
                                                 ? 'text-lightgreen border-lightgreen'
                                                 : 'text-lightred border-lightred'
                                         }`}
                                     >
                                         {market.sentiment}
-                                    </span>
+                                    </div>
                                 </td>
                             </tr>
                         ))}

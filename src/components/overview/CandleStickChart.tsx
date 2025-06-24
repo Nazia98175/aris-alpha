@@ -17,25 +17,28 @@ const CandlestickChart: React.FC<CandlestickChartProps> = ({ symbol, height = 94
         const data = []
         let currentPrice = basePrice
 
-        // Create CLEAR three-phase pattern: UP → DOWN → UP
         const volatilityPattern = [
-            // Phase 1: Strong uptrend (candles 0-9) - lower volatility for cleaner trend
-            0.08, 0.06, 0.07, 0.05, 0.09, 0.06, 0.07, 0.08, 0.06, 0.07,
-            // Phase 2: Strong downtrend (candles 10-19) - higher volatility for dramatic crash
-            0.12, 0.15, 0.13, 0.16, 0.14, 0.17, 0.15, 0.14, 0.18, 0.16,
-            // Phase 3: Strong recovery (candles 20-29) - moderate volatility for steady climb
-            0.09, 0.08, 0.1, 0.07, 0.11, 0.08, 0.09, 0.1, 0.08, 0.09,
+            // Phase 1: Rounded top - moderate volatility
+            0.06, 0.07, 0.08, 0.07, 0.06, 0.05, 0.04, 0.03, 0.02, 0.01,
+            // Phase 2: Sideways chop - low to moderate volatility
+            0.015, 0.012, 0.017, 0.02, 0.016, 0.014, 0.018, 0.019,
+            // Phase 3: Sharp drop - high volatility
+            0.12, 0.13, 0.15, 0.16, 0.14,
+            // Phase 4: V-shape recovery - moderate to high volatility
+            0.1, 0.09, 0.08, 0.07, 0.06, 0.05, 0.04,
         ]
 
-        // Create CLEAR directional trends: STRONG UP → STRONG DOWN → STRONG UP
         const trendPattern = [
-            // Phase 1: Consistent uptrend - all positive, increasing momentum
-            2.5, 2.8, 3.1, 2.6, 3.4, 2.9, 3.2, 3.5, 2.7, 3.8,
-            // Phase 2: Brutal downtrend - all negative, accelerating selling
-            -3.2, -3.8, -4.1, -3.5, -4.5, -3.9, -4.2, -4.8, -3.6, -5.1,
-            // Phase 3: Strong recovery - all positive, building momentum back up
-            2.8, 3.1, 2.5, 3.6, 2.9, 3.3, 3.7, 2.6, 3.4, 4.0,
+            // Phase 1: Gradual rise then flat
+            2.5, 2.8, 3.0, 2.6, 2.2, 1.5, 1.0, 0.5, 0.2, 0.0,
+            // Phase 2: Sideways
+            0.1, -0.1, 0.0, 0.2, -0.2, 0.0, 0.1, -0.1,
+            // Phase 3: Sharp drop
+            -4.2, -4.8, -5.0, -4.5, -4.0,
+            // Phase 4: V recovery
+            3.8, 3.6, 3.2, 2.8, 2.5, 2.0, 1.5,
         ]
+          
 
         for (let i = 0; i < 30; i++) {
             const date = new Date()
@@ -43,7 +46,7 @@ const CandlestickChart: React.FC<CandlestickChartProps> = ({ symbol, height = 94
 
             const volatility = volatilityPattern[i] || 0.08
             const trend = trendPattern[i] || 0
-            const trendStrength = 0.025 // Strong but controlled trend movements
+            const trendStrength = 0.05 // Strong but controlled trend movements
 
             const trendChange = trend * trendStrength
             const randomChange = (Math.random() - 0.5) * 2 * volatility
@@ -56,21 +59,22 @@ const CandlestickChart: React.FC<CandlestickChartProps> = ({ symbol, height = 94
             let upperWickExtension, lowerWickExtension, wickMultiplier
 
             if (i < 10) {
-                // Phase 1: Uptrend - longer lower wicks (buying dips), shorter upper wicks
-                upperWickExtension = Math.random() * 0.03 + 0.015 // 1.5-4.5% upper wick
-                lowerWickExtension = Math.random() * 0.06 + 0.04 // 4-10% lower wick
-                wickMultiplier = Math.random() < 0.7 ? 2.0 : 1.5 // 70% chance for dramatic lower wicks
+                // Phase 1: Uptrend - longer lower wicks, decent upper wicks
+                upperWickExtension = Math.random() * 0.06 + 0.03
+                lowerWickExtension = Math.random() * 0.12 + 0.08
+                wickMultiplier = Math.random() < 0.7 ? 2.8 : 2.0
             } else if (i < 20) {
-                // Phase 2: Downtrend - longer upper wicks (selling rallies), shorter lower wicks
-                upperWickExtension = Math.random() * 0.08 + 0.05 // 5-13% upper wick
-                lowerWickExtension = Math.random() * 0.03 + 0.02 // 2-5% lower wick
-                wickMultiplier = Math.random() < 0.8 ? 2.5 : 2.0 // 80% chance for dramatic upper wicks
+                // Phase 2: Sideways - longer upper wicks, tight lower wicks
+                upperWickExtension = Math.random() * 0.16 + 0.1
+                lowerWickExtension = Math.random() * 0.06 + 0.04
+                wickMultiplier = Math.random() < 0.8 ? 3.0 : 2.3
             } else {
-                // Phase 3: Recovery - longer lower wicks (strong buying), moderate upper wicks
-                upperWickExtension = Math.random() * 0.04 + 0.02 // 2-6% upper wick
-                lowerWickExtension = Math.random() * 0.07 + 0.045 // 4.5-11.5% lower wick
-                wickMultiplier = Math.random() < 0.75 ? 2.2 : 1.8 // 75% chance for dramatic lower wicks
+                // Phase 3: Recovery - balanced but strong wicks
+                upperWickExtension = Math.random() * 0.08 + 0.04
+                lowerWickExtension = Math.random() * 0.14 + 0.08
+                wickMultiplier = Math.random() < 0.75 ? 2.8 : 2.0
             }
+            
 
             const bodyHigh = Math.max(open, close)
             const bodyLow = Math.min(open, close)

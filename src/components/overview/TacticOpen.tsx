@@ -59,8 +59,8 @@ const TacticOpen = () => {
                                 </span>
                             </div>
                         </div>
-                        <div className="mx-auto h-[94px] w-full xl:h-[94px]">
-                            <CandlestickChart symbol={signal.symbol} />
+                        <div className="mx-auto -my-8 w-full">
+                            <CandlestickChart height={160} symbol={signal.symbol} />
                         </div>
                         <div className="gradient-border-tactic my-3.5 h-[1px] w-full"></div>
                         <span className="text-richwhite text-custom-sm font-semibold tracking-normal">Entry Logic</span>

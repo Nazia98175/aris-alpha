@@ -78,9 +78,9 @@ const AllocationClosed = ({
             className={`${isSingleExpandedCardOne ? 'min-h-[350px]' : ''} ${isSingleExpandedCardTwo ? 'min-h-[260px]' : ''} ${isSingleExpandedCardThree ? 'min-h-[298px]' : ''} flex h-full w-full flex-col justify-between gap-5 pb-3 sm:pb-5 xl:gap-3.5`}
         >
             <div
-                className={`max-xs:flex-col xs:justify-between mt-6 flex w-full max-w-[600px] items-center xl:max-w-[400px] ${isSingleExpanded ? 'gap-5 sm:gap-6 xl:gap-4' : 'gap-5 sm:gap-8'}`}
+                className={`max-xs:flex-col xs:justify-between flex w-full max-w-[530px] items-center xl:max-w-[400px] ${isSingleExpanded ? 'gap-5 sm:gap-6 xl:gap-4' : 'gap-5 sm:gap-8'}`}
             >
-                <div className="relative flex aspect-[256/229] w-full xl:aspect-[200/180]">
+                <div className="relative max-xl:-my-7 -mx-10 flex max-xs:max-w-[350px] max-xl:max-w-[400px] aspect-[180/150] w-full xl:aspect-[200/180]">
                     <ResponsiveContainer width="100%" height="100%">
                         <PieChart>
                             <Pie
@@ -134,7 +134,7 @@ const AllocationClosed = ({
                 </div>
             </div>
             <div className="bg-richsand w-full rounded-md px-2.5 py-1.5">
-                <p className="text-custom-sm text-mediumgrey font-normal tracking-normal italic">
+                <p className={`text-custom-sm text-mediumgrey font-normal tracking-normal italic ${isSingleExpanded ? " max-w-[238px]":""}`}>
                     Suggested allocations are model-based and not tailored to individual portfolios.
                 </p>
             </div>

@@ -87,8 +87,8 @@ const TacticClosed = ({
                                     ${signal.range[0]}-${signal.range[1]}
                                 </span>
                             </div>
-                            <div className="mx-auto h-[52px] w-full">
-                                <CandlestickChart symbol={signal.symbol} height={52} />
+                            <div className="mx-auto -my-8 w-full">
+                                <CandlestickChart symbol={signal.symbol} height={110} />
                             </div>
                             <div className={`my-2.5 ${isSingleExpanded && 'mb-0'}`}>
                                 <span className="text-custom-sm text-richslate font-light tracking-normal">

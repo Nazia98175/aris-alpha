@@ -1,9 +1,14 @@
 import CompleteOverview from '@/components/overview/CompleteOverview'
+import { Metadata } from 'next'
 import React from 'react'
 
+export const metadata: Metadata = {
+    title: 'Aris Alpha | Overview ',
+    description: 'Real-time trading dashboard with candlestick charts, market insights, and portfolio analytics.',
+}
 const page = () => {
     return (
-        <div className="bg-fadeblack min-h-screen pb-14">
+        <div className="bg-fadeblack min-h-screen">
             <div className="mx-auto w-full max-w-[1920px]">
                 <CompleteOverview />
             </div>

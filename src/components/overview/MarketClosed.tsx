@@ -54,15 +54,15 @@ const MarketClosed = ({ isSingleExpandedCardFour, isSingleExpandedCardOne }: Mar
                                 <td
                                     className={`px-4 py-4 text-right ${i === MARKET_SNAPSHOT_DATA_LIST.slice(0, isSingleExpandedCardOne ? 6 : 5).length - 1 && 'rounded-br-[10px]'}`}
                                 >
-                                    <span
-                                        className={`rounded-[30px] border bg-transparent px-2.5 py-0.5 text-xs !leading-[150%] font-medium tracking-normal ${
+                                    <div
+                                        className={`rounded-[30px] ml-auto min-w-[70px] w-fit text-center border bg-transparent px-2.5 py-0.5 text-xs !leading-[150%] font-medium tracking-normal ${
                                             market.trend === 'up'
                                                 ? 'text-lightgreen border-lightgreen'
                                                 : 'text-lightred border-lightred'
                                         }`}
                                     >
                                         {market.sentiment}
-                                    </span>
+                                    </div>
                                 </td>
                             </tr>
                         ))}

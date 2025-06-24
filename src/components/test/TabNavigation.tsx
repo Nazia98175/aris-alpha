@@ -30,7 +30,7 @@ const TabNavigation = () => {
                     <Link
                         key={tab.name}
                         href={tab.href}
-                        className={`flex h-auto items-center justify-center gap-2 rounded-[10px] py-2 text-sm font-medium transition-all duration-300 md:px-3 md:py-2 md:text-base lg:h-[50px] lg:px-6 lg:py-3 ${tab.width} ${
+                        className={`flex h-auto items-center justify-center gap-2 rounded-[10px] py-2 text-sm font-medium transition-all duration-300 md:px-3  ${tab.width} ${
                             isActive
                                 ? 'bg-primaryblue text-white shadow-[0px_0px_10px_0px_#2A64F6]'
                                 : 'bg-white/5 text-gray-300 hover:shadow-[0px_0px_10px_0px_#2A64F6]'

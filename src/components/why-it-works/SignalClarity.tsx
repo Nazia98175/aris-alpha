@@ -6,17 +6,17 @@ import { Platform } from '../onboard/Icons'
 
 const SignalClarity = () => {
     return (
-        <section className="mx-auto flex w-full max-w-[1140px] flex-col items-center justify-between gap-5 px-6 py-10 text-white md:gap-[58px] md:py-20 lg:flex-row xl:px-0">
+        <section className="mx-auto flex w-full max-w-[1140px] flex-col items-center justify-between gap-5 px-4 py-10 text-white md:gap-[58px] md:py-20 lg:flex-row xl:px-0">
             {/* Left Content */}
             <div className="w-full max-w-full lg:max-w-[454px]">
                 <h2 className="secondary-heading">
                     Signal Clarity Over <br className="hidden md:block" /> Chaos
                 </h2>
 
-                <p className="description mt-4 !text-[#D0D0D0]/[80%]">
+                <p className="description mt-4 !leading-[160%] !text-[#D0D0D0]/[80%]">
                     Most platforms flood you with alerts. We don’t.
                 </p>
-                <p className="description mt-8 !text-[#D0D0D0]/[80%]">
+                <p className="description mt-8 !leading-[160%] !text-[#D0D0D0]/[80%]">
                     Aris Alpha filters thousands of data points and surfaces only high-conviction setups — the kind
                     elite investors act on.
                 </p>

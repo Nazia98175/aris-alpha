@@ -21,8 +21,8 @@ const WhyItWorksPage = () => {
             <WhyItWorks />
             <SignalClarity />
             <BuiltAroundReality />
-            <section className="relative h-auto min-h-screen bg-[url('/assets/backgrounds/working-bg.webp')] bg-no-repeat md:bg-contain md:bg-bottom xl:h-[1444px]">
-                <WhatYouGet />
+            <WhatYouGet />
+            <section className="relative h-auto bg-[url('/assets/backgrounds/working-bg.webp')] bg-no-repeat md:bg-contain md:bg-center">
                 <WhyItOutperforms />
                 <ThatsWhyItWorks />
                 <Footer />

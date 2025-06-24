@@ -18,13 +18,13 @@ const WhyUsPage = () => {
             <Navbar navBg="!bg-[#000103]" />
             <WhoAreWe />
             <ProblemWeSolve />
-            <section className="relative bg-[url('/assets/backgrounds/working-bg.webp')] bg-no-repeat md:bg-contain md:bg-top">
+            <section className="relative h-auto bg-[url('/assets/backgrounds/working-bg.webp')] bg-no-repeat md:bg-contain md:bg-center xl:h-[804px]">
                 <OurSolution />
-                <section className="relative bg-[url('/assets/backgrounds/working-bg.webp')] bg-no-repeat md:bg-contain md:bg-center">
-                    <OurPhilosophy />
-                </section>
-                <Footer />
             </section>
+            <section className="relative h-auto bg-[url('/assets/backgrounds/working-bg.webp')] bg-no-repeat md:bg-contain md:bg-bottom xl:h-[804px]">
+                <OurPhilosophy />
+            </section>
+            <Footer />
         </section>
     )
 }

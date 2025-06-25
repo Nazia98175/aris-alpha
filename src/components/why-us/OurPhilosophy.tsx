@@ -4,7 +4,7 @@ import Image from 'next/image'
 
 export const OurPhilosophy = () => {
     return (
-        <section className="w-full px-4 pt-10 text-white md:pt-20 xl:px-0">
+        <section className="w-full px-4 pt-10 text-white lg:pt-20 xl:px-0">
             <div className="mx-auto w-full max-w-[1140px]">
                 <div className="bg-howlblack relative h-auto rounded-[15px] border px-0 pt-4 backdrop-blur-[33.3px] md:rounded-[32px] md:pt-6 xl:h-[586px]">
                     <div className="relative z-10 px-2 md:px-4 xl:px-0">

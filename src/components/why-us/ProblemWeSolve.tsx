@@ -5,7 +5,7 @@ import Image from 'next/image'
 
 const ProblemWeSolve = () => {
     return (
-        <section className="w-full px-4 py-10 text-white md:py-20 xl:px-0">
+        <section className="w-full px-4 py-10 text-white lg:py-20 xl:px-0">
             <div className="mx-auto flex w-full max-w-[1140px] flex-col items-center justify-between lg:flex-row">
                 {/* Text Column */}
                 <div className="font-poppins w-full max-w-full lg:max-w-[542px]">

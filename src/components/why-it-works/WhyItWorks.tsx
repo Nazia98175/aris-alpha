@@ -4,7 +4,7 @@ import React from 'react'
 
 const WhyItWorks = () => {
     return (
-        <section className="relative flex h-auto flex-col items-center justify-center bg-[url('/assets/backgrounds/working-bg.webp')] bg-cover bg-center px-4 py-10 text-white md:h-[493px] md:py-20 xl:px-0">
+        <section className="relative flex h-auto flex-col items-center justify-center bg-[url('/assets/backgrounds/working-bg.webp')] bg-cover bg-center px-4 py-10 text-white md:h-[493px] lg:py-20 xl:px-0">
             <h2 className="main-heading">Why It Works</h2>
             <p className="mt-4 text-center text-sm leading-[150%] font-medium text-white md:text-base">
                 Most signals are noise. Ours aren’t.

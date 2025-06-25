@@ -2,11 +2,12 @@
 
 // import Image from 'next/image'
 import React from 'react'
-import { Platform } from '../onboard/Icons'
+// import { Platform } from '../onboard/Icons'
+import Image from 'next/image'
 
 const SignalClarity = () => {
     return (
-        <section className="mx-auto flex w-full max-w-[1140px] flex-col items-center justify-between gap-5 px-4 py-10 text-white md:gap-[58px] md:py-20 lg:flex-row xl:px-0">
+        <section className="mx-auto flex w-full max-w-[1140px] flex-col items-center justify-between gap-5 px-4 py-10 text-white md:gap-[58px] lg:flex-row lg:py-20 xl:px-0">
             {/* Left Content */}
             <div className="w-full max-w-full lg:max-w-[454px]">
                 <h2 className="secondary-heading">
@@ -27,15 +28,15 @@ const SignalClarity = () => {
             </div>
 
             {/* Right Side Image */}
-            <div className="h-auto w-full max-w-full md:max-w-[639px] xl:h-[407px]">
-                {/* <Image
+            <div className="h-auto w-full max-w-full xl:h-[407px] xl:max-w-[639px]">
+                <Image
                     src="/assets/homepage/webp/platforms.webp"
                     alt="Typical Platforms vs Aris Alpha"
                     width={639}
                     height={407}
                     className="h-auto w-full rounded-[15px] border border-[#808080] md:rounded-[30px]"
-                /> */}
-                <Platform />
+                />
+                {/* <Platform /> */}
             </div>
         </section>
     )

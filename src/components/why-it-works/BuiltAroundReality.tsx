@@ -6,7 +6,7 @@ import { CheckIcon } from '../home/Icons'
 
 const BuiltAroundReality = () => {
     return (
-        <section className="mx-auto flex w-full max-w-[1140px] flex-col items-center justify-center gap-5 px-4 py-10 text-white md:gap-[51px] md:py-20 lg:flex-row xl:px-0">
+        <section className="mx-auto flex w-full max-w-[1140px] flex-col items-center justify-center gap-5 px-4 py-10 text-white md:gap-[51px] lg:flex-row lg:py-20 xl:px-0">
             {/* Left: Image */}
             <div className="h-auto w-full max-w-full lg:max-w-[656px] xl:h-[529px]">
                 <Image

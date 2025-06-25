@@ -772,7 +772,14 @@ export const CheckSquare = () => (
 )
 
 export const Platform = () => (
-    <svg width="635" height="396" viewBox="0 0 635 396" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg
+        width="635"
+        height="396"
+        viewBox="0 0 635 396"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        className="h-auto w-[435px] xl:h-[396px] xl:w-[635px]"
+    >
         <rect x="0.462519" y="0.462519" width="634.075" height="395.075" rx="27.2886" fill="#050607" />
         <rect
             x="0.462519"

@@ -6,7 +6,7 @@ import OurSolutionCard from './OurSolutionCard'
 
 export const OurSolution = () => {
     return (
-        <section className="w-full bg-transparent px-4 py-10 text-white md:py-20 xl:px-0">
+        <section className="w-full bg-transparent px-4 py-10 text-white lg:py-20 xl:px-0">
             <div className="mx-auto w-full max-w-[1140px] text-center">
                 <h2 className="secondary-heading">Our Solution</h2>
                 <p className="description !text-waterwhite/[80%] mx-auto mt-4 max-w-[691px] !leading-[160%]">

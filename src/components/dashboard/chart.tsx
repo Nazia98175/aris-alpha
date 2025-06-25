@@ -5,9 +5,12 @@ import { useEffect, useRef } from 'react'
 
 interface Props {
     data: LineData[]
+    heading: string
+    headingClass?:string
+    description?:string
 }
 
-export default function AreaChart({ data }: Props) {
+export default function AreaChart({ data, heading, headingClass, description }: Props) {
     const chartContainerRef = useRef<HTMLDivElement>(null)
     const chartRef = useRef<ReturnType<typeof createChart>>(null)
 
@@ -55,7 +58,10 @@ export default function AreaChart({ data }: Props) {
                 height: '100%',
             }}
         >
-            <h6 className="text-start text-xl font-bold sm:text-3xl">Advanced Insights</h6>
+            <h6 className={`text-start text-xl font-bold sm:text-3xl ${headingClass}`}>{heading}</h6>
+            {description && (
+                <p className='max-w-[830px] mx-auto text-center font-normal text-base sm:text-lg !leading-[160%] text-waterwhite'>{description}</p>
+            )}
             <div ref={chartContainerRef} className="grow" />
         </div>
     )

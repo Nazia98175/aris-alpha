@@ -1,104 +1,47 @@
 'use client'
 
 import Image from 'next/image'
-import { useEffect, useRef, useState } from 'react'
+import { useRef } from 'react'
 import CommonBtn from '../ui/common-btn'
-
-interface FeatureCard {
-    id: number
-    title: string
-    description: string
-    image: string
-}
+import { features } from '../onboard/Helper'
+import { useScrollActiveSection } from '@/hooks/useScrollActiveSection'
 
 const AiHandle = () => {
-    const [activeIndex, setActiveIndex] = useState(0)
-    const sectionRefs = useRef<(HTMLDivElement | null)[]>([])
+    const sectionCount = 3 // Change this based on number of sections
     const containerRef = useRef<HTMLDivElement>(null)
-
-    const features: FeatureCard[] = [
-        {
-            id: 1,
-            title: 'Momentum Alerts',
-            description: 'We highlight the moment, you decide what to do.',
-            image: '/assets/homepage/png/buy-sell.png',
-        },
-        {
-            id: 2,
-            title: 'No guessing. We flag the moment.',
-            description: 'No spread cants, just deart insights.',
-            image: '/assets/homepage/png/no-guessing.png',
-        },
-        {
-            id: 3,
-            title: 'Sentiment Forecasts',
-            description: 'No gimmicks. Only clear market moves.',
-            image: '/assets/homepage/png/forecast.png',
-        },
-        {
-            id: 4,
-            title: 'Weekly Outlooks',
-            description: "Be prepared—know what's ahead.",
-            image: '/assets/homepage/png/outlook.png',
-        },
-    ]
-
-    useEffect(() => {
-        const handleScroll = () => {
-            // Only apply scroll effect on desktop (md and above)
-            if (window.innerWidth < 768) return
-
-            sectionRefs.current.forEach((ref, index) => {
-                if (ref) {
-                    const { top, bottom } = ref.getBoundingClientRect()
-                    const sectionCenter = top + (bottom - top) / 2
-                    const windowHeight = window.innerHeight
-
-                    // Check if section center is in the middle third of viewport
-                    if (sectionCenter > windowHeight / 3 && sectionCenter < (windowHeight * 2) / 3) {
-                        setActiveIndex(index)
-                    }
-                }
-            })
-        }
-
-        window.addEventListener('scroll', handleScroll)
-        handleScroll()
-
-        return () => window.removeEventListener('scroll', handleScroll)
-    }, [])
+    const { activeIndex, sectionRefs } = useScrollActiveSection(sectionCount)
 
     return (
-        <section 
+        <section
             ref={containerRef}
-            className="relative py-10 sm:pt-16 sm:pb-20 xl:pb-28 md:min-h-screen md:snap-start md:snap-always overflow-clip" 
-            id='about-us'
+            className="relative overflow-clip py-10 sm:pt-16 sm:pb-20 md:min-h-screen md:snap-start md:snap-always xl:pb-28"
+            id="about-us"
             style={{
                 // Ensure clean snap behavior
                 scrollSnapAlign: 'start',
-                scrollSnapStop: 'always'
+                scrollSnapStop: 'always',
             }}
         >
             <Image
-                className="w-full absolute opacity-[32%] z-[-1] mix-blend-hard-light"
+                className="absolute z-[-1] w-full opacity-[32%] mix-blend-hard-light"
                 unoptimized
                 height={150}
                 width={200}
                 src={'/assets/homepage/webp/ai-handle-bg.webp'}
-                alt={"AiHandle"}
+                alt={'AiHandle'}
             />
             <div className="custom-container">
-                <h2 className="text-white secondary-heading mx-auto mb-6 w-fit text-center sm:mb-8 lg:mb-12 xl:mb-[72px]">
+                <h2 className="secondary-heading mx-auto mb-6 w-fit text-center text-white sm:mb-8 lg:mb-12 xl:mb-[72px]">
                     Let the AI Handle the Chaos
                 </h2>
                 {/* Mobile/Tablet Layout - Static Cards */}
                 <div className="block space-y-8 md:hidden">
                     {features.map((feature) => (
-                        <div key={feature.id} className="rounded-2xl border border-[#1A1A1A] bg-[#0A0A0A] p-4 sm:p-8">
+                        <div key={feature.id} className="bg-angst border-darker rounded-2xl border p-4 sm:p-8">
                             <div className="flex flex-col sm:flex-row sm:items-start sm:gap-6">
                                 <div className="flex-1">
                                     <h3 className="mb-2 text-xl font-semibold text-white">{feature.title}</h3>
-                                    <p className="text-sm leading-[130%] text-[#D0D0D0]">{feature.description}</p>
+                                    <p className="text-waterwhite text-sm leading-[130%]">{feature.description}</p>
                                 </div>
                                 <div className="mt-4 sm:mt-0 sm:w-[300px]">
                                     <Image
@@ -124,15 +67,15 @@ const AiHandle = () => {
                                 ref={(el) => {
                                     sectionRefs.current[index] = el
                                 }}
-                                className="flex min-h-[244px] flex-col justify-center lg:min-h-[335px] xl:min-h-[400px] transition-opacity duration-300 ease-in-out"
+                                className="flex min-h-[244px] flex-col justify-center transition-opacity duration-300 ease-in-out lg:min-h-[335px] xl:min-h-[400px]"
                                 style={{
-                                    opacity: activeIndex === index ? 1 : 0.3
+                                    opacity: activeIndex === index ? 1 : 0.3,
                                 }}
                             >
                                 <h2 className="mb-2 text-2xl leading-[120%] text-white lg:text-4xl xl:text-[48px]">
                                     {feature.title}
                                 </h2>
-                                <p className="text-sm leading-[130%] text-[#D0D0D0] sm:text-base xl:text-lg">
+                                <p className="text-waterwhite text-sm leading-[130%] sm:text-base xl:text-lg">
                                     {feature.description}
                                 </p>
                             </div>
@@ -146,12 +89,10 @@ const AiHandle = () => {
                                     <div
                                         key={feature.id}
                                         className={`transition-all duration-1000 ease-in-out ${
-                                            activeIndex === index 
-                                                ? 'opacity-100' 
-                                                : 'absolute inset-0 opacity-0'
+                                            activeIndex === index ? 'opacity-100' : 'absolute inset-0 opacity-0'
                                         }`}
                                         style={{
-                                            transitionDelay: activeIndex === index ? '200ms' : '0ms'
+                                            transitionDelay: activeIndex === index ? '200ms' : '0ms',
                                         }}
                                     >
                                         <Image

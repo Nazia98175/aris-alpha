@@ -21,10 +21,10 @@ const WhyUsPage = async () => {
             <Navbar navBg="!bg-[#000103]" />
             <WhoAreWe />
             <ProblemWeSolve />
-            <section className="relative h-auto bg-[url('/assets/backgrounds/working-bg.webp')] bg-no-repeat md:bg-contain md:bg-center xl:h-[804px]">
+            <section className="relative h-auto bg-[url('/assets/homepage/png/working-another-bg.png')] bg-no-repeat md:bg-contain md:bg-center xl:h-[804px]">
                 <OurSolution />
             </section>
-            <section className="relative h-auto bg-[url('/assets/backgrounds/working-bg.webp')] bg-no-repeat md:bg-contain md:bg-bottom xl:h-[804px] w-full px-4 mt-[74px]">
+            <section className="relative mt-[74px] h-auto w-full bg-[url('/assets/homepage/png/working-another-bg.png')] bg-no-repeat px-4 md:bg-contain md:bg-bottom xl:h-[804px]">
                 <OurPhilosophy trade={trade} />
             </section>
             <Footer />

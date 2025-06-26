@@ -56,7 +56,7 @@ const Reviews = () => {
     }, [])
 
     return (
-        <section className="py-12 md:py-24">
+        <section className="bg-background py-12 md:py-24">
             <div ref={scrollRef} className="overflow-hidden" style={{ scrollBehavior: 'auto' }}>
                 <div className="scroll-content flex gap-4 sm:gap-6 lg:gap-10">
                     {reviewSlider.map((obj, i) => {

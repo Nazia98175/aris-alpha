@@ -1,21 +1,16 @@
-import Chart from '@/components/dashboard/chart'
-import Header from '@/components/dashboard/header'
-import React from 'react'
-import { tradeData } from '../actions/trade.actions'
-import DashboardLayout from './layout'
+'use client'
 
-const page = async () => {
-    const trade = await tradeData()
-    return (
-        <DashboardLayout>
-            <div className="flex h-full w-full flex-col space-y-5 sm:space-y-10">
-                <Header />
-                <div className="grow">
-                    <Chart heading="Advanced Insights" data={trade} />
-                </div>
-            </div>
-        </DashboardLayout>
-    )
+import { useEffect } from 'react'
+import { useRouter } from 'next/navigation'
+
+const TestDashboard = () => {
+    const router = useRouter()
+
+    useEffect(() => {
+        router.replace('/dashboard/overview')
+    }, [router])
+
+    return null // Only return this — DO NOT include any JSX below
 }
 
-export default page
+export default TestDashboard

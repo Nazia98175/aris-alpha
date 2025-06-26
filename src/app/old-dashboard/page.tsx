@@ -1,0 +1,21 @@
+import Chart from '@/components/old-dashboard/chart'
+import Header from '@/components/old-dashboard/header'
+import React from 'react'
+import { tradeData } from '../actions/trade.actions'
+import DashboardLayout from './layout'
+
+const page = async () => {
+    const trade = await tradeData()
+    return (
+        <DashboardLayout>
+            <div className="flex h-full w-full flex-col space-y-5 sm:space-y-10">
+                <Header />
+                <div className="grow">
+                    <Chart heading="Advanced Insights" data={trade} />
+                </div>
+            </div>
+        </DashboardLayout>
+    )
+}
+
+export default page

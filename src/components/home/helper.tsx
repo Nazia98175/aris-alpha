@@ -32,7 +32,7 @@ export const footerLinks = [
     },
     {
         label: 'About Us',
-        href: '/test',
+        href: '/dashboard',
     },
 ]
 

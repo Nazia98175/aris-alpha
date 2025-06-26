@@ -58,7 +58,7 @@ export default function Home() {
 
     return (
         <div className="relative">
-            <main className="bg-[url('/assets/homepage/webp/hero-bg.webp')] bg-cover bg-right">
+            <main className="bg-[url('/assets/homepage/webp/hero-bg.webp')] bg-cover bg-right min-[2500px]:!pb-[100px]">
                 <Navbar navBg="" />
                 <Header />
                 <Projects />

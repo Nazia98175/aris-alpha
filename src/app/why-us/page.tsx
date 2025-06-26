@@ -5,14 +5,14 @@ import { OurSolution } from '@/components/why-us/OurSolution'
 import ProblemWeSolve from '@/components/why-us/ProblemWeSolve'
 import WhoAreWe from '@/components/why-us/WhoAreWe'
 import { tradeData } from '../actions/trade.actions'
-// import { Metadata } from 'next'
-// import Image from 'next/image'
+import { SliderOverlay } from '@/components/home/Icons'
+import { Metadata } from 'next'
 
-// export const metadata: Metadata = {
-//     title: 'Working | CTA',
-//     description:
-//         'Get started with our quick and interactive onboarding process. Learn how to build your strategy with ease.',
-// }
+export const metadata: Metadata = {
+    title: 'Aris Alpha | Why Choose Us',
+    description:
+        'Discover how Aris Alpha is solving real trading problems, offering unique solutions, and delivering value with AI-driven strategies.',
+}
 const WhyUsPage = async () => {
     const trade = await tradeData()
 
@@ -20,11 +20,17 @@ const WhyUsPage = async () => {
         <section className="relative">
             <Navbar navBg="!bg-background" />
             <WhoAreWe />
+            {/* <span className="absolute top-0 left-0 block w-full translate-y-[-70%]">
+                    <SliderOverlay />
+                </span> */}
+            <span className="absolute bottom-0 left-0 block w-full translate-y-[70%] rotate-180">
+                <SliderOverlay />
+            </span>
             <ProblemWeSolve />
-            <section className="relative h-auto bg-[url('/assets/homepage/png/working-another-bg.png')] bg-no-repeat md:bg-contain md:bg-center xl:h-[804px]">
+            <section className="relative h-auto bg-[url('/assets/homepage/png/working-another-bg.png')] bg-contain bg-no-repeat md:bg-center lg:bg-cover">
                 <OurSolution />
             </section>
-            <section className="relative mt-[74px] h-auto w-full bg-[url('/assets/homepage/png/working-another-bg.png')] bg-no-repeat px-4 md:bg-contain md:bg-bottom xl:h-[804px]">
+            <section className="relative mt-[74px] h-auto w-full bg-[url('/assets/homepage/png/working-another-bg.png')] bg-contain bg-no-repeat px-4 md:bg-bottom lg:bg-cover xl:h-[804px]">
                 <OurPhilosophy trade={trade} />
             </section>
             <Footer />

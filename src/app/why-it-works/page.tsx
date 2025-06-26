@@ -6,14 +6,13 @@ import ThatsWhyItWorks from '@/components/why-it-works/ThatsWhyItWorks'
 import WhatYouGet from '@/components/why-it-works/WhatYouGet'
 import WhyItOutperforms from '@/components/why-it-works/WhyItOutperforms'
 import WhyItWorks from '@/components/why-it-works/WhyItWorks'
-// import { Metadata } from 'next'
-// import Image from 'next/image'
+import { Metadata } from 'next'
 
-// export const metadata: Metadata = {
-//     title: 'Working | CTA',
-//     description:
-//         'Get started with our quick and interactive onboarding process. Learn how to build your strategy with ease.',
-// }
+export const metadata: Metadata = {
+    title: 'Aris Alpha | Why It Works',
+    description:
+        'Discover the core principles and innovations that make Aris Alpha’s AI trading system outperform traditional methods. Real-time clarity, logic-based models, and proven results.',
+}
 const WhyItWorksPage = () => {
     return (
         <section className="relative">
@@ -22,7 +21,7 @@ const WhyItWorksPage = () => {
             <SignalClarity />
             <BuiltAroundReality />
             <WhatYouGet />
-            <section className="relative h-auto bg-[url('/assets/homepage/png/working-another-bg.png')] bg-no-repeat md:bg-contain md:bg-center">
+            <section className="relative h-auto bg-[url('/assets/homepage/png/working-another-bg.png')] bg-contain bg-no-repeat md:bg-center">
                 <WhyItOutperforms />
                 <ThatsWhyItWorks />
                 <Footer />

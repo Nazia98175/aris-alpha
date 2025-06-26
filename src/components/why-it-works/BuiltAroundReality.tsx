@@ -5,8 +5,8 @@ import FeatureListItem from './FeatureListItem'
 
 const BuiltAroundReality = () => {
     return (
-        <div className="relative mx-auto w-full max-w-[1920px]">
-            <div className="relative top-6 lg:absolute xl:top-1">
+        <div className="relative mx-auto w-full max-w-[1140px]">
+            <div className="relative top-6 lg:absolute xl:top-0">
                 {/* Left: SVG with curved lines and labels */}
                 <BuiltAroundSvg />
             </div>

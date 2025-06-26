@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 const OnBoardPage = () => {
     return (
         <section className="flex min-h-screen flex-col bg-[url('/assets/backgrounds/onboard-bg.webp')] bg-cover bg-fixed bg-center">
-            <Navbar navBg="!bg-[#000103]" />
+            <Navbar navBg="!bg-background" />
             <Suspense fallback={<LoaderSpinner />}>
                 <Onboarding />
             </Suspense>

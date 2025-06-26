@@ -17,12 +17,12 @@ import WhyItWorks from '@/components/why-it-works/WhyItWorks'
 const WhyItWorksPage = () => {
     return (
         <section className="relative">
-            <Navbar navBg="!bg-[#000103]" />
+            <Navbar navBg="!bg-background" />
             <WhyItWorks />
             <SignalClarity />
             <BuiltAroundReality />
             <WhatYouGet />
-            <section className="relative h-auto bg-[url('/assets/backgrounds/working-bg.webp')] bg-no-repeat md:bg-contain md:bg-center">
+            <section className="relative h-auto bg-[url('/assets/homepage/png/working-another-bg.png')] bg-no-repeat md:bg-contain md:bg-center">
                 <WhyItOutperforms />
                 <ThatsWhyItWorks />
                 <Footer />

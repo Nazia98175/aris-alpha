@@ -25,7 +25,7 @@ const StepIndicator = ({ stepNumber, currentStep, isFinalScreen = false }: StepI
                 </span>
             ) : (
                 <div
-                    className={`flex h-5 w-5 items-center justify-center rounded-full border-2 sm:h-6 sm:w-6 sm:border-[3.5px] lg:h-[30px] lg:w-[30px] lg:border-4 ${outerClass} bg-[#000103]`}
+                    className={`flex h-5 w-5 items-center justify-center rounded-full border-2 sm:h-6 sm:w-6 sm:border-[3.5px] lg:h-[30px] lg:w-[30px] lg:border-4 ${outerClass} bg-background`}
                 >
                     {showInner && <div className={`h-2 w-2 rounded-full sm:h-2 sm:w-2 lg:h-3 lg:w-3 ${innerClass}`} />}
                 </div>

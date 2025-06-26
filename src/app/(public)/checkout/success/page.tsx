@@ -24,7 +24,7 @@ export default function ThankYouPage() {
 
                     <div className="flex w-full flex-col gap-3 pt-4 sm:flex-row">
                         <Button asChild className="w-full" size="lg">
-                            <Link href="/dashboard">
+                            <Link href="/old-dashboard">
                                 Go to Dashboard
                                 <ArrowRight className="ml-2 h-4 w-4" />
                             </Link>

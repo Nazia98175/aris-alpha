@@ -1,10 +1,7 @@
-'use client'
-
 import React from 'react'
-
 const WhoAreWe = () => {
     return (
-        <section className="relative flex h-auto flex-col items-center justify-center bg-[url('/assets/backgrounds/working-bg.webp')] bg-cover bg-center px-4 py-10 text-white md:py-20 lg:h-[493px] xl:px-0">
+        <section className="hero-main-container-bg-style">
             <div className="h-auto w-full max-w-[866px] text-center text-white xl:h-[277px]">
                 <p className="strokeLinejoin mb-3">Who Are We</p>
                 <h2 className="main-heading mb-6">Aris Capital</h2>

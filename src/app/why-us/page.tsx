@@ -4,6 +4,7 @@ import { OurPhilosophy } from '@/components/why-us/OurPhilosophy'
 import { OurSolution } from '@/components/why-us/OurSolution'
 import ProblemWeSolve from '@/components/why-us/ProblemWeSolve'
 import WhoAreWe from '@/components/why-us/WhoAreWe'
+import { tradeData } from '../actions/trade.actions'
 // import { Metadata } from 'next'
 // import Image from 'next/image'
 
@@ -12,17 +13,19 @@ import WhoAreWe from '@/components/why-us/WhoAreWe'
 //     description:
 //         'Get started with our quick and interactive onboarding process. Learn how to build your strategy with ease.',
 // }
-const WhyUsPage = () => {
+const WhyUsPage = async () => {
+    const trade = await tradeData()
+
     return (
         <section className="relative">
             <Navbar navBg="!bg-[#000103]" />
             <WhoAreWe />
             <ProblemWeSolve />
-            <section className="relative h-auto bg-[url('/assets/backgrounds/working-bg.webp')] bg-no-repeat md:bg-contain md:bg-center xl:h-[804px]">
+            <section className="relative h-auto bg-[url('/assets/homepage/png/working-another-bg.png')] bg-no-repeat md:bg-contain md:bg-center xl:h-[804px]">
                 <OurSolution />
             </section>
-            <section className="relative h-auto bg-[url('/assets/backgrounds/working-bg.webp')] bg-no-repeat md:bg-contain md:bg-bottom xl:h-[804px]">
-                <OurPhilosophy />
+            <section className="relative mt-[74px] h-auto w-full bg-[url('/assets/homepage/png/working-another-bg.png')] bg-no-repeat px-4 md:bg-contain md:bg-bottom xl:h-[804px]">
+                <OurPhilosophy trade={trade} />
             </section>
             <Footer />
         </section>

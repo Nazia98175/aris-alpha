@@ -2,7 +2,7 @@
 
 // import Image from 'next/image'
 import React from 'react'
-// import { Platform } from '../onboard/Icons'
+import { Platform } from '../onboard/Icons'
 import Image from 'next/image'
 
 const SignalClarity = () => {
@@ -29,14 +29,14 @@ const SignalClarity = () => {
 
             {/* Right Side Image */}
             <div className="h-auto w-full max-w-full xl:h-[407px] xl:max-w-[639px]">
-                <Image
+                {/* <Image
                     src="/assets/homepage/webp/platforms.webp"
                     alt="Typical Platforms vs Aris Alpha"
                     width={639}
                     height={407}
                     className="h-auto w-full rounded-[15px] border border-[#808080] md:rounded-[30px]"
-                />
-                {/* <Platform /> */}
+                /> */}
+                <Platform />
             </div>
         </section>
     )

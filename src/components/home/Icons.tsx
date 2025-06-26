@@ -765,4 +765,3 @@ export const TacticEntryLogic = () => (
         />
     </svg>
 )
-

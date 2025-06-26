@@ -62,7 +62,11 @@ export default function Home() {
                 <Header />
                 <Projects />
             </main>
-            <Reviews />
+            <div className="relative overflow-visible">
+                <div className="absolute -top-2 h-32 w-full max-w-full bg-gradient-to-t from-black/70 to-black blur-xl"></div>
+                <Reviews />
+                <div className="bottom-overlay from-background absolute right-0 -bottom-10 left-0 h-[200px] w-full bg-linear-to-t to-transparent blur-2xl"></div>
+            </div>
             <Dashboard />
             <div ref={aiHandleRef}>
                 <AiHandle />

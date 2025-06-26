@@ -3,9 +3,12 @@ import CommonBtn from '../ui/common-btn'
 
 const Dashboard = () => {
     return (
-        <section className="relative xl:pt-6" id='dashboard'>
+        <section
+            className="relative bg-[url('/assets/homepage/png/working-another-bg.png')] bg-contain bg-center bg-no-repeat lg:bg-cover xl:pt-6"
+            id="dashboard"
+        >
             <div className="custom-container pb-10">
-                <h3 className="mx-auto mb-6 sm:mb-8 lg:mb-12 xl:mb-14 text-white text-center text-3xl sm:text-4xl xl:text-[40px] leading-[120%] w-fit">
+                <h3 className="mx-auto mb-6 w-fit text-center text-3xl leading-[120%] text-white sm:mb-8 sm:text-4xl lg:mb-12 xl:mb-14 xl:text-[40px]">
                     Trusted to Cut Through the Noise
                 </h3>
                 <Image
@@ -17,7 +20,7 @@ const Dashboard = () => {
                     alt="dashboard-img"
                 />
                 <CommonBtn
-                    className="mx-auto mt-6 sm:mt-8 lg:mt-12 xl:mt-16 w-fit lg:!py-[18px]"
+                    className="mx-auto mt-6 w-fit sm:mt-8 lg:mt-12 lg:!py-[18px] xl:mt-16"
                     btnText="Get Started"
                     btnUrl="/onboarding"
                     variant="secondary"

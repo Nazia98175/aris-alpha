@@ -1,5 +1,3 @@
-'use client'
-
 import { solutions } from '../home/helper'
 import { CheckSquare } from '../onboard/Icons'
 import OurSolutionCard from './OurSolutionCard'

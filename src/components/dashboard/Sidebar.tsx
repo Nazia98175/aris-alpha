@@ -10,7 +10,7 @@ interface SidebarProps {
 const Sidebar: React.FC<SidebarProps> = ({ isOpen, onToggle }) => {
     const pathname = usePathname()
     const menuItems = [
-        { label: 'Dashboard', link: '/test' },
+        { label: 'Dashboard', link: '/dashboard' },
         { label: 'Institutional', link: '/' },
         { label: 'Strategy', link: '/' },
         { label: 'Product', link: '/' },

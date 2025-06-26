@@ -7,13 +7,13 @@ import { FileIcon, HomeIcon } from '../home/Icons'
 const tabs = [
     {
         name: 'Overview',
-        href: '/test/overview',
+        href: '/dashboard/overview',
         icon: <HomeIcon />,
         width: 'w-[152px]', // Mobile → MD → Desktop
     },
     {
         name: 'Account',
-        href: '/test/account',
+        href: '/dashboard/account',
         icon: <FileIcon />,
         width: 'w-[145px]',
     },

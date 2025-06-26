@@ -1046,17 +1046,17 @@ export const BuiltAroundSvg = () => (
         <path
             d="M681 317.918C656.938 311.583 645.226 304.047 622 286.359C598.774 268.671 491.651 186.558 482.046 180.708C456.864 165.371 440.817 158.285 410.698 156.011C380.578 153.737 155.488 156.011 155.488 156.011H-2"
             stroke="url(#paint0_linear_3135_8226)"
-            stroke-width="2.74419"
+            strokeWidth="2.74419"
         />
         <path
             d="M681 316.907C656.938 323.241 645.226 330.777 622 348.466C598.774 366.154 491.651 448.267 482.046 454.116C456.864 469.454 440.817 476.54 410.698 478.814C380.578 481.088 155.488 478.814 155.488 478.814H-9.5L-50.5 396"
             stroke="url(#paint1_linear_3135_8226)"
-            stroke-width="2.74419"
+            strokeWidth="2.74419"
         />
         <path
             d="M1442 316.907H679.628C472.795 316.907 356.833 316.907 150 316.907H-7"
             stroke="url(#paint2_linear_3135_8226)"
-            stroke-width="2.74419"
+            strokeWidth="2.74419"
         />
         <g opacity="0.54" filter="url(#filter2_f_3135_8226)">
             <circle cx="701.5" cy="317" r="42.5" fill="#527DE4" />
@@ -1085,9 +1085,9 @@ export const BuiltAroundSvg = () => (
                 width="170"
                 height="170"
                 filterUnits="userSpaceOnUse"
-                color-interpolation-filters="sRGB"
+                colorInterpolationFilters="sRGB"
             >
-                <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                <feFlood floodOpacity="0" result="BackgroundImageFix" />
                 <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
                 <feGaussianBlur stdDeviation="21.25" result="effect1_foregroundBlur_3135_8226" />
             </filter>
@@ -1099,8 +1099,8 @@ export const BuiltAroundSvg = () => (
                 y2="236.459"
                 gradientUnits="userSpaceOnUse"
             >
-                <stop stop-color="#007BFF" />
-                <stop offset="1" stop-color="#00CFFF" />
+                <stop stopColor="#007BFF" />
+                <stop offset="1" stopColor="#00CFFF" />
             </linearGradient>
             <linearGradient
                 id="paint1_linear_3135_8226"
@@ -1110,8 +1110,8 @@ export const BuiltAroundSvg = () => (
                 y2="398.366"
                 gradientUnits="userSpaceOnUse"
             >
-                <stop stop-color="#00D084" />
-                <stop offset="1" stop-color="#7CFF6A" />
+                <stop stopColor="#00D084" />
+                <stop offset="1" stopColor="#7CFF6A" />
             </linearGradient>
             <linearGradient
                 id="paint2_linear_3135_8226"
@@ -1121,9 +1121,9 @@ export const BuiltAroundSvg = () => (
                 y2="317.407"
                 gradientUnits="userSpaceOnUse"
             >
-                <stop offset="0.438431" stop-color="#00D4C0" />
-                <stop offset="0.787798" stop-color="white" />
-                <stop offset="1" stop-color="white" stop-opacity="0" />
+                <stop offset="0.438431" stopColor="#00D4C0" />
+                <stop offset="0.787798" stopColor="white" />
+                <stop offset="1" stopColor="white" stopOpacity="0" />
             </linearGradient>
         </defs>
     </svg>
@@ -1142,9 +1142,9 @@ export const SignalTrigger = () => (
                 width="170"
                 height="170"
                 filterUnits="userSpaceOnUse"
-                color-interpolation-filters="sRGB"
+                colorInterpolationFilters="sRGB"
             >
-                <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                <feFlood floodOpacity="0" result="BackgroundImageFix" />
                 <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
                 <feGaussianBlur stdDeviation="21.25" result="effect1_foregroundBlur_3135_8231" />
             </filter>

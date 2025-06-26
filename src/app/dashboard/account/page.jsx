@@ -1,5 +1,5 @@
 'use client'
-import AccountContent from '@/components/test/AccountContent'
+import AccountContent from '@/components/dashboard/AccountContent'
 import { Suspense } from 'react'
 
 const AccountPage = () => {

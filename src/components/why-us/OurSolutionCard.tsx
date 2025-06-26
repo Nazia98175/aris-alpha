@@ -1,5 +1,3 @@
-'use client'
-
 import { ReactNode } from 'react'
 
 interface OurSolutionCardProps {
@@ -10,10 +8,10 @@ interface OurSolutionCardProps {
 
 const OurSolutionCard = ({ icon, title, description }: OurSolutionCardProps) => {
     return (
-        <div className="transform cursor-pointer rounded-[15px] bg-white/[4%] p-[16px] text-left shadow-[0px_0px_10px_0px_rgba(42,100,246,0.15)] backdrop-blur-[40px] transition duration-300 hover:scale-[1.03] md:rounded-[30px] lg:h-[455px] lg:max-w-[364px] xl:p-[26px]">
+        <div className="oursolution-box-shadow oursolution-container-style">
             <div className="mx-auto mb-4 flex w-full justify-center">{icon}</div>
             <h3 className="mb-2 text-center text-xl font-medium text-white">{title}</h3>
-            <p className="text-waterwhite/[80%] text-center text-lg !leading-[160%] font-normal">{description}</p>
+            <p className="text-waterwhite/[80%] description !text-center !leading-[160%]">{description}</p>
         </div>
     )
 }

@@ -1,13 +1,9 @@
-'use client'
-
 import Image from 'next/image'
-// import { CompoundCircle } from '../onboard/Icons'
 
 const ProblemWeSolve = () => {
     return (
         <section className="w-full px-4 py-10 text-white lg:py-20 xl:px-0">
             <div className="mx-auto flex w-full max-w-[1140px] flex-col items-center justify-between lg:flex-row">
-                {/* Text Column */}
                 <div className="font-poppins w-full max-w-full lg:max-w-[542px]">
                     <h2 className="secondary-heading mb-6">The Problem We Solve</h2>
                     <p className="description !text-waterwhite/[80%] mb-6 !leading-[160%]">
@@ -22,8 +18,6 @@ const ProblemWeSolve = () => {
                     </p>
                 </div>
 
-                {/* Image Column */}
-                {/* <CompoundCircle /> */}
                 <div className="flex w-full items-center justify-center lg:justify-end">
                     <Image
                         src="/assets/homepage/webp/compound-circle.webp"

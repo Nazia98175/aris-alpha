@@ -1,32 +1,20 @@
-'use client'
-
 import React from 'react'
 import { CheckIcon, NextVector } from '../home/Icons'
-
-const traditionalPoints = ['Too many alerts', 'Reacts to headlines', 'Unclear sizing', 'Late entries']
-
-const arisPoints = [
-    'Only high-conviction signals',
-    'Anticipates structural shifts',
-    'Portfolio-aware allocations',
-    'Early signals',
-]
+import { arisPoints, traditionalPoints } from '../onboard/Helper'
 
 const WhyItOutperforms = () => {
     return (
-        <section className="mx-auto flex w-full max-w-[908px] flex-col items-center px-4 py-10 text-white lg:py-20 xl:px-0">
+        <section className="outperform-outer-container-style">
             <h2 className="secondary-heading mb-12 text-center !font-normal">Why It Outperforms</h2>
 
-            <div className="flex w-full max-w-[908px] flex-col items-center justify-center gap-6 md:flex-row md:justify-between">
+            <div className="outperform-inner-container-style">
                 {/* Traditional Tools */}
-                <div className="relative h-auto w-full max-w-full rounded-[15px] border border-white/[20%] bg-[#310F0E]/[30%] p-6 md:h-[350px] md:rounded-[30px] md:p-3 lg:h-[398px] lg:max-w-[432px] lg:p-6">
+                <div className="traditional-tools-container-style">
                     <div className="relative mb-7 md:mb-14">
-                        <h3 className="border-b border-[#D0D0D0] pb-4 text-[26px] font-normal md:text-[32px] lg:text-[40px]">
-                            Traditional Tools
-                        </h3>
-                        <div className="absolute top-[53px] z-10 h-[3px] w-[120px] bg-[#A03E3A] md:top-[61px] md:h-[4px] lg:top-[73px]" />
+                        <h3 className="tool-heading-style">Traditional Tools</h3>
+                        <div className="redline-traditional-container-style" />
                     </div>
-                    <ul className="ml-3 space-y-6 text-xl leading-[130%] font-normal text-[#D0D0D0] md:space-y-3 lg:space-y-6 xl:text-2xl">
+                    <ul className="outperform-list-style">
                         {traditionalPoints.map((point, index) => (
                             <li key={index} className="ml-5 list-disc">
                                 {point}
@@ -34,22 +22,20 @@ const WhyItOutperforms = () => {
                         ))}
                     </ul>
 
-                    <span className="absolute top-1/2 right-[-45px] hidden -translate-y-1/2 rotate-0 text-base text-[#D0D0D0] lg:block">
-                        <span className="absolute -top-4 right-[55px] text-[#D0D0D0]">Noise</span>
+                    <span className="outperform-nextvector-absolute-style">
+                        <span className="text-waterwhite absolute -top-4 right-[55px]">Noise</span>
                         <NextVector />
                     </span>
                 </div>
 
                 {/* Aris Alpha */}
-                <div className="h-auto w-full max-w-full rounded-[15px] border border-[#002787]/[20%] bg-[#2A64F6]/[20%] p-6 md:h-[350px] md:rounded-[30px] md:p-3 lg:h-[398px] lg:max-w-[432px] lg:p-6">
+                <div className="aris-alpha-container-style">
                     <div className="relative mb-7 md:mb-14">
-                        <h3 className="border-b border-[#D0D0D0] pb-4 text-[26px] font-normal md:text-[32px] lg:text-[40px]">
-                            Aris Alpha
-                        </h3>
-                        <div className="absolute top-[53px] z-10 h-[3px] w-[120px] bg-[#2A64F6] md:top-[61px] md:h-[4px] lg:top-[73px]" />
+                        <h3 className="tool-heading-style">Aris Alpha</h3>
+                        <div className="blueline-arisalpha-container-style" />
                     </div>
                     {/* <div className="pointer-events-none absolute inset-0 z-0 bg-[url('/noise.png')] opacity-10 mix-blend-screen" /> */}
-                    <ul className="ml-3 space-y-6 text-xl leading-[130%] font-normal text-[#D0D0D0] md:space-y-3 lg:space-y-6 xl:text-2xl">
+                    <ul className="outperform-list-style">
                         {arisPoints.map((point, index) => (
                             <li key={index} className="flex items-center gap-2">
                                 <CheckIcon />

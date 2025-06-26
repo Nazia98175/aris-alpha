@@ -1,15 +1,13 @@
-'use client'
-
 import React from 'react'
 
 const WhyItWorks = () => {
     return (
-        <section className="relative flex h-auto flex-col items-center justify-center bg-[url('/assets/homepage/png/working-another-bg.png')] bg-contain bg-center bg-no-repeat px-4 py-10 text-white md:h-[493px] lg:bg-cover lg:py-20 xl:px-0">
+        <section className="hero-main-container-bg-style">
             <h2 className="main-heading">Why It Works</h2>
             <p className="mt-4 text-center text-sm leading-[150%] font-medium text-white md:text-base">
                 Most signals are noise. Ours aren’t.
             </p>
-            <div className="font-outfit mt-6 w-full max-w-[702px] rounded-lg border border-white/[0.2] bg-white/5 px-6 py-6 text-center shadow-md backdrop-blur-[32px] md:px-4 md:py-3">
+            <div className="hero-inner-container-style">
                 <p className="mb-2 text-base leading-[200%] font-normal text-white md:text-lg">
                     We built Aris Alpha for one purpose:
                 </p>

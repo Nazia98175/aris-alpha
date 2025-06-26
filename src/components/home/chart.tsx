@@ -3,7 +3,7 @@
 import { AreaSeries, LineData, createChart } from 'lightweight-charts'
 import React, { FC, useEffect, useRef } from 'react'
 
-import AreaChart from '../dashboard/chart'
+import AreaChart from '../old-dashboard/chart'
 import Container from '../ui/container'
 
 interface IProps {
@@ -78,7 +78,7 @@ const Chart: FC<IProps> = ({ trade }) => {
                 ></div>
 
                 <div className="h-[500px] w-full sm:h-[600px]">
-                    <AreaChart data={trade} />
+                    <AreaChart heading="Live Results" data={trade} />
                 </div>
             </Container>
             <div

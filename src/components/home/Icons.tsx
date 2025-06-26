@@ -212,6 +212,30 @@ export const WhiteCheckIcon = () => (
         />
     </svg>
 )
+export const SliderOverlay = () => (
+    <svg
+        className="h-[84px] w-full"
+        viewBox="0 0 9272 84"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        preserveAspectRatio="none"
+    >
+        <rect width="9272" height="84" fill="url(#paint0_linear_5001_8222)" />
+        <defs>
+            <linearGradient
+                id="paint0_linear_5001_8222"
+                x1="4636"
+                y1="0"
+                x2="4636"
+                y2="84"
+                gradientUnits="userSpaceOnUse"
+            >
+                <stop offset="0.307692" stopColor="#000103" stopOpacity="0" />
+                <stop offset="0.625" stopColor="#000103" />
+            </linearGradient>
+        </defs>
+    </svg>
+)
 
 export const BlackChekcIcon = () => (
     <svg width="100%" height="100%" viewBox="0 0 33 34" fill="none" xmlns="http://www.w3.org/2000/svg">

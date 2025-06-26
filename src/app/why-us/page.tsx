@@ -18,7 +18,7 @@ const WhyUsPage = async () => {
 
     return (
         <section className="relative">
-            <Navbar navBg="!bg-[#000103]" />
+            <Navbar navBg="!bg-background" />
             <WhoAreWe />
             <ProblemWeSolve />
             <section className="relative h-auto bg-[url('/assets/homepage/png/working-another-bg.png')] bg-no-repeat md:bg-contain md:bg-center xl:h-[804px]">

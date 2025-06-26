@@ -22,7 +22,7 @@ const OnboardHeader = () => {
     ]
 
     return (
-        <nav className="sticky top-0 z-30 h-16 bg-[#000103] sm:h-20 md:h-24 2xl:h-[110px]">
+        <nav className="bg-background sticky top-0 z-30 h-16 sm:h-20 md:h-24 2xl:h-[110px]">
             <div className="custom-container relative flex h-full items-center justify-between">
                 <Link className="inline-block text-2xl leading-[120%] sm:text-3xl md:text-[40px]" href={'/'}>
                     ARIS

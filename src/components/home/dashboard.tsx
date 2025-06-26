@@ -4,7 +4,7 @@ import CommonBtn from '../ui/common-btn'
 const Dashboard = () => {
     return (
         <section
-            className="relative bg-[url('/assets/homepage/png/working-another-bg.png')] bg-contain bg-center bg-no-repeat lg:bg-cover xl:pt-6"
+            className="relative bg-[url('/assets/homepage/png/working-another-bg.png')] bg-cover bg-center bg-no-repeat xl:pt-6 min-[2500px]:!pt-[100px]"
             id="dashboard"
         >
             <div className="custom-container pb-10">

@@ -17,7 +17,7 @@ import WhyItWorks from '@/components/why-it-works/WhyItWorks'
 const WhyItWorksPage = () => {
     return (
         <section className="relative">
-            <Navbar navBg="!bg-[#000103]" />
+            <Navbar navBg="!bg-background" />
             <WhyItWorks />
             <SignalClarity />
             <BuiltAroundReality />

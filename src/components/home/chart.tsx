@@ -78,7 +78,10 @@ const Chart: FC<IProps> = ({ trade }) => {
                 ></div>
 
                 <div className="h-[500px] w-full sm:h-[600px]">
-                    <AreaChart data={trade} />
+                    <AreaChart
+                        heading="Advanced Insights"
+                        data={trade}
+                    />
                 </div>
             </Container>
             <div

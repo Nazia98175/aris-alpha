@@ -3,9 +3,10 @@ import { MOMENTUM_ALERTS_DATA_LIST } from './Helper'
 
 interface MomentumClosedProps {
     isSingleExpandedCardOne: boolean
+    isSingleExpanded:boolean
 }
 
-const MomentumClosed = ({ isSingleExpandedCardOne }: MomentumClosedProps) => {
+const MomentumClosed = ({ isSingleExpandedCardOne, isSingleExpanded }: MomentumClosedProps) => {
     return (
         <div className="pb-3 max-sm:overflow-x-auto sm:pb-5">
             <table className="w-full max-sm:min-w-[580px]">
@@ -52,6 +53,11 @@ const MomentumClosed = ({ isSingleExpandedCardOne }: MomentumClosedProps) => {
                     ))}
                 </tbody>
             </table>
+            <p
+                className={`${isSingleExpanded ? "!hidden" :""} text-offgrey text-custom-sm mx-auto rounded-[10px] pt-3 sm:pt-5 text-center font-normal italic`}
+            >
+                Model-generated signals for informational use only. Not financial advice
+            </p>
             <div
                 className={`${isSingleExpandedCardOne ? 'block' : 'hidden'} bg-richsand mt-5 w-full rounded-md px-2.5 py-1.5 xl:mt-3.5`}
             >

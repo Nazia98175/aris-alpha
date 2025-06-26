@@ -4,10 +4,11 @@ import MomentumOpen from './MomentumOpen'
 interface MomentumAlertsProps {
     expanded: boolean
     isSingleExpandedCardOne: boolean
+    isSingleExpanded:boolean
 }
-const MomentumAlerts = ({ expanded, isSingleExpandedCardOne }: MomentumAlertsProps) => {
+const MomentumAlerts = ({ expanded, isSingleExpandedCardOne, isSingleExpanded }: MomentumAlertsProps) => {
     if (!expanded) {
-        return <MomentumClosed isSingleExpandedCardOne={isSingleExpandedCardOne} />
+        return <MomentumClosed isSingleExpanded={isSingleExpanded} isSingleExpandedCardOne={isSingleExpandedCardOne} />
     }
 
     return <MomentumOpen />

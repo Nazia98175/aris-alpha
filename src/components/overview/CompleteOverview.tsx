@@ -105,7 +105,13 @@ const CompleteOverview = () => {
                     />
                 )
             case 'momentum':
-                return <MomentumAlerts isSingleExpandedCardOne={isSingleExpandedCardOne} expanded={card.expanded} />
+                return (
+                    <MomentumAlerts
+                        isSingleExpanded={isSingleExpanded}
+                        isSingleExpandedCardOne={isSingleExpandedCardOne}
+                        expanded={card.expanded}
+                    />
+                )
             case 'allocation':
                 return (
                     <AllocationView

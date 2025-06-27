@@ -1,6 +1,5 @@
-import React from 'react'
-import { BuiltAroundSvg } from '../onboard/Icons'
 import { featureListItems } from '../onboard/Helper'
+import { BuiltAroundSvg } from '../onboard/Icons'
 import FeatureListItem from './FeatureListItem'
 
 const BuiltAroundReality = () => {
@@ -9,6 +8,7 @@ const BuiltAroundReality = () => {
             <div className="relative top-6 lg:absolute xl:top-0">
                 {/* Left: SVG with curved lines and labels */}
                 <BuiltAroundSvg />
+                {/* <Image src="/assets/icons/buildaroundsvg.svg" width={420} height={420} alt="buildaround" /> */}
             </div>
             <section className="built-around-container-style">
                 {/* Right: Content */}

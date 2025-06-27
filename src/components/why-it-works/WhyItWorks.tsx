@@ -2,7 +2,7 @@ import React from 'react'
 
 const WhyItWorks = () => {
     return (
-        <section className="hero-main-container-bg-style">
+        <section className="hero-main-container-bg-style relative">
             <h2 className="main-heading">Why It Works</h2>
             <p className="mt-4 text-center text-sm leading-[150%] font-medium text-white md:text-base">
                 Most signals are noise. Ours aren’t.
@@ -15,6 +15,7 @@ const WhyItWorks = () => {
                     Detect when markets are about to shift — before it becomes obvious.
                 </p>
             </div>
+            <div className="gradient-dark-black-layer absolute bottom-0 left-0 w-full h-[100px]"></div>
         </section>
     )
 }

@@ -1,8 +1,8 @@
 import React from 'react'
 const WhoAreWe = () => {
     return (
-        <section className="hero-main-container-bg-style">
-            <div className="h-auto w-full max-w-[866px] text-center text-white xl:h-[277px]">
+        <section className="hero-main-container-bg-style relative">
+            <div className="relative z-10 h-auto w-full max-w-[866px] text-center text-white xl:h-[277px]">
                 <p className="strokeLinejoin mb-3">Who Are We</p>
                 <h2 className="main-heading mb-6">Aris Capital</h2>
                 <p className="description !font-poppins !text-waterwhite/[80%] !leading-[160%]">
@@ -13,6 +13,7 @@ const WhoAreWe = () => {
                     annually over the long term.
                 </p>
             </div>
+                <div className="gradient-dark-black-layer absolute bottom-0 h-[100px] left-0 z-0 w-full"></div>
         </section>
     )
 }

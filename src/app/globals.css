@@ -339,4 +339,10 @@
         box-shadow: 0px 0px 12px -8px #ffff !important;
         border-radius: 10px !important;
     }
+    .gradient-dark-black-layer {
+        background: linear-gradient(360deg, #000000 0%, rgba(0, 0, 0, 0) 100%);
+      }
+    .gradient-dark-black-layer-top {
+        background: linear-gradient(180deg, #000000 0%, rgba(0, 0, 0, 0) 100%);
+      }
 }

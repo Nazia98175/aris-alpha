@@ -4,8 +4,8 @@ import OurSolutionCard from './OurSolutionCard'
 
 export const OurSolution = () => {
     return (
-        <section className="w-full bg-transparent px-4 py-10 text-white lg:py-20 xl:px-0">
-            <div className="mx-auto w-full max-w-[1140px] text-center">
+        <section className="relative w-full bg-transparent px-4 py-10 text-white lg:py-20 xl:px-0">
+            <div className="relative z-10 mx-auto w-full max-w-[1140px] text-center">
                 <h2 className="secondary-heading">Our Solution</h2>
                 <p className="description !text-waterwhite/[80%] mx-auto mt-4 max-w-[691px] !leading-[160%]">
                     Aris Capital was built to solve this problem at its root. We operate as a fully independent
@@ -28,6 +28,8 @@ export const OurSolution = () => {
                     ))}
                 </div>
             </div>
+            <div className="gradient-dark-black-layer absolute bottom-0 left-0 z-0 h-[200px] w-full"></div>
+            <div className="gradient-dark-black-layer-top absolute top-0 left-0 z-0 h-[200px] w-full"></div>
         </section>
     )
 }

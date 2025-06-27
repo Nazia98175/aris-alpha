@@ -21,10 +21,13 @@ const WhyItWorksPage = () => {
             <SignalClarity />
             <BuiltAroundReality />
             <WhatYouGet />
-            <section className="relative h-auto bg-[url('/assets/homepage/png/working-another-bg.png')] bg-contain bg-no-repeat md:bg-center">
-                <WhyItOutperforms />
-                <ThatsWhyItWorks />
-                <Footer />
+            <section className="relative h-auto bg-[url('/assets/homepage/png/working-another-bg.png')] bg-contain bg-no-repeat md:bg-center 2xl:bg-cover">
+                <div className='relative z-10'>
+                    <WhyItOutperforms />
+                    <ThatsWhyItWorks />
+                    <Footer />
+                </div>
+                <div className="gradient-dark-black-layer-top absolute top-0 w-full left-0 h-[200px] z-0"></div>
             </section>
         </section>
     )

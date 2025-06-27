@@ -30,8 +30,12 @@ const WhyUsPage = async () => {
             <section className="relative h-auto bg-[url('/assets/homepage/png/working-another-bg.png')] bg-contain bg-no-repeat md:bg-center lg:bg-cover">
                 <OurSolution />
             </section>
-            <section className="relative mt-[74px] h-auto w-full bg-[url('/assets/homepage/png/working-another-bg.png')] bg-contain bg-no-repeat px-4 md:bg-bottom lg:bg-cover xl:h-[804px]">
-                <OurPhilosophy trade={trade} />
+            <section className="relative mt-[74px] h-auto w-full bg-[url('/assets/homepage/png/working-another-bg.png')] bg-contain bg-no-repeat px-4 md:bg-bottom lg:bg-cover xl:h-[804px] 2xl:bg-center">
+                <div className="relative z-10 w-full h-full">
+                    <OurPhilosophy trade={trade} />
+                </div>
+                    <div className="gradient-dark-black-layer absolute bottom-0 left-0 z-0 h-[200px] w-full"></div>
+                    <div className="gradient-dark-black-layer-top absolute top-0 left-0 z-0 h-[200px] w-full"></div>
             </section>
             <Footer />
         </section>

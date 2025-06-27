@@ -4,10 +4,10 @@ import CommonBtn from '../ui/common-btn'
 const Dashboard = () => {
     return (
         <section
-            className="relative bg-[url('/assets/homepage/png/working-another-bg.png')] bg-cover bg-center bg-no-repeat xl:pt-6 min-[2500px]:!pt-[100px]"
+            className="relative bg-[url('/assets/homepage/png/working-another-bg.png')] bg-cover bg-center bg-no-repeat min-[2500px]:!pt-[100px] xl:pt-6"
             id="dashboard"
         >
-            <div className="custom-container pb-10">
+            <div className="custom-container relative z-10 pb-10">
                 <h3 className="mx-auto mb-6 w-fit text-center text-3xl leading-[120%] text-white sm:mb-8 sm:text-4xl lg:mb-12 xl:mb-14 xl:text-[40px]">
                     Trusted to Cut Through the Noise
                 </h3>

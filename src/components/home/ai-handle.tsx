@@ -30,7 +30,7 @@ const AiHandle = () => {
                 src={'/assets/homepage/webp/ai-handle-bg.webp'}
                 alt={'AiHandle'}
             />
-            <div className="custom-container">
+            <div className="custom-container relative z-10">
                 <h2 className="secondary-heading mx-auto mb-6 w-fit text-center text-white sm:mb-8 lg:mb-12 xl:mb-[72px]">
                     Let the AI Handle the Chaos
                 </h2>
@@ -116,6 +116,7 @@ const AiHandle = () => {
                     variant="secondary"
                 />
             </div>
+            <div className="gradient-dark-black-layer absolute bottom-0 left-0 z-0 h-[200px] w-full"></div>
         </section>
     )
 }

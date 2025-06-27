@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import CommonBtn from '../ui/common-btn'
 import { ProgressStep, stepInstractions } from './helper'
 import { DotedLineIcon } from './Icons'
@@ -6,16 +5,8 @@ import StepInstractionBlock from './StepInstractionBlock'
 
 const AlphaBuild = () => {
     return (
-        <section className="relative">
-            <Image
-                width={1440}
-                height={800}
-                className="absolute top-0 left-0 z-[-1] h-[700px] w-full object-cover object-right max-sm:object-top md:object-fill lg:h-[1000px]"
-                src="/assets/homepage/webp/hero-bg.webp"
-                alt="background"
-                unoptimized
-            />
-            <div className="mx-auto max-w-[1004px] px-4 py-13 sm:pt-10 md:pb-[112px] lg:pb-[161px]">
+        <section className="relative bg-[url('/assets/homepage/png/working-another-bg.png')] bg-cover bg-center bg-no-repeat">
+            <div className="relative z-10 mx-auto max-w-[1004px] px-4 py-13 sm:pt-10 md:pb-[112px] lg:pb-[161px]">
                 <h2 className="secondary-heading text-center text-white">How Aris Alpha Builds Your Strategy</h2>
                 <div className="pt-[45px] md:pt-[60px]">
                     <div className="flex justify-between gap-7">
@@ -50,6 +41,8 @@ const AlphaBuild = () => {
                     />
                 </div>
             </div>
+            <div className="gradient-dark-black-layer absolute bottom-0 left-0 z-0 h-[200px] w-full"></div>
+            <div className="gradient-dark-black-layer-top absolute top-0 left-0 z-0 h-[200px] w-full"></div>
         </section>
     )
 }

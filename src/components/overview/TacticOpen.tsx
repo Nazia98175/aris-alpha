@@ -37,6 +37,19 @@ const TacticOpen = () => {
                                 </span>
                             </div>
                         </div>
+                        <span className="text-richwhite text-custom-sm font-semibold tracking-normal">Entry Logic</span>
+                        {signal.entryLogic && (
+                            <div className="bg-richsand mt-3 w-full rounded-[4px] px-[5px] py-2.5">
+                                <div className="h-10">{signal.entryLogic}</div>
+                            </div>
+                        )}
+                        {signal.desc && (
+                            <p className="text-custom-sm text-smoke mt-3 !leading-[180%] font-normal tracking-normal">
+                                {signal.desc}
+                            </p>
+                        )}
+                        <div className="gradient-border-tactic my-3.5 h-[1px] w-full"></div>
+
                         <div className="flex items-center justify-between">
                             <div className="flex flex-col gap-1.5">
                                 <span className="text-custom-sm text-lightslate font-normal tracking-normal">
@@ -62,18 +75,6 @@ const TacticOpen = () => {
                         <div className="mx-auto -my-8 w-full">
                             <CandlestickChart height={160} symbol={signal.symbol} />
                         </div>
-                        <div className="gradient-border-tactic my-3.5 h-[1px] w-full"></div>
-                        <span className="text-richwhite text-custom-sm font-semibold tracking-normal">Entry Logic</span>
-                        {signal.entryLogic && (
-                            <div className="bg-richsand mt-3 w-full rounded-[4px] px-[5px] py-2.5">
-                                <div className="h-10">{signal.entryLogic}</div>
-                            </div>
-                        )}
-                        {signal.desc && (
-                            <p className="text-custom-sm text-smoke mt-3 !leading-[180%] font-normal tracking-normal">
-                                {signal.desc}
-                            </p>
-                        )}
                     </div>
                 ))}
             </div>

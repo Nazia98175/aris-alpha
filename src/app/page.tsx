@@ -9,9 +9,7 @@ import InstantlyAction from '@/components/home/instantly-action'
 import Projects from '@/components/home/Projects'
 import Reviews from '@/components/home/reviews'
 import Footer from '@/components/layout/public/footer'
-import Image from 'next/image'
 import Navbar from '@/components/layout/navbar'
-import { SliderOverlay } from '@/components/home/Icons'
 
 export default function Home() {
     const [aiHandleScrolled, setAiHandleScrolled] = useState(false)
@@ -58,23 +56,21 @@ export default function Home() {
 
     return (
         <div className="relative">
-            <main className="bg-[url('/assets/homepage/webp/hero-bg.webp')] bg-cover bg-right min-[2500px]:!pb-[100px]">
-                <Navbar navBg="" />
-                <Header />
-                <Projects />
+            <main className="relative bg-[url('/assets/homepage/webp/hero-bg.webp')] bg-cover bg-right min-[2500px]:!pb-[100px]">
+                <div className="relative z-10">
+                    <Navbar navBg="" />
+                    <Header />
+                    <Projects />
+                </div>
+                <div className="gradient-dark-black-layer absolute bottom-0 left-0 z-0 h-[200px] w-full"></div>
             </main>
-            <div className="relative z-10">
-                {/* <div className="absolute h-40 w-full max-w-full bg-[linear-gradient(to_bottom,rgba(0,1,3,0)_0%,#000103_100%)] blur-xl top-[-140px]"></div> */}
-                <Reviews />
-                <span className="absolute top-0 left-0 block w-full translate-y-[-70%]">
-                    <SliderOverlay />
-                </span>
-                <span className="absolute bottom-0 left-0 block w-full translate-y-[70%] rotate-180">
-                    <SliderOverlay />
-                </span>
-                {/* <div className="bottom-overlay from-red-500 absolute right-0 -bottom-10 left-0 h-[200px] w-full bg-linear-to-t to-transparent blur-2xl"></div> */}
+            <Reviews />
+
+            <div className="relative">
+                <Dashboard />
+                <div className="gradient-dark-black-layer-top absolute top-0 left-0 z-0 h-[200px] w-full"></div>
+                <div className="gradient-dark-black-layer absolute bottom-0 left-0 z-0 h-[200px] w-full"></div>
             </div>
-            <Dashboard />
             <div ref={aiHandleRef}>
                 <AiHandle />
             </div>
@@ -85,15 +81,13 @@ export default function Home() {
                     }`}
                 >
                     <AlphaBuild />
-                    <div className="relative">
-                        <Image
-                            fill
-                            className="absolute bottom-[10%] left-0 z-[-1] h-[700px] w-full object-cover object-right md:object-fill"
-                            src="/assets/homepage/webp/hero-bg.webp"
-                            alt="background"
-                        />
-                        <InstantlyAction />
-                        <Footer />
+                    <div className="relative bg-[url('/assets/homepage/png/working-another-bg.png')] bg-cover bg-center bg-no-repeat">
+                        <div className="relative z-10">
+                            <InstantlyAction />
+                            <Footer />
+                        </div>
+                        <div className="gradient-dark-black-layer absolute bottom-0 left-0 z-0 h-[200px] w-full"></div>
+                        <div className="gradient-dark-black-layer-top absolute top-0 left-0 z-0 h-[200px] w-full"></div>
                     </div>
                 </div>
             </div>

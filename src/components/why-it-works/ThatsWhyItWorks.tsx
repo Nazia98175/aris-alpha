@@ -1,4 +1,3 @@
-import React from 'react'
 const ThatsWhyItWorks = () => {
     return (
         <section className="flex w-full justify-center px-4 pt-10 lg:pt-20 xl:px-0">

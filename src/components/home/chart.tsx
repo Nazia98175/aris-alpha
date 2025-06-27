@@ -3,7 +3,7 @@
 import { AreaSeries, LineData, createChart } from 'lightweight-charts'
 import React, { FC, useEffect, useRef } from 'react'
 
-import AreaChart from '../old-dashboard/chart'
+import AreaChart from '../old-dashboard/Chart'
 import Container from '../ui/container'
 
 interface IProps {

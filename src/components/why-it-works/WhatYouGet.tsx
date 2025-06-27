@@ -1,6 +1,5 @@
-import React from 'react'
-import CardItem from './CardItem'
 import { whatYouGet } from '../onboard/Helper'
+import CardItem from './CardItem'
 
 const WhatYouGet = () => {
     return (

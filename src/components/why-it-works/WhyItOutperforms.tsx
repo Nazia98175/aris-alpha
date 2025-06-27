@@ -1,4 +1,3 @@
-import React from 'react'
 import { CheckIcon, NextVector } from '../home/Icons'
 import { arisPoints, traditionalPoints } from '../onboard/Helper'
 
@@ -8,7 +7,6 @@ const WhyItOutperforms = () => {
             <h2 className="secondary-heading mb-12 text-center !font-normal">Why It Outperforms</h2>
 
             <div className="outperform-inner-container-style">
-                {/* Traditional Tools */}
                 <div className="traditional-tools-container-style">
                     <div className="relative mb-7 md:mb-14">
                         <h3 className="tool-heading-style">Traditional Tools</h3>
@@ -27,14 +25,11 @@ const WhyItOutperforms = () => {
                         <NextVector />
                     </span>
                 </div>
-
-                {/* Aris Alpha */}
                 <div className="aris-alpha-container-style">
                     <div className="relative mb-7 md:mb-14">
                         <h3 className="tool-heading-style">Aris Alpha</h3>
                         <div className="blueline-arisalpha-container-style" />
                     </div>
-                    {/* <div className="pointer-events-none absolute inset-0 z-0 bg-[url('/noise.png')] opacity-10 mix-blend-screen" /> */}
                     <ul className="outperform-list-style">
                         {arisPoints.map((point, index) => (
                             <li key={index} className="flex items-center gap-2">

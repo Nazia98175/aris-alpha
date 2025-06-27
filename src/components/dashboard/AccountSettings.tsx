@@ -1,7 +1,7 @@
 'use client'
 import { useState } from 'react'
 import { EmailAddress, ThemeIcon, UserName } from '../home/Icons'
-import CommonBtn from '../ui/common-btn'
+import CommonBtn from '../ui/CommonBtn'
 import SettingsGroup from './SettingsGroup'
 import SettingsRow from './SettingsRow'
 import ToggleSwitch from './ToggleSwitch'

@@ -1,8 +1,8 @@
 'use client'
 
-import React, { useMemo } from 'react'
-import dynamic from 'next/dynamic'
 import { ApexOptions } from 'apexcharts'
+import dynamic from 'next/dynamic'
+import React, { useMemo } from 'react'
 
 const Chart = dynamic(() => import('react-apexcharts'), { ssr: false })
 
@@ -38,7 +38,6 @@ const CandlestickChart: React.FC<CandlestickChartProps> = ({ symbol, height = 94
             // Phase 4: V recovery
             3.8, 3.6, 3.2, 2.8, 2.5, 2.0, 1.5,
         ]
-          
 
         for (let i = 0; i < 30; i++) {
             const date = new Date()
@@ -74,7 +73,6 @@ const CandlestickChart: React.FC<CandlestickChartProps> = ({ symbol, height = 94
                 lowerWickExtension = Math.random() * 0.14 + 0.08
                 wickMultiplier = Math.random() < 0.75 ? 2.8 : 2.0
             }
-            
 
             const bodyHigh = Math.max(open, close)
             const bodyLow = Math.min(open, close)
@@ -123,8 +121,8 @@ const CandlestickChart: React.FC<CandlestickChartProps> = ({ symbol, height = 94
             plotOptions: {
                 candlestick: {
                     colors: {
-                        upward: '#00B266', 
-                        downward: '#E54C4C', 
+                        upward: '#00B266',
+                        downward: '#E54C4C',
                     },
                     wick: {
                         useFillColor: true,
@@ -178,7 +176,6 @@ const CandlestickChart: React.FC<CandlestickChartProps> = ({ symbol, height = 94
                     const change = close - open
                     const changePercent = ((change / open) * 100).toFixed(2)
 
-                    // Format price based on symbol
                     const formatPrice = (price: number) => {
                         if (symbol === 'BTC') {
                             return `${price.toLocaleString('en-US', { maximumFractionDigits: 0 })}`
@@ -247,7 +244,7 @@ const CandlestickChart: React.FC<CandlestickChartProps> = ({ symbol, height = 94
                 show: false,
             },
             stroke: {
-                width: [1, 1], // Thinner lines for more precision
+                width: [1, 1],
             },
             fill: {
                 opacity: 1,

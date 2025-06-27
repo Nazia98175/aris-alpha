@@ -1,12 +1,11 @@
-import React from 'react'
-import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip } from 'recharts'
+import { Cell, Pie, PieChart, ResponsiveContainer, Tooltip } from 'recharts'
 import { ALLOCATION_CLOSED_DATA } from './Helper'
 
 interface AllocationClosedProps {
     isSingleExpandedCardOne: boolean
     isSingleExpandedCardTwo: boolean
     isSingleExpandedCardThree: boolean
-    isSingleExpanded:boolean
+    isSingleExpanded: boolean
 }
 
 interface DataItem {
@@ -65,7 +64,7 @@ const AllocationClosed = ({
     const CustomTooltip = ({ active, payload }: CustomTooltipProps) => {
         if (active && payload && payload.length > 0) {
             return (
-                <div className="rounded-lg border border-gray-400 bg-lightblack p-3 shadow-lg">
+                <div className="bg-lightblack rounded-lg border border-gray-400 p-3 shadow-lg">
                     <p className="text-sm font-medium text-white">{`${payload[0].name}: ${payload[0].value}%`}</p>
                 </div>
             )
@@ -80,7 +79,7 @@ const AllocationClosed = ({
             <div
                 className={`max-xs:flex-col xs:justify-between flex w-full max-w-[530px] items-center xl:max-w-[400px] ${isSingleExpanded ? 'gap-5 sm:gap-6 xl:gap-4' : 'gap-5 sm:gap-8'}`}
             >
-                <div className="relative max-xl:-my-7 -mx-10 flex max-xs:max-w-[350px] max-xl:max-w-[400px] aspect-[180/150] w-full xl:aspect-[200/180]">
+                <div className="max-xs:max-w-[350px] relative -mx-10 flex aspect-[180/150] w-full max-xl:-my-7 max-xl:max-w-[400px] xl:aspect-[200/180]">
                     <ResponsiveContainer width="100%" height="100%">
                         <PieChart>
                             <Pie
@@ -134,7 +133,9 @@ const AllocationClosed = ({
                 </div>
             </div>
             <div className="bg-richsand w-full rounded-md px-2.5 py-1.5">
-                <p className={`text-custom-sm text-mediumgrey font-normal tracking-normal italic ${isSingleExpanded ? " max-w-[238px]":""}`}>
+                <p
+                    className={`text-custom-sm text-mediumgrey font-normal tracking-normal italic ${isSingleExpanded ? 'max-w-[238px]' : ''}`}
+                >
                     Suggested allocations are model-based and not tailored to individual portfolios.
                 </p>
             </div>

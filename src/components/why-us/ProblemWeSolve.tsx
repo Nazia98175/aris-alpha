@@ -17,7 +17,6 @@ const ProblemWeSolve = () => {
                         acting with discipline.
                     </p>
                 </div>
-
                 <div className="flex w-full items-center justify-center lg:justify-end">
                     <Image
                         src="/assets/homepage/webp/compound-circle.webp"

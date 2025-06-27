@@ -1,7 +1,6 @@
 import { BarChart, Bar, XAxis, YAxis, ResponsiveContainer, Cell } from 'recharts'
 import { ALLOCATION_DATA_LIST } from './Helper'
 
-// Type definitions
 interface ChartDataItem {
     name: string
     value: number
@@ -32,7 +31,6 @@ interface CustomLabelProps {
 }
 
 const AllocationOpen = () => {
-    // Transform data for vertical Recharts
     const chartData: ChartDataItem[] = ALLOCATION_DATA_LIST.map((item) => ({
         name: item.name,
         value: parseInt(item.percentage),
@@ -42,7 +40,6 @@ const AllocationOpen = () => {
         borderColor: getBorderColorFromClass(item.border),
     }))
 
-    // Helper functions to convert Tailwind classes to hex colors
     function getColorFromClass(colorClass: string): string {
         const colorMap: Record<string, string> = {
             'bg-lightgreen/10': '#202F26',
@@ -96,7 +93,7 @@ const AllocationOpen = () => {
         const isMobile = typeof window !== 'undefined' && window.innerWidth < 640
         const nameFontSize = isMobile ? 10 : 12
         const percentageFontSize = isMobile ? 14 : 18
-        const percentageYOffset = isMobile ? 18 : 25 // Adjust vertical spacing on mobile
+        const percentageYOffset = isMobile ? 18 : 25
 
         return (
             <g>
@@ -140,10 +137,7 @@ const AllocationOpen = () => {
                             barCategoryGap="5%" // Space between bars
                         >
                             <XAxis dataKey="name" hide />
-                            <YAxis
-                                hide
-                                domain={[0, 0]} // Set max height based on largest value (45%)
-                            />
+                            <YAxis hide domain={[0, 0]} />
                             <Bar dataKey="value" shape={<CustomBar />} label={<CustomLabel />}>
                                 {chartData.map((entry, index) => (
                                     <Cell key={`cell-${index}`} fill={entry.color} />
@@ -152,13 +146,11 @@ const AllocationOpen = () => {
                         </BarChart>
                     </ResponsiveContainer>
                 </div>
-
-                {/* Descriptions below the chart */}
-                <div className='px-1 xs:px-2 lg:px-3.5 2xl:px-[18px] '>
-                    <div className="xs:grid-cols-4 mt-4 grid grid-cols-2 gap-4  lg:gap-7 2xl:gap-9">
+                <div className="xs:px-2 px-1 lg:px-3.5 2xl:px-[18px]">
+                    <div className="xs:grid-cols-4 mt-4 grid grid-cols-2 gap-4 lg:gap-7 2xl:gap-9">
                         {ALLOCATION_DATA_LIST.map((obj, index) => (
                             <div key={index} className="w-full">
-                                <div className="bg-darkslate w-full rounded-md px-1.5 lg:px-2.5 py-1.5">
+                                <div className="bg-darkslate w-full rounded-md px-1.5 py-1.5 lg:px-2.5">
                                     <p className="text-custom-sm text-richwhite mx-auto line-clamp-2 max-w-[270px] text-center font-normal tracking-normal italic">
                                         {obj.desc}
                                     </p>
@@ -168,7 +160,6 @@ const AllocationOpen = () => {
                     </div>
                 </div>
             </div>
-
             <div className="bg-richsand mt-4 mb-5 w-fit rounded-md px-2.5 py-1.5">
                 <p className="text-custom-sm text-mediumgrey font-normal tracking-normal italic">
                     Suggested allocations are model-based and not tailored to individual portfolios.

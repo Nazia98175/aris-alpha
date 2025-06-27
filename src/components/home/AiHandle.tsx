@@ -4,7 +4,7 @@ import { useScrollActiveSection } from '@/hooks/useScrollActiveSection'
 import Image from 'next/image'
 import { useRef } from 'react'
 import { features } from '../onboard/Helper'
-import CommonBtn from '../ui/common-btn'
+import CommonBtn from '../ui/CommonBtn'
 
 const AiHandle = () => {
     const sectionCount = 3

@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import CommonBtn from '../ui/common-btn'
+import CommonBtn from '../ui/CommonBtn'
 
 const Header = () => {
     const noiseOptions = [

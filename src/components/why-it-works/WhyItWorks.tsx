@@ -1,4 +1,3 @@
-import React from 'react'
 
 const WhyItWorks = () => {
     return (
@@ -15,7 +14,7 @@ const WhyItWorks = () => {
                     Detect when markets are about to shift — before it becomes obvious.
                 </p>
             </div>
-            <div className="gradient-dark-black-layer absolute bottom-0 left-0 w-full h-[100px]"></div>
+            <div className="gradient-dark-black-layer absolute bottom-0 left-0 h-[100px] w-full"></div>
         </section>
     )
 }

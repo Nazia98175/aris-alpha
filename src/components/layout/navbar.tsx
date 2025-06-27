@@ -1,5 +1,5 @@
 'use client'
-import CommonBtn from '@/components/ui/common-btn'
+import CommonBtn from '@/components/ui/CommonBtn'
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
 import { supabase } from '@/lib/supabase/client'

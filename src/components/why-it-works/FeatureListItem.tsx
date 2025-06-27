@@ -1,5 +1,4 @@
-// components/common/FeatureListItem.tsx
-import React, { ReactNode } from 'react'
+import { ReactNode } from 'react'
 
 interface FeatureListItemProps {
     icon: ReactNode

@@ -1,4 +1,3 @@
-import React from 'react'
 const WhoAreWe = () => {
     return (
         <section className="hero-main-container-bg-style relative">
@@ -13,7 +12,7 @@ const WhoAreWe = () => {
                     annually over the long term.
                 </p>
             </div>
-                <div className="gradient-dark-black-layer absolute bottom-0 h-[100px] left-0 z-0 w-full"></div>
+            <div className="gradient-dark-black-layer absolute bottom-0 left-0 z-0 h-[100px] w-full"></div>
         </section>
     )
 }

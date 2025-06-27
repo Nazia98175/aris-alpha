@@ -1,7 +1,7 @@
 'use client'
 
 import Image from 'next/image'
-import { reviewSlider } from './helper'
+import { reviewSlider } from './Helper'
 import { useEffect, useRef } from 'react'
 
 const Reviews = () => {

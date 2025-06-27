@@ -1,13 +1,13 @@
 'use client'
 
+import { useScrollActiveSection } from '@/hooks/useScrollActiveSection'
 import Image from 'next/image'
 import { useRef } from 'react'
-import CommonBtn from '../ui/common-btn'
 import { features } from '../onboard/Helper'
-import { useScrollActiveSection } from '@/hooks/useScrollActiveSection'
+import CommonBtn from '../ui/common-btn'
 
 const AiHandle = () => {
-    const sectionCount = 3 // Change this based on number of sections
+    const sectionCount = 3
     const containerRef = useRef<HTMLDivElement>(null)
     const { activeIndex, sectionRefs } = useScrollActiveSection(sectionCount)
 
@@ -34,7 +34,6 @@ const AiHandle = () => {
                 <h2 className="secondary-heading mx-auto mb-6 w-fit text-center text-white sm:mb-8 lg:mb-12 xl:mb-[72px]">
                     Let the AI Handle the Chaos
                 </h2>
-                {/* Mobile/Tablet Layout - Static Cards */}
                 <div className="block space-y-8 md:hidden">
                     {features.map((feature) => (
                         <div key={feature.id} className="bg-angst border-darker rounded-2xl border p-4 sm:p-8">
@@ -57,9 +56,7 @@ const AiHandle = () => {
                         </div>
                     ))}
                 </div>
-                {/* Desktop Layout - Scroll Effect with Opacity */}
                 <div className="relative hidden gap-8 md:flex lg:gap-16">
-                    {/* Left side - Cards with opacity transitions */}
                     <div className="flex-1 space-y-8 lg:space-y-16 xl:space-y-[100px]">
                         {features.map((feature, index) => (
                             <div
@@ -81,7 +78,6 @@ const AiHandle = () => {
                             </div>
                         ))}
                     </div>
-                    {/* Right side - Sticky Image */}
                     <div className="max-w-[400px] lg:max-w-[550px] xl:max-w-[656px]">
                         <div className="sticky top-[120px]">
                             <div className="relative overflow-hidden rounded-2xl">

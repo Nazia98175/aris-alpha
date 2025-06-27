@@ -1,25 +1,22 @@
 'use client'
 
-import React, { useEffect, useState } from 'react'
+import { motion } from 'framer-motion'
+import { useRouter, useSearchParams } from 'next/navigation'
+import { useEffect, useState } from 'react'
 import AccountSettings from './AccountSettings'
 import FeedPreferences from './FeedPreferences'
-import { useSearchParams, useRouter } from 'next/navigation'
-import { motion } from 'framer-motion'
 
 const AccountContent = () => {
     const searchParams = useSearchParams()
     const router = useRouter()
     const tabParam = searchParams.get('tab') || 'account'
-
     const [activeTab, setActiveTab] = useState<'account' | 'feed-preferences'>(
         tabParam === 'feed-preferences' ? 'feed-preferences' : 'account',
     )
-
     const tabs = [
         { label: 'Account', value: 'account' },
         { label: 'Feed Preferences', value: 'feed-preferences' },
     ]
-
     useEffect(() => {
         router.replace(`?tab=${activeTab}`)
     }, [activeTab, router])
@@ -30,7 +27,6 @@ const AccountContent = () => {
 
     return (
         <div className="bg-darker rounded-lg border border-white/[7%] p-3 text-white backdrop-blur-[32px] md:p-6">
-            {/* Tab Navigation */}
             <div className="bg-darkbrown relative mx-auto mb-2 w-fit rounded-full sm:mx-0 md:mb-4">
                 <div className="relative flex w-full max-w-[361px] overflow-hidden rounded-full">
                     <motion.div
@@ -48,9 +44,7 @@ const AccountContent = () => {
                     ))}
                 </div>
             </div>
-
             <p className="mb-6 text-sm text-white/80">User settings, preferences, and controls</p>
-
             {activeTab === 'account' ? <AccountSettings /> : <FeedPreferences />}
         </div>
     )

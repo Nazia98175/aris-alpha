@@ -1,4 +1,4 @@
-import { solutions } from '../home/helper'
+import { solutions } from '../home/Helper'
 import { CheckSquare } from '../onboard/Icons'
 import OurSolutionCard from './OurSolutionCard'
 

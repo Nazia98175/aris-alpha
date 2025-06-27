@@ -1,5 +1,4 @@
 'use client'
-
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { FileIcon, HomeIcon } from '../home/Icons'
@@ -9,7 +8,7 @@ const tabs = [
         name: 'Overview',
         href: '/dashboard/overview',
         icon: <HomeIcon />,
-        width: 'w-[152px]', // Mobile → MD → Desktop
+        width: 'w-[152px]',
     },
     {
         name: 'Account',
@@ -30,7 +29,7 @@ const TabNavigation = () => {
                     <Link
                         key={tab.name}
                         href={tab.href}
-                        className={`flex h-auto items-center justify-center gap-2 rounded-[10px] py-2 text-sm font-medium transition-all duration-300 md:px-3  ${tab.width} ${
+                        className={`flex h-auto items-center justify-center gap-2 rounded-[10px] py-2 text-sm font-medium transition-all duration-300 md:px-3 ${tab.width} ${
                             isActive
                                 ? 'bg-primaryblue text-white shadow-[0px_0px_10px_0px_#2A64F6]'
                                 : 'bg-white/5 text-gray-300 hover:shadow-[0px_0px_10px_0px_#2A64F6]'

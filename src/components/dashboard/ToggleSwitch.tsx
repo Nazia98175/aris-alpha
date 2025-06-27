@@ -1,8 +1,5 @@
-// components/ui/ToggleSwitch.tsx
 'use client'
-
 import React from 'react'
-
 interface ToggleSwitchProps {
     enabled: boolean
     onToggle: () => void

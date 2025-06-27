@@ -3,10 +3,10 @@
 import { ArrowUpRight, CreditCard } from 'lucide-react'
 
 import Image from 'next/image'
-import LoadingButton from '@/components/ui/loading-button'
+import LoadingButton from '@/components/ui/LoadingButton'
 import { MutationKeys } from '@/types'
 import React from 'react'
-import { SidebarFooter } from '@/components/ui/sidebar'
+import { SidebarFooter } from '@/components/ui/Sidebar'
 import { useAuth } from '@/hooks/use-auth'
 import { useMutation } from '@tanstack/react-query'
 

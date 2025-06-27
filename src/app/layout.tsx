@@ -1,6 +1,6 @@
 import './globals.css'
 
-import { Toaster } from '@/components/ui/Sonner'
+import { Toaster } from '@/components/ui/SoonerUi'
 import ReactQueryProvider from '@/providers/react-query'
 import type { Metadata } from 'next'
 import { Poppins } from 'next/font/google'

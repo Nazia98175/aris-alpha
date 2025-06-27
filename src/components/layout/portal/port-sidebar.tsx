@@ -7,10 +7,10 @@ import {
     SidebarMenu,
     SidebarMenuButton,
     SidebarMenuItem,
-} from '@/components/ui/sidebar'
+} from '@/components/ui/Sidebar'
 
 import Link from 'next/link'
-import Logo from '@/components/ui/logo'
+import Logo from '@/components/ui/Logo'
 import PortalSidebarFooter from './sidebar-footer'
 import React from 'react'
 import { dashboardLinks } from '@/data/nav-links'

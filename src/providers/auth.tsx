@@ -2,7 +2,7 @@
 
 import React, { PropsWithChildren, createContext, useEffect, useState } from 'react'
 
-import LoadingSpinner from '@/components/ui/loading-spinner'
+import LoadingSpinner from '@/components/ui/LoadingSpinner'
 import { QueryKeys } from '@/types'
 import { Tables } from '../../supabase/types/database.types'
 import { supabase } from '@/lib/supabase/client'

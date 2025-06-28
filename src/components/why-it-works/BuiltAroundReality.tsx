@@ -6,7 +6,7 @@ const BuiltAroundReality = () => {
     return (
         <div className="relative mx-auto w-full max-w-[1140px]">
             <div className="relative top-6 lg:absolute xl:top-0">
-                <BuiltAroundSvg />
+                <BuiltAroundSvg className='h-[420px] xl:h-[470px] max-xxs:-mt-44 -my-36 xs:-my-28 sm:-my-24 md:-my-16 lg:-my-0' />
             </div>
             <section className="built-around-container-style">
                 <div className="w-full max-w-full lg:max-w-[433px]">

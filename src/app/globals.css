@@ -94,6 +94,7 @@
     --radius-md: calc(var(--radius) - 2px);
     --radius-lg: var(--radius);
     --radius-xl: calc(var(--radius) + 4px);
+    --breakpoint-xxs: 400px;
     --breakpoint-xs: 550px;
     --breakpoint-3xl: 1920px;
     --color-primary-gradient: radial-gradient(

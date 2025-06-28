@@ -57,8 +57,8 @@ export default function Home() {
     return (
         <div className="relative">
             <main className="relative bg-[url('/assets/backgrounds/bg-ellipse.webp')] bg-cover bg-right min-[2500px]:!pb-[100px]">
-                <div className="relative z-10">
-                    <Navbar />
+                <div className="relative z-50">
+                    <Navbar/>
                     <Header />
                     <Projects />
                 </div>

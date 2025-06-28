@@ -12,6 +12,19 @@ export const metadata: Metadata = {
     title: 'Aris Alpha | Why It Works',
     description:
         'Discover the core principles and innovations that make Aris Alpha’s AI trading system outperform traditional methods. Real-time clarity, logic-based models, and proven results.',
+    openGraph: {
+        title: 'Aris Alpha | Why It Works',
+        description:
+            'Discover the core principles and innovations that make Aris Alpha’s AI trading system outperform traditional methods. Real-time clarity, logic-based models, and proven results.',
+        images: ['https://i.ibb.co/GvzP8XRV/why-it-work-seo.png'],
+    },
+    twitter: {
+        card: 'summary_large_image',
+        title: 'Aris Alpha | Why It Works',
+        description:
+            'Discover the core principles and innovations that make Aris Alpha’s AI trading system outperform traditional methods. Real-time clarity, logic-based models, and proven results.',
+        images: ['https://i.ibb.co/GvzP8XRV/why-it-work-seo.png'],
+    },
 }
 const WhyItWorksPage = () => {
     return (

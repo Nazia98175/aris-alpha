@@ -11,7 +11,20 @@ import { Metadata } from 'next'
 export const metadata: Metadata = {
     title: 'Aris Alpha | Why Choose Us',
     description:
-        'Discover how Aris Alpha is solving real trading problems, offering unique solutions, and delivering value with AI-driven strategies.',
+        'Discover how Aris Alpha is solving real trading problems, offering unique solutions, and delivering value with AI-driven strategies',
+    openGraph: {
+        title: 'Aris Alpha | Why Choose Us',
+        description:
+            'Discover how Aris Alpha is solving real trading problems, offering unique solutions, and delivering value with AI-driven strategies',
+        images: ['https://i.ibb.co/hzVMCg6/why-us-seo.png'],
+    },
+    twitter: {
+        card: 'summary_large_image',
+        title: 'Aris Alpha | Why Choose Us',
+        description:
+            'Discover how Aris Alpha is solving real trading problems, offering unique solutions, and delivering value with AI-driven strategies',
+        images: ['https://i.ibb.co/hzVMCg6/why-us-seo.png'],
+    },
 }
 const WhyUsPage = async () => {
     const trade = await tradeData()

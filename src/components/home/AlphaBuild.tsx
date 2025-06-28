@@ -5,7 +5,7 @@ import StepInstractionBlock from './StepInstractionBlock'
 
 const AlphaBuild = () => {
     return (
-        <section className="relative bg-[url('/assets/homepage/png/working-another-bg.png')] bg-cover bg-center bg-no-repeat">
+        <section className="relative bg-[url('/assets/backgrounds/bg-ellipse.webp')] bg-cover bg-center bg-no-repeat">
             <div className="relative z-10 mx-auto max-w-[1004px] px-4 py-13 sm:pt-10 md:pb-[112px] lg:pb-[161px]">
                 <h2 className="secondary-heading text-center text-white">How Aris Alpha Builds Your Strategy</h2>
                 <div className="pt-[45px] md:pt-[60px]">

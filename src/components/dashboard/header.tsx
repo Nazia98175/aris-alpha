@@ -3,6 +3,7 @@ import Image from 'next/image'
 import { useEffect, useRef, useState } from 'react'
 import { BellIcon } from '../home/Icons'
 import TabNavigation from './TabNavigation'
+import Link from 'next/link'
 
 export const Header = () => {
     const [mobileSearchOpen, setMobileSearchOpen] = useState(false)
@@ -34,9 +35,11 @@ export const Header = () => {
             <div className="mx-auto w-full max-w-[1920px]">
                 <div className="flex flex-wrap items-center justify-between gap-3 sm:gap-4 md:flex-nowrap">
                     <div className="flex w-fit max-w-full items-center justify-between md:w-[50%] lg:w-full">
-                        <h1 className="text-custom-3xl md:!text-custom-4xl leading-[120%] font-normal text-white">
-                            ARIS
-                        </h1>
+                        <Link href="/">
+                            <h1 className="text-custom-3xl md:!text-custom-4xl leading-[120%] font-normal text-white">
+                                ARIS
+                            </h1>
+                        </Link>
                     </div>
                     <div className="hidden w-fit md:flex">
                         <TabNavigation />

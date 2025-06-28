@@ -284,7 +284,7 @@
         @apply text-waterwhite absolute top-1/2 right-[-45px] hidden -translate-y-1/2 rotate-0 text-base lg:block;
     }
     .hero-main-container-bg-style {
-        @apply relative flex h-auto flex-col items-center justify-center bg-[url('/assets/homepage/png/working-another-bg.png')] bg-contain bg-center bg-no-repeat px-4 py-10 text-white md:h-[493px] lg:bg-cover lg:py-20 xl:px-0;
+        @apply relative flex h-auto flex-col items-center justify-center bg-[url('/assets/backgrounds/bg-ellipse.webp')] bg-contain bg-center bg-no-repeat px-4 py-10 text-white md:h-[493px] lg:bg-cover lg:py-20 xl:px-0;
     }
     .hero-inner-container-style {
         @apply font-outfit mt-6 w-full max-w-[702px] rounded-lg border border-white/[0.2] bg-white/5 px-6 py-6 text-center shadow-md backdrop-blur-[32px] md:px-4 md:py-3;

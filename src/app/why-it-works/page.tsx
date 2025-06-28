@@ -1,4 +1,4 @@
-import Navbar from '@/components/layout/navbar'
+import Navbar from '@/components/layout/Navbar'
 import Footer from '@/components/layout/public/footer'
 import BuiltAroundReality from '@/components/why-it-works/BuiltAroundReality'
 import SignalClarity from '@/components/why-it-works/SignalClarity'
@@ -21,13 +21,13 @@ const WhyItWorksPage = () => {
             <SignalClarity />
             <BuiltAroundReality />
             <WhatYouGet />
-            <section className="relative h-auto bg-[url('/assets/homepage/png/working-another-bg.png')] bg-contain bg-no-repeat md:bg-center 2xl:bg-cover">
-                <div className='relative z-10'>
+            <section className="relative h-auto bg-[url('/assets/backgrounds/bg-ellipse.webp')] bg-contain bg-no-repeat md:bg-center 2xl:bg-cover">
+                <div className="relative z-10">
                     <WhyItOutperforms />
                     <ThatsWhyItWorks />
                     <Footer />
                 </div>
-                <div className="gradient-dark-black-layer-top absolute top-0 w-full left-0 h-[200px] z-0"></div>
+                <div className="gradient-dark-black-layer-top absolute top-0 left-0 z-0 h-[200px] w-full"></div>
             </section>
         </section>
     )

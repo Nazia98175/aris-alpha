@@ -9,7 +9,7 @@ import InstantlyAction from '@/components/home/InstantlyAction'
 import Projects from '@/components/home/Projects'
 import Reviews from '@/components/home/Reviews'
 import Footer from '@/components/layout/public/footer'
-import Navbar from '@/components/layout/navbar'
+import Navbar from '@/components/layout/Navbar'
 
 export default function Home() {
     const [aiHandleScrolled, setAiHandleScrolled] = useState(false)
@@ -56,9 +56,9 @@ export default function Home() {
 
     return (
         <div className="relative">
-            <main className="relative bg-[url('/assets/homepage/webp/hero-bg.webp')] bg-cover bg-right min-[2500px]:!pb-[100px]">
+            <main className="relative bg-[url('/assets/backgrounds/bg-ellipse.webp')] bg-cover bg-right min-[2500px]:!pb-[100px]">
                 <div className="relative z-10">
-                    <Navbar navBg="" />
+                    <Navbar />
                     <Header />
                     <Projects />
                 </div>
@@ -81,7 +81,7 @@ export default function Home() {
                     }`}
                 >
                     <AlphaBuild />
-                    <div className="relative bg-[url('/assets/homepage/png/working-another-bg.png')] bg-cover bg-center bg-no-repeat">
+                    <div className="relative bg-[url('/assets/backgrounds/bg-ellipse.webp')] bg-cover bg-center bg-no-repeat">
                         <div className="relative z-10">
                             <InstantlyAction />
                             <Footer />

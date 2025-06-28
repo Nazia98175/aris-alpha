@@ -1,4 +1,4 @@
-import Navbar from '@/components/layout/navbar'
+import Navbar from '@/components/layout/Navbar'
 import ReadyToFilter from '@/components/onboard/ReadyToFilter'
 import { Metadata } from 'next'
 import Image from 'next/image'
@@ -18,7 +18,7 @@ const CtaPage = () => {
                 alt="strategy-feed"
                 className="absolute bottom-0 left-1/2 translate-x-[-50%] rounded-sm object-cover blur-[14px] lg:rounded-4xl"
             />
-            <Navbar navBg='' />
+            <Navbar navBg="!bg-background" />
             <ReadyToFilter />
         </section>
     )

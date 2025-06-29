@@ -53,6 +53,7 @@ const AccountSettings = () => {
                         Manage your billing and subscription through our secure provider.
                     </p>
                     <CommonBtn
+                        btnUrl="/onboarding"
                         className="my-3 w-fit !px-5 !py-2 md:my-5"
                         btnText="Manage Subscription"
                         variant="secondary"

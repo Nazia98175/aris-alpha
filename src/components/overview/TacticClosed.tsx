@@ -44,7 +44,7 @@ const TacticClosed = ({
                 >
                     {visibleSignals.map((signal, i) => (
                         <div key={i} className="bg-lightblack rounded-[10px] p-3 sm:p-4">
-                            <div className="mb-4 flex justify-between gap-3">
+                            <div className="flex justify-between gap-3">
                                 <div className="flex items-center gap-3">
                                     <div
                                         className={`flex h-8 w-8 items-center justify-center rounded-full ${signal.symbol === 'QQQ' && 'bg-lightred'} ${signal.symbol === 'BTC' && 'bg-lightyellow'} ${signal.symbol === 'SPY' && 'bg-lightgreen'}`}
@@ -67,7 +67,19 @@ const TacticClosed = ({
                                     {signal.status}
                                 </Link>
                             </div>
-                            <div className="mb-3.5 flex justify-between">
+                            <div className={`my-2.5 ${isSingleExpanded && 'mb-0'}`}>
+                                <span className="text-custom-sm text-richslate font-light tracking-normal">
+                                    Updated 1 min ago
+                                </span>
+                            </div>
+                            <div
+                                className={`bg-richsand w-full rounded-md px-2 py-1.5 ${isSingleExpanded && 'hidden'}`}
+                            >
+                                <p className="text-custom-sm text-mediumgrey font-normal tracking-normal italic">
+                                    &quot;BTC held support on weekly close, momentum building from $69K base.&quot;{' '}
+                                </p>
+                            </div>
+                            <div className="my-3 flex justify-between">
                                 <span className="text-custom-sm text-lightslate font-normal tracking-normal">
                                     Suggested <br /> Allocation
                                 </span>
@@ -79,7 +91,7 @@ const TacticClosed = ({
                                     </span>
                                 </div>
                             </div>
-                            <div className="mb-4 flex items-center justify-between text-xs text-gray-400">
+                            <div className="mb-3.5 flex items-center justify-between text-xs text-gray-400">
                                 <span className="text-custom-sm text-lightslate font-normal tracking-normal">
                                     Entry Range
                                 </span>
@@ -89,18 +101,6 @@ const TacticClosed = ({
                             </div>
                             <div className="mx-auto -my-8 w-full">
                                 <CandlestickChart symbol={signal.symbol} height={110} />
-                            </div>
-                            <div className={`my-2.5 ${isSingleExpanded && 'mb-0'}`}>
-                                <span className="text-custom-sm text-richslate font-light tracking-normal">
-                                    Updated 1 min ago
-                                </span>
-                            </div>
-                            <div
-                                className={`bg-richsand w-full rounded-md px-2.5 py-1.5 ${isSingleExpanded && 'hidden'}`}
-                            >
-                                <p className="text-custom-sm text-mediumgrey font-normal tracking-normal italic">
-                                    &quot;BTC held support on weekly close, momentum building from $69K base.&quot;{' '}
-                                </p>
                             </div>
                         </div>
                     ))}

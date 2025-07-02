@@ -160,11 +160,9 @@ const AllocationOpen = () => {
                     </div>
                 </div>
             </div>
-            <div className="bg-richsand mt-4 mb-5 w-fit rounded-md px-2.5 py-1.5">
-                <p className="text-custom-sm text-mediumgrey font-normal tracking-normal italic">
+                <p className="text-custom-sm my-3 text-center mx-auto text-mediumgrey font-normal tracking-normal italic">
                     Suggested allocations are model-based and not tailored to individual portfolios.
                 </p>
-            </div>
         </div>
     )
 }

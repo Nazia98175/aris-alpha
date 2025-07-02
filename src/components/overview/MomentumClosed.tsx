@@ -59,9 +59,9 @@ const MomentumClosed = ({ isSingleExpandedCardOne, isSingleExpanded }: MomentumC
                 Model-generated signals for informational use only. Not financial advice
             </p>
             <div
-                className={`${isSingleExpandedCardOne ? 'block' : 'hidden'} bg-richsand mt-5 w-full rounded-md px-2.5 py-1.5 xl:mt-3.5`}
+                className={`${isSingleExpandedCardOne ? 'block' : 'hidden'} mt-5 w-full xl:mt-3.5`}
             >
-                <p className="text-custom-sm text-mediumgrey font-normal tracking-normal italic">
+                <p className="text-custom-sm text-centera text-mediumgrey font-normal tracking-normal italic">
                     All alerts are informational and do not constitute a recommendation to buy or sell.
                 </p>
             </div>

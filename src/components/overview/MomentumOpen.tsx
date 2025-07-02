@@ -47,11 +47,9 @@ const MomentumOpen = () => {
                     ))}
                 </tbody>
             </table>
-            <div className="bg-richsand mt-4 mb-5 w-full rounded-md px-2.5 py-1.5">
-                <p className="text-custom-sm text-mediumgrey font-normal tracking-normal italic">
+                <p className="text-custom-sm text-center my-3 text-mediumgrey font-normal tracking-normal italic">
                     All alerts are informational and do not constitute a recommendation to buy or sell.
                 </p>
-            </div>
         </div>
     )
 }

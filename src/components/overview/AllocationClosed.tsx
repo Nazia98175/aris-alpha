@@ -135,7 +135,7 @@ const AllocationClosed = ({
                 </div>
             </div>
             <p
-                className={`text-custom-sm text-mediumgrey font-normal tracking-normal italic ${isSingleExpanded ? 'max-w-[238px]' : 'text-center'}`}
+                className={`text-custom-sm text-mediumgrey font-normal tracking-normal mx-auto text-center italic ${isSingleExpanded ? 'max-w-[238px]' : 'text-center'}`}
             >
                 Suggested allocations are model-based and not tailored to individual portfolios.
             </p>

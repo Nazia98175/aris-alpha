@@ -3,7 +3,7 @@ import { MARKET_SNAPSHOT_DATA_LIST } from './Helper'
 
 const MarketOpen = () => {
     return (
-        <div>
+        <div className='pb-3 sm:pb-5'>
             <div className="overflow-x-auto md:overflow-x-visible">
                 <table className="w-full min-w-[693px]">
                     <thead>
@@ -77,9 +77,6 @@ const MarketOpen = () => {
                     </tbody>
                 </table>
             </div>
-            <p className="text-offgrey text-custom-sm mx-auto rounded-[10px] pt-[18px] pb-2.5 text-center font-normal italic">
-                Model-generated signals for informational use only. Not financial advice
-            </p>
         </div>
     )
 }

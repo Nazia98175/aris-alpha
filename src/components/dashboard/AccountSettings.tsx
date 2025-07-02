@@ -1,6 +1,9 @@
 'use client'
+
+import { supabase } from '@/lib/supabase/client'
+import { useRouter } from 'next/navigation'
 import { useState } from 'react'
-import { EmailAddress, ThemeIcon, UserName } from '../home/Icons'
+import { EmailAddress, LogoutIcon, ThemeIcon, UserName } from '../home/Icons'
 import CommonBtn from '../ui/CommonBtn'
 import SettingsGroup from './SettingsGroup'
 import SettingsRow from './SettingsRow'
@@ -10,6 +13,17 @@ const AccountSettings = () => {
     const [themeDark, setThemeDark] = useState(false)
     const [emailNotifications, setEmailNotifications] = useState(false)
     const [telegramNotifications, setTelegramNotifications] = useState(false)
+
+    const router = useRouter()
+
+    const handleLogout = async () => {
+        const { error } = await supabase.auth.signOut()
+        if (error) {
+            console.error('Logout error:', error.message)
+        } else {
+            router.push('/login')
+        }
+    }
 
     return (
         <div className="rounded-lg bg-white/[3%] p-3 md:p-6">
@@ -65,6 +79,15 @@ const AccountSettings = () => {
                         investment advice.
                     </p>
                 </SettingsGroup>
+                <button
+                    onClick={handleLogout}
+                    className="w-w-fit px-4 py-2 text-sm border rounded-full border-red-400 text-red-400"
+                >
+                    <div className="flex items-center gap-2 sm:gap-3">
+                        <LogoutIcon />
+                        Logout
+                    </div>
+                </button>
             </div>
         </div>
     )

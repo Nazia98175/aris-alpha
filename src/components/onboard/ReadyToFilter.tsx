@@ -156,15 +156,16 @@ const ReadyToFilter = () => {
         }
     }, [])
     return (
-        <section className="mx-auto my-10 flex w-full max-w-[589px] flex-col items-center justify-center px-4 text-white">
-            <h1 className="mx-auto mb-5 w-fit text-center text-4xl leading-[120%] text-white md:text-5xl lg:mb-8 xl:text-[64px]">
-                Get Real-Time Signals. Unlock Your Dashboard.
+        <section className="mx-auto my-10 flex w-full max-w-[750px] flex-col items-center justify-center px-4 text-white">
+            <h1 className="mb-5 text-center text-4xl leading-[120%] text-white md:text-5xl lg:mb-8 xl:text-[64px]">
+                You&#39;re One Step Away
             </h1>
-            <p className="mb-8 text-center text-base leading-[150%] font-medium text-white/70 sm:mb-7 md:mb-10 md:text-lg lg:mb-14 lg:text-xl">
-                Create your free account to access live tactical signals and personalized strategy. Cancel anytime.
+            <p className="mx-auto mb-8 w-full max-w-[550px] md:max-w-[600px] lg:max-w-[660px] text-center text-base leading-[150%] font-medium text-white/70 sm:mb-7 md:mb-10 md:text-lg lg:mb-14 lg:text-xl">
+                From seeing real-time setups cut from flow, sentiment, and positioning data—before the rest of the
+                market picks up on them.
             </p>
 
-            <div className="w-full rounded-xl border border-[#2A64F6] bg-[#FCF6F1] px-3 py-4 text-[#010101] backdrop-blur-[10px] sm:rounded-2xl md:p-4 lg:rounded-4xl lg:p-6">
+            <div className="mx-auto w-full max-w-[589px] rounded-xl border border-[#2A64F6] bg-[#FCF6F1] px-3 py-4 text-[#010101] backdrop-blur-[10px] sm:rounded-2xl md:p-4 lg:rounded-4xl lg:p-6">
                 <form onSubmit={handleSubmit} className="space-y-4">
                     <div>
                         <label htmlFor="firstName" className="mb-1 block text-sm font-medium">
@@ -244,7 +245,7 @@ const ReadyToFilter = () => {
                                 <TickIcon />
                             </div>
                             <span className="text-xs font-medium sm:text-sm md:text-base">
-                               Alert me to major market moves
+                                Alert me to major market moves
                                 <span className="font-light italic opacity-70">(Optional)</span>
                             </span>
                         </label>
@@ -258,7 +259,7 @@ const ReadyToFilter = () => {
                         type="submit"
                         className="flex h-[45px] w-full cursor-pointer items-center justify-center gap-2.5 rounded-[40px] border border-[#2A64F6] bg-[#2A64F6] text-base text-white shadow-[0px_0px_10px_0px_rgba(119,68,255,0.70)] transition-all duration-300 hover:bg-transparent hover:text-[#2A64F6] md:h-[63px]"
                     >
-                        Create Account <span className="max-sm:hidden">& View Dashboard</span>
+                        Unlock My Signals <span className="max-sm:hidden">& See Dashboard</span>
                         <span className="rotate-180">
                             <ArrowIcon />
                         </span>
@@ -266,8 +267,7 @@ const ReadyToFilter = () => {
 
                     {/* Added microcopy below the button */}
                     <div className="text-center text-xs text-[#666361]">
-                        <p>No payment required. Your dashboard unlocks after signup.</p>
-                        <p className="mt-1">
+                        <p>
                             Already have an account?{' '}
                             <Link href="/login" className="text-[#2A64F6] underline">
                                 Log in here

@@ -1,4 +1,4 @@
-import Navbar from '@/components/layout/Navbar'
+import Navbar from '@/components/layout/navbar'
 import Footer from '@/components/layout/public/footer'
 import { OurPhilosophy } from '@/components/why-us/OurPhilosophy'
 import { OurSolution } from '@/components/why-us/OurSolution'

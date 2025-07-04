@@ -1,4 +1,4 @@
-import Navbar from '@/components/layout/Navbar'
+import Navbar from '@/components/layout/navbar'
 import Footer from '@/components/layout/public/footer'
 import BuiltAroundReality from '@/components/why-it-works/BuiltAroundReality'
 import SignalClarity from '@/components/why-it-works/SignalClarity'

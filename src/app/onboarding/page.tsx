@@ -1,4 +1,4 @@
-import Navbar from '@/components/layout/Navbar'
+import Navbar from '@/components/layout/navbar'
 import LoaderSpinner from '@/components/onboard/LoaderSpinner'
 import Onboarding from '@/components/onboard/Onboarding'
 import { Metadata } from 'next'

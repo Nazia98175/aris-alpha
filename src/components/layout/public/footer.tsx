@@ -1,4 +1,4 @@
-import { footerLinks } from '@/components/home/helper'
+import { footerLinks } from '@/components/home/Helper'
 import { FooterLogoIcon, WhiteCheckIcon } from '@/components/home/Icons'
 import Link from 'next/link'
 

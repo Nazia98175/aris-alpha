@@ -3,13 +3,13 @@
 import { useState, useEffect, useRef } from 'react'
 import AiHandle from '@/components/home/AiHandle'
 import AlphaBuild from '@/components/home/AlphaBuild'
-import Dashboard from '@/components/home/dashboard'
-import Header from '@/components/home/header'
+import Dashboard from '@/components/home/Dashboard'
+import Header from '@/components/home/Header'
 import InstantlyAction from '@/components/home/InstantlyAction'
 import Projects from '@/components/home/Projects'
-import Reviews from '@/components/home/reviews'
+import Reviews from '@/components/home/Reviews'
 import Footer from '@/components/layout/public/footer'
-import Navbar from '@/components/layout/navbar'
+import Navbar from '@/components/layout/Navbar'
 
 export default function Home() {
     const [aiHandleScrolled, setAiHandleScrolled] = useState(false)

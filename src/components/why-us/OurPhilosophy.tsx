@@ -1,6 +1,6 @@
 import { LineData } from 'lightweight-charts'
 import { FC } from 'react'
-import AreaChart from '../old-dashboard/Chart'
+import AreaChart from '../old-dashboard/chart'
 
 interface Props {
     trade: LineData[]

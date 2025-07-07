@@ -13,8 +13,21 @@ const AccountSettings = () => {
     const [themeDark, setThemeDark] = useState(false)
     const [emailNotifications, setEmailNotifications] = useState(false)
     const [telegramNotifications, setTelegramNotifications] = useState(false)
-
+    const [loading, setloading] = useState(false)
     const router = useRouter()
+
+    const manageSubcription = async () => {
+        setloading(true)
+        try {
+            const res = await fetch('/api/checkout', { method: 'POST' })
+            const data = await res.json()
+            router.push(data.url)
+        } catch (error) {
+            throw new Error('Something went wrong while processing checkout')
+        } finally {
+            setloading(false)
+        }
+    }
 
     const handleLogout = async () => {
         const { error } = await supabase.auth.signOut()
@@ -67,7 +80,8 @@ const AccountSettings = () => {
                         Manage your billing and subscription through our secure provider.
                     </p>
                     <CommonBtn
-                        btnUrl="/onboarding"
+                        disabled={loading}
+                        onClick={manageSubcription}
                         className="my-3 w-fit !px-5 !py-2 md:my-5"
                         btnText="Manage Subscription"
                         variant="secondary"
@@ -81,7 +95,7 @@ const AccountSettings = () => {
                 </SettingsGroup>
                 <button
                     onClick={handleLogout}
-                    className="w-w-fit px-4 py-2 text-sm border rounded-full border-red-400 text-red-400"
+                    className="w-w-fit rounded-full border border-red-400 px-4 py-2 text-sm text-red-400"
                 >
                     <div className="flex items-center gap-2 sm:gap-3">
                         <LogoutIcon />

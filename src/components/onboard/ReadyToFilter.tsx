@@ -109,7 +109,14 @@ const ReadyToFilter = () => {
                 takeAction: JSON.stringify(values.takeAction),
             })
 
-            router.push('/dashboard')
+            try {
+                const res = await fetch('/api/checkout', { method: 'POST' })
+                const data = await res.json()
+                router.push(data.url)
+                //eslint-disable-next-line
+            } catch (error) {
+                throw new Error('Something went wrong while processing checkout')
+            }
         },
     })
 
@@ -160,7 +167,7 @@ const ReadyToFilter = () => {
             <h1 className="mb-5 text-center text-4xl leading-[120%] text-white md:text-5xl lg:mb-8 xl:text-[64px]">
                 You&#39;re One Step Away
             </h1>
-            <p className="mx-auto mb-8 w-full max-w-[550px] md:max-w-[600px] lg:max-w-[660px] text-center text-base leading-[150%] font-medium text-white/70 sm:mb-7 md:mb-10 md:text-lg lg:mb-14 lg:text-xl">
+            <p className="mx-auto mb-8 w-full max-w-[550px] text-center text-base leading-[150%] font-medium text-white/70 sm:mb-7 md:mb-10 md:max-w-[600px] md:text-lg lg:mb-14 lg:max-w-[660px] lg:text-xl">
                 From seeing real-time setups cut from flow, sentiment, and positioning data—before the rest of the
                 market picks up on them.
             </p>

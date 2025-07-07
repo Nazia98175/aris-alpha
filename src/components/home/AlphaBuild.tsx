@@ -1,5 +1,5 @@
 import CommonBtn from '../ui/CommonBtn'
-import { ProgressStep, stepInstractions } from '../home/Helper'
+import { ProgressStep, stepInstractions } from './Helper'
 import { DotedLineIcon } from './Icons'
 import StepInstractionBlock from './StepInstractionBlock'
 

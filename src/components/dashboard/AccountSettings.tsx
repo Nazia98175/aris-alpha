@@ -1,5 +1,4 @@
 'use client'
-
 import { supabase } from '@/lib/supabase/client'
 import { useRouter } from 'next/navigation'
 import { useState } from 'react'
@@ -22,6 +21,7 @@ const AccountSettings = () => {
             const res = await fetch('/api/checkout', { method: 'POST' })
             const data = await res.json()
             router.push(data.url)
+            //eslint-disable-next-line
         } catch (error) {
             throw new Error('Something went wrong while processing checkout')
         } finally {
